@@ -1,8 +1,8 @@
-#Blog
+#Welcome
+This Repo is for my personal blog.  On it, I post about genomics, bioinformatics, & web and mobile development.
 
-Hello!  This is my super basic blog site.  It uses [Jekyll](http://jekyllrb.com) with the [Poole theme](http://demo.getpoole.com).
-
-The site is hosted on [GitHub Pages](https://pages.github.com).
+###About
+This site uses [Jekyll](http://jekyllrb.com) with the [Poole theme](http://demo.getpoole.com), and [GitHub Pages](https://pages.github.com) for hosting.
 
 
 

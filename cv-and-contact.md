@@ -14,17 +14,15 @@ guid: http://www.bradfordcondon.com/?page_id=484
   <a href="mailto:Bradford.condon@gmail.com">Bradford.condon@gmail.com</a>
 </p>
 
-**Education**
+## Education
 
 August 2013, PhD in Plant Pathology & Plant-Microbe Interactions, Cornell University, Ithaca, NY
 
 May 2007, BA in Biology and Religion, Oberlin College, Oberlin, OH
 
-&nbsp;
 
-**Employment**
+## Employment
 
-&nbsp;
 
 February 2017 to present: Postdoctoral associate, Department of Entomology and Plant Pathology, University of Tennessee, Knoxville.
 
@@ -38,11 +36,10 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
   <a href="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/TurgeonLab_4_10.jpg"><img class="alignnone size-medium wp-image-485" src="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/TurgeonLab_4_10-300x166.jpg?fit=300%2C166" alt="TurgeonLab_4_10" srcset="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/TurgeonLab_4_10.jpg?resize=300%2C166 300w, https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/TurgeonLab_4_10.jpg?w=510 510w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a>
 </p>
 
-&nbsp;
 
-**Skills:**
+## Skills
 
-_Bioinformatics:_
+#### Bioinformatics
 
   * Proficient with UNIX/LINUX systems, command-line programming, querying and managing big data/databases (SQL, JSON)
   * Developer for cross-platform apps in React-Native, and genomics websites using Tripal and Drupal.
@@ -52,16 +49,18 @@ _Bioinformatics:_
       * Genome assembly and annotation
       * Phylogenetics
 
-  * Programming languages: **R, Perl, swift, javascript, PHP**
+  * Programming languages: **R, Perl, swift, javascript, PHP, CSS**
 
-_Molecular biology_:
+  * Frameworks: **R, Perl, swift, javascript, PHP**
+
+#### Molecular biology
 
   * Fungal and bacterial culture, transformation, and phenotyping
   * Molecular bio bench skills include DNA extraction, PCR, southern/northern blotting, light and confocal microscopy
   * Next-gen (illumina) library preparation
   * Greenhouse management
 
-_Communication and mentorship_:
+#### Communication and mentorship
 
   * Formed UK-BLAST, the undergraduate bioinformatics mentorship group at the University of Kentucky 
       * Leading and designing workshops in bioinformatics
@@ -70,35 +69,41 @@ _Communication and mentorship_:
   * Co-PI awardee for bringing [Expanding Your Horizons](http://www.eyhn.org/), a STEM conference for young girls, to the University of Kentucky
   * Community outreach and education on fungi includes presentations at Floracliff Nature Sanctuary and the Kentucky Food Retail Safety conference
 
-**Awards and honors:  **
+#### Awards and honors
 
-2006 Oberlin College Norman H Wright Prize for undergraduate research
+* 2006 Oberlin College Norman H Wright Prize for undergraduate research
 
-2007-2008 Presidential Life Science Fellow
+* 2007-2008 Presidential Life Science Fellow
 
-2009 NSF graduate research fellowship honorable mention
+* 2009 NSF graduate research fellowship honorable mention
 
-2010 NSF EAPSI fellow (New Zealand)
+* 2010 NSF EAPSI fellow (New Zealand)
 
-2011 Plant Sciences outstanding TA award
+* 2011 Plant Sciences outstanding TA award
 
-2012 McClintock Outstanding Plant Sciences Graduate Student Award
+* 2012 McClintock Outstanding Plant Sciences Graduate Student Award
 
-2011-2012 Center For Teaching Excellence Graduate Teaching Associate Fellow
+* 2011-2012 Center For Teaching Excellence Graduate Teaching Associate Fellow
 
-2012-2013 Center For Teaching Excellence Graduate Teaching Associate Fellow
+* 2012-2013 Center For Teaching Excellence Graduate Teaching Associate Fellow
 
-&nbsp;
+* 2017 NSF EPSCoR grant, [Expanding Your Horizons](http://www.eyhn.org/)
 
-**Teaching and leadership:**
 
-_**UK-BLAST**: University of Kentucky_
+#### Teaching and leadership
+
+##### 
+
+##### KBRIN Next Generation Sequencing and Data Analysis Workshop 2017
+
+Web coordinator and instructor
+
+##### UK-BLAST: *University of Kentucky* 2016
 
 UK-BLAST is an extracurricular support group for undergraduates performing genomics research at the University of Kentucky.  In addition to advising students on their projects, I designed and implemented workshops on topics in genomics.
 
-&nbsp;
 
-_Departmental teaching: Cornell University_
+##### Departmental teaching: _Cornell University_ 2008-2013
 
 Spring 2008: PLPA 2010 TA: Magical Mushrooms & Mischievous Molds.
 
@@ -112,49 +117,51 @@ Spring 2013 PLPA 2015 TA:  Mushrooms, Molds, and Molecules.
 
 _ _
 
-_[Center for Teaching Excellence](http://www.cte.cornell.edu/): workshops (1 hour) developed & implemented_
+##### [Center for Teaching Excellence](http://www.cte.cornell.edu/): _Cornell University_ 2011-2013
 
-Classical teaching models and the psychology of learning
+_workshops (1 hour) developed & implemented:_
 
-What do I want my students to learn? Identifying learning outcomes as the basis for instruction and assessment
+* Classical teaching models and the psychology of learning
 
-Using library resources to enhance student’s research skills
+* What do I want my students to learn? Identifying learning outcomes as the basis for instruction and assessment
 
-Creating effective questions for iClickers and online quizzes
+* Using library resources to enhance student’s research skills
 
-Establishing a professional electronic online identity
+* Creating effective questions for iClickers and online quizzes
 
-_Center for Teaching Excellence:_ _full day workshops developed & implemented_ 
+* Establishing a professional electronic online identity
 
-2012 Chemistry TA training instructor
+_Full day workshops developed & implemented:_ 
 
-2012 Teaching Excellence Practicum Instructor, CTE summer Institute** **
+* 2012 Chemistry TA training instructor
+
+* 2012 Teaching Excellence Practicum Instructor, CTE summer Institute
 
 &nbsp;
 
-**Presentations:**
+#### Presentations
 
-_Talks:_
+##### Talks
 
-Joint Genome Institute Dothideomycete jamboree. Walnut Creek, CA (2008)
+* Joint Genome Institute Dothideomycete jamboree. Walnut Creek, CA (2008)
 
-Fungal Genetics Conference, secondary metabolism session. Asilomar, CA (2013)
+* Fungal Genetics Conference, secondary metabolism session. Asilomar, CA (2013)
 
-_ _
+* Kentucky Food Retail Safety Conference, invited speaker on wild mushroom safety. Frankfurt, KY (2016)
 
-_Posters:_
 
-American Society of Plant Biologists, Boston, MA (2006)
+##### Posters
 
-Fungal Genetics Conference, Asilomar, CA (2009)
+* American Society of Plant Biologists, Boston, MA (2006)
 
-Molecular Plant Microbe Biology, Quebec City, QC (2009)
+* Fungal Genetics Conference, Asilomar, CA (2009)
 
-Fungal Genetics Conference, Asilomar, CA (2011)
+* Molecular Plant Microbe Biology, Quebec City, QC (2009)
 
-**_ _**
+* Fungal Genetics Conference, Asilomar, CA (2011)
 
-**Publications:**
+
+## Publications
 
 Mohd Zainudin, N. A. I., **Condon, B. J.,** De Bruyne, L., Poucke, C. V., Bi, Q., Li, W., et al. (2015). Virulence, host selective toxin production, and development of three Cochliobolus phytopathogens lacking the Sfp-type 4&#8242;-phosphopantetheinyl transferase Ppt1. _MPMI_ (digital preprint). doi:10.1094/MPMI-03-15-0068-R
 

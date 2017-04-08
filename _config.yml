@@ -3,10 +3,11 @@ permalink:           pretty
 
 # Setup
 title:               Bradford Condon PhD
-tagline:             Bioinformatics, Mobile and Web Development
+tagline:             
 url:                 http://bradfordcondon.com
 paginate:            10
 baseurl:             ""
+description:        I earned my PhD in plant pathology in 2013, working in fungal genetics & genomics.  Since then, I've progressed from a bioinformaticist to a web developer.
 
 # Assets
 #

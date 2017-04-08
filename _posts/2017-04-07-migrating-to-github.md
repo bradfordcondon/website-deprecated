@@ -1,6 +1,5 @@
-
-
 ---
+layout: post
 title: Moving to Github Pages
 permalink: helloWorld.html
 ---

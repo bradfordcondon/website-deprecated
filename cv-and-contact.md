@@ -14,7 +14,7 @@ guid: http://www.bradfordcondon.com/?page_id=484
   <a href="mailto:Bradford.condon@gmail.com">Bradford.condon@gmail.com</a>
 </p>
 
-**Education**
+## Education
 
 August 2013, PhD in Plant Pathology & Plant-Microbe Interactions, Cornell University, Ithaca, NY
 
@@ -22,7 +22,7 @@ May 2007, BA in Biology and Religion, Oberlin College, Oberlin, OH
 
 &nbsp;
 
-**Employment**
+## Employment
 
 &nbsp;
 
@@ -40,9 +40,9 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 
 &nbsp;
 
-**Skills:**
+## Skills
 
-_Bioinformatics:_
+#### Bioinformatics:
 
   * Proficient with UNIX/LINUX systems, command-line programming, querying and managing big data/databases (SQL, JSON)
   * Developer for cross-platform apps in React-Native, and genomics websites using Tripal and Drupal.
@@ -54,14 +54,14 @@ _Bioinformatics:_
 
   * Programming languages: **R, Perl, swift, javascript, PHP**
 
-_Molecular biology_:
+#### Molecular biology:
 
   * Fungal and bacterial culture, transformation, and phenotyping
   * Molecular bio bench skills include DNA extraction, PCR, southern/northern blotting, light and confocal microscopy
   * Next-gen (illumina) library preparation
   * Greenhouse management
 
-_Communication and mentorship_:
+#### Communication and mentorship:
 
   * Formed UK-BLAST, the undergraduate bioinformatics mentorship group at the University of Kentucky 
       * Leading and designing workshops in bioinformatics
@@ -70,7 +70,7 @@ _Communication and mentorship_:
   * Co-PI awardee for bringing [Expanding Your Horizons](http://www.eyhn.org/), a STEM conference for young girls, to the University of Kentucky
   * Community outreach and education on fungi includes presentations at Floracliff Nature Sanctuary and the Kentucky Food Retail Safety conference
 
-**Awards and honors:  **
+#### Awards and honors:
 
 2006 Oberlin College Norman H Wright Prize for undergraduate research
 
@@ -88,17 +88,19 @@ _Communication and mentorship_:
 
 2012-2013 Center For Teaching Excellence Graduate Teaching Associate Fellow
 
+2017 NSF EPSCoR grant, [Expanding Your Horizons](http://www.eyhn.org/)
+
 &nbsp;
 
-**Teaching and leadership:**
+#### Teaching and leadership
 
-_**UK-BLAST**: University of Kentucky_
+##### UK-BLAST: *University of Kentucky*
 
 UK-BLAST is an extracurricular support group for undergraduates performing genomics research at the University of Kentucky.  In addition to advising students on their projects, I designed and implemented workshops on topics in genomics.
 
 &nbsp;
 
-_Departmental teaching: Cornell University_
+##### Departmental teaching: _Cornell University_
 
 Spring 2008: PLPA 2010 TA: Magical Mushrooms & Mischievous Molds.
 
@@ -112,23 +114,25 @@ Spring 2013 PLPA 2015 TA:  Mushrooms, Molds, and Molecules.
 
 _ _
 
-_[Center for Teaching Excellence](http://www.cte.cornell.edu/): workshops (1 hour) developed & implemented_
+##### [Center for Teaching Excellence](http://www.cte.cornell.edu/): _Cornell University_ 
 
-Classical teaching models and the psychology of learning
+_workshops (1 hour) developed & implemented:_
 
-What do I want my students to learn? Identifying learning outcomes as the basis for instruction and assessment
+* Classical teaching models and the psychology of learning
 
-Using library resources to enhance student’s research skills
+* What do I want my students to learn? Identifying learning outcomes as the basis for instruction and assessment
 
-Creating effective questions for iClickers and online quizzes
+* Using library resources to enhance student’s research skills
 
-Establishing a professional electronic online identity
+* Creating effective questions for iClickers and online quizzes
 
-_Center for Teaching Excellence:_ _full day workshops developed & implemented_ 
+* Establishing a professional electronic online identity
 
-2012 Chemistry TA training instructor
+_Full day workshops developed & implemented:_ 
 
-2012 Teaching Excellence Practicum Instructor, CTE summer Institute** **
+* 2012 Chemistry TA training instructor
+
+* 2012 Teaching Excellence Practicum Instructor, CTE summer Institute
 
 &nbsp;
 

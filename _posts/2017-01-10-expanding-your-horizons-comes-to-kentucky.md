@@ -8,9 +8,11 @@ guid: http://www.bradfordcondon.com/?p=605
 permalink: /?p=605
 image: /wp-content/uploads/2017/01/logo_nonet.jpg
 categories:
-  - Uncategorized
+  - Outreach
+  - Science
 ---
-I&#8217;m excited to announce that, a collaboration between Dr. Ellen Crocker, Dr. Susan Odom and myself has secured an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research) grant to bring a science conference for young girls to University of Kentucky.  The conference, an extension of the [Expanding Your Horizons (EYH) network](http://www.eyhn.org/), is a great opportunity for young girls, as well as undergraduate and graduate students.  The conference will be held April 29, 2017.
+
+I'm excited to announce that, a collaboration between Dr. Ellen Crocker, Dr. Susan Odom and myself has secured an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research) grant to bring a science conference for young girls to University of Kentucky.  The conference, an extension of the [Expanding Your Horizons (EYH) network](http://www.eyhn.org/), is a great opportunity for young girls, as well as undergraduate and graduate students.  The conference will be held April 29, 2017.
 
 &nbsp;
 
@@ -18,7 +20,7 @@ I&#8217;m excited to announce that, a collaboration between Dr. Ellen Crocker, 
 
 &nbsp;
 
-To learn more, see the [writeup in UKNow](http://uknow.uky.edu/campus-news/uk-host-stem-conference-middle-school-girls-april-29), or, [visit the website.](http://www.expandingyourhorizons.org/conferences/UKLex/)  We&#8217;re still collecting applications for activities- once we have our offerings together we will open registration to participants!
+To learn more, see the [writeup in UKNow](http://uknow.uky.edu/campus-news/uk-host-stem-conference-middle-school-girls-april-29), or, [visit the website.](http://www.expandingyourhorizons.org/conferences/UKLex/)  We're still collecting applications for activities- once we have our offerings together we will open registration to participants!
 
 &nbsp;
 

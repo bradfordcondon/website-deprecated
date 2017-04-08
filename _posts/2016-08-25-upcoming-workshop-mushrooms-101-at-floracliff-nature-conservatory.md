@@ -21,7 +21,7 @@ I&#8217;m excited to announce that my wife [Dr. Ellen Crocker](https://evcrocker
 
 No promises, but our last foray into the Daniel Boone National Forest was beautiful, and yielded a pound or two of some nice chanterelles.
 
-&nbsp;<figure id="attachment_583" style="width: 700px" class="wp-caption aligncenter">
+&nbsp;<figure id="attachment_583" style="width: 300px" class="wp-caption aligncenter">
 
 <img class="wp-image-583 size-large" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2016/08/IMG_2027-1024x768.jpg?fit=700%2C525" alt="Chanterelles being sauted with onion" srcset="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2016/08/IMG_2027.jpg?resize=1024%2C768 1024w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2016/08/IMG_2027.jpg?resize=300%2C225 300w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2016/08/IMG_2027.jpg?resize=768%2C576 768w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2016/08/IMG_2027.jpg?w=2000 2000w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2016/08/IMG_2027.jpg?w=3000 3000w" sizes="(max-width: 700px) 100vw, 700px" data-recalc-dims="1" /><figcaption class="wp-caption-text">Wild chanterelles harvested this summer in Kentucky.  Chanterelles are an example of an easy to identify edible wild mushroom.  The only poisonous look-a-like to the chanterelle is [_Omphalotus iludens_, the Jack O&#8217;Lantern mushroom.](http://www.mushroomexpert.com/omphalotus_illudens.html)  Beginning mushroom hunters will learn that chanterelles have false gills, unlike the Jack O&#8217;Lantern.  Additionaly, Jack O&#8217;Lanterns tend to grow in dense clusters, whereas chanterelles emerge distinctly.</figcaption></figure> 
 

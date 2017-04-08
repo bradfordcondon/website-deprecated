@@ -5,7 +5,7 @@ permalink:           pretty
 title:               Bradford Condon PhD
 tagline:             Genomics, Bioinformatics, Mobile and Web Development
 url:                 http://bradfordcondon.com
-paginate:            1
+paginate:            10
 baseurl:             ""
 
 # Assets

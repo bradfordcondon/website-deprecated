@@ -7,14 +7,11 @@ tagline:
 url:                 http://bradfordcondon.com
 paginate:            10
 baseurl:             ""
-description:        I earned my PhD in plant pathology in 2013, working in fungal genetics & genomics.  Since then, I've progressed from a bioinformaticist to a web developer.
+description:        I am a bioinformaticist and mobile/web developer living in Lexington, KY.
 
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
 
 # About/contact
 author:

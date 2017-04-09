@@ -3,17 +3,15 @@ permalink:           pretty
 
 # Setup
 title:               Bradford Condon PhD
-tagline:             Bioinformatics, Mobile and Web Development
+tagline:             Bioinformatics, Web & Mobile Development
 url:                 http://bradfordcondon.com
 paginate:            10
 baseurl:             ""
+description:        I am a bioinformaticist and mobile/web developer living in Lexington, KY.
 
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
 
 # About/contact
 author:

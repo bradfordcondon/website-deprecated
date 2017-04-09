@@ -4,10 +4,8 @@ title: CV and contact
 date: 2015-12-05T03:02:17+00:00
 author: bradford.condon@gmail.com
 layout: page
-permalink: cv.html
+guid: http://www.bradfordcondon.com/?page_id=484
 ---
-
-
 <p style="text-align: center;">
   Bradford Condon, PhD
 </p>

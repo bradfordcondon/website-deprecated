@@ -4,32 +4,39 @@ title: Home
 ---
 
 <div class="posts">
+ <br>
   {% for post in paginator.posts %}
-  <article class="post">
   <div class="card">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
+  <article class="post">
+    <div class="card-header-title"">
+    <p class="is-2">
+      <a class="is-2" href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
-    </h1>
-
+      </p>
+      </div>
+      <div class ="card-content">
     <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
-
+      </div>
+    <div class="card-content">
     {{ post.content }}
+    </div>
   </article>
   </div>
+  <br>
   {% endfor %}
 </div>
 
-<div class="pagination">
+<nav class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+    <a class="button pagination previous is-primary is-large" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
   {% else %}
-    <span class="pagination-item older">Older</span>
+    <a class="button pagination previous is-primary is-large">Older</a>
+
   {% endif %}
   {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+    <a class="button pagination-item newer is-primary is-large" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
   {% else %}
-    <span class="pagination-item newer">Newer</span>
+    <span class="button pagination-item newer is-primary is-large">Newer</span>
   {% endif %}
 </div>

@@ -5,29 +5,38 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<nav>
-<div class ="nav-left nav-menu">
-    <a class= "nav-item" href="{{ site.baseurl }}/" title="Home">
-    {{ site.title }}
-    </a>
+
+<section class="hero is-primary is-bold">
+  <div class="hero-head">
+    <div class="container">
+
+      <h1 class="title">
+      <a href="{{ site.baseurl }}/" title="Home">
+{{ site.title }}
+</a>
+      </h1>
+      <h2 class="subtitle">
+      {{site.tagline}}
+        </h2>
     </div>
 
+  </div>
+<div class="hero-foot">
+  <nav class="tabs is-boxed nav-menu has-shadow">
+    <div class="nav-center">
+        <ul>
+          <li class="is-active"><a href="{{ site.baseurl }}/">Home</a></li>
+          <li><a href="{{site.baseurl}}/about/">About</a></li>
+          <li><a href="{{site.baseurl}}/cv/">CV</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-<div class="nav-center nav-menu">
+</section>
 
-   <a class="nav-item">
-      Blog
-    </a>
-    <a class="nav-item">
-      CV
-    </a>
-     <a class="nav-item">
-      About
-    </a>
 
-    </div>
 
-</nav>
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css">

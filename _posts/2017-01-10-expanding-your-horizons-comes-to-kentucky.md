@@ -4,7 +4,6 @@ title: Expanding Your Horizons comes to Kentucky
 date: 2017-01-10T19:00:07+00:00
 author: bradford.condon@gmail.com
 layout: post
-permalink: /?p=605
 image: /wp-content/uploads/2017/01/logo_nonet.jpg
 categories:
   - Outreach

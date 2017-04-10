@@ -4,8 +4,6 @@ title: Where did MaCQIIME go?
 date: 2016-07-11T18:29:34+00:00
 author: bradford.condon@gmail.com
 layout: post
-guid: http://www.bradfordcondon.com/?p=573
-permalink: /?p=573
 categories:
   - Science
   - Tools

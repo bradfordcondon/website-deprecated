@@ -5,7 +5,6 @@ date: 2016-08-25T18:21:02+00:00
 author: bradford.condon@gmail.com
 layout: post
 guid: http://www.bradfordcondon.com/?p=582
-permalink: /?p=582
 image: /wp-content/uploads/2016/08/cropped_us-150x150.png
 categories:
   - fun

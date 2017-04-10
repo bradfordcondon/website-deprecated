@@ -8,8 +8,6 @@ guid: http://bradfordcondon.wordpress.com/?p=111
 permalink: /?p=111
 publicize_twitter_user:
   - BradfordCondon
-tagazine-media:
-  - 'a:7:{s:7:"primary";s:85:"http://bradfordcondon.files.wordpress.com/2013/06/tumblr_inline_moc25f6vrk1qz4rgp.jpg";s:6:"images";a:2:{s:85:"http://bradfordcondon.files.wordpress.com/2013/06/tumblr_inline_moc217xwob1qz4rgp.jpg";a:6:{s:8:"file_url";s:85:"http://bradfordcondon.files.wordpress.com/2013/06/tumblr_inline_moc217xwob1qz4rgp.jpg";s:5:"width";i:500;s:6:"height";i:332;s:4:"type";s:5:"image";s:4:"area";i:166000;s:9:"file_path";b:0;}s:85:"http://bradfordcondon.files.wordpress.com/2013/06/tumblr_inline_moc25f6vrk1qz4rgp.jpg";a:6:{s:8:"file_url";s:85:"http://bradfordcondon.files.wordpress.com/2013/06/tumblr_inline_moc25f6vrk1qz4rgp.jpg";s:5:"width";i:500;s:6:"height";i:444;s:4:"type";s:5:"image";s:4:"area";i:222000;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:2;s:6:"author";s:8:"37172565";s:7:"blog_id";s:8:"51189331";s:9:"mod_stamp";s:19:"2013-06-13 15:33:30";}'
 categories:
   - fun
 tags:

@@ -4,7 +4,7 @@ title: "Moving to Jekyll"
 <!-- date: unpublished-->
 ---
 
-##Switching to Jekyll
+## Switching to Jekyll
 
 This weekend I switched my site from a Wordpress site hosted by bluehost to a Jekyll site hosted on githubpages.  I'm excited about this for plenty of reasons.
 
@@ -24,6 +24,13 @@ If you're looking to try this out for yourself, you'll want Ruby/RVM, Jekyll, an
 
 It's simple: download and enable the plugin, then use the `export to Jekyll` command on the toolbar.  
 
+
+  <figure>
+    
+        <img src="/assets/img/wp2jekyllTool.png">
+        <figcaption> The installed plugin on your Wordpress site </figcaption>
+    
+    </figure>
 
 All of my Wordpress posts are now neatly in my `_posts` folder, and all associated assets are in `wp-content/uploads/[date]/`.  I need to cull some of the images to cut down on space, and I have to redo the formatting of my old Wordpress posts.  For example, the MD headers have more info than we would possibly care about (such as review requests) and there are some wonky tags in the pages.  All in all, though, this works extremely well.
 

@@ -23,15 +23,19 @@ When I taught a science for non-science majors at Cornell University, my favorit
 
 This is such an important life skill because at this point in time, **blogs, newspapers, and magazines print unscientific bullshit.**  They do it because it sells. ** **I have never seen an article so neatly package all of the problems that lead to this state of affairs than [John Bohannon&#8217;s recent &#8220;Chocolate Diet&#8221; charade.](http://io9.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800)  If you haven&#8217;t read it yet, please do.  I&#8217;ll wait.
 
-Amazing, right?<figure id="attachment_420" style="width: 255px" class="wp-caption aligncenter">
+Amazing, right?
 
-[<img class="size-medium wp-image-420" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/screen-shot-2015-05-28-at-3-59-55-pm-255x300.png?fit=255%2C300" alt="An echo of the article, still up on BodyandSoul.com.au" srcset="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/screen-shot-2015-05-28-at-3-59-55-pm.png?w=1120 1120w, https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/screen-shot-2015-05-28-at-3-59-55-pm.png?resize=255%2C300 255w, https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/screen-shot-2015-05-28-at-3-59-55-pm.png?resize=871%2C1024 871w" sizes="(max-width: 255px) 100vw, 255px" data-recalc-dims="1" />](https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/screen-shot-2015-05-28-at-3-59-55-pm.png)<figcaption class="wp-caption-text">An echo of the article, still up on BodyandSoul.com.au</figcaption></figure> 
+![image](/wp-content/uploads/2015/05/screen-shot-2015-05-28-at-3-59-55-pm-255x300.png)
 
 ## **The study**
 
-Here&#8217;s the breakdown: Diana Löbl and Peter Onneken are working on a &#8220;diet science&#8221; documentary, and want to show how diet news can get reported.  So they enlist Johannes to conduct a shoddy study.  Participants will either make no dietary changes, go on a diet, or go on a diet with a bar of chocolate.  By only including 15 people in their study, and measuring a wealth of factors, they were guaranteed to find that the chocolate dieters fared better in some way than the other groups.  The finding would be meaningless, but it would be &#8220;statistically significant&#8221; &#8211; within the confines of their prohibitively small study.  They lucked out, and the 5 chocolate eaters lost weight.<figure id="attachment_419" style="width: 203px" class="wp-caption aligncenter">
+Here&#8217;s the breakdown: Diana Löbl and Peter Onneken are working on a &#8220;diet science&#8221; documentary, and want to show how diet news can get reported.  So they enlist Johannes to conduct a shoddy study.  Participants will either make no dietary changes, go on a diet, or go on a diet with a bar of chocolate.  By only including 15 people in their study, and measuring a wealth of factors, they were guaranteed to find that the chocolate dieters fared better in some way than the other groups.  The finding would be meaningless, but it would be &#8220;statistically significant&#8221; &#8211; within the confines of their prohibitively small study.  They lucked out, and the 5 chocolate eaters lost weight.
 
-[<img class="size-medium wp-image-419" src="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/untitled-203x300.png?fit=203%2C300" alt="How to Lie With Statistics, by Daryl Huff." srcset="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/untitled.png?w=541 541w, https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/untitled.png?resize=203%2C300 203w" sizes="(max-width: 203px) 100vw, 203px" data-recalc-dims="1" />](https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/05/untitled.png)<figcaption class="wp-caption-text">How to Lie With Statistics, by Daryl Huff.</figcaption></figure> 
+
+
+![image](/wp-content/uploads/2015/05/untitled.png)
+
+>How to Lie With Statistics, by Daryl Huff.
 
 Next, they needed to publish their study somewhere.  Fortunately for Johannes, it&#8217;s getting harder and harder to distinguish &#8220;fake&#8221; publishers from real ones.  Real journals will conduct real peer review, where third-party scientists must evaluate the article before it can be published.  Due to the intentionally poor design of this study, it (hopefully) wouldn&#8217;t pass peer review in any credible journal.
 

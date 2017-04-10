@@ -23,13 +23,15 @@ It was a soggy morning in early Fall when I encountered an ostracod.  I had jus
 
 Laying still, it looked like a small pebble the size of a grain of rice, its surface coated in slimy mud.  Careful observation found that the pebble scooted around the puddle in small circles, propelled as if by an onboard motor.  Enthralled, I plucked one and teased it on my finger.  What was this microscopic backwoods clam?  Amazingly, a tiny shrimp-like head poked out, with sweeping tendrils.  I immediately announced we had discovered a lost species of clam-shrimp, and found a nearby coca cola bottle to collect one.  Before we could gather another, an ATV rode by, crashing through the puddles and hopelessly clouding our view.
 
-Arriving at the lab, we armed ourselves with a microscope, and the knowledge of the scientific community.  Kathie immediately decided we were dealing with an [ostracod](http://en.wikipedia.org/wiki/Ostracod).<figure style="width: 800px" class="wp-caption alignnone">
+Arriving at the lab, we armed ourselves with a microscope, and the knowledge of the scientific community.  Kathie immediately decided we were dealing with an [ostracod](http://en.wikipedia.org/wiki/Ostracod).
 
-<img alt="" src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/thumb/9/93/Ostracod.JPG/800px-Ostracod.JPG?resize=800%2C595" data-recalc-dims="1" /><figcaption class="wp-caption-text">An ostracod. Photo from Wikipedia: http://en.wikipedia.org/wiki/File:Ostracod.JPG</figcaption></figure> 
+<img alt="" src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/thumb/9/93/Ostracod.JPG/800px-Ostracod.JPG?resize=800%2C595" data-recalc-dims="1" />
+>An ostracod. Photo from Wikipedia: http://en.wikipedia.org/wiki/File:Ostracod.JPG
 
 Observing our ostracod (we named her Sue) scooting around under the microscope was a joy.  My curiosity for Sue was fed by an excellent website by [Robin James Smith at the Lake Biwa Museum](http://www.lbm.go.jp/smith/facts.html).  I highly encourage you to visit Robin&#8217;s website, especially the [images](http://www.lbm.go.jp/smith/photos.html) section (I&#8217;ve included my favorite sketch below).  Amazingly my initial assessment wasn&#8217;t far off: the common name of my &#8220;clamshrimp&#8221; is actually &#8220;seed shrimp!&#8221;<figure style="width: 500px" class="wp-caption alignnone">
 
-<img alt="" src="https://i0.wp.com/www.lbm.go.jp/smith/images/limnocythere2.png?resize=500%2C377" data-recalc-dims="1" /><figcaption class="wp-caption-text">A sketch of a female ostracod, by Robin James Smith</figcaption></figure> 
+<img alt="" src="https://i0.wp.com/www.lbm.go.jp/smith/images/limnocythere2.png?resize=500%2C377" data-recalc-dims="1" />
+>A sketch of a female ostracod, by Robin James Smith
 
 The amazing thing about biology is that a simple walk through the woods can ignite an entire afternoon of looking through a microscope and learning something new and bizarre.  I now know that ostracods can produce spermatozoa up to ten times their body length, can be bioluminescent, and can hunt in groups!  Every organism has an untold story, with so much left to learn and be discovered.  And thanks to the unbelievable scope and rigor of science, a discovery can easily climb the scaffolds of human knowledge.  We can just as easily reach the peak, and wonder at the reality just beyond our comprehension.
 

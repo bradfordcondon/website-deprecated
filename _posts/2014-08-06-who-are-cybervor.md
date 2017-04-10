@@ -26,7 +26,7 @@ Skeptics have pointed out that, well, [things don&#8217;t really add up.](http:/
 
 So what does Hold Security know about CyberVor?  According to The New York Times piece (which means according to Hold Security, who sell the solution to the CyberVor problem), CyberVor is made up of fewer than a dozen men in South Central Russia.  Hold Security knows this because they have been in communication with them.  Seriously.<figure style="width: 293px" class="wp-caption alignnone">
 
-<img class="" src="https://i0.wp.com/upload.wikimedia.org/wikipedia/en/6/67/Hackersposter.jpg?resize=293%2C434" alt="" data-recalc-dims="1" /><figcaption class="wp-caption-text">CyberVor: we know they are real because we Skype all the time.</figcaption></figure> 
+<img class="" src="https://i0.wp.com/upload.wikimedia.org/wikipedia/en/6/67/Hackersposter.jpg?resize=293%2C434" alt="" data-recalc-dims="1" />
 
 I&#8217;ll be interested in seeing how this develops.  As it is, I see a lot of big claims with no evidence or specifics, and the group making the claim profiting from the resulting panic.  I also find it odd that CyberVor and Hold Security communicate.  Is that normal?  Do hackers usually chat with data security firms?  I can&#8217;t even verify that CyberVor is a thing from anyone other than Hold Security because, well, Hold Security coined the term CyberVor, and that is all we have to go on.
 

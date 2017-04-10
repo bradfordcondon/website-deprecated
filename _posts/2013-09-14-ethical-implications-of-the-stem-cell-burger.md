@@ -26,11 +26,6 @@ tags:
 ---
 I am  writing a short piece on the [Stem Cell Burger](http://www.cnn.com/2013/08/05/world/europe/europe-stem-cell-burger-ott) which was unveiled early last month.  The [Cultured Beef website](http://culturedbeef.net/) is eager to point out the many benefits this technology could have for global research usage and animal ethics.  [Opponents](http://www.huffingtonpost.com/paul-knoepfler/test-tube-burger_b_3726288.html) are just as quick to point out the possibility of unknown side-effects.
 
-<span class="embed-youtube" style="text-align:center; display: block;"></span>
-
-<p style="text-align:center;">
-  <em style="font-size:15px;line-height:1.6;"><span style="font-size:15px;line-height:1.6;">An animated video of how the burgers are grown from cultured cells.</span></em>
-</p>
 
 <p style="text-align:left;">
   Cultured Beef may change the world- but maybe not in ways people expect.  I&#8217;ve jotted down a few of the more extreme implications for Cultured Beef.  I&#8217;m not an actual proponent of all these ideas: this is really just a thought experiment for possible ethical issues downstream of culturing just beef.
@@ -38,21 +33,27 @@ I am  writing a short piece on the [Stem Cell Burger](http://www.cnn.com/2013/0
 
 **1)  Eating endangered species.**
 
-Why limit ourselves to cows?  If we can string together cow cells grown in culture, why not the cells of a Bald Eagle?  It would be arguably the most American burger possible, and wouldn&#8217;t require death or suffering from of our favorite bird of prey.<figure id="attachment_210" style="width: 300px" class="wp-caption aligncenter">
+Why limit ourselves to cows?  If we can string together cow cells grown in culture, why not the cells of a Bald Eagle?  It would be arguably the most American burger possible, and wouldn&#8217;t require death or suffering from of our favorite bird of prey.
 
-[<img class="size-full wp-image-210" alt="Bald Eagle Burger is a real band!  The burgers aren't real.  Yet." src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/300x300.jpg?fit=300%2C300" srcset="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/300x300.jpg?w=300 300w, https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/300x300.jpg?resize=150%2C150 150w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://myspace.com/baldeagleburger/music/songs)<figcaption class="wp-caption-text">Bald Eagle Burger is a real band! The burgers aren&#8217;t real. Yet.</figcaption></figure> 
+<img class="size-full wp-image-210" alt="Bald Eagle Burger is a real band!  The burgers aren't real.  Yet." src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/300x300.jpg?fit=300%2C300" srcset="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/300x300.jpg?w=300 300w, https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/300x300.jpg?resize=150%2C150 150w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />
+>Bald Eagle Burger is a real band! The burgers aren&#8217;t real. Yet
 
 **2)  Eating extinct species.**
 
-With scientists pondering the implications of cloning extinct species, such as the [woolly mammoth](http://newsfeed.time.com/2012/03/14/the-woolly-mammoths-return-scientists-plan-to-clone-extinct-creature/), why not clone these extinct species into the Cultured Beef pipeline?  I imagine lots of people would be very excited to eat woolly mammoth burgers.<figure id="attachment_209" style="width: 300px" class="wp-caption aligncenter">
+With scientists pondering the implications of cloning extinct species, such as the [woolly mammoth](http://newsfeed.time.com/2012/03/14/the-woolly-mammoths-return-scientists-plan-to-clone-extinct-creature/), why not clone these extinct species into the Cultured Beef pipeline?  I imagine lots of people would be very excited to eat woolly mammoth burgers.
 
-[<img class="size-medium wp-image-209" alt="Mammoth ribs, the original family meal." src="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/flintstonesribs-300x203.jpg?fit=300%2C202" srcset="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/flintstonesribs.jpg?w=453 453w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/flintstonesribs.jpg?resize=300%2C203 300w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/flintstonesribs.jpg)<figcaption class="wp-caption-text">Mammoth ribs, the original family meal.</figcaption></figure> 
+
+
+![<img class="size-medium wp-image-209" alt="Mammoth ribs, the original family meal." src="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/flintstonesribs-300x203.jpg?fit=300%2C202" srcset="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/flintstonesribs.jpg?w=453 453w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/09/flintstonesribs.jpg?resize=300%2C203 300w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](/wp-content/uploads/2013/09/flintstonesribs.jpg)
+>Mammoth ribs, the original family meal
 
 **<span style="font-size:15px;line-height:1.6;">3)  Eating people.</span>**
 
-Cannibalism is one of those taboos that people love to joke about, but when push comes to shove, few in our modern society would seriously consider.  But what if there was a meat you could buy that came from people, _without anyone being hurt or killed?  _And we aren&#8217;t just limited to eating any old person.  Cultured cells of celebrities, dead and living.  Bill Clinton hot dogs.  Miley Cyrus patties.  American celebrity culture is ready.<figure style="width: 207px" class="wp-caption aligncenter">
+Cannibalism is one of those taboos that people love to joke about, but when push comes to shove, few in our modern society would seriously consider.  But what if there was a meat you could buy that came from people, _without anyone being hurt or killed?  _And we aren&#8217;t just limited to eating any old person.  Cultured cells of celebrities, dead and living.  Bill Clinton hot dogs.  Miley Cyrus patties.  American celebrity culture is ready.
 
-[<img alt="" src="https://i2.wp.com/3.bp.blogspot.com/-zpL8KOupGIo/UR9KtdD9T6I/AAAAAAAAAzU/4KfZRfwLbA4/s320/miley-cyrus-quiff.jpg?resize=207%2C320" data-recalc-dims="1" />](https://i2.wp.com/3.bp.blogspot.com/-zpL8KOupGIo/UR9KtdD9T6I/AAAAAAAAAzU/4KfZRfwLbA4/s320/miley-cyrus-quiff.jpg)<figcaption class="wp-caption-text">Forget energy drinks, stem cell burgers could be the next big endorsement.</figcaption></figure> 
+![<img alt="" src="https://i2.wp.com/3.bp.blogspot.com/-zpL8KOupGIo/UR9KtdD9T6I/AAAAAAAAAzU/4KfZRfwLbA4/s320/miley-cyrus-quiff.jpg?resize=207%2C320" data-recalc-dims="1" />](https://i2.wp.com/3.bp.blogspot.com/-zpL8KOupGIo/UR9KtdD9T6I/AAAAAAAAAzU/4KfZRfwLbA4/s320/miley-cyrus-quiff.jpg)
+
+>Forget energy drinks, stem cell burgers could be the next big endorsement.
 
 **4)  Eating ourselves.**
 

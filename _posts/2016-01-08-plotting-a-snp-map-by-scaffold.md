@@ -31,6 +31,8 @@ Where the first column is the scaffold # in the reference, and the second and th
 
 We do two quick things to help us out.  The first is use count() and match() to generate a column which essentially counts the number of SNPs for each scaffold.  Then we use order() to sort by this new SNP count column.
 
+```
+
     library(plyr)
     library(ggplot2)
     
@@ -59,7 +61,8 @@ We do two quick things to help us out.  The first is use count() and match() to
     png("snps.png",750,750)
     print(toprint)
     dev.off()
-    
+```
+
 
 The above R code will plot the only scaffold with over 40k SNP counts. I chose this number because it prints the below plot.
 

@@ -22,9 +22,7 @@ tags:
 
 &nbsp;<figure id="attachment_520" style="width: 300px" class="wp-caption aligncenter">
 
-<a href="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/vignette_nmds.png" rel="attachment wp-att-520"><img class="wp-image-520 size-medium" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/vignette_nmds-300x210.png?fit=300%2C210" alt="Phyloseq NMDS" srcset="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/vignette_nmds.png?resize=300%2C210 300w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/vignette_nmds.png?w=720 720w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a><figcaption class="wp-caption-text">NMDS from Phyloseq vignette</figcaption></figure> 
-
-&nbsp;
+![NMDS](/wp-content/uploads/2015/12/vignette_nmds.png)
 
 As I became more comfortable in R, I found myself relying on Phyloseq less and using the VEGAN packages Phyloseq was wrapping more.  Still, Phyloseq is a fantastic stepping stone for scientists studying metagenomics who are not ecologists themselves.
 

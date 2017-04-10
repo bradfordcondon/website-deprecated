@@ -33,15 +33,12 @@ tags:
 
 <p style="text-align: left;">
   A newer concept for me is <a href="http://en.wikipedia.org/wiki/Gamification">Gamification</a>.  At it&#8217;s core, gamification is about turning stuff that you want to get done into a game.  <a href="https://www.duolingo.com/">Duolingo</a> is a simple example of this.  Complete vocabulary lessons to level up and unlock new lessons.  When accomplishing tasks results in leveling up and earning rewards, the same compulsion that lead me to waste my teen years playing Everquest will now work in my favor.  That&#8217;s the idea, at least, and I manage to keep up with Duolingo fairly well.
-</p><figure id="attachment_404" style="width: 252px" class="wp-caption aligncenter">
+</p>
 
-[<img class="size-medium wp-image-404" src="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/01/screen-shot-2015-01-29-at-7-23-39-pm-252x300.png?fit=252%2C300" alt="Duolingo tracks your daily language progress through experience points (XP). The site encourages you to make progress every day. Looks like I'm not too consistent this week." srcset="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/01/screen-shot-2015-01-29-at-7-23-39-pm.png?w=680 680w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/01/screen-shot-2015-01-29-at-7-23-39-pm.png?resize=252%2C300 252w" sizes="(max-width: 252px) 100vw, 252px" data-recalc-dims="1" />](https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/01/screen-shot-2015-01-29-at-7-23-39-pm.png)<figcaption class="wp-caption-text">Duolingo tracks your daily language progress through experience points (XP). The site encourages you to make progress every day. Looks like I&#8217;m not too consistent this week.</figcaption></figure> 
+![image](/wp-content/uploads/2015/01/screen-shot-2015-01-29-at-7-23-39-pm-680x510.png)
 
 <p style="text-align: left;">
   <a href="https://habitrpg.com/">HabitRPG</a> is <strong>MUCH</strong> more ambitious with this concept.  It goes all out, giving you an avatar with the ability to earn mounts, group up with friends, and fight bosses.  You get to choose your &#8220;quests&#8221; so it can be tailored for whatever purpose you&#8217;d like.  If you set a daily goal to study for one hour, you&#8217;ll gain experience points and gold for completing it, but take damage each day you feel to check it off.  You can then spend accumulated gold to buy rewards that you specify, or in-game swag.
-</p><figure style="width: 150px" class="wp-caption aligncenter">
-
-<img class="" src="http://vignette2.wikia.nocookie.net/habitrpg/images/5/5d/Clipart-rosemonkeyct-reading.png/revision/latest?cb=20140207110314" alt="" width="150" height="150" /><figcaption class="wp-caption-text">HabitRPG takes a fantasy RPG approach to positive habit building.</figcaption></figure> 
 
 <p style="text-align: left;">
   There&#8217;s no doubt that consistency and repetition are the keys to setting up positive habits.  This is where a tool like HabitRPG shines- it rewards positive habits in a fun and imaginative way.

@@ -8,8 +8,6 @@ guid: http://bradfordcondon.wordpress.com/?p=148
 permalink: /?p=148
 geo_public:
   - "0"
-draftfeedback_requests:
-  - 'a:1:{s:25:"ellen.v.crocker@gmail.com";a:3:{s:3:"key";s:13:"51e23373b31a6";s:4:"time";s:10:"1373778803";s:7:"user_id";s:8:"37172565";}}'
 publicize_reach:
   - 'a:2:{s:7:"twitter";a:1:{i:3583188;i:41;}s:2:"wp";a:1:{i:0;i:9;}}'
 publicize_twitter_user:

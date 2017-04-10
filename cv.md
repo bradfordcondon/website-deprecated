@@ -51,9 +51,8 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
       * Genome assembly and annotation
       * Phylogenetics
 
-  * Programming languages: **R, Perl, swift, javascript, PHP, CSS**
-
-  * Frameworks: **R, Perl, swift, javascript, PHP**
+  * Programming languages: **R, Perl, swift, javascript, PHP, CSS, Ruby**
+  * Frameworks: **Laravel, Drupal, Wordpress, React Native**
 
 #### Molecular biology
 

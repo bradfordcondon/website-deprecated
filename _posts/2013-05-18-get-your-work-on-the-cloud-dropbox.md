@@ -22,7 +22,7 @@ tags:
 ---
 [Dropbox](https://www.dropbox.com/) is simple and intuitive.  Make a folder on your computer that is automatically backed up to a cloud storage account.  Suddenly, the files you work on and the data you access syncs across devices, at home and at work.  Plus, you can dropbox folders with others.
 
-[<img class="alignnone size-medium wp-image-53" alt="Screen Shot 2013-05-18 at 5.04.58 PM" src="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/05/screen-shot-2013-05-18-at-5-04-58-pm-300x85.png?fit=300%2C84" srcset="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/05/screen-shot-2013-05-18-at-5-04-58-pm.png?w=534 534w, https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/05/screen-shot-2013-05-18-at-5-04-58-pm.png?resize=300%2C85 300w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/05/screen-shot-2013-05-18-at-5-04-58-pm.png)
+![image](/wp-content/uploads/2013/05/screen-shot-2013-05-18-at-5-04-58-pm.png)
 
 Write at home, go in to work, and the latest version is on dropbox without passing it between USB sticks.
 

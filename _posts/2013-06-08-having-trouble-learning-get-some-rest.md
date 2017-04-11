@@ -18,9 +18,10 @@ tags:
   - sleep
   - study habits
 ---
-Do you schedule breaks and rests during your working, writing, and learning?  Do you make time for sleep in your life?   A new article by Ingrid L. C. Nieuwenhuis et al., [published June 5th in the journal PLOS ONE,](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0065046) provides another piece of evidence that you should.<figure id="attachment_108" style="width: 300px" class="wp-caption alignnone">
+Do you schedule breaks and rests during your working, writing, and learning?  Do you make time for sleep in your life?   A new article by Ingrid L. C. Nieuwenhuis et al., [published June 5th in the journal PLOS ONE,](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0065046) provides another piece of evidence that you should.
 
-[<img class=" wp-image-108  " alt="Sleep is an important step for proper learning.  Photo source: Wikipedia" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?resize=300%2C199" srcset="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?w=1024 1024w, https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?resize=300%2C200 300w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg)<figcaption class="wp-caption-text">Sleep is an important step for proper learning.</figcaption></figure> 
+[<img class=" wp-image-108  " alt="Sleep is an important step for proper learning.  Photo source: Wikipedia" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?resize=300%2C199" srcset="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?w=1024 1024w, https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?resize=300%2C200 300w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](/wp-content/uploads/2013/06/sleeping-girl.jpg)
+>Sleep is an important step for proper learning.
 
 &nbsp;
 
@@ -34,12 +35,8 @@ Here at Cornell, the all-nighter is an all too common occurrence.  This may be 
 
 &nbsp;
 
-<span style="line-height:1.6;">Article source:</span>
+>Article source:
+Nieuwenhuis ILC, Folia V, Forkstam C, Jensen O, Petersson KM (2013) Sleep Promotes the Extraction of Grammatical Rules. PLoS ONE 8(6): e65046. doi:10.1371/journal.pone.0065046
 
-<span style="line-height:1.6;">Nieuwenhuis ILC, Folia V, Forkstam C, Jensen O, Petersson KM (2013) Sleep Promotes the Extraction of Grammatical Rules. PLoS ONE 8(6): e65046. doi:10.1371/journal.pone.0065046</span>
-
-&nbsp;
-
-Photo source:
-
+>Photo source:
 http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg

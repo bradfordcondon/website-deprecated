@@ -24,7 +24,7 @@ Maybe you download PDFs, and carefully curate your articles in a dense folder st
 
 <span style="line-height:1.6;">Being the supremely lazy and scattered-brained person that I am, I need a more hands-off solution.  The primary tool I use for reading and storing scientific papers is</span> <a style="line-height:1.6;" title="papers" href="http://www.papersapp.com/papers/" target="_blank">Papers</a><span style="line-height:1.6;">.  Think of it as itunes for your PDF library.  </span>
 
-[<img class="size-full wp-image" id="i-9" alt="Image" src="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png" data-recalc-dims="1" />](https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png)
+![<img class="size-full wp-image" id="i-9" alt="Image" src="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png" data-recalc-dims="1" />](/wp-content/uploads/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png)
 
 &nbsp;
 

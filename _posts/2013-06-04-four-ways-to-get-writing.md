@@ -18,9 +18,10 @@ I am trying to write my PhD dissertation.
 
 It&#8217;s going OK, thanks for asking.  But it&#8217;s not going OK all the time.
 
-Some days, I can spend an hour in front of my computer and have nothing to show for it but a lot of purple links on Reddit.<figure style="width: 487px" class="wp-caption alignnone">
+Some days, I can spend an hour in front of my computer and have nothing to show for it but a lot of purple links on Reddit.
 
-[<img class="size-full wp-image" id="i-65" alt="Image" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-4-57-29-pm.png?resize=487%2C280" data-recalc-dims="1" />](https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-4-57-29-pm.png)<figcaption class="wp-caption-text">Surfing the web instead of working? Sounds like time for a run to me.</figcaption></figure> 
+![<img class="size-full wp-image" id="i-65" alt="Image" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-4-57-29-pm.png?resize=487%2C280" data-recalc-dims="1" />](/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-4-57-29-pm.png)
+>Surfing the web instead of working? Sounds like time for a run to me. 
 
 <span style="line-height:1.6;">Other days I can literally write, almost nonstop and without distraction, for epic 10 hour sessions.  </span>
 
@@ -42,9 +43,10 @@ Rather than seeking to control my productivity, I work with it.
 
 **#3.  Write the shitty, plagiarized first draft**.
 
-I am not  a perfectionist, really.  I&#8217;m not even a details person.  But when it comes to writing, it&#8217;s really tough for me to get going.  Oddly, the toughest section is writing the introduction (more on that later, perhaps) where what I need to say has already been written, a thousand times.<figure style="width: 487px" class="wp-caption alignnone">
+I am not  a perfectionist, really.  I&#8217;m not even a details person.  But when it comes to writing, it&#8217;s really tough for me to get going.  Oddly, the toughest section is writing the introduction (more on that later, perhaps) where what I need to say has already been written, a thousand times.
 
-[<img class="size-full wp-image" id="i-78" alt="Image" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-5-07-02-pm.png?resize=487%2C248" data-recalc-dims="1" />](https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-5-07-02-pm.png)<figcaption class="wp-caption-text">It&#8217;s perfect, because I didn&#8217;t write it! And for right now, that&#8217;s OK!</figcaption></figure> 
+![<img class="size-full wp-image" id="i-78" alt="Image" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-5-07-02-pm.png?resize=487%2C248" data-recalc-dims="1" />](/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-5-07-02-pm.png)
+>It&#8217;s perfect, because I didn&#8217;t write it! And for right now, that&#8217;s OK!
 
 By blatantly plagiarizing whole sections from other people&#8217;s reviews and my own writing elsewhere (and highlighting the sections so I don&#8217;t forget, of course), I can move on, revise, and build off of what&#8217;s on the page.  I no longer try to rewrite what has been said again and again (a more unpleasant task, to me, than blazing a new trail with new data)- I go with what&#8217;s been said, and after things are in place, I reshape it to my needs.
 

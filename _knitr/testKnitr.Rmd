@@ -1,0 +1,43 @@
+---
+title: "Untitled"
+author: "Bradford Condon"
+date: "4/10/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Knitting R Markdown to Jekyll
+
+This is a test of the Knittr package and Jekyll.
+
+It looks like the original package for using knitr with Jekyll [here](https://github.com/yihui/knitr-jekyll) has fallen out of favor for Hugo, a GO-based static web-site generator.  Pretty cool, but let's see how easy it is to knit into Jekyll without using any packages.
+
+###Load in some libraries and data
+
+```{r, warning=FALSE, message=FALSE}
+require(ggplot2)
+require(knitr)
+attach(mtcars)
+```
+
+
+####Do some plots
+
+````{r}
+head(mtcars)
+
+qplot(mpg, drat, data=mtcars, color=cyl, main="mpg vs drat mtcars")
+
+```
+
+>Behold my beautiul plot
+
+
+#####Render
+
+Next we need to get our RMD to MD, with the image paths sorted.  To do this I'll stand on the shoulders of [chepec](https://chepec.se/2014/07/16/knitr-jekyll.html) who has implemented a solution.  I created a `_knitr` directory in my Jekyll site, and I included a `knitr` folder in my `assets` folder.  Make sure you update the necessary paths in the `render_post.r` file.
+
+Now its a matter of simply sourcing hte file and running `KnitPost`

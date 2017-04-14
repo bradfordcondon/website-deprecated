@@ -49,4 +49,4 @@ Reload the site and voila, our header now updates based on our page.
 
 >![tabs working!](/assets/img/tabsFix2017/tabsFixed.png)<br>Liquid tags make it easy to conditionally change the class of our header tab element to active or not.
 
-If you'd like to learn more, `{% %}` signifies a [Liquid](https://shopify.github.io/liquid/) tag.  There are a variety of handy tags to make your static page more dynamic.
+If you'd like to learn more we have been working with [Liquid](https://shopify.github.io/liquid/) tags.  There are a variety of handy tags to make your static page more dynamic.

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Floracliff mushroom workshop
- date: unpublished
 ---
 
 

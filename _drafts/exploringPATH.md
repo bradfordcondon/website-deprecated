@@ -144,7 +144,7 @@ It will automatically move us to our *home directory*.
 {% highlight shell linenos %}
 $ cd test
 $ ls
-{% end highlight %}
+{% endhighlight %}
 
 this will move us into the test folder, and list the files in this folder.  We just made it, so it's empty.
 

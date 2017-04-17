@@ -19,14 +19,15 @@ To see more UK-BLAST tutorials, click here.
 
 BLAST, or Basic Local Alignment Search Tool, is a program compares a protein or nucleotide query sequence against a database of known sequences.  BLAST has many different applications for many fields of biology.  For example, BLAST is commonly used...
 
- *	To compare sequences from different genomes.
- *	To compare similar genes within a genome.
- *	To create phylogenetic trees.
- *	To identify species given a DNA sample of unknown origin.
- *	To infer function of an unknown protein. 
- *	To map DNA to a reference.
- *	To identify repeated sequences (self BLAST).
- *	To find conserved motifs in a protein (PSI-BLAST)
+* To compare sequences from different genomes.
+* To compare similar genes within a genome.
+* To create phylogenetic trees.
+* To identify species given a DNA sample of unknown origin.
+* To infer function of an unknown protein. 
+* To map DNA to a reference.
+* To identify repeated sequences (self BLAST).
+* To find conserved motifs in a protein (PSI-BLAST)
+
 
 When most users access BLAST, they do so via the NCBI BLAST web portal.  Here, one can paste in a sequence and search against GenBank or other comprehensive databases.  As of 2013, Genbank includes sequences from almost 260,000 formally described species.
 Note: for an extremely in depth summary of how BLAST works, see the NCBI course here. Be warned: there is a lot of higher math in this link. 
@@ -97,15 +98,17 @@ In the second part of this walkthrough, we will use a single ABC sequence to ide
 
 ### Downloading genomes from Genbank
 Alternatively, we may want to download an entire genome to work with later.  Typically, we want either the protein catalogue (a single FASTA file with all of the predicted amino acid sequences for a genome, corresponding to each gene) and/or the assembly (the nucleotide sequence of the entire genome, broken up into contigs or scaffolds [sets of smaller nucleotide sequence "pieces" stitched together and assembled as best as possible.  The best possible assembly will have a single scaffold for each chromosome]).
-Navigating from a BLAST result to a genome
-Finding this raw data can sometimes be challenging.  Let's say we're interested in finding our top BLAST hit above in the *Magnaporthe oryzae* (species name) Y34 (strain name) assembly.   If we click on it's name, this brings us to the alignment, where we can click on the sequence ID gb|ELQ39949.1| 
- 
- Wow, there's a lot of information here!  Read through the page and answer the following questions.
+
+### Navigating from a BLAST result to a genome
+
+Finding this raw data can sometimes be challenging.  Let's say we're interested in finding our top BLAST hit above in the *Magnaporthe oryzae* (species name) Y34 (strain name) assembly.   If we click on it's name, this brings us to the alignment, where we can click on the sequence ID [ELQ39949.1](http://www.ncbi.nlm.nih.gov/protein/440470910?report=genbank&log$=protalign&blast_rank=1&RID=DWCKYC6P014).
 
 > *	How many amino acids long is this protein?
- *	If we wanted to read the article describing this sequence (and likely this genome) what journal and issue would we find it in?
- *	What evidence on this page confirms this protein is an ABC transporter?    Hint: try clicking on the links labeled INTERPRO and CDD.
-If you click on  ORGANISM  Magnaporthe oryzae Y34 at the top of the page, you will arrive at NCBI's taxonomy browser.  From here we can find many useful resources, but for right now, let's focus on the "Entrez records" on the right hand side of the screen.  We'd like to download the "Assembly" and all of the associated proteins.
+ * If we wanted to read the article describing this sequence (and likely this genome) what journal and issue would we find it in?
+ * What evidence on this page confirms this protein is an ABC transporter?    *Hint: try clicking on the links labeled INTERPRO and CDD.*
+
+
+If you click on **ORGANISM** [*Magnaporthe oryzae* Y34](http://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=1143189) at the top of the page, you will arrive at NCBI's taxonomy browser.  From here we can find many useful resources, but for right now, let's focus on the "Entrez records" on the right hand side of the screen.  We'd like to download the "Assembly" and all of the associated proteins.
 
  
 >Click on the "1" next to "Assembly" to go to the Entrez assembly record.   
@@ -113,17 +116,19 @@ If you click on  ORGANISM  Magnaporthe oryzae Y34 at the top of the page, you wi
 We're almost there!
 The assembly page has even more information about this strain's genome sequence.  Of particular interest is the genome coverage, the sequencing technology, the total sequence length, and the number of scaffolds. 
 
-> 	Click on the "Download the Genbank assembly" link to access the genome download page.
+>Click on the "Download the Genbank assembly" link to access the genome download page.
 
 At this point, you should be pointed at ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA_000292585.1_MoY34_2.0.  This is an FTP site, which means we could connect to this site via the terminal to download from the command line!  It may look like a lot of stuff here: if you're confused, check the README.TXT file.  It's common practice for people to include a README file explaining the contents of these repositories.  We want the nucleotide sequences in FASTA format and the protein sequences in FASTA format, which correspond to the files ending in protein.faa and genomic.fna.
-> *	Download the nucleotide assembly and the full protein catalogue of this genome.  
- *	In UNIX, make a folder for your whole genome assemblies.  You may like to keep one folder for proteins, and another for nucleic acids.
- *	Create a table (for exmaple in excel) to keep track of your downloaded genomes.  Be sure to have a column for the file name (on your system), species name, strain name, where you downloaded the data from, reference, date downloaded, and version.  If you aren't sure of this information, it should be on the reference page.
+
+> *	Download the nucleotide assembly and the full protein catalogue of this genome. 
+ * In UNIX, make a folder for your whole genome assemblies.  You may like to keep one folder for proteins, and another for nucleic acids.
+* Create a table (for example in excel) to keep track of your downloaded genomes.  Be sure to have a column for the file name (on your system), species name, strain name, where you downloaded the data from, reference, date downloaded, and version.  If you aren't sure of this information, it should be on the reference page.
 
 ### Building a database relevant to your project
 Now that you've downloaded a genome, you may want to have a database of genomes relevant to your own project.  To get started on this, go back to your original BLAST search (or perform a new search if you've lost the page).  
 
 > *	Following the above steps, attempt to download another organism's full nucleotide assembly and protein catalogue.    Be sure to add its information to your genome database spreadsheet. 
 
-Genbank is one of many data repositories where datasets are available.  Depending on your project, you may download assemblies from other sources.  Databases and assemblies are updated and change, which is why its important to keep track of what version you are using, and where you got it from.
+Genbank is one of many data repositories where datasets are available.  Depending on your project, you may download assemblies from other sources.  Databases and assemblies are updated and change, which is why its important to *keep track of what version you are using, and where you got it from*.
+
 In the next lesson, we'll go over installing and running BLAST locally.

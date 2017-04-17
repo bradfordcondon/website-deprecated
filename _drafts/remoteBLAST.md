@@ -35,17 +35,22 @@ Note: for an extremely in depth summary of how BLAST works, see the NCBI course 
 
 Accessing data: let's go to GenBank and access some protein sequences by pointing a browser to http://www.ncbi.nlm.nih.gov/genbank/  
 
-![Blast remote](/assets/img/BLASTremote/BLASTremote1.png)
+![Blast remote](/assets/img/BLASTremote/rblast1.png)
 
 
 > *	Search for a protein you are interested in. For starters, let's look for ABC transporters in *Magnaporthe oryzae*, the fungus which causes a variety of blast diseases on different “grass” plants (including wheat and rice).
 
 
 Here is a top hit.  Note that the Accession number, ELQ65981.1 as well as the gene ID 440486081 both serve to uniquely identify this protein.
+
+![Your first BLAST hit](/assets/img/BLASTremote/rblast2.png)
  
 Clicking on the FASTA link for this sequence will display the protein's sequence in FASTA format.
+
+![Your first BLAST hit, in FASTA format](/assets/img/BLASTremote/rblast3.png)
  
->	Download a protein sequence and save it to its own FASTA file.  
+>Download a protein sequence and save it to its own FASTA file.  
+
 Be careful copy-pasting and opening sequence files in programs like Microsoft Word - they will introduce hidden characters that will corrupt bioinformatic analyses.   It's best to download files directory, or to use "safe" text editors like Textwrangler or SublimeText.
 
 
@@ -57,6 +62,9 @@ The National Institute of Health hosts a fantastic BLAST database at their websi
  *	Paste or upload your FASTA file into the protein BLAST search form (careful about giving them too many options). For now, we will use the default search parameters. Make sure that the database you are querying is the non-redundant protein database.
  A view of the BLAST results is provided below.
  
+![BLAST query interface](/assets/img/BLASTremote/rblast4.png)
+
+
 The conserved domains section gives us an overview of the protein.  You can click on individual regions of the protein to learn more about each domain.  Because we searched with an ABC protein, we see an ATP-binding cassette (ABC) domain, a ABC_membrane domain, and a second ABC domain.
 
 > *	Click on the conserved domains of your protein.  Write down each domain name, and what function you think each domain might perform for the protein. 
@@ -64,6 +72,8 @@ The conserved domains section gives us an overview of the protein.  You can clic
 We will learn more about predicting protein domains, and understanding conserved domains, in a later lesson.
 Navigate back to the blast results page (back on your browser), and scroll down to the colored alignments section.
    
+![BLAST query interface close up](/assets/img/BLASTremote/rblast5.png)
+
 
 BLAST will list results in descending order.  In the example of the first six results above, our query protein is given at the top, and each result is drawn as a series of colored boxes.  The higher the alignment score for a region, the more similar that protein is. 
 
@@ -76,8 +86,11 @@ BLAST will list results in descending order.  In the example of the first six re
 #### Storing BLAST results
 Let's say we wanted to store the sequences of proteins retrieved in our BLAST.  To do this, scroll down to the list of hits, click "select all", then Download, and hit "continue" with the FASTA (complete sequence) option checked.  This will download all of our hit sequences to a single FASTA file.  By selecting Text, on the other hand, we can download the BLAST output itself (the alignments, e values, etc).
  
+![batch download BLAST results](/assets/img/BLASTremote/rblast6.png)
+
+
 > *	Download all sequences matched by BLAST to a single FASTA file.
- *	In your UNIX terminal, create a working directory for this tutorial.  Move your downloaded sequences to that folder (on OS X, your default download location is /Users/yourname/Downloads/).  
+ * 	In your UNIX terminal, create a working directory for this tutorial.  Move your downloaded sequences to that folder (on OS X, your default download location is /Users/yourname/Downloads/) using the `mv` command.    
 
 There are many things we can do with this dataset. We could look for conserved domain structures in ABC proteins, align the sequences, build a phylogenetic tree, or search new genomes for more ABC transporter sequences.  Storing the data with clear names, typically with a corresponding notebook describing what the data contains and the goal of your project, is essential for keeping track of your work!
 In the second part of this walkthrough, we will use a single ABC sequence to identify all candidate ABC transporters in a genome.
@@ -111,6 +124,6 @@ At this point, you should be pointed at ftp://ftp.ncbi.nlm.nih.gov/genomes/all/G
 Now that you've downloaded a genome, you may want to have a database of genomes relevant to your own project.  To get started on this, go back to your original BLAST search (or perform a new search if you've lost the page).  
 
 > *	Following the above steps, attempt to download another organism's full nucleotide assembly and protein catalogue.    Be sure to add its information to your genome database spreadsheet. 
- 
+
 Genbank is one of many data repositories where datasets are available.  Depending on your project, you may download assemblies from other sources.  Databases and assemblies are updated and change, which is why its important to keep track of what version you are using, and where you got it from.
 In the next lesson, we'll go over installing and running BLAST locally.

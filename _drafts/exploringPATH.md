@@ -1,12 +1,14 @@
+---
+layout: post
+title: PATH, a guide to finding one's way
+---
 
-===
 
-===
-
-
-#### Notice
+#### UK-BLAST workshop 2016
 
 These exercises were developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.
+
+UK-BLAST is a bioinformatics working group for undergraduate researchers.  In small labs, students often tackle the bioinformatician role in with little to no technical guidance.  The group may not have anyone with a computer science background, or the task may be beyond the skills of current personnel.  In these cases, a working group headed by a technical mentor (myself) allows students to bypass some of the pitfalls and headaches associated with learning computer science all alone.
 
 # PATH: A guide to finding one's way
 
@@ -14,34 +16,34 @@ These exercises were developed for Dr. Mark Farman at the University of Kentucky
 Written by Bradford Condon, PhD.  Farman Labratory, University of Kentucky, 2016
 
 
-#Background: What is a PATH?
+## Background: What is a PATH?
 
 In computing, [a PATH](https://en.wikipedia.org/wiki/Path_(computing)) is the absolute name of a file or directory, specifiying its unique location within a file system.  When you navigate to a file on your computer, locate a song in your music library, or navigate to a website, you do so using this absolute file structure.
 
-##Computer file structures
+### Computer file structures
 Before we dive in to the command line, let's start with something more familiar.  
 
-![Alt text](./Screen Shot 2016-02-10 at 12.09.44 PM.png)
+![Traditional folder structure](assets/img/PATH/path1.png)
 
 This is a folder on my computer called "Home."  I keep all sorts of stuff in here: my movies, my music, my photos.  I have a folder for each.  Within each of those folders, I organize my things by category.  For example, in my pictures folder I've organized my photos by food, vacation, and work photos, and within my vacation photos, I keep each trip in a separate folder.  In short, we use nested folder structures to organize our files.
 
 **Command line file structure works the same way**.  To indicate that a folder exists within another folder, we use the / symbol.  The location of my new orleans folder, above, is therefore Home/pictures/vacation/new_orleans.  
 
-* **Tip:** Avoid adding spaces to files and folder names.  Use underscores (_) instead.
+> **Tip:** Avoid adding spaces to files and folder names.  Use underscores (\_) instead.  This is called snake\_case.  Alternatively, you can omit the spaces and capitalize each new word: this is called camelCase.
 
 Let's see this in action on the command line.
 
 
-#Getting started
+## Getting started
 
 To begin, you must first access the command line.  On Mac, this is through the Terminal: on Windows, you need to use a program like [PuTTY](http://kb.site5.com/shell-access-ssh/putty/putty-how-to-start-a-ssh-session-from-the-command-line/).  
 
 Open up your Terminal (press CMD-SPACE top open spotlight and type terminal) and you should be greeted by a command prompt like this:
-![Alt text](./Screen Shot 2016-02-05 at 10.58.49 AM.png)
+![Welcome to the command line](assets/img/PATH/path2.png)
 
 Where are we?  What files and folders are located where we are?  The word immediately preceeding the $ symbol is the name of my current working directory.  The next section will explain some simple commands to look around your file structure.
 
-##PWD: print working directory
+### *PWD*: print working directory
 
 Our first essential command is PWD.  PWD stands for print working directory.
 
@@ -130,7 +132,7 @@ If you ever need guidance figuring out how to run a program, type the program na
 	
 
 
-##CD: change directories
+### *CD*: change directories
 
 CD changes the directory we are in.  If we only type in
 
@@ -190,7 +192,7 @@ Even more importantly, we can issue a command on files in other directories by g
 
 - [ ]  Try listing the contents of a folder *that is not your current working directory*.
 
-###Relative and absolute paths
+#### Relative and absolute paths
 
 - [ ] Try the following example below (on a mac).  
 
@@ -212,10 +214,10 @@ Notice that by typing cd /FOLDER, we are telling cd the *absolute* path of a fil
 >What is the relative path of our test folder from the home directory?
 ><br>
 
-###Shortcuts
+#### Shortcuts
 Below are two very useful shortcuts.
 
-```bash
+```{bash}
 $ cd ..   ##One directory up.  Very useful for quickly navigating directories.
 $ cd ../anotherfolder  ##navigates one folder backwards, and then into another folder
  
@@ -223,15 +225,16 @@ $ cd ~   #~ is a shortcut to the home directory.  It's not useful here because c
 $ cd ~/Desktop/Documents	## Home directory.  Very useful when specifying the ABSOLUTE PATH of a file or folder.
 
 	## The hash symbol indicates a comment.  Most programming langauge ignore everything appearing in a line after a #: it is for human eyes to "annotate" code.
+
 ```
 
 >From Your home directory, where does cd .. take you?
 
-##Command line completion/autofill
+## Command line completion/autofill
 
 The final essential tip of this lesson is command line completion or autofill.
 
-```bash
+```{bash}
 Bradfords-MacBook-Pro:Desktop chet$ pwd
 /Users/chet/Desktop
 Bradfords-MacBook-Pro:Desktop chet$ ls
@@ -243,11 +246,8 @@ images_for_PATH
 Bradfords-MacBook-Pro:Desktop chet$ 
 
 ```
-As you can see, I'm currently located in /Users/chet/Desktop.  If I'd like to move into my test folders located in documents I could type
 
-		cd Documents/test/test
-
-However, this is a confusing file path.  It's very easy to make mistakes typing out something like this.  Command line autofill is an extremely powerful tool to get around this.  To access it, start typing your command and press tab *after writing a few characters*. It will automatically fill in the rest of the file name if it is unambiguous.
+As you can see, I'm currently located in /Users/chet/Desktop.  If I'd like to move into my test folders located in documents I could type `cd Documents/test/test`  However, this is a confusing file path.  It's very easy to make mistakes typing out something like this.  Command line autofill is an extremely powerful tool to get around this.  To access it, start typing your command and press tab *after writing a few characters*. It will automatically fill in the rest of the file name if it is unambiguous.
 
 >From your home directory, navigate back to your test folder by using autocomplete.
 
@@ -259,7 +259,7 @@ Sometimes, we'll have two files with similar names.  Suppose we have two folders
 
 We can use autocomplete not only to change directories quickly, but correctly navigate confusing directories.
 
-##Final exercise
+## Final exercise
 
 **Note: do not experiment deleting, moving, or modifying files in your root directory.**
 
@@ -273,7 +273,7 @@ Keep in mind that being familiar with the absolute PATH of files is useful for m
 
 for example, to list the files in a new folder, we can type
 
-```bash
+```{bash}
 cd /Users/chet/Desktop
 mkdir test_folder
 ls test_folder

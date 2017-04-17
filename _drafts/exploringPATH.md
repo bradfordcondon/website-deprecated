@@ -140,13 +140,12 @@ CD changes the directory we are in.  If we only type in
 	
 It will automatically move us to our *home directory*.
 
-- [ ] To navigate into our new test folder, type  issue the following two commands.
-<br>
+>To navigate into our new test folder, type  issue the following two commands.
+{% highlight shell linenos %}
+$ cd test
+$ ls
+{% end highlight %}
 
-
-		$ cd test
-		$ ls
-	
 this will move us into the test folder, and list the files in this folder.  We just made it, so it's empty.
 
 - [ ] Next, make a new folder in this directory and use ls to see if the command was successful.
@@ -164,10 +163,11 @@ We can have two folders named test in separate locations, but we cannot have two
 
 - [ ] While located in the this second test folder, issue these three commands:
 
-
-		$ pwd
-		$ cd
-		$ pwd
+```
+$ pwd
+$ cd
+$ pwd
+```
 
 As you can see, the cd command returns us to our home directory when we dont supply an argument (write something after the command name).
 
@@ -200,19 +200,16 @@ Even more importantly, we can issue a command on files in other directories by g
 $ cd /usr
 $ pwd 
 $ ls
-$ cd /Users/chet/Desktop/Documents/test/test
+$ cd /Users/_yourNameHere_/Desktop/Documents/test/test
 $ pwd
 ```
 
-Notice that by typing cd /FOLDER, we are telling cd the *absolute* path of a file.  before, we typed cd FOLDER (without the backslash first).  This specified the *relative* path.  The absolute path of a file never changes.  The relative path is really the path *from our current working directory*.  
+Notice that by typing `cd /FOLDER`, we are telling cd the *absolute* path of a file.  before, we typed `cd FOLDER` (without the backslash first).  This specified the *relative* path.  The absolute path of a file never changes.  The relative path is really the path *from our current working directory*.  
 
-- [ ]  Answer the questions below.
+##### Comprehension questions
 
->What is the absolute path of our second test folder?
-><br>
->
->What is the relative path of our test folder from the home directory?
-><br>
+* What is the absolute path of our second test folder?
+* What is the relative path of our test folder from the home directory?
 
 #### Shortcuts
 Below are two very useful shortcuts.
@@ -224,11 +221,13 @@ $ cd ../anotherfolder  ##navigates one folder backwards, and then into another f
 $ cd ~   #~ is a shortcut to the home directory.  It's not useful here because cd also returns us to our home directory but....
 $ cd ~/Desktop/Documents	## Home directory.  Very useful when specifying the ABSOLUTE PATH of a file or folder.
 
-	## The hash symbol indicates a comment.  Most programming langauge ignore everything appearing in a line after a #: it is for human eyes to "annotate" code.
+	## The hash symbol indicates a comment. 
+	# Most programming langauge ignore everything appearing in a line after a # 
+	#(or a different character used for this purpose): it is for human eyes to "annotate" code.
 
 ```
 
->From Your home directory, where does cd .. take you?
+>From Your home directory, where does `cd ..` take you?
 
 ## Command line completion/autofill
 
@@ -264,9 +263,9 @@ We can use autocomplete not only to change directories quickly, but correctly na
 **Note: do not experiment deleting, moving, or modifying files in your root directory.**
 
 > Navigate to the root of your file structure by typing 	cd /
->* What files are located here?
->* What is the easiest way to return to your home directory?
->
+ * What files are located here?
+ * What is the easiest way to return to your home directory?
+
 >Try navigating from your root directory to your test directory created earlier using a single command!  You can make use of the shortcuts listed above, especially tab autocomplete.  
 
 Keep in mind that being familiar with the absolute PATH of files is useful for more than just navigating around your computer.  **We can issue commands in folders where we are not currently located using the PATH**.  This works with both relative, and absolute, paths.
@@ -279,10 +278,13 @@ mkdir test_folder
 ls test_folder
 ```
 
+##### Comprehension questions
+
+
 >Make a new test folder and navigate into it.
->From here, how can you list the contents of your home directory using...
->* Absolute path
->* Relative path
->
+From here, how can you list the contents of your home directory using...
+ * Absolute path
+ * Relative path
+
 > How can you make a new folder in your home directory from this remote location?
 

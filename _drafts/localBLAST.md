@@ -1,6 +1,7 @@
 ---
 style: post
 title: Installing and running BLAST locally
+tags: UK-BLAST, genomics, bioinformatics
 ---
 
 
@@ -115,12 +116,16 @@ It's important to recognize we are only using a single sequence as a query.  BLA
 Using this simple program, we have a list of candidate ABC transporters in this strain's genome.  There are many ways we could improve this analysis.  For example, we can set an e-value cutoff to exclude results greater than a certain evalue.  Remember that "big" evalues are worse (meaning more likely to be due to random chance), and that 5e-78 is really really small.   
 
 >Use the -evalue flag to exclude hits above a certain value (the cutoff you noticed in the previous question).
+
+`blastp -db /Users/chet/databases/protein/Moryzae_Y34.faa -query /Users/chet/working/query_ABC.fasta -evalue [YOUR_CUTOFF] > ABC_output_2.blast`
  
 Sometimes, you want don't want this complicated BLAST report, and want to simplify the BLAST output.  This is done with the -outfmt flag. You can read more about this flag here.
 > * Run your BLAST with the simplified outfmt tag set to 6.
- * Look at the resulting output file.  Frustratingly there are no column headers.  What do you think each column stands for? 
 
-A cheat-sheet for these columns is [available here](http://www.drive5.com/usearch/manual/blast6out.html).
+`$ blastp -db /Users/chet/databases/protein/Moryzae_Y34.faa -query /Users/chet/working/query_ABC.fasta -outfmt 6 > out3.txt`
+
+> * Look at the resulting output file.  Frustratingly there are no column headers.  What do you think each column stands for? 
+>A cheat-sheet for these columns is [available here](http://www.drive5.com/usearch/manual/blast6out.html).
 
 >Try running your blast with other values for -outfmt [1-12].  Make a note of which outputs look useful.
 

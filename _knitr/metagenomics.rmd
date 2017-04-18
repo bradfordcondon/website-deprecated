@@ -1,0 +1,36 @@
+---
+title: "Metagenomics I Introduction to R"
+author: "Bradford Condon"
+output: html_document
+---
+
+# Introduction
+
+Metagenomics analysis is becoming a staple workflow for microbial ecologists.  Fortunately, many of the tools required to analyze processed metagenomic datasets are built in **R**, a language many Ecologists feel at home in.
+
+Other scientists, especially wet-lab scientists, might feel confused and overwhelmed.
+
+In the following weeks I'll try and explain the basics of Metagenomics analysis, assuming no background in R.
+
+## Working enviornment
+
+If you are working in R, you should probably be working with RStudio.  To learn about how I use RSudio to contribute directly to my blog thanks ti `knitr` and `jekyll`, see this post.
+
+
+## Installing dependencies
+
+The first thing you'll want to do is install your dependencies. These are the packages that will do all the heavy lifting for you.  
+
+Once packages are installed, they can be invoked using the `library` or `require` command.
+
+```{r}
+library("phyloseq")
+library("ggplot2")
+library("scales")
+library("grid")
+library("plyr")
+theme_set(theme_bw())
+```
+
+All R functions follow this syntax of `function()`.  Parameters go inside the parentheses- these are the objects that are handed to the function.
+

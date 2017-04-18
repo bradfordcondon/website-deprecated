@@ -29,8 +29,8 @@ BLAST, or Basic Local Alignment Search Tool, is a program compares a protein or 
 * To find conserved motifs in a protein (PSI-BLAST)
 
 
-When most users access BLAST, they do so via the NCBI BLAST web portal.  Here, one can paste in a sequence and search against GenBank or other comprehensive databases.  As of 2013, Genbank includes sequences from almost 260,000 formally described species.
-Note: for an extremely in depth summary of how BLAST works, see the NCBI course here. Be warned: there is a lot of higher math in this link. 
+When most users access BLAST, they do so via the [NCBI BLAST web portal](http://blast.ncbi.nlm.nih.gov/Blast.cgi).  Here, one can paste in a sequence and search against GenBank or other comprehensive databases.  As of 2013, Genbank includes sequences from almost 260,000 formally described species.
+Note: for an extremely in depth summary of how BLAST works, see [the NCBI course here](http://www.ncbi.nlm.nih.gov/BLAST/tutorial/Altschul-1.html.). Be warned: there is a lot of higher math in this link. 
 
 ### Using BLAST remotely
 
@@ -61,12 +61,13 @@ The National Institute of Health hosts a fantastic BLAST database at their websi
 *Note*:  if your websession fails, you can access previous results by clicking on the "Recent Results" link.
 > * 	Visit the NCBI blast database.  Explore the different types of BLAST available and make sure you understand the different BLAST “flavors”
  *	Paste or upload your FASTA file into the protein BLAST search form (careful about giving them too many options). For now, we will use the default search parameters. Make sure that the database you are querying is the non-redundant protein database.
+
  A view of the BLAST results is provided below.
  
 ![BLAST query interface](/assets/img/BLASTremote/rblast4.png)
 
 
-The conserved domains section gives us an overview of the protein.  You can click on individual regions of the protein to learn more about each domain.  Because we searched with an ABC protein, we see an ATP-binding cassette (ABC) domain, a ABC_membrane domain, and a second ABC domain.
+The *conserved domains* section gives us an overview of the protein.  You can click on individual regions of the protein to learn more about each domain.  Because we searched with an ABC protein, we see an ATP-binding cassette (ABC) domain, a ABC_membrane domain, and a second ABC domain.
 
 > *	Click on the conserved domains of your protein.  Write down each domain name, and what function you think each domain might perform for the protein. 
 
@@ -82,6 +83,14 @@ BLAST will list results in descending order.  In the example of the first six re
  *	How many hits retrieved have a percent identity greater than 95%?
  *	Are the hits with low % identity still listed as ABC transporters?
  *	Look at the header rows in the Descriptions section.  What does each column mean?  Translate each header below.  If you need help, you can look up the term in the BLAST glossary. 
+ ```
+	Max score
+	Total Score
+	Query Cover
+	E value
+	Ident
+	Accession
+```
  
  
 #### Storing BLAST results

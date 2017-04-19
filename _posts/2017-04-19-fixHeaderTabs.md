@@ -1,6 +1,7 @@
 ---
 layout: post
 title: fixing tabs
+date: 2017-04-19
 ---
 
 As you can see below, the navigation tabs I'm using at the top of my page didn't properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.

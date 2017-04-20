@@ -7,7 +7,7 @@ date: 2017-04-19
 As you can see below, the navigation tabs I'm using at the top of my page didn't properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.
 
 
->![tabs not working!](/assets/img/tabsfix2017/tabIssue.png)
+>![tabs not working!](/assets/img/tabsFix2017/tabIssue.png)
 
 So how do we fix it?
 

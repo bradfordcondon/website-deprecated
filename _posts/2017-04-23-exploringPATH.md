@@ -1,6 +1,7 @@
 ---
 layout: post
 title: PATH, a guide to finding one's way
+date: 2017-04-23
 ---
 
 

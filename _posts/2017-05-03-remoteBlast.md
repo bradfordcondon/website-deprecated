@@ -1,8 +1,10 @@
 ---
 layout: post
 title: Introduction to BLAST
-date: 2017-05-1
-
+date: 2017-05-03
+tags:
+  - bioinformatics
+  - UKBLAST
 ---
 
 

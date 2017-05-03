@@ -12,13 +12,14 @@ tags: outreach, education
 ![NSF epscor](/assets/img/EYH2017/sponsor_image.jpg)
 
 
-On April 29th 2017, the Expanding Your Horizons conference came to Kentucky for the first time.  The conference was funded by an NSF EPSCOR grant which I, along with Ellen Crocker and Susan Odom, was a PI on. The conference planning committee consisted of
+On April 29th 2017, the Expanding Your Horizons conference came to Kentucky for the first time.  The conference was funded by an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research for Education and Outreach)  grant which I, along with Ellen Crocker and Susan Odom, was a PI on. The conference planning committee consisted of
 
-The deprecated site is available [here](http://www.expandingyourhorizons.org/conferences/UKLex/).
 * Bradford Condon
 * Ellen Crocker
 * Susan Odom
 ...
+
+The deprecated site is available [here](http://www.expandingyourhorizons.org/conferences/UKLex/).
 
 ## About the conference
 

@@ -7,6 +7,8 @@ title: Home
  <br>
   {% for post in paginator.posts %}
   <div class="card">
+
+
    <div class="card-content">
    <p class="title">
         
@@ -20,10 +22,13 @@ title: Home
    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
       </p>
       </div>
-      
      
     <div class="card-content">
-    {{ post.content }}
+    {{ post.excerpt }}
+     <a href="{{post.url}}">
+     Read the full post...
+     </a>
+
     </div>
   </div>
   <br>

@@ -1,9 +1,12 @@
 ---
 layout: post
 title: "File extensions"
+excerpt_separator: <!--more-->
 ---
 
-This post is the first in a series on understanding biological file formats.
+This post is the first in a series on understanding biological file formats.  This material is developed for use in hte KBRIN Next Generation Sequencing workshop 2017 hosted at the University of Kentucky.
+
+<!--more-->
 
 Before I get into explaining the specific output of different common programs, I first need to answer a simple question: what is a file format?  Simple questions are often redirected to the dictionary (or in this day and age, [Wikipedia](https://en.wikipedia.org/wiki/File_format)).
 

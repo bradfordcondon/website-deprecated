@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Moving to Github Pages
-permalink: helloWorld.html
 ---
 
 I'm moving to a Markdown-based blog using Jekyll and github pages hosting!

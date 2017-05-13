@@ -3,6 +3,7 @@ title: "Knitting to Jekyll"
 author: "Bradford Condon"
 date: 2017-04-11
 output: html_document
+excerpt_separator: <!--more-->
 ---
 
 
@@ -13,6 +14,7 @@ This is a test of the Knittr package and Jekyll.
 
 It looks like the original package for using knitr with Jekyll [here](https://github.com/yihui/knitr-jekyll) has fallen out of favor for Hugo, a GO-based static web-site generator.  Pretty cool, but let's see how easy it is to knit into Jekyll without using any packages.
 
+
 ## Load in some libraries and data
 
 
@@ -21,6 +23,8 @@ require(ggplot2)
 require(knitr)
 attach(mtcars)
 {% endhighlight %}
+
+<!--more-->
 
 
 ## Do some plots

@@ -2,6 +2,8 @@
 layout: post
 title: fixing tabs
 date: 2017-04-19
+excerpt_separator: <!--more-->
+
 ---
 
 As you can see below, the navigation tabs I'm using at the top of my page didn't properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.
@@ -10,6 +12,9 @@ As you can see below, the navigation tabs I'm using at the top of my page didn't
 >![tabs not working!](/assets/img/tabsFix2017/tabIssue.png)
 
 So how do we fix it?
+
+<!--more-->
+
 
 The header is defined in the `/_includes` folder in a hero-footer element.
 

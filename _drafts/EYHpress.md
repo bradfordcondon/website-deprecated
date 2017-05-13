@@ -2,6 +2,7 @@
 style: post
 title: Expanding Your Horizons Kentucky 2017
 tags: outreach, education
+excerpt_separator: <!--more-->
 ---
 
 
@@ -14,10 +15,15 @@ tags: outreach, education
 
 On April 29th 2017, the Expanding Your Horizons conference came to Kentucky for the first time.  The conference was funded by an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research for Education and Outreach)  grant which I, along with Ellen Crocker and Susan Odom, was a PI on. The conference planning committee consisted of
 
+<!--more-->
+
+### Chairs
+
 * Bradford Condon
 * Ellen Crocker
 * Susan Odom
-...
+
+### 
 
 The deprecated site is available [here](http://www.expandingyourhorizons.org/conferences/UKLex/).
 
@@ -30,10 +36,21 @@ To learn more about EYH, visit the [national website](http://www.eyhn.org/).
 
 ## Press
 
+#### Post Conference
+
+* [Out of the Box, Into the Future, UK Ag News, May 11 2017](http://news.ca.uky.edu/article/out-box-future)
+
+>“Why are you all here?” Crocker asked the participants. “We need you. If we’re going to solve the world’s problems, if we’re going to find solutions to safe drinking water, healthy air, continue being a country that is a research powerhouse, we need the best and the brightest.”
+
+#### Pre-conference
+
 * [STEM Conference for Middle School Girls Welcomes Participants and UK Volunteers](https://uknow.uky.edu/uk-happenings/stem-conference-middle-school-girls-welcomes-participants-and-uk-volunteers), **UKnow** April 3, 2017
 * [UK Students, Faculty Encourage Middle School Girls to 'Expand Their Horizons'](https://uknow.uky.edu/campus-news/uk-students-faculty-encourage-middle-school-girls-expand-their-horizons) **UKnow** April 25, 2017
 
-## Preparation
+## Photos
+
+#### Undergraduate and graduate student workshop preparation
+
 Photo credits: [UKnow article by Jenny Wells](https://uknow.uky.edu/campus-news/uk-students-faculty-encourage-middle-school-girls-expand-their-horizons) jenny.wells@uky.edu 
 
 >![EYH prep image 1](/assets/img/EYH2017/IMG_7101.jpg)
@@ -43,6 +60,16 @@ Photo credits: [UKnow article by Jenny Wells](https://uknow.uky.edu/campus-news/
 >![EYH prep image 2](/assets/img/EYH2017/IMG_7112.jpg)
 >
 >Students discussing the workshop they are preparing.
+
+
+#### Set 2
+
+The full album is avialable at [the UkAg Flickr page, credits UK College of Agriculture](https://www.flickr.com/photos/ukagriculture/sets/72157683329558835).  These photos are under a [CC BY-NC-ND 2.0 license](https://creativecommons.org/licenses/by-nc-nd/2.0/).
+
+>![EYH Gasp](/assets/img/EYH2017/ukAgGasp.png)
+>![EYH Microscope](/assets/img/EYH2017/UKAgBlender.png)
+>![picture 3](/assets/img/EYH2017/UKAgScope.png)
+
 
 
 ## Materials

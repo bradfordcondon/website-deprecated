@@ -2,6 +2,7 @@
 layout: post
 title: "Moving to Jekyll"
 date: 2017-04-09
+excerpt_separator: <!--more-->
 ---
 
 ## Switching to Jekyll
@@ -17,6 +18,8 @@ This weekend I switched my site from a Wordpress site hosted by bluehost to a Je
 It's pretty win-win.
 
 If you're looking to try this out for yourself, you'll want Ruby/RVM, Jekyll, and github set up.
+
+<!--more-->
 
 ## Migrating my old Wordpress posts
 

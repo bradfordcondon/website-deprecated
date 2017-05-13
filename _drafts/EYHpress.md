@@ -1,5 +1,5 @@
 ---
-style: post
+layout: post
 title: Expanding Your Horizons Kentucky 2017
 tags: outreach, education
 excerpt_separator: <!--more-->

@@ -2,24 +2,33 @@
 <html lang="en">
 
   {% include head.html %}
-
-  <body>
-
-    <div class="container content">
-    
+  
+  <section class="section"> 
+    <div class="container content is-large">
       <main>
         {{ content }}
       </main>
-
-      <footer class="footer">
-        <small>
-          &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.  Proudly hosted on Github Pages.
-        </small>
-      </footer>
     </div>
+    </section>
+      <footer class="footer">
+      <div class="container">
+
+      <div class="content has-text-centered">
+      <p>
+      <span>
+        <a href="https://github.com/bradfordcondon"><i class="fa fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/BradfordCondon"><i class="fa fa-twitter-square fa-3x"></i></a>
+        </span>
+        </p>
+          <p>
+          <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          </p> 
+      
+        </div>
+        </div>
+      </footer>
 
     {% if jekyll.environment == 'production' %}
     {% include analytics.html %}
     {% endif %}
-  </body>
 </html>

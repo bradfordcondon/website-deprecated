@@ -14,10 +14,13 @@ Before I get into explaining the specific output of different common programs, I
 
 
 ### Binary
+These characters are encoded in binary using the [ASCII characters rules](https://en.wikipedia.org/wiki/ASCII).
 
 
 
 ### UTF
+
+### FASTA
 
 If we're thinking about bioinformatics data, we are usually thinking about *strings* which can be written out in a text file.  For example, a protein represented in FASTA format is written out in FASTA format as  
 

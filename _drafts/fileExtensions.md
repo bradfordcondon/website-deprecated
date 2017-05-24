@@ -17,7 +17,6 @@ Before I get into explaining the specific output of different common programs, I
 These characters are encoded in binary using the [ASCII characters rules](https://en.wikipedia.org/wiki/ASCII).
 
 
-
 ### UTF
 
 ### FASTA

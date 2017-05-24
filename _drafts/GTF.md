@@ -4,17 +4,18 @@ title: 'GTF (General Transfer Format)'
 author: Bradford Condon
 ---
 
-
-
 ## GTF
 
-
-
-GTF, also known as GFF (General Feature Format) 2.0, is the format for transcripts in exercise 4, **RNAseq**.
+General transfer format (GTF), also known as General Feature Format (GFF) 2.0, is the format for transcripts in exercise 4, **RNAseq**.
 For more details, please see the [ensembl guide to GFF](www.ensembl.org/info/website/upload/gff.html).
 
+GTF/GFF2.0 is fairly straightforward.  Understand that is can describe a variety of sequence features, not just transcripts.  All components of a gene's structure, such as introns, exons, and protein CDS, can be described with GTF using the correct feature type (column 3).
+
+
+## Format
 
 Each feature takes up one line, with **9** columns per line (plus optional track definition lines).
+
 
 ### Columns
 

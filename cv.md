@@ -148,7 +148,7 @@ _Full day workshops developed & implemented:_
 
 * Fungal Genetics Conference, secondary metabolism session. Asilomar, CA (2013)
 
-* Kentucky Food Retail Safety Conference, invited speaker on wild mushroom safety. Frankfurt, KY (2016)
+* Kentucky Food Retail Safety Conference, invited speaker on wild mushroom safety. Frankfort, KY (2016)
   - [Slides](https://www.slideshare.net/BradfordCondon1/ky-retail-foodseminar)
 
 

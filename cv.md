@@ -96,15 +96,11 @@ UK-BLAST is an extracurricular support group for undergraduates performing genom
 
 ##### Departmental teaching: _Cornell University_ 2008-2013
 
-Spring 2008: PLPA 2010 TA: Magical Mushrooms & Mischievous Molds.
-
-Spring 2010: PLPA 2015 TA: Mushrooms, Molds and Molecules.
-
-Spring 2011 PLPA 2015 TA: Mushrooms, Molds, and Molecules.
-
-Spring 2012 PLPA 2015 TA:  Mushrooms, Molds, and Molecules.
-
-Spring 2013 PLPA 2015 TA:  Mushrooms, Molds, and Molecules.
+* Spring 2008: PLPA 2010 TA: Magical Mushrooms & Mischievous Molds.
+* Spring 2010: PLPA 2015 TA: Mushrooms, Molds and Molecules.
+* Spring 2011 PLPA 2015 TA: Mushrooms, Molds, and Molecules.
+* Spring 2012 PLPA 2015 TA:  Mushrooms, Molds, and Molecules.
+* Spring 2013 PLPA 2015 TA:  Mushrooms, Molds, and Molecules.
 
 _ _
 
@@ -112,32 +108,26 @@ _ _
 
 _workshops (1 hour) developed & implemented:_
 
-* Classical teaching models and the psychology of learning
-
+>* Classical teaching models and the psychology of learning
 * What do I want my students to learn? Identifying learning outcomes as the basis for instruction and assessment
-
 * Using library resources to enhance student’s research skills
-
 * Creating effective questions for iClickers and online quizzes
-
 * Establishing a professional electronic online identity
 
 _Full day workshops developed & implemented:_ 
 
-* 2012 Chemistry TA training instructor
-
+>* 2012 Chemistry TA training instructor
 * 2012 Teaching Excellence Practicum Instructor, CTE summer Institute
 
-&nbsp;
-
 #### Presentations
+
+##### Workshops
+* [Floracliff mushroom identification workshop](http://www.bradfordcondon.com/2017/04/17/floraCliffUpdate/) Lexington, KY (2016)
 
 ##### Talks
 
 * Joint Genome Institute Dothideomycete jamboree. Walnut Creek, CA (2008)
-
 * Fungal Genetics Conference, secondary metabolism session. Asilomar, CA (2013)
-
 * Kentucky Food Retail Safety Conference, invited speaker on wild mushroom safety. Frankfort, KY (2016)
   - [Slides](https://www.slideshare.net/BradfordCondon1/ky-retail-foodseminar)
 

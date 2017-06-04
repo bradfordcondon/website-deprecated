@@ -41,7 +41,7 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 
 ## Skills
 
-#### Bioinformatics
+#### Bioinformatics and programming
 
   * Proficient with UNIX/LINUX systems, command-line programming, querying and managing big data/databases (SQL, JSON)
   * Developer for cross-platform apps in React-Native, and genomics websites using Tripal and Drupal.
@@ -73,27 +73,17 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 #### Awards and honors
 
 * 2006 Oberlin College Norman H Wright Prize for undergraduate research
-
 * 2007-2008 Presidential Life Science Fellow
-
 * 2009 NSF graduate research fellowship honorable mention
-
 * 2010 NSF EAPSI fellow (New Zealand)
-
 * 2011 Plant Sciences outstanding TA award
-
 * 2012 McClintock Outstanding Plant Sciences Graduate Student Award
-
 * 2011-2012 Center For Teaching Excellence Graduate Teaching Associate Fellow
-
 * 2012-2013 Center For Teaching Excellence Graduate Teaching Associate Fellow
-
 * 2017 NSF EPSCoR grant, [Expanding Your Horizons](http://www.eyhn.org/)
-
+* 2017 [UKY SOPS](http://sops.as.uky.edu/?q=content/symposia) research symposium postdoc poster award (second place)
 
 #### Teaching and leadership
-
-##### 
 
 ##### KBRIN Next Generation Sequencing and Data Analysis Workshop 2017
 
@@ -155,12 +145,11 @@ _Full day workshops developed & implemented:_
 ##### Posters
 
 * American Society of Plant Biologists, Boston, MA (2006)
-
 * Fungal Genetics Conference, Asilomar, CA (2009)
-
 * Molecular Plant Microbe Biology, Quebec City, QC (2009)
-
 * Fungal Genetics Conference, Asilomar, CA (2011)
+* [University of Kentucky Society of Postdoctoral Scholars Research Symposium](http://sops.as.uky.edu/), Lexington, KY (2017) 
+
 
 
 ## Publications

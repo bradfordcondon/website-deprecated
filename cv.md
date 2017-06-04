@@ -85,9 +85,9 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 
 #### Teaching and leadership
 
-##### KBRIN Next Generation Sequencing and Data Analysis Workshop 2017
-
-Web coordinator and instructor
+##### KBRIN Next Generation Sequencing and Data Analysis Workshop, *University of Kentucky* 2017
+ 
+Instructor and web developer.  Implemented and maintained the (Drupal-based workshop website)[https://ngs.csr.uky.edu/] and REDCap registration system.
 
 ##### UK-BLAST: *University of Kentucky* 2016
 

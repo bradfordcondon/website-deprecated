@@ -8,12 +8,12 @@ Hello!  I am a postdoctoral fellow at the University of Tennessee Knoxville an
 
 ## My current projects
 
-## University of Kentucky
+### University of Kentucky
 
 * [Expanding Your Horizons](http://www.bradfordcondon.com/2017/05/14/EYHpress/) women in STEM outreach
 * [Next Generation Sequencing Workshop](https://ngs.csr.uky.edu/)
 
-## University of Tennessee
+### University of Tennessee
 
 * [TreeSnap mobile web and app developer](https://treesnap.org/)
 * [Hardwood Genomics developer](http://hardwoodgenomics.org/)

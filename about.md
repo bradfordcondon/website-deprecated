@@ -21,5 +21,5 @@ Hello!  I am a postdoctoral fellow at the University of Tennessee Knoxville an
 
 
 ### This site 
-This site exists as a "living CV" for me.  On this site you will find thoughts on science in popular media, snippets of code to help budding bioinformatic scientists, and information on some of the work I'm doing.  This site uses Jekyll and the Bulma CSS framework, and is hosted by github pages.
+This site exists as a "living CV" for me.  You will find my thoughts on science in popular media, snippets of code to help budding bioinformatic scientists, and information on some of the work I'm doing.  This site uses Jekyll and the Bulma CSS framework, and is hosted by github pages.
 

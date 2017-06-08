@@ -12,10 +12,6 @@ permalink: cv.html
   Bradford Condon, PhD
 </p>
 
-<p style="text-align: center;">
-  <a href="mailto:Bradford.condon@gmail.com">Bradford.condon@gmail.com</a>
-</p>
-
 ## Education
 
 August 2013, PhD in Plant Pathology & Plant-Microbe Interactions, Cornell University, Ithaca, NY

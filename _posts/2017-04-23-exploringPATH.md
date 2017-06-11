@@ -54,7 +54,7 @@ Where are we?  What files and folders are located where we are?  The word immedi
 
 Our first essential command is PWD.  PWD stands for print working directory.
 
- - [ ] Type in PWD or pwd  (it isnt case sensitive, files and directories are) and make note of where you are located.
+* Type in `pwd` and make note of where you are located.
 
 ```bash
 Bradfords-MacBook-Pro:Documents chet$ pwd
@@ -67,58 +67,48 @@ The dollar sign $ is called the prompt.  It lets you know that your computer is 
 
 	
 
-The value returned by PWD on my computer was:
-
-	/Users/chet/Desktop/Documents
+The value returned by PWD on my computer was `/Users/chet/Desktop/Documents`.
 
 This is where my terminal is currently located, and is referred to as my working directory.  **Yours will look different** but it will mean the same thing: There are a series of folders within folders telling you how to find your current working directory.  on OSX, the /Users/ directory contains the home directory for all the users of that computer.
 
- - [ ] Write the full PATH pwd returns for you below.
+* Write the full PATH pwd returns for you below.
 
 >PATH to my home directory:
 > 
 >/  
 >    
 
-<br>
-
-Let's go a few quick commands so we can practice navigating our file structure.
+Let's go over a few quick commands so we can practice navigating our file structure.
 
 * **LS** - lists files and folders in your current directory
 * **CD** - Changes directory. 
 * **MKDIR**-  Creates a directory.
 
-<br>
 
-- [ ] Try each of the above commands yourself and see what happens.  Write what happens for each in the box below.
+* Try each of the above commands yourself and see what happens.  Write what happens for each in the box below.
 
-		$ ls
-		$ cd
-		$ mkdir
-	
-
-> LS
-<br>
-
->CD
-<br>
-
->MKDIR
-><br>
+```
+ls
+cd
+mkdir
+```
+> 
+> 
+> 
 
 
-What did mkdir do?  It gave us a *usage* message, which means we didn't use the program properly.  We tried to create a directory without specifying the name of the directory. 
+What did `mkdir` do?  It gave us a *usage* message, which means we didn't use the program properly.  We tried to create a directory without specifying the name of the directory. 
 
-- [ ]  Let's create a directory called test:
+*  Let's create a directory called test:
 
-		$  mkdir test
+```
+mkdir test
+```
 
-<br>
-
-- [ ]  Try the excercises below.
+* Try the excercises below.
 
 > Which of the above commands will let us check if our newly made directory exists? Execute this command.
-> <br>
+<br>
 
 > What is the full path of this new folder?  
 <br>
@@ -128,90 +118,96 @@ What did mkdir do?  It gave us a *usage* message, which means we didn't use the 
 
 
 
-MKDIR failed because we cannot have two files with the same name in the same location.  
+`mkdir` failed because we cannot have two files with the same name in the same location.  
 
-If you ever need guidance figuring out how to run a program, type the program name with the help option/flag for documentation (-h after the command: see the code box below).  As you use more and more elaborate programs, this will become very useful!
+If you ever need guidance figuring out how to run a program, type the program name with the help option/flag for documentation (`-h` after the command: see the code box below).  As you use more and more elaborate programs, this will become very useful!
 
-	$ cd -h
-	$ ls -h
-	$ mkdir -h
-
+```
+cd -h
+ls -h
+mkdir -h
+```
 	
 
 
 ### *CD*: change directories
 
-CD changes the directory we are in.  If we only type in
+`cd` changes the directory we are in.  If we only type in
 
-	$ cd
+> `cd`
 	
 It will automatically move us to our *home directory*.
 
->To navigate into our new test folder, type  issue the following two commands.
-{% highlight shell linenos %}
-$ cd test
-$ ls
-{% endhighlight %}
+* To navigate into our new test folder, type  issue the following two commands.
+
+```
+cd test
+ls
+```
 
 this will move us into the test folder, and list the files in this folder.  We just made it, so it's empty.
 
-- [ ] Next, make a new folder in this directory and use ls to see if the command was successful.
-<br>
+ * Next, make a new folder in this directory and use ls to see if the command was successful.
 
-		$ 	mkdir test
-		$	ls
+```
+mkdir test
+ls
+```
 
 We can have two folders named test in separate locations, but we cannot have two folders named test in the same location.  This is because each folder has its own ABSOLUTE PATH.
 
-- [ ] use pwd and cd to answer the question below.
+* Use pwd and cd to answer the question below.
 
 > What is the full PATH of the first test directory we made?  The second?
 ><br>
 
-- [ ] While located in the this second test folder, issue these three commands:
+*  While located in the this second test folder, issue these three commands:
 
 ```
-$ pwd
-$ cd
-$ pwd
+pwd
+cd
+pwd
 ```
 
-As you can see, the cd command returns us to our home directory when we dont supply an argument (write something after the command name).
+As you can see, the `cd` command returns us to our home directory when we dont supply an argument (write something after the command name).
 
 If we want to navigate back , we could type
 
-	$ cd test
-	$ cd test
-	$ pwd
+```
+cd test
+cd test
+pwd
+```
 
 Alternatively: we can navigate there in one jump by typing 
 
-	$ cd test/test
+```
+cd test/test
+```
 
 This command changes directory from our current directory to a folder called test, and then to the next folder inside of that.  What's important to understand is that we can do this from *anywhere on the computer* by specifying the full path.
 
 Even more importantly, we can issue a command on files in other directories by giving their full PATH!  The below command would list the contents of my test folder no matter what my current working directory is.
 
-	$ ls /Users/chet/Desktop/Documents/test/test
+```
+ls /Users/chet/Desktop/Documents/test/test
+```
 
-
-  
-
-- [ ]  Try listing the contents of a folder *that is not your current working directory*.
+* Try listing the contents of a folder *that is not your current working directory*.
 
 #### Relative and absolute paths
 
-- [ ] Try the following example below (on a mac).  
+* Try the following example below (on a mac).  
 
 ```
-$ cd /usr
-$ pwd 
-$ ls
-$ cd /Users/_yourNameHere_/Desktop/Documents/test/test
-$ pwd
+cd /usr
+pwd 
+ls
+cd /Users/_yourNameHere_/Desktop/Documents/test/test
+pwd
 ```
 
-Notice that by typing `cd /FOLDER`, we are telling cd the *absolute* path of a file.  before, we typed `cd FOLDER` (without the backslash first).  This specified the *relative* path.  The absolute path of a file never changes.  The relative path is really the path *from our current working directory*.  
+Notice that by typing `cd /FOLDER`, we are telling `cd` the *absolute* path of a file.  before, we typed `cd FOLDER` (without the backslash first).  This specified the *relative* path.  The absolute path of a file never changes.  The relative path is really the path *from our current working directory*.  
 
 ##### Comprehension questions
 
@@ -222,11 +218,10 @@ Notice that by typing `cd /FOLDER`, we are telling cd the *absolute* path of a f
 Below are two very useful shortcuts.
 
 ```{bash}
-$ cd ..   ##One directory up.  Very useful for quickly navigating directories.
-$ cd ../anotherfolder  ##navigates one folder backwards, and then into another folder
- 
-$ cd ~   #~ is a shortcut to the home directory.  It's not useful here because cd also returns us to our home directory but....
-$ cd ~/Desktop/Documents	## Home directory.  Very useful when specifying the ABSOLUTE PATH of a file or folder.
+cd ..   ##One directory up.  Very useful for quickly navigating directories.
+cd ../anotherfolder  ##navigates one folder backwards, and then into another folder 
+cd ~   #~ is a shortcut to the home directory.  It's not useful here because cd also returns us to our home directory but....
+cd ~/Desktop/Documents	## Very useful when specifying the ABSOLUTE PATH of a file or folder.
 
 	## The hash symbol indicates a comment. 
 	# Most programming langauge ignore everything appearing in a line after a # 
@@ -234,7 +229,7 @@ $ cd ~/Desktop/Documents	## Home directory.  Very useful when specifying the ABS
 
 ```
 
->From Your home directory, where does `cd ..` take you?
+* From Your home directory, where does `cd ..` take you?
 
 ## Command line completion/autofill
 
@@ -253,15 +248,15 @@ Bradfords-MacBook-Pro:Desktop chet$
 
 ```
 
-As you can see, I'm currently located in /Users/chet/Desktop.  If I'd like to move into my test folders located in documents I could type `cd Documents/test/test`  However, this is a confusing file path.  It's very easy to make mistakes typing out something like this.  Command line autofill is an extremely powerful tool to get around this.  To access it, start typing your command and press tab *after writing a few characters*. It will automatically fill in the rest of the file name if it is unambiguous.
+As you can see, I'm currently located in `/Users/chet/Desktop`.  If I'd like to move into my test folders located in documents I could type `cd Documents/test/test`  However, this is a confusing file path.  It's very easy to make mistakes typing out something like this.  Command line autofill is an extremely powerful tool to get around this.  To access it, start typing your command and press tab *after writing a few characters*. It will automatically fill in the rest of the file name if it is unambiguous.
 
->From your home directory, navigate back to your test folder by using autocomplete.
+* From your home directory, navigate back to your test folder by using autocomplete.
 
 Sometimes, we'll have two files with similar names.  Suppose we have two folders, test1 and test2.  How can we quickly navigate into test2?
 
->Make two similarly named directories in current folder.  Begin using autocomplete to cd into one.  What happens?
+* Make two similarly named directories in current folder.  Begin using autocomplete to cd into one.  What happens?
 
->Try pressing pressing tab **twice** after typing in a few letters.  What happens?
+* Try pressing pressing tab **twice** after typing in a few letters.  What happens?
 
 We can use autocomplete not only to change directories quickly, but correctly navigate confusing directories.
 
@@ -269,11 +264,11 @@ We can use autocomplete not only to change directories quickly, but correctly na
 
 **Note: do not experiment deleting, moving, or modifying files in your root directory.**
 
-> Navigate to the root of your file structure by typing 	cd /
- * What files are located here?
- * What is the easiest way to return to your home directory?
+* Navigate to the root of your file structure by typing `cd /`
+ - What files are located here?
+ - What is the easiest way to return to your home directory?
 
->Try navigating from your root directory to your test directory created earlier using a single command!  You can make use of the shortcuts listed above, especially tab autocomplete.  
+* Try navigating from your root directory to your test directory created earlier using a single command!  You can make use of the shortcuts listed above, especially tab autocomplete.  
 
 Keep in mind that being familiar with the absolute PATH of files is useful for more than just navigating around your computer.  **We can issue commands in folders where we are not currently located using the PATH**.  This works with both relative, and absolute, paths.
 
@@ -288,10 +283,9 @@ ls test_folder
 ##### Comprehension questions
 
 
->Make a new test folder and navigate into it.
-From here, how can you list the contents of your home directory using...
- * Absolute path
- * Relative path
-
-> How can you make a new folder in your home directory from this remote location?
+* Make a new test folder and navigate into it.
+ - From here, how can you list the contents of your home directory using...
+  + Absolute path
+  + Relative path
+* How can you make a new folder in your home directory from this remote location?
 

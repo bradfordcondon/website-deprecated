@@ -221,7 +221,7 @@ cd ~/Desktop/Documents	## Very useful when specifying the ABSOLUTE PATH of a fil
 
 The final essential tip of this lesson is command line completion or autofill.
 
-```{bash}
+```
 Bradfords-MacBook-Pro:Desktop chet$ pwd
 /Users/chet/Desktop
 Bradfords-MacBook-Pro:Desktop chet$ ls

@@ -27,20 +27,6 @@ Written by Bradford Condon, PhD.  Farman Labratory, University of Kentucky, 2016
 
 In computing, [a PATH](https://en.wikipedia.org/wiki/Path_(computing)) is the absolute name of a file or directory, specifiying its unique location within a file system.  When you navigate to a file on your computer, locate a song in your music library, or navigate to a website, you do so using this absolute file structure.
 
-### Computer file structures
-Before we dive in to the command line, let's start with something more familiar.  
-
-![Traditional folder structure](assets/img/PATH/path1.png)
-
-This is a folder on my computer called "Home."  I keep all sorts of stuff in here: my movies, my music, my photos.  I have a folder for each.  Within each of those folders, I organize my things by category.  For example, in my pictures folder I've organized my photos by food, vacation, and work photos, and within my vacation photos, I keep each trip in a separate folder.  In short, we use nested folder structures to organize our files.
-
-**Command line file structure works the same way**.  To indicate that a folder exists within another folder, we use the / symbol.  The location of my new orleans folder, above, is therefore Home/pictures/vacation/new_orleans.  
-
-> **Tip:** Avoid adding spaces to files and folder names.  Use underscores (\_) instead.  This is called snake\_case.  Alternatively, you can omit the spaces and capitalize each new word: this is called camelCase.
-
-Let's see this in action on the command line.
-
-
 ## Getting started
 
 To begin, you must first access the command line.  On Mac, this is through the Terminal: on Windows, you need to use a program like [PuTTY](http://kb.site5.com/shell-access-ssh/putty/putty-how-to-start-a-ssh-session-from-the-command-line/).  

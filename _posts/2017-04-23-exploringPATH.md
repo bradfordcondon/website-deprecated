@@ -274,7 +274,7 @@ Keep in mind that being familiar with the absolute PATH of files is useful for m
 
 for example, to list the files in a new folder, we can type
 
-```{bash}
+```
 cd /Users/chet/Desktop
 mkdir test_folder
 ls test_folder

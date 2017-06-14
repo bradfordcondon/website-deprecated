@@ -4,7 +4,7 @@ title: Velvet assembly output files
 date: 2017-6-13
 ---
 
-This post is part 3 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next 
+This post is part 4 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next 
 Generation Sequencing Workshop at the University of Kentucky.
 
 ## Introduction 

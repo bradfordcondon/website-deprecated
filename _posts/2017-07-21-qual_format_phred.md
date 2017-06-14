@@ -1,7 +1,7 @@
 ---
 layout: post
 title: qual format
-date: 2017-07-01
+date: 2017-7-21
 ---
 
 A `.qual` file provides Phred-based quality scores for a set of sequences (often a corresponding FASTA file).  It looks something like this:

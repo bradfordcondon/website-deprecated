@@ -4,7 +4,7 @@ title: "File extensions"
 excerpt_separator: <!--more-->
 ---
 
-This post is the first in a series on understanding biological file formats.  This material is developed for use in hte KBRIN Next Generation Sequencing workshop 2017 hosted at the University of Kentucky.
+This post is the first in a series on understanding biological file formats.  This material is developed for use in the KBRIN Next Generation Sequencing workshop 2017 hosted at the University of Kentucky.
 
 <!--more-->
 

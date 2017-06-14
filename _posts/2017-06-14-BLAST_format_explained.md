@@ -37,6 +37,7 @@ The best compromise between human readability and machine parsing is probably *t
 
 ## outfmt 6
 
+
 Out format 6 outputs a single line per entry, where each column is seperated by a tab character `/t`.  The columns are as follows: 
 
 | label   | description               |

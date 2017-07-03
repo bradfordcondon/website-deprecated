@@ -1,66 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  {% include head.html %}
+{% include head.html %}
 </br>
 
-  <body>
+<body>
 
-      <div class="tile is-ancestor">
-        <div class="tile is-parent is-vertical">
-        
-          <div class="tile box">
-          <div class="box">
-
-
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-64x64">
-        <img src="/assets/img/condon_face.jpg" alt="Bradford Condon PhD">
-      </figure>
-    </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong>Bradford Condon</strong> <small>Postdoctoral Associate</small>
-          <br>
-          
-        </p>
-      </div>
-    </div>
-  </article>
-          </div>
-          <a href="/blog/">
-           <div class="tile box">
-          <p class="title">Latest Blog Posts</p>
-          <figure class="image">
-            <img src="/assets/img/floracliff2016/groupPhoto.png">
-          </figure>
-          </div>
-          </a>
-          </div>
-
-        <div class="tile is-parent">
-              <div class="tile is-child box">
-
-               <p class="title has-text-centered">TreeSnap</p>
-               <figure class="image">
-            <img src="/assets/img/TreeSnap/ts-logo-768.jpg">
-          </figure>
-              </div>
-             <div class="tile is-child box">
-                <p class="title">
-              Hardwood Genomics  </p>
-               <figure class="image">
-            <img src="/assets/img/HWG/HWG_logo.png">
-          </figure>
+<div class="container is-centered">
+    <div class="tile is-ancestor">
+        <div class="tile is-parent is-vertical is-4">
+            <div class="tile box">
+                <article class="media">
+                    <div class="media-left">
+                        <figure class="image is-64x64">
+                            <img src="/assets/img/condon_face.jpg" alt="Bradford Condon PhD">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <div class="header">
+                            <p class="title">Bradford Condon</p>
+                        </div>
+                        <p>Postdoctoral Associate, University of Tennessee Knoxville</p>
+                        <p>Web and database developer, Hardwood Genomics</p>
+                        <p>App and Web developer, App release manager, TreeSnap</p>
+                    </div>
+                </article>
             </div>
-          
-          </div>
-      </div>
-      </div>
+        </div>
+        <div class="tile is-parent is-vertical is-6">
+            <div class="tile is-child box">
+                <p class="title has-text-centered">My projects</p>
+            </div>
+            <div class="tile is-child box">
 
-      {% include footer.html %}
-    {% include analytics.html %}
-  </body>
+                <p class="title has-text-centered">TreeSnap</p>
+                <figure class="image is-64x64">
+                    <img src="/assets/img/TreeSnap/ts-logo-768.jpg">
+                </figure>
+            </div>
+            <div class="tile is-child box">
+                <p class="title">
+                    Hardwood Genomics </p>
+                <figure class="image is-64x64">
+                    <img src="/assets/img/HWG/HWG_logo.png">
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include footer.html %}
+{% include analytics.html %}
+</body>
 </html>

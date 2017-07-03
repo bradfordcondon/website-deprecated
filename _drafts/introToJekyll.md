@@ -61,3 +61,7 @@ Hooboy.  As someone who has almost zero experience doing this, I'd recommend sta
 
 I'm really hopeful that The joy of writing in Markdown (and R Markdown) will get me back in the blogging game.
 
+## Converting from markdown to word
+
+find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" -o "${0%.md}.docx"' {} \;
+

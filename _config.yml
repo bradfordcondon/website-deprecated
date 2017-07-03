@@ -15,9 +15,14 @@ description:        I am a bioinformaticist and mobile/web developer living in L
 
 # About/contact
 author:
-  name:              Bradford Confon
+  name:              Bradford Condon
   email:             bradford.condon@uky.edu
 
+twitter_username: bradfordcondon
+github_username:  bradfordcondon
+
+collections:
+- tiles
 
 # Gems
 gems:

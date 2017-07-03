@@ -6,10 +6,39 @@
 
   <body>
 
-      <div class="tile">
+      <div class="tile is-ancestor">
+        <div class="tile is-parent is-vertical">
+          <div class="tile box">
+          <p class="title">Bradford Condon</p>
+          </div>
+           <div class="tile box">
+          <p class="title">Latest Blog Posts</p>
+          <figure class="image">
+            <img src="/assets/img/floracliff2016/groupPhoto.png">
+          </figure>
+          
+          </div>
+          </div>
 
-Tiles go here
-</div>
+        <div class="tile is-parent">
+              <div class="tile is-child box">
+
+               <p class="title has-text-centered">TreeSnap</p>
+               <figure class="image">
+            <img src="/assets/img/TreeSnap/ts-logo-768.jpg">
+          </figure>
+              </div>
+             <div class="tile is-child box">
+                <p class="title">
+              Hardwood Genomics  </p>
+               <figure class="image">
+            <img src="/assets/img/HWG/HWG_logo.png">
+          </figure>
+            </div>
+          
+          </div>
+      </div>
+      </div>
 
       {% include footer.html %}
     {% include analytics.html %}

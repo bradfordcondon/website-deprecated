@@ -1,3 +1,7 @@
+safe: false
+lsi: false
+pygments: true
+
 # Permalinks
 permalink:           pretty
 
@@ -23,3 +27,15 @@ github_username:  bradfordcondon
 gems:
   - jekyll-gist
   - octopress-paginate #jekyll-paginate doesnt support paginating different areas of the site!  This is much easier.
+
+
+exclude:
+
+  - README.md
+  - Rakefile
+  - Gemfile
+  - Gemfile.lock
+  - changelog.md
+  - "*.Rmd"
+  - vendor
+  - .travis.yml

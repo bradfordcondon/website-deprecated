@@ -1,6 +1,5 @@
 safe: false
 lsi: false
-pygments: true
 
 # Permalinks
 permalink:           pretty

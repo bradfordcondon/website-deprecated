@@ -2,54 +2,120 @@
 <html lang="en">
 
 {% include head.html %}
-</br>
 
 <body>
-
-<div class="container is-centered">
-    <div class="tile is-ancestor">
-        <div class="tile is-parent is-vertical is-4">
-            <div class="tile box">
-                <article class="media">
-                    <div class="media-left">
-                        <figure class="image is-64x64">
-                            <img src="/assets/img/condon_face.jpg" alt="Bradford Condon PhD">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <div class="header">
-                            <p class="title">Bradford Condon</p>
+<div class="block" style="margin-top:2rem">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-3 is-vertical">
+                <div class="tile is-child">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-256x256">
+                                <img src="/assets/img/condon_face.jpg" alt="Bradford Condon PhD">
+                            </figure>
                         </div>
-                        <p>Postdoctoral Associate, University of Tennessee Knoxville</p>
-                        <p>Web and database developer, Hardwood Genomics</p>
-                        <p>App and Web developer, App release manager, TreeSnap</p>
+                        <div class="card-content">
+                            <p class="title is-4"> Hello, thanks for visiting! </p>
+                            <div class="content">
+                                I am a postdoctoral fellow at the University of Tennessee Knoxville and the University
+                                of
+                                Kentucky. I am trained as a microbiologist and have slowly evolved as a bioinformaticist
+                                and, now, as a mobile/web developer.
+                            </div>
+                        </div>
                     </div>
-                </article>
+                </div>
+                <div class="tile box is-child">
+                    This site contains my CV, links to my current and past projects, and my blog where I share snippets
+                    of
+                    code helpful for budding bioinformaticists.
+                </div>
             </div>
-        </div>
-        <div class="tile is-parent is-vertical is-6">
-            <div class="tile is-child box">
-                <p class="title has-text-centered">My projects</p>
-            </div>
-            <div class="tile is-child box">
-
-                <p class="title has-text-centered">TreeSnap</p>
-                <figure class="image is-64x64">
-                    <img src="/assets/img/TreeSnap/ts-logo-768.jpg">
-                </figure>
-            </div>
-            <div class="tile is-child box">
-                <p class="title">
-                    Hardwood Genomics </p>
-                <figure class="image is-64x64">
-                    <img src="/assets/img/HWG/HWG_logo.png">
-                </figure>
+            <div class="tile is-parent is-vertical">
+                <div class="tile is-child">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header-icon">
+                                <figure class="image is-64x64">
+                                    <img src="/assets/img/HWG/hwg_square.png">
+                                </figure>
+                            </div>
+                            <div class="card-header-title">
+                                HardWoodGenomics
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            Web and Database Developer
+                        </div>
+                    </div>
+                </div>
+                <div class="tile is-child">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header-icon">
+                                <figure class="image is-64x64">
+                                    <img src="/assets/img/TreeSnap/ts-logo-768.jpg">
+                                </figure>
+                            </div>
+                            <div class="card-header-title">
+                                <strong>Tree</strong>Snap
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            App manager, Web and Database Developer
+                        </div>
+                    </div>
+                </div>
+                <div class="tile is-child">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header-icon">
+                                <figure class="image is-by1">
+                                    <img src="/assets/img/EYH_logo.png">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            Youth STEM conference coordinator
+                        </div>
+                    </div>
+                </div>
+                <div class="tile is-child">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header-icon">
+                                <figure class="image is-64x64">
+                                    <img src="/assets/img/sops_square.png">
+                                </figure>
+                                <div class="card-header-title">
+                                    Society of Postdoctoral Scholars
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            Technical Officer
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-{% include footer.html %}
-{% include analytics.html %}
+
+    <div class="block" style="margin-top:2rem">
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Blog topics</h1>
+                    <h2 class="subtitle">Under development </h2>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    {% include footer.html %}
+    {% include analytics.html %}
 </body>
 </html>

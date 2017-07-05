@@ -1,12 +1,14 @@
 
 # Scripts covered
-
+* multiple_join_paired_ends.py
 * Split-libraries.py
 * Pick_de_novo_otus.py
 * biom summarize table
 * summarize taxa throguh plots
 * multiple rarefactions
-* 
+
+## multiple joined paired ends
+
 
 
 ## Split-libraries.py
@@ -282,3 +284,40 @@ GROUP "/" {
 }
 }
 ```
+
+## BIOM summarize table
+
+```
+Num samples: 19
+Num observations: 1563
+Total count: 133137
+Table density (fraction of non-zero values): 0.191
+
+Counts/sample summary:
+ Min: 2854.0
+ Max: 18129.0
+ Median: 5457.000
+ Mean: 7007.211
+ Std. dev.: 3955.546
+ Sample Metadata Categories: None provided
+ Observation Metadata Categories: taxonomy
+
+Counts/sample detail:
+
+```
+
+
+
+
+## ANOVA
+
+We perform the ANOVA test on multiple taxonomic level.  
+
+| Column name    | Description                                                                                                                                                                                                                                           |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OTU            | OTU id                                                                                                                                                                                                                                                |
+| Test-Statistic | the value of the test statistic for the given test                                                                                                                                                                                                    |
+| P              | the raw P value returned by the given test.                                                                                                                                                                                                           |
+| FDR_P          | the P value corrected by the Benjamini-Hochberg FDR procedure for multiple comparisons.                                                                                                                                                               |
+| Bonferroni_P   | the P value corrected by the Bonferroni procedure for multiple comparisons.                                                                                                                                                                           |
+| x_mean         | there will be as many of these headers as there are unique values in the mapping file under the category passed with the -c option. Each of these fields will contain the mean frequency/abundance/count of the given OTU for the given sample group.  We have two groups in this workshop (early and late) so we will have two columns |

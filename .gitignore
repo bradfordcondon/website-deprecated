@@ -1,6 +1,8 @@
-_site
 .sass-cache
 .jekyll-metadata
 .idea
+*.gem
+*.rbc
 *.DS_store
+vendor
 

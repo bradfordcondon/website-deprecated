@@ -24,7 +24,7 @@ github_username:  bradfordcondon
 
 
 relative_source: .
-destination: _site
+destination: docs
 
 
 # Gems

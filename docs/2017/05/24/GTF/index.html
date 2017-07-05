@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                <a href="/" title="Home">
+                    Bradford Condon PhD
+                </a>
+            </h1>
+            <h2 class="subtitle">
+                Bioinformatics, Web & Mobile Development
+            </h2>
+        </div>
+
+    </div>
+    <div class="hero-foot">
+        <nav class="tabs is-boxed nav-menu has-shadow">
+            <div class="nav-center">
+                <ul>
+
+                    <li >
+                    <a href="/">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-home fa-stack-1x"></i>
+          </span>
+                        Home</a></li>
+                    <!--<li >-->
+
+                    <!--<a href="/blog/">-->
+
+          <!--<span class="fa-stack fa-lg">-->
+            <!--<i class="fa fa-square-o fa-stack-2x"></i>-->
+            <!--<i class="fa fa-newspaper-o fa-stack-1x"></i>-->
+          <!--</span>-->
+                        <!--Blog</a>-->
+                    <!--</li>-->
+
+
+                    <li >
+
+                    <a href="/about/">
+                   <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-question fa-stack-1x"></i>
+                    </span>
+                        About</a>
+
+                    </li>
+                    <li >
+
+                    <a href="/cv.html">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-id-card fa-stack-1x"></i>
+                   </span>
+                        CV</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<link rel="stylesheet" href="/assets/css/application.css" />
+<link rel="stylesheet" href="/assets/css/prism.css" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+      href="/public/apple-touch-icon-precomposed.png">
+<link rel="shortcut icon" href="/public/favicon.ico">
+<link rel="alternate" type="application/atom+xml" title="Bradford Condon PhD" href="/atom.xml">
+</head>
+
+</br>
+
+  <body>
+
+        <div class="container content">
+      <main>
+          <div class="box">
+<article class="post">
+  <h1 class="post-title">GTF (General Transfer Format)</h1>
+  <img src=>
+  <time datetime="2017-05-24T00:00:00-04:00" class="post-date">24 May 2017</time>
+  <div class="card-content">
+  <p>This post is part 3 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted <a href="http://www.endophyte.uky.edu/ngs/">here</a>.</p>
+
+<p>General transfer format (GTF), also known as General Feature Format (GFF) 2.0, is the format for transcripts in exercise 4, <strong>RNAseq</strong>.
+For more details, please see the <a href="www.ensembl.org/info/website/upload/gff.html">ensembl guide to GFF</a>.</p>
+
+<!--more-->
+
+<p>GTF/GFF2.0 is fairly straightforward.  Understand that is can describe a variety of sequence features, not just transcripts.  All components of a gene’s structure, such as introns, exons, and protein CDS, can be described with GTF using the correct feature type (column 3).</p>
+
+<h2 id="format">Format</h2>
+
+<p>Each feature takes up one line, with <strong>9</strong> columns per line (plus optional track definition lines).</p>
+
+<h3 id="columns">Columns</h3>
+
+<ol>
+  <li><strong>seqname</strong>  Chromosome or scaffold name.</li>
+  <li><strong>source</strong> Database, project, or program name.</li>
+  <li><strong>feature</strong>  Feature type (eg Gene)</li>
+  <li><strong>start</strong>  Start position</li>
+  <li><strong>end</strong>  End position</li>
+  <li><strong>score</strong></li>
+  <li><strong>strand</strong> + (forward) or - (reverse)</li>
+  <li><strong>frame</strong> 0, 1, 2</li>
+  <li><strong>attribute</strong>  Tag “value” ; tag “value”</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1 transcribed_unprocessed_pseudogene  gene        11869 14409 . + . gene_id "ENSG00000223972"; gene_name "DDX11L1"; gene_source "havana"; gene_biotype "transcribed_unprocessed_pseudogene"; 
+</code></pre>
+</div>
+<p>In the above sample <code class="highlighter-rouge">GTF</code> file from ensembl, for example, the name is <em>(chromosome) 1</em>, the source is <em>transcribed_unprocessed_pseudogene</em>, the feature type is <em>gene</em>, the start-end is <em>11869-14409</em>, there is no applicable score (.), it’s on the forward (+) strand, there is no frame data, and there are four attributes.  The first attribute, for example, is gene_name with the value <em>DDX11L1</em>.</p>
+
+<h3 id="track-lines">Track lines</h3>
+
+<p>The optional track lines start with the word ‘track’, followed by space-seperated key=value pairs.</p>
+
+  </div>
+  </div>
+</article>
+
+
+ <div class="box">
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2017/06/14/BLAST_format_explained/">
+          BLAST output
+          <small><time datetime="2017-06-14T00:00:00-04:00">14 Jun 2017</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2017/06/13/velvet_out/">
+          Velvet assembly output files
+          <small><time datetime="2017-06-13T00:00:00-04:00">13 Jun 2017</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2017/05/14/EYHpress/">
+          Expanding Your Horizons Kentucky 2017
+          <small><time datetime="2017-05-14T00:00:00-04:00">14 May 2017</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+<
+
+
+      </main>
+
+    </div>
+      <footer class="footer">
+      <div class="container">
+
+      <div class="content has-text-centered">
+      <span>
+        <a href="https://github.com/bradfordcondon"><i class="fa fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/BradfordCondon"><i class="fa fa-twitter-square fa-3x"></i></a>
+        </span>
+        </div>
+              <div class="content has-text-centered">
+
+          <p>
+          <time datetime="2017-07-05T15:51:07-04:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          </p> 
+          </div>
+      
+        </div>
+        
+      </footer>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71775012-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

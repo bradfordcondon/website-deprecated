@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+</br>
+
+  <body>
+
+        <div class="container content">
+      <main>
+        <div class="posts">
+  {% for post in paginator.posts %}
+  <div class="card">
+   <div class="card-content">
+   <p class="title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+</p>
+
+<p class="subtitle">  
+   <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+      </p>
+      </div>
+     
+    <div class="card-content">
+    {{ post.excerpt }}
+     <a href="{{post.url}}">
+     Read the full post...
+     </a>
+
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+</div>
+
+<nav class="pagination">
+  {% if paginator.next_page %}
+    <a class="button pagination previous is-primary is-large" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+  {% else %}
+    <a class="button pagination previous is-primary is-large">Older</a>
+
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="button pagination-item newer is-primary is-large" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+  {% else %}
+    <span class="button pagination-item newer is-primary is-large">Newer</span>
+  {% endif %}
+</div>
+      </main>
+
+    </div>
+      {% include footer.html %}
+    {% include analytics.html %}
+  </body>
+</html>
+

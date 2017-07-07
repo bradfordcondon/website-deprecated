@@ -2,6 +2,9 @@
 layout: post
 title: Velvet assembly output files
 date: 2017-6-13
+tags:
+  - bioinformatics
+  - Next-generation sequencing
 ---
 
 This post is part 4 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next 

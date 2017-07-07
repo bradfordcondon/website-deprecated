@@ -1,7 +1,10 @@
 ---
 layout: post
 title: ZFF annotations for SNAP
-date: 2017-06-24
+date: 2017-07-02
+tags:
+  - bioinformatics
+  - Next-generation sequencing
 ---
 
 SNAP stands *for Semi-HMM-based Nucleic Acid Parser*, it is a general purpose gene-finding utility.

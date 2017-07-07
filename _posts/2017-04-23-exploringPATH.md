@@ -6,6 +6,7 @@ excerpt_separator: <!--more-->
 
 tags:
   - bioinformatics
+  - UKBLAST
 ---
 
 

@@ -10,9 +10,7 @@ tags:
 SNAP stands *for Semi-HMM-based Nucleic Acid Parser*, it is a general purpose gene-finding utility.
 The ZFF file is generated with `maker2zff` and is fed into the `fathom` command
 
-
 To read more, read the `README` file distributed with SNAP.  Examples are taken from https://crc.ibest.uidaho.edu/help/Applications/SNAP.html.
-
 
 ### ZFF format
 

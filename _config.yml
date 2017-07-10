@@ -26,12 +26,15 @@ github_username:  bradfordcondon
 relative_source: .
 destination: docs
 
+#tags
+tag_page_layout: tag_page
+tag_page_dir: tag
 
 # Gems
 gems:
   - jekyll-gist
   - octopress-paginate #jekyll-paginate doesnt support paginating different areas of the site!  This is much easier.
-
+  - jekyll/tagging
 
 exclude:
 

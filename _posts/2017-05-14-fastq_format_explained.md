@@ -5,7 +5,7 @@ date: 2017-05-14
 excerpt_separator: <!--more-->
 tags:
   - bioinformatics
-  - Next-generation sequencing
+  - next-generation-sequencing
 ---
 
 

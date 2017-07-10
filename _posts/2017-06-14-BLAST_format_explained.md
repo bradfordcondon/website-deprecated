@@ -4,7 +4,7 @@ title: BLAST output
 date: 2017-06-14
 tags:
   - bioinformatics
-  - Next-generation sequencing
+  - next-generation-sequencing
 ---
 
 

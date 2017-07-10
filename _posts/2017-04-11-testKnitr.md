@@ -1,6 +1,7 @@
 ---
 title: "Knitting to Jekyll"
 author: "Bradford Condon"
+layout: post
 date: 2017-04-11
 output: html_document
 excerpt_separator: <!--more-->
@@ -18,11 +19,11 @@ It looks like the original package for using knitr with Jekyll [here](https://gi
 ## Load in some libraries and data
 
 
-{% highlight r %}
+```
 require(ggplot2)
 require(knitr)
 attach(mtcars)
-{% endhighlight %}
+```
 
 <!--more-->
 
@@ -30,13 +31,9 @@ attach(mtcars)
 ## Do some plots
 
 
-{% highlight r %}
+```
 head(mtcars)
-{% endhighlight %}
 
-
-
-{% highlight text %}
 ##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
@@ -44,13 +41,9 @@ head(mtcars)
 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
 ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
-{% endhighlight %}
 
-
-
-{% highlight r %}
 qplot(mpg, drat, data=mtcars, color=cyl, main="mpg vs drat mtcars")
-{% endhighlight %}
+```
 
 ![plot of chunk unnamed-chunk-2](/assets/knitr/unnamed-chunk-2-1.svg)
 

@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<div class="container content">
+    <main>
+        <div class="card is-primary">
+            <div class="card-content">
+                    <span class="tag is-primary is-large">
+              {{ page.tag }}
+                    </span>
+            </div>
+        </div>
+        {% for post in site.posts %}
+        {% for tag in post.tags %}
+        {% if tag == page.tag %}
+
+        <div class="card">
+            <div class="card-header">
+                <p class="card-header-title">
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </p>
+            </div>
+            <div class="media-content" style="padding: .5rem">
+            <span class="tag">
+   <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date is-small">
+   {{ post.date | date_to_string }}</time>
+   </span>
+                {% for tag in post.tags %}
+                <a href="/tag/{{tag}}/">
+        <span class="tag is-primary">
+              {{ tag }}
+        </span>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="card-content">
+                {{ post.excerpt }}
+                <a href="{{post.url}}">
+                    Read the full post...
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </main>
+</div>
+

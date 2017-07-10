@@ -114,8 +114,21 @@
         <section class="hero is-primary">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">Blog topics</h1>
-                    <h2 class="subtitle">Under development </h2>
+                    <h1 class="title">Blog </h1>
+                    <h2 class="subtitle">Popular topics </h2>
+                        {% for tag in site.tags %}
+                        {% assign t = tag | first %}
+                        {% assign count = tag | last | size %}
+                        {% if count > 2 %}
+                    <a href="/tag/{{t}}/">
+                                <span class="tag is-light">
+                                    {{ t }} {{ count }}
+                                </span>
+
+                    </a>
+
+                        {% endif %}
+                        {% endfor %}
                 </div>
             </div>
         </section>

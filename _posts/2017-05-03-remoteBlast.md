@@ -5,7 +5,7 @@ date: 2017-05-03
 excerpt_separator: <!--more-->
 tags:
   - bioinformatics
-  - UKBLAST
+  - ukblast
 ---
 
 

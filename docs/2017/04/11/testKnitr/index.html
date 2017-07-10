@@ -1,4 +1,90 @@
-<h2 id="knitting-r-markdown-to-jekyll">Knitting R Markdown to Jekyll</h2>
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                <a href="/" title="Home">
+                    Bradford Condon PhD
+                </a>
+            </h1>
+            <h2 class="subtitle">
+                Bioinformatics, Web & Mobile Development
+            </h2>
+        </div>
+
+    </div>
+    <div class="hero-foot">
+        <nav class="tabs is-boxed nav-menu has-shadow">
+            <div class="nav-center">
+                <ul>
+
+                    <li >
+                    <a href="/">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-home fa-stack-1x"></i>
+          </span>
+                        Home</a></li>
+                    <li >
+
+                    <a href="/blog/">
+
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-newspaper-o fa-stack-1x"></i>
+          </span>
+                        Blog</a>
+                    </li>
+                    <li >
+
+                    <a href="/about/">
+                   <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-question fa-stack-1x"></i>
+                    </span>
+                        About</a>
+
+                    </li>
+                    <li >
+
+                    <a href="/cv.html">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-id-card fa-stack-1x"></i>
+                   </span>
+                        CV</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<link rel="stylesheet" href="/assets/css/application.css" />
+<link rel="stylesheet" href="/assets/css/prism.css" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+      href="/public/apple-touch-icon-precomposed.png">
+<link rel="shortcut icon" href="/public/favicon.ico">
+<link rel="alternate" type="application/atom+xml" title="Bradford Condon PhD" href="/atom.xml">
+</head>
+
+<br/>
+
+<body>
+<div class="container content">
+    <main>
+          <div class="box">
+<article class="post">
+  <h1 class="post-title">Knitting to Jekyll</h1>
+  <img src=>
+  <time datetime="2017-04-11T00:00:00-04:00" class="post-date">11 Apr 2017</time>
+  <div class="card-content">
+  <h2 id="knitting-r-markdown-to-jekyll">Knitting R Markdown to Jekyll</h2>
 
 <p>This is a test of the Knittr package and Jekyll.</p>
 
@@ -6,25 +92,29 @@
 
 <h2 id="load-in-some-libraries-and-data">Load in some libraries and data</h2>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">require</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
-</span><span class="n">require</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span><span class="w">
-</span><span class="n">attach</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span></code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code>require(ggplot2)
+require(knitr)
+attach(mtcars)
+</code></pre>
+</div>
 
 <!--more-->
 
 <h2 id="do-some-plots">Do some plots</h2>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">head</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span></code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code>head(mtcars)
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
 ## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre></figure>
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">qplot</span><span class="p">(</span><span class="n">mpg</span><span class="p">,</span><span class="w"> </span><span class="n">drat</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">mtcars</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="n">cyl</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s2">"mpg vs drat mtcars"</span><span class="p">)</span></code></pre></figure>
+qplot(mpg, drat, data=mtcars, color=cyl, main="mpg vs drat mtcars")
+</code></pre>
+</div>
 
 <p><img src="/assets/knitr/unnamed-chunk-2-1.svg" alt="plot of chunk unnamed-chunk-2" /></p>
 
@@ -35,3 +125,74 @@
 <p>Next we need to get our RMD to MD, with the image paths sorted.  To do this I’ll stand on the shoulders of <a href="https://chepec.se/2014/07/16/knitr-jekyll.html">chepec</a> who has implemented a solution.  I created a <code class="highlighter-rouge">_knitr</code> directory in my Jekyll site, and I included a <code class="highlighter-rouge">knitr</code> folder in my <code class="highlighter-rouge">assets</code> folder.  Make sure you update the necessary paths in the <code class="highlighter-rouge">render_post.r</code> file.</p>
 
 <p>Now its a matter of simply sourcing the file and running <code class="highlighter-rouge">KnitPost</code>.  Make sure that your post titles match Jekyll requirements (start with <code class="highlighter-rouge">YYYY-MM-DD</code> format date).  The result is a very rapid R-studio to web post!</p>
+
+  </div>
+  </div>
+</article>
+
+
+ <div class="box">
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2017/06/14/BLAST_format_explained/">
+          BLAST output
+          <small><time datetime="2017-06-14T00:00:00-04:00">14 Jun 2017</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2017/06/13/velvet_out/">
+          Velvet assembly output files
+          <small><time datetime="2017-06-13T00:00:00-04:00">13 Jun 2017</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2017/05/24/GTF/">
+          GTF (General Transfer Format)
+          <small><time datetime="2017-05-24T00:00:00-04:00">24 May 2017</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+<
+
+
+    </main>
+</div>
+
+<footer class="footer">
+      <div class="container">
+
+      <div class="content has-text-centered">
+      <span>
+        <a href="https://github.com/bradfordcondon"><i class="fa fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/BradfordCondon"><i class="fa fa-twitter-square fa-3x"></i></a>
+        </span>
+        </div>
+              <div class="content has-text-centered">
+
+          <p>
+          <time datetime="2017-07-10T10:34:08-04:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          </p> 
+          </div>
+      
+        </div>
+        
+      </footer>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71775012-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

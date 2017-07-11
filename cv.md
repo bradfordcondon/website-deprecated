@@ -140,6 +140,12 @@ _Full day workshops developed & implemented:_
 
 ## Publications
 
+### Pre-print
+
+Gladieux, P., **Condon, B. J.,** Ravel, S., Soanes, D., Nunes Maciel, J. L., Nhani, A., Jr., Terauchi, R., Lebrun, M.-H., Tharreau, D., Mitchell, T., Pedley, K. F., Valent, B., Talbot, N., Farman, M., and Fournier, E. 2017. Gene flow between divergent cereal- and grass-specific lineages of the rice blast fungus Magnaporthe oryzae. bioRxiv. :161513
+
+### Peer-reviewed
+
 Mohd Zainudin, N. A. I., **Condon, B. J.,** De Bruyne, L., Poucke, C. V., Bi, Q., Li, W., et al. (2015). Virulence, host selective toxin production, and development of three Cochliobolus phytopathogens lacking the Sfp-type 4&#8242;-phosphopantetheinyl transferase Ppt1. _MPMI_ (digital preprint). doi:10.1094/MPMI-03-15-0068-R
 
 Santana, M. F., Silva, J. C. F., Mizubuti, E. S. G., Araújo, E. F., **Condon, B. J.,** Turgeon, B. G., & Queiroz, M. V. (2014). Characterization and potential evolutionary impact of transposable elements in the genome of _Cochliobolus_ _heterostrophus_. _BMC Genomics_, _15_(1), 536. doi:10.1186/1471-2164-15-536

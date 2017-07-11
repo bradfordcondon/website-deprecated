@@ -1,17 +1,19 @@
 ---
 layout: post
 title: Understanding Discovar output
-date: 2017-06-30
+date: 2017-07-15
 excerpt_separator: <!--more-->
-
+tags:
+  - bioinformatics
+  - next-generation-sequencing
 ---
 
-This post is part of a series on file formats and outputs, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted [here](http://www.endophyte.uky.edu/ngs/).
-
+This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
+Generation Sequencing Workshop at the University of Kentucky.
 
 ## Discovar
 
- 
+
 DISCOVAR is a new genome assembler and variant caller developed by the broad institute. As of this writing,it takes as input Illumina reads of length 250 or longer produced on MiSeq or HiSeq 2500.  To learn more, read the entire DISCOVAR manual [here](https://docs.google.com/document/d/1U_o-Z0dJ0QKiJn86AV2o_YHiFzUtW9c57eh3tYjkINc/edit).
 
 

@@ -7,6 +7,9 @@ tags:
   - next-generation-sequencing
 ---
 
+This post is part 5 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.
+
+## BLAST
 
 The full BLAST manual is avialable here: [https://www.ncbi.nlm.nih.gov/books/NBK279675/](https://www.ncbi.nlm.nih.gov/books/NBK279675/)
 

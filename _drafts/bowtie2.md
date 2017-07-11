@@ -1,4 +1,10 @@
+---
+layout: post
+title: Examining bowtie output
+date: 2017-7-21
+---
 
+Bowtie output
 
 [The Bowtie 2 manual is available here](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml).
 

@@ -142,7 +142,7 @@ _Full day workshops developed & implemented:_
 
 ### Pre-print
 
-Gladieux, P., **Condon, B. J.,** Ravel, S., Soanes, D., Nunes Maciel, J. L., Nhani, A., Jr., Terauchi, R., Lebrun, M.-H., Tharreau, D., Mitchell, T., Pedley, K. F., Valent, B., Talbot, N., Farman, M., and Fournier, E. 2017. Gene flow between divergent cereal- and grass-specific lineages of the rice blast fungus Magnaporthe oryzae. bioRxiv. :161513
+Gladieux, P., **Condon, B. J.,** Ravel, S., Soanes, D., Nunes Maciel, J. L., Nhani, A., Jr., Terauchi, R., Lebrun, M.-H., Tharreau, D., Mitchell, T., Pedley, K. F., Valent, B., Talbot, N., Farman, M., and Fournier, E. (2017). Gene flow between divergent cereal- and grass-specific lineages of the rice blast fungus _Magnaporthe oryzae_. bioRxiv. :161513
 
 ### Peer-reviewed
 

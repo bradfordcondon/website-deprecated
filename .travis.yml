@@ -1,9 +1,10 @@
 language: ruby
+cache: bundler
 rvm:
 - 2.3.3
 install:
 - bundle install
-script: bundle exec rake site:deploy --trace
+script:   bundle exec jekyll build 
 branches:
   only:
   - master

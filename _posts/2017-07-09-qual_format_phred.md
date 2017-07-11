@@ -2,8 +2,10 @@
 layout: post
 title: qual format
 date: 2017-07-09
+tags:
+  - bioinformatics
+  - next-generation-sequencing
 ---
-
 
 This post is part 7 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.
 

@@ -2,6 +2,3 @@
 set -e # halt script on error
 
 bundle exec jekyll build
-git add .
-git commit -m "building master"
-git push origin master

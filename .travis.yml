@@ -8,7 +8,7 @@ before_script:
 
 script:  
   - ./script/cibuild
-  -  bash ./deploy.sh
+  -  bash ./script/deploy.sh
 branches:
   only:
   - master

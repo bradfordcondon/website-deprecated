@@ -7,7 +7,6 @@ layout: page
 permalink: cv.html
 ---
 
-
 <p style="text-align: center;">
   Bradford Condon, PhD
 </p>
@@ -83,7 +82,7 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 
 ##### KBRIN Next Generation Sequencing and Data Analysis Workshop, *University of Kentucky* 2017
  
-Instructor and web developer.  Implemented and maintained the (Drupal-based workshop website)[https://ngs.csr.uky.edu/] and REDCap registration system.
+Instructor and web developer.  Implemented and maintained the (Drupal-based workshop website)[https://ngs.csr.uky.edu/] and REDCap registration/survey system.
 
 ##### UK-BLAST: *University of Kentucky* 2016
 

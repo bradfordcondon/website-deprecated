@@ -1,0 +1,27 @@
+Meeting with Jonathan
+
+
+### Summary
+
+CAI are higher than random for control genes.  This is good/as expected.
+
+CAI are no higher htan random for tox genes.  This is reasonable.
+
+CAI is higher when genes using Lingdomyces CUT to calculate CAI.  This is interesting and will be investigated.
+
+####  To do:
+
+* Summary table with calculated CAI for each gene, the SD, the threshold.   (99 %) ?
+	- automating this expecting we're goign to change the input and perhaps output.
+
+* Test all TOX and controls genes using native CUT AND using Ligndomyces CUT
+	- What about the threshhold from randomly generated CAI?	
+
+* Jon will ask Bradford for coding help! And working in the shared directory so he can help :D
+
+	
+* Examine individual effect of tox genes on the average tox CAI being higher using lingdo CUT vs native.
+
+* Generate CUTs using control AND tox genes for eall species.  And we're going to calculate pairwise distances.  
+
+

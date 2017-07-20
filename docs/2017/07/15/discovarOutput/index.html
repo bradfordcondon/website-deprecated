@@ -80,109 +80,60 @@
     <main>
           <div class="box">
 <article class="post">
-  <h1 class="post-title">ZFF annotations for SNAP</h1>
+  <h1 class="post-title">Understanding Discovar output</h1>
   <img src=>
-  <time datetime="2017-07-02T00:00:00-04:00" class="post-date">02 Jul 2017</time>
+  <time datetime="2017-07-15T00:00:00-04:00" class="post-date">15 Jul 2017</time>
   <div class="card-content">
-  <p>This post is part 6 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
+  <p>This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
+Generation Sequencing Workshop at the University of Kentucky.</p>
 
-<h3 id="snap-and-zff">SNAP and ZFF</h3>
+<h2 id="discovar">Discovar</h2>
 
-<p>SNAP stands <em>for Semi-HMM-based Nucleic Acid Parser</em>, it is a general purpose gene-finding utility.
-The ZFF file is generated with <code class="highlighter-rouge">maker2zff</code> and is fed into the <code class="highlighter-rouge">fathom</code> command</p>
+<p>DISCOVAR is a new genome assembler and variant caller developed by the broad institute. As of this writing,it takes as input Illumina reads of length 250 or longer produced on MiSeq or HiSeq 2500.  To learn more, read the entire DISCOVAR manual <a href="https://docs.google.com/document/d/1U_o-Z0dJ0QKiJn86AV2o_YHiFzUtW9c57eh3tYjkINc/edit">here</a>.</p>
 
-<p>To read more, read the <code class="highlighter-rouge">README</code> file distributed with SNAP.  Examples are taken from https://crc.ibest.uidaho.edu/help/Applications/SNAP.html.</p>
+<h3 id="the-assembly-output">The assembly output</h3>
 
-<h3 id="zff-format">ZFF format</h3>
+<p>The final output assembly will take the form of <code class="highlighter-rouge">OUT_HEAD.final.*</code>, where <code class="highlighter-rouge">OUT_HEAD</code> is set by the user.  Below let’s assume we’ve set <code class="highlighter-rouge">OUT_HEAD</code> to out.</p>
 
-<p>Gene structure files are in <code class="highlighter-rouge">ZFF</code>format.  Confusingly, this is the file with the <code class="highlighter-rouge">.ann</code> extension.  It is a non-standard file format that resembles both <code class="highlighter-rouge">FASTA</code> and <code class="highlighter-rouge">GFF</code>.  There is both a short and long format.</p>
+<!--more-->
 
-<p><em>Short format</em></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt;sequence-1
-Einit    201    325   Y73E7A.6
-Eterm   2175   2319   Y73E7A.6
-&gt;sequence-2
-Einit    201    462   Y73E7A.7
-Exon    1803   2031   Y73E7A.7
-Exon    2929   3031   Y73E7A.7
-Exon    3467   3624   Y73E7A.7
-Exon    4185   4406   Y73E7A.7
-Eterm   5103   5280   Y73E7A.7
+<h4 id="intermediate-assemblies">Intermediate assemblies</h4>
+
+<p>DISCOVAR also generates a number of intermediate assembly files, named <code class="highlighter-rouge">out.n.*</code>.</p>
+
+<p>The final assembly is a graph, the edges of which are contained in two fasta files: <code class="highlighter-rouge">out.final.fasta0</code> and <code class="highlighter-rouge">out.final.fasta</code>.  <code class="highlighter-rouge">fasta0</code> contains the non-overlapping edges, whereas <code class="highlighter-rouge">out.final.fasta</code> extends the edges to overlap by K-1 bases.</p>
+
+<p>Which you choose to use will depend on your specific needs.  In either case, the FASTA header generated takes the form of:</p>
+
+<blockquote>
+  <p>edge-name	start-node:end-node k-size	edge-size</p>
+</blockquote>
+
+<p>For example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;edge_10 1:100 K=80 bases=330
 </code></pre>
 </div>
 
-<p><em>Long format</em></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt;Y73E7A.6
-Einit    201    325   +    90   0   2   1   Y73E7A.6
-Eterm   2175   2319   +   295   1   0   2   Y73E7A.6
-&gt;Y73E7A.7
-Einit    201    462   +   263   0   1   1   Y73E7A.7
-Exon    1803   2031   +   379   2   2   0   Y73E7A.7
-Exon    2929   3031   +   236   1   0   0   Y73E7A.7
-Exon    3467   3624   +   152   0   2   0   Y73E7A.7
-Exon    4185   4406   +   225   1   2   2   Y73E7A.7
-Eterm   5103   5280   +    46   1   0   2   Y73E7A.7
+<p>Note that the <code class="highlighter-rouge">fasta0</code> file does not have a k parameter and is omitted.</p>
+
+<h3 id="visualizing-the-output-graph">Visualizing the output graph</h3>
+
+<p>The assembly graph can be visualized using GraphViz using the below commands:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dot -Tps -o assembly.final.ps assembly.final.dot
+gv assembly.final.ps
 </code></pre>
 </div>
 
-<p>The below table describes each column</p>
+<p>The resulting visualization will show each edge with its edgeID color coded by length.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Label</td>
-      <td>Short</td>
-      <td>See zoeFeature.h for a complete list of possible values</td>
-    </tr>
-    <tr>
-      <td>Begin</td>
-      <td>Short</td>
-      <td>Start location</td>
-    </tr>
-    <tr>
-      <td>End</td>
-      <td>Short</td>
-      <td>End location</td>
-    </tr>
-    <tr>
-      <td>Group</td>
-      <td>Short (optional)</td>
-      <td>All exons must share a group name</td>
-    </tr>
-    <tr>
-      <td>Strand</td>
-      <td>Long</td>
-      <td>Plus or minus strand</td>
-    </tr>
-    <tr>
-      <td>Score</td>
-      <td>Long</td>
-      <td>A float type integer for score.  This score depends on the method used to generate the file.</td>
-    </tr>
-    <tr>
-      <td>5’-overhang</td>
-      <td>Long</td>
-      <td>Number of bp of incomplete codon 5’</td>
-    </tr>
-    <tr>
-      <td>3’-overhang</td>
-      <td>Long</td>
-      <td>Number of bp of incomplete codon 3’</td>
-    </tr>
-    <tr>
-      <td>Frame</td>
-      <td>Long</td>
-      <td>Reading frame (0, 1, 2)</td>
-    </tr>
-  </tbody>
-</table>
+<blockquote>
+  <p><img src="/assets/img/discovar/discovar_graph.png" alt="Edge illustration" /></p>
+
+  <p>Example visualization of a DISCOVAR edge, <a href="https://docs.google.com/document/d/1U_o-Z0dJ0QKiJn86AV2o_YHiFzUtW9c57eh3tYjkINc/edit">from the DISCOVAR manual</a>.</p>
+</blockquote>
+
 
   </div>
   </div>
@@ -195,13 +146,6 @@ Eterm   5103   5280   +    46   1   0   2   Y73E7A.7
   <ul class="related-posts">
     
       <li>
-        <a href="/2017/07/15/discovarOutput/">
-          Understanding Discovar output
-          <small><time datetime="2017-07-15T00:00:00-04:00">15 Jul 2017</time></small>
-        </a>
-      </li>
-    
-      <li>
         <a href="/2017/07/13/bowtie2/">
           Examining bowtie output
           <small><time datetime="2017-07-13T00:00:00-04:00">13 Jul 2017</time></small>
@@ -212,6 +156,13 @@ Eterm   5103   5280   +    46   1   0   2   Y73E7A.7
         <a href="/2017/07/11/newblr/">
           Guide to newblr output
           <small><time datetime="2017-07-11T00:00:00-04:00">11 Jul 2017</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2017/07/09/qual_format_phred/">
+          qual format
+          <small><time datetime="2017-07-09T00:00:00-04:00">09 Jul 2017</time></small>
         </a>
       </li>
     

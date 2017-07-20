@@ -2,10 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Bradford Condon PhD</title>
+<<<<<<< HEAD
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
  <updated>2017-07-20T16:14:20-04:00</updated>
  <id>http://localhost:4000</id>
+=======
+ <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
+ <link href="http://bradfordcondon.com/"/>
+ <updated>2017-07-20T16:28:35-04:00</updated>
+ <id>http://bradfordcondon.com</id>
+>>>>>>> master
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
@@ -14,9 +21,15 @@
  
  <entry>
    <title>Understanding Discovar output</title>
+<<<<<<< HEAD
    <link href="http://localhost:4000/2017/07/15/discovarOutput/"/>
    <updated>2017-07-15T00:00:00-04:00</updated>
    <id>http://localhost:4000/2017/07/15/discovarOutput</id>
+=======
+   <link href="http://bradfordcondon.com/2017/07/15/discovarOutput/"/>
+   <updated>2017-07-15T00:00:00-04:00</updated>
+   <id>http://bradfordcondon.com/2017/07/15/discovarOutput</id>
+>>>>>>> master
    <content type="html">&lt;p&gt;This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
 Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
@@ -72,9 +85,15 @@ gv assembly.final.ps
  
  <entry>
    <title>Examining bowtie output</title>
+<<<<<<< HEAD
    <link href="http://localhost:4000/2017/07/13/bowtie2/"/>
    <updated>2017-07-13T00:00:00-04:00</updated>
    <id>http://localhost:4000/2017/07/13/bowtie2</id>
+=======
+   <link href="http://bradfordcondon.com/2017/07/13/bowtie2/"/>
+   <updated>2017-07-13T00:00:00-04:00</updated>
+   <id>http://bradfordcondon.com/2017/07/13/bowtie2</id>
+>>>>>>> master
    <content type="html">&lt;p&gt;This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
 &lt;h3 id=&quot;bowtie-output&quot;&gt;Bowtie output&lt;/h3&gt;

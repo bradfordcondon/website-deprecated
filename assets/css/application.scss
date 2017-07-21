@@ -1,7 +1,10 @@
 ---
 ---
+
 // Imports
-@import "variables";
+
+//@import "variables";
+
 
 // Bulma.io CSS Framework
 @import "bulma/utilities/_all";
@@ -14,10 +17,13 @@
 // Font-Awesome
 @import "font-awesome/font-awesome.scss";
 
+$is-primary : $blue;
+
 // Custom
 .nav-brand {
   font-weight: bold;
 }
+
 
 .post-card {
   .post-title {
@@ -26,4 +32,12 @@
   .post-categories {
     margin-bottom: 5px;
   }
+}
+
+.figure-small-on-xs {
+  max-width: 100%;
+ @include mobile() {
+   max-width: 250px;
+   margin: 0 auto;
+ }
 }

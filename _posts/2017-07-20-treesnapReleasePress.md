@@ -25,3 +25,4 @@ I'm grateful to Carol Spence for interviewing Dr. Ellen Crocker (the extension s
 The story has since appeared in:
 
 * [UKNOW](http://uknow.uky.edu/research/new-tree-app-builds-partnerships-between-citizens-and-scientists?utm_medium=social)July 20th 2017
+* [Eforester](https://www.eforester.org/Main/News/New_Tree_App_Builds_Partnerships_Between_Citizens_and_Scientists.aspx) July 22nd 2017

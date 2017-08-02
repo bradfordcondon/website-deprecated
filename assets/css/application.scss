@@ -7,6 +7,7 @@
 
 
 // Bulma.io CSS Framework
+@import "_variables";
 @import "bulma/utilities/_all";
 @import "bulma/base/_all";
 @import "bulma/elements/_all";
@@ -16,8 +17,6 @@
 
 // Font-Awesome
 @import "font-awesome/font-awesome.scss";
-
-$is-primary : $blue;
 
 // Custom
 

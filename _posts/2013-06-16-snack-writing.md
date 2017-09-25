@@ -5,13 +5,6 @@ date: 2013-06-16T14:19:55+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=99
-permalink: /?p=99
-publicize_reach:
-  - 'a:2:{s:7:"twitter";a:1:{i:3583188;i:39;}s:2:"wp";a:1:{i:0;i:6;}}'
-tagazine-media:
-  - 'a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:8:"37172565";s:7:"blog_id";s:8:"51189331";s:9:"mod_stamp";s:19:"2013-06-16 14:19:55";}'
-publicize_twitter_user:
-  - BradfordCondon
 categories:
   - Writing
 tags:

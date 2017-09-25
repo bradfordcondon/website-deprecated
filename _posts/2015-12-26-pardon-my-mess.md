@@ -5,7 +5,6 @@ date: 2015-12-26T17:05:24+00:00
 author: bradford.condon@gmail.com
 layout: post
 guid: http://www.bradfordcondon.com/?p=505
-permalink: /?p=505
 categories:
   - Uncategorized
 ---

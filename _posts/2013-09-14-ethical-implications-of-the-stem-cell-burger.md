@@ -5,11 +5,6 @@ date: 2013-09-14T09:00:47+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=197
-permalink: /?p=197
-draftfeedback_requests:
-  - 'a:1:{s:25:"ellen.v.crocker@gmail.com";a:3:{s:3:"key";s:13:"522657f373e42";s:4:"time";s:10:"1378244595";s:7:"user_id";s:8:"37172565";}}'
-draft_feedback:
-  - 'a:1:{s:25:"ellen.v.crocker@gmail.com";a:1:{i:0;a:2:{s:4:"time";s:10:"1378245722";s:7:"content";s:443:" Hehehe ok I see what you mean...  I like it, but it sounds like you want to show off science writing ability as well as creativity.  Maybe if you have a couple paragraphs on the science behind it before getting silly with possible scenarios?  Like a little about the technology involved and then summarize the potential benefits/ unknown-side effects that other people have proposed?  (The video is great, just a quick summary in your words?)";}}}'
 tagazine-media:
   - 'a:7:{s:7:"primary";s:69:"http://bradfordcondon.files.wordpress.com/2013/09/flintstonesribs.jpg";s:6:"images";a:2:{s:61:"http://bradfordcondon.files.wordpress.com/2013/09/300x300.jpg";a:6:{s:8:"file_url";s:61:"http://bradfordcondon.files.wordpress.com/2013/09/300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:4:"type";s:5:"image";s:4:"area";i:90000;s:9:"file_path";b:0;}s:69:"http://bradfordcondon.files.wordpress.com/2013/09/flintstonesribs.jpg";a:6:{s:8:"file_url";s:69:"http://bradfordcondon.files.wordpress.com/2013/09/flintstonesribs.jpg";s:5:"width";i:453;s:6:"height";i:306;s:4:"type";s:5:"image";s:4:"area";i:138618;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:3;s:6:"author";s:8:"37172565";s:7:"blog_id";s:8:"51189331";s:9:"mod_stamp";s:19:"2013-09-04 15:23:53";}'
 publicize_twitter_user:

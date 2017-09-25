@@ -4,10 +4,6 @@ title: A digital notebook
 date: 2013-07-18T22:13:37+00:00
 author: BradfordCondon
 layout: post
-geo_public:
-  - "0"
-tagazine-media:
-  - 'a:7:{s:7:"primary";s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-18-at-6-05-46-pm.png";s:6:"images";a:1:{s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-18-at-6-05-46-pm.png";a:6:{s:8:"file_url";s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-18-at-6-05-46-pm.png";s:5:"width";i:1424;s:6:"height";i:1698;s:4:"type";s:5:"image";s:4:"area";i:2417952;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:2;s:6:"author";s:8:"37172565";s:7:"blog_id";s:8:"51189331";s:9:"mod_stamp";s:19:"2013-07-18 22:13:37";}'
 categories:
   - Tools
 tags:

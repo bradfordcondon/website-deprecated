@@ -5,11 +5,6 @@ date: 2013-07-07T18:15:04+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=140
-permalink: /?p=140
-tagazine-media:
-  - 'a:7:{s:7:"primary";s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-07-at-1-37-21-pm.png";s:6:"images";a:3:{s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-07-at-1-24-37-pm.png";a:6:{s:8:"file_url";s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-07-at-1-24-37-pm.png";s:5:"width";i:172;s:6:"height";i:136;s:4:"type";s:5:"image";s:4:"area";i:23392;s:9:"file_path";b:0;}s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-07-at-1-37-21-pm.png";a:6:{s:8:"file_url";s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-07-at-1-37-21-pm.png";s:5:"width";i:1113;s:6:"height";i:266;s:4:"type";s:5:"image";s:4:"area";i:296058;s:9:"file_path";b:0;}s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-07-at-1-28-50-pm.png";a:6:{s:8:"file_url";s:90:"http://bradfordcondon.files.wordpress.com/2013/07/screen-shot-2013-07-07-at-1-28-50-pm.png";s:5:"width";i:276;s:6:"height";i:178;s:4:"type";s:5:"image";s:4:"area";i:49128;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:3;s:6:"author";s:8:"37172565";s:7:"blog_id";s:8:"51189331";s:9:"mod_stamp";s:19:"2013-07-07 18:15:04";}'
-publicize_twitter_user:
-  - BradfordCondon
 categories:
   - Uncategorized
 tags:

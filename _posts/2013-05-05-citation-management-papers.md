@@ -4,10 +4,6 @@ title: 'Citation management: Papers'
 date: 2013-05-05T20:55:41+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=3
-permalink: /?p=6
-tagazine-media:
-  - 'a:7:{s:7:"primary";s:90:"http://bradfordcondon.files.wordpress.com/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png";s:6:"images";a:1:{s:90:"http://bradfordcondon.files.wordpress.com/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png";a:6:{s:8:"file_url";s:90:"http://bradfordcondon.files.wordpress.com/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png";s:5:"width";i:2560;s:6:"height";i:1390;s:4:"type";s:5:"image";s:4:"area";i:3558400;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:1;s:6:"author";s:8:"37172565";s:7:"blog_id";s:8:"51189331";s:9:"mod_stamp";s:19:"2013-05-05 20:55:41";}'
 categories:
   - Tools
 tags:

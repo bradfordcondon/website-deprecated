@@ -4,14 +4,7 @@ title: 'Get your work on the cloud: Dropbox'
 date: 2013-05-18T21:04:28+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=51
-permalink: /?p=51
-publicize_reach:
-  - 'a:2:{s:7:"twitter";a:1:{i:3583188;i:34;}s:2:"wp";a:1:{i:0;i:3;}}'
-publicize_twitter_user:
-  - BradfordCondon
-tagazine-media:
-  - 'a:7:{s:7:"primary";s:0:"";s:6:"images";a:1:{s:90:"http://bradfordcondon.files.wordpress.com/2013/05/screen-shot-2013-05-18-at-5-04-58-pm.png";a:6:{s:8:"file_url";s:90:"http://bradfordcondon.files.wordpress.com/2013/05/screen-shot-2013-05-18-at-5-04-58-pm.png";s:5:"width";i:534;s:6:"height";i:151;s:4:"type";s:5:"image";s:4:"area";i:80634;s:9:"file_path";b:0;}}s:6:"videos";a:0:{}s:11:"image_count";i:1;s:6:"author";s:8:"37172565";s:7:"blog_id";s:8:"51189331";s:9:"mod_stamp";s:19:"2013-05-18 21:05:28";}'
+
 categories:
   - Tools
 tags:

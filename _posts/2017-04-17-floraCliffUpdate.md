@@ -3,6 +3,8 @@ layout: post
 title: Floracliff mushroom workshop
 date: 2017-04-17
 excerpt_separator: <!--more-->
+tags: 
+ - mycology
 
 ---
 

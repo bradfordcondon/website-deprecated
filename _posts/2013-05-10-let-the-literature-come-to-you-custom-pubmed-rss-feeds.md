@@ -4,12 +4,6 @@ title: 'Let the literature come to you: custom pubmed RSS feeds'
 date: 2013-05-10T20:23:45+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=42
-permalink: /?p=42
-tagazine-media:
-  - 'a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:8:"37172565";s:7:"blog_id";s:8:"51189331";s:9:"mod_stamp";s:19:"2013-05-10 20:26:29";}'
-publicize_twitter_user:
-  - BradfordCondon
 categories:
   - Tools
 tags:

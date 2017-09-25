@@ -5,7 +5,6 @@ date: 2015-12-26T17:36:19+00:00
 author: bradford.condon@gmail.com
 layout: post
 guid: http://www.bradfordcondon.com/?p=501
-permalink: /?p=501
 image: /wp-content/uploads/2015/12/vignette_nmds.png
 categories:
   - Science

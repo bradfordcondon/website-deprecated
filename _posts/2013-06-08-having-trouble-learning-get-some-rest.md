@@ -4,8 +4,6 @@ title: 'Having trouble learning?  Get some rest'
 date: 2013-06-08T18:33:11+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=104
-permalink: /?p=104
 publicize_reach:
   - 'a:2:{s:7:"twitter";a:1:{i:3583188;i:38;}s:2:"wp";a:1:{i:0;i:6;}}'
 publicize_twitter_user:

@@ -5,7 +5,6 @@ date: 2013-06-22T20:33:43+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=134
-permalink: /?p=134
 publicize_twitter_user:
   - BradfordCondon
 categories:

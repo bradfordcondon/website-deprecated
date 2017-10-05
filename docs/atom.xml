@@ -4,13 +4,89 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2017-09-25T09:59:37-04:00</updated>
+ <updated>2017-10-05T11:34:01-04:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Software Carpentry TakeAways</title>
+   <link href="http://bradfordcondon.com/2017/10/05/carpentry_lessons/"/>
+   <updated>2017-10-05T00:00:00-04:00</updated>
+   <id>http://bradfordcondon.com/2017/10/05/carpentry_lessons</id>
+   <content type="html">&lt;p&gt;In a &lt;a href=&quot;/2017/09/25/Software_Data_Carpentry/&quot;&gt;previous blog post&lt;/a&gt;, I announced my excitement for becoming a certified Software and Data Carpentry instructor.  As I complete my checkout process, I also wanted to recap the most important points from the training.&lt;/p&gt;
+
+&lt;p&gt;Looking forward to teaching my first workshop in the next few months!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/d_carp.png&quot; alt=&quot;Data Carpentry&quot; /&gt; &lt;img src=&quot;/assets/img/carpentry/s_carp.png&quot; alt=&quot;Software Carpentry&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;teaching-techniques&quot;&gt;Teaching Techniques&lt;/h1&gt;
+
+&lt;p&gt;The current goal in higher education is to create an &lt;a href=&quot;https://teachingcommons.stanford.edu/resources/learning-resources/promoting-active-learning&quot;&gt;active learning environment&lt;/a&gt; in the classroom.  This is not new, and in fact I spent 2 years working with the &lt;a href=&quot;https://www.cte.cornell.edu/&quot;&gt;Cornell Center for Teaching Excellence&lt;/a&gt; designing workshops using this philosophy.  Often, higher education utilizes passive learning environments.  The professor is the expert, and they lecture for 50 minutes alongside powerpoint slides.  This format is easy to teach, it matches the traditional academic presentation style, and its fairly easy to prepare because the instructor focuses on the question: &lt;strong&gt;“What material should I cover?”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;learning-objectives&quot;&gt;Learning Objectives&lt;/h2&gt;
+&lt;p&gt;A wonderful outcome of active learning is that the instructor is encourage to instead ask &lt;strong&gt;“What should the outcome of this lesson be?”&lt;/strong&gt;  These outcomes are called &lt;a href=&quot;https://www.cmu.edu/teaching/designteach/design/learningobjectives.html&quot;&gt;learning objectives&lt;/a&gt;, and without them, you are teaching just to cover material.  Learning Objectives describe what your students will be able to &lt;strong&gt;do&lt;/strong&gt; after finishing the lesson.  Learning objectives can be foundational (recite this fact, describe this model) or higher order (choose and apply the correct model to solve a real world problem).&lt;/p&gt;
+
+&lt;p&gt;It should be no surprise that Software and Data Carpentry workshops clearly state their learning objectives at the start of each lesson: communicating these to your students is very helpful!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-human-brain&quot;&gt;The Human Brain&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/ca/Memory_module_DDRAM_20-03-2006.jpg&quot; alt=&quot;RAM&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The human brain has limited space for short term memory, not unlike Random Access Memory (RAM) in a computer.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Software and Data Carpentry subscribes to a model of working memory with limited cognitive load.  Your working memory is fast and effective, but small.  To test the limits of your working memory, you can take &lt;a href=&quot;https://cat.xula.edu/thinker/memory/working/serial&quot;&gt;this test&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Most people can remember 5-7 things in the above exercise, give or take.  Keep in mind that for true novices, every piece of a single concept will constitute one “thing”!  Picking one higher order learning objective per lesson, and including the foundational skills required to achieve it, will almost always meet, or exceed, this limit.&lt;/p&gt;
+
+&lt;h2 id=&quot;evaluations&quot;&gt;Evaluations&lt;/h2&gt;
+&lt;p&gt;When we think of school, we think tests.  Tests are a great form of evaluation, but they should just be the tip of the iceberg.  Sprinkling a lesson with evaluations has many benefits, such as :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gives students a chance to “handle” the content, improving retention&lt;/li&gt;
+  &lt;li&gt;Corrects student misconceptions&lt;/li&gt;
+  &lt;li&gt;Tests for gaps in lesson plan&lt;/li&gt;
+  &lt;li&gt;Slows down instruction, giving students time to process and &lt;strong&gt;retain&lt;/strong&gt; information.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;activities&quot;&gt;Activities&lt;/h2&gt;
+
+&lt;p&gt;Prudent use of in-class activities will allow you to &lt;em&gt;evaluate your students’ learning&lt;/em&gt; while also &lt;em&gt;working to overcome the limits of short term memory&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some great&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Show of Hands&lt;/li&gt;
+  &lt;li&gt;Multiple Choice&lt;/li&gt;
+  &lt;li&gt;Short answer reflection&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.readingrockets.org/strategies/think-pair-share&quot;&gt;Think-Pair-Share&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;technology&quot;&gt;Technology&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://etherpad.org/img/screenshot.png&quot; alt=&quot;etherpad&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;etherpad is an excellent group notepad.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The most interesting portion of this training for me was the use of technology.  Active learning is so difficult in an on-line session: how do you stop for evaluations or encourage students to interact?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The video conference software Zoom allowed &lt;strong&gt;breakout rooms&lt;/strong&gt; where we were paired off in small groups to discuss questions and present it back to the group.&lt;/li&gt;
+  &lt;li&gt;The collaborative note program &lt;strong&gt;Ether Pad&lt;/strong&gt; served as the roadmap for the lesson.  The software has a chatbox, and colored text for tracking who writes what.  The frequent activities had us type our responses into Ether Pad where we could comment on one another’s answers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I was also delighted that Workshops use a Jekyll template and github hosting for the website.  This site is powered by the same tools!&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h1&gt;
+
+&lt;p&gt;There were many other topics covered in the workshop, but these were my favorite.  If you are interested in learning more, please visit the &lt;a href=&quot;https://software-carpentry.org/&quot;&gt;Software Carpentry&lt;/a&gt; and &lt;a href=&quot;http://www.datacarpentry.org/&quot;&gt;Data Carpentry&lt;/a&gt; websites.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Software and Data Carpentry</title>

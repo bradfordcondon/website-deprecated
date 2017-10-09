@@ -28,3 +28,7 @@ The story has since appeared in:
 * [Eforester](https://www.eforester.org/Main/News/New_Tree_App_Builds_Partnerships_Between_Citizens_and_Scientists.aspx) July 22nd 2017
 * [UGA extension](http://blog.extension.uga.edu/climate/2017/07/new-tree-app-builds-partnerships-between-citizens-and-scientists/) July 22 2017
 * [protect TN forests](http://protecttnforests.org/)
+
+# Blog posts mentioning TreeSnap
+
+* [Techwell, Pamela Rentz](https://www.techwell.com/techwell-insights/2017/08/citizen-scientist-project-saving-trees-apps)

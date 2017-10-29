@@ -1,9 +1,20 @@
+---
+layout: post
+title: "Dockerizing your environment"
+excerpt_separator: <!--more-->
+---
+
 
 For a long time, I've been using Homestead to set up my web developer environment.  It's easy to set up, and most importantly, I could understand where my files were.
 
 The problem is that as a novice developer, I make mistakes, a lot.  I insert all sorts of junk into my database writing new code, and after a few months, I need to destroy my machine and start over.  To recreate a Tripal site, I need to reinstall Drupal, Tripal, all of my modules, and then re-load data.  After the second time I knew I had to implement a different solution.  I had to figure out this Docker thing.
 
-You can find the final, pre-loaded develoepr image [here](https://hub.docker.com/r/bcondon/docker_tripal3/).
+![Docker logo](https://www.docker.com/sites/default/files/vertical_large.png)
+
+
+You can find the final, pre-loaded developer image [here](https://hub.docker.com/r/bcondon/docker_tripal3/).
+
+<!--more-->
 
 
 # Dockerizing as simple as possible.

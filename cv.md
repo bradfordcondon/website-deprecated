@@ -23,31 +23,26 @@ May 2007, BA in Biology and Religion, Oberlin College, Oberlin, OH
 
 February 2017 to present: Postdoctoral associate, Department of Entomology and Plant Pathology, University of Tennessee, Knoxville.
 
-January 2016 to present: Postdoctoral associate, Department of Plant Pathology, University of Kentucky.
+January 2016 to January 2017: Postdoctoral associate, Department of Plant Pathology, University of Kentucky.
 
 June 2014 to December 2015: Postdoctoral associate, Department of Ecology, Evolution, and Behavior, University of Minnesota.
 
 August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department of Plant Pathology & Plant-Microbe Interactions, Cornell University, advised by Dr. [B Gillian Turgeon](http://www.plantpath.cornell.edu/labs/turgeon/index.html)
-
-<p style="text-align: center;">
-  <a href="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/TurgeonLab_4_10.jpg"><img class="alignnone size-medium wp-image-485" src="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/TurgeonLab_4_10-300x166.jpg?fit=300%2C166" alt="TurgeonLab_4_10" srcset="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/TurgeonLab_4_10.jpg?resize=300%2C166 300w, https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/12/TurgeonLab_4_10.jpg?w=510 510w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /></a>
-</p>
-
 
 ## Skills
 
 #### Bioinformatics and programming
 
   * Proficient with UNIX/LINUX systems, command-line programming, querying and managing big data/databases (SQL, JSON)
-  * Developer for cross-platform apps in React-Native, and genomics websites using Tripal and Drupal.
+  * Developer for cross-platform (iOS and Android) apps in React-Native, and genomics websites using Tripal and Drupal.
   * Experience designing experiments and analyzing data for a wide variety of bioinformatic projects, including 
       * Metagenomics
       * RNA-seq and transcriptomics
       * Genome assembly and annotation
       * Phylogenetics
 
-  * Programming languages: **R, Perl, swift, javascript, PHP, CSS, Ruby**
-  * Frameworks: **Laravel, Drupal, Wordpress, React Native**
+  * Programming languages: **R, Perl, javascript, PHP, CSS, Ruby**
+  * Frameworks: **Laravel, Drupal, Wordpress, React, React Native**
 
 #### Molecular biology
 
@@ -79,6 +74,11 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 * 2017 [UKY SOPS](http://sops.as.uky.edu/?q=content/symposia) research symposium postdoc poster award (second place)
 
 #### Teaching and leadership
+
+##### Data and Software Carpentry Certified Instructor 2017
+Trained and certified as a [Data Carpentry](http://www.datacarpentry.org/) and [Software Carpentry](https://software-carpentry.org/) Instructor. 
+**Hosted Workshops**
+* December 2017 (Content TBA)
 
 ##### KBRIN Next Generation Sequencing and Data Analysis Workshop, *University of Kentucky* 2017
  

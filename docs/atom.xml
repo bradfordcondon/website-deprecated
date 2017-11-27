@@ -4,13 +4,33 @@
  <title>Bradford Condon PhD</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-10-29T15:35:28-04:00</updated>
+ <updated>2017-11-27T16:07:52-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Upcoming Software Carpentry Workshop: December 18th &amp; 19th</title>
+   <link href="http://localhost:4000/2017/11/27/swc_workshop_announce_december_2017/"/>
+   <updated>2017-11-27T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/11/27/swc_workshop_announce_december_2017</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/s_carp.png&quot; alt=&quot;Software Carpentry&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I am happy to announce I will be instructing a Software Carpentry Workshop at the University of Tennessee Knoxville.  The workshop will be taught by myself, Meg Staton, and Drew Steen on December 18th and 19th, 2017 in 702 Strong Hall.&lt;/p&gt;
+
+&lt;p&gt;This workshop will cover the basics of:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Unix Shell&lt;/li&gt;
+  &lt;li&gt;Git&lt;/li&gt;
+  &lt;li&gt;R&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please visit the &lt;a href=&quot;https://statonlab.github.io/2017-12-18-carpentry-workshop/&quot;&gt;workshop website for more information and registration links&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Software Carpentry TakeAways</title>

@@ -13,6 +13,8 @@ I tried to follow the general recommendations and most things worked out great. 
 
 ![The Software Carpentry logo](/assets/img/carpentry/s_carp.png)
 
+
+
 <!--more-->
 
 ## Preparation

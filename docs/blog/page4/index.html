@@ -6,6 +6,12 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <!-- Enable responsiveness on mobile devices-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head>
+  <title>Bradford Condon, Developer and Bioinformaticist</title>
+<meta charset="utf-8">
+<meta name="author" content="Bradford Condon">
+<meta name="description" content="Website, CV, and Blog of Bradford Condon.  Bradford is a web and mobile developer.  Bradford also holds a PhD in plant pathology and is an expert in genomics, bioinformatics.">
+</head>
 <section class="hero is-primary is-bold">
     <div class="hero-body">
         <div class="container">
@@ -71,7 +77,6 @@
       href="/public/apple-touch-icon-precomposed.png">
 <link rel="shortcut icon" href="/public/favicon.ico">
 <link rel="alternate" type="application/atom+xml" title="Bradford Condon PhD" href="/atom.xml">
-</head>
 
 <br/>
 <body>
@@ -82,49 +87,52 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/science/2015/05/28/an-unfortunate-sweet-tooth-for-sensationalism/">
-                            An unfortunate sweet tooth for sensationalism
+                        <a href="/2017/05/14/fastq_format_explained/">
+                            FASTQ format explained
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2015-05-28T17:10:09-04:00" class="post-date is-small">
-   28 May 2015</time>
+   <time datetime="2017-05-14T00:00:00-04:00" class="post-date is-small">
+   14 May 2017</time>
    </span>
                     
-                    <a href="/tag/news/">
+                    <a href="/tag/bioinformatics/">
         <span class="tag is-primary">
-              news
+              bioinformatics
         </span>
                     </a>
                     
-                    <a href="/tag/peer-review/">
+                    <a href="/tag/next-generation-sequencing/">
         <span class="tag is-primary">
-              peer-review
-        </span>
-                    </a>
-                    
-                    <a href="/tag/science/">
-        <span class="tag is-primary">
-              science
-        </span>
-                    </a>
-                    
-                    <a href="/tag/writing/">
-        <span class="tag is-primary">
-              writing
+              next-generation-sequencing
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    When I taught a science for non-science majors at Cornell University, my favorite lecture was on science in the popular media.  My learning objective was straight forward: I wanted students to pick up a newspaper, flip to the science section, and detect bullshit.
+                    <p>This post is part 2 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted <a href="http://www.endophyte.uky.edu/ngs/">here</a>.</p>
 
-This is such an important life skill because at this point in time, blogs, newspapers, and magazines print unscientific bullshit.  They do it because it sells.  I have never seen an article so neatly package all of the problems that lead to this state of affairs than John Bohannon's recent "Chocolate Diet" charade.
+<p>#FastQ sequence format</p>
 
-                    <a href="/science/2015/05/28/an-unfortunate-sweet-tooth-for-sensationalism/">
+<p>FASTQ was originally developed by the Wellcome Trust Sanger Institute to bind together FASTA sequences with their respective quality data.  It is now the standard for high-throughput sequencing output.</p>
+
+<h2 id="the-format">The format</h2>
+
+<p>FASTQ is a four-line per sequence format.  If it looks like the raw sequence of your read takes up more than four lines, you probably have word-wrapping enabled.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@SEQ_ID
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF&gt;&gt;&gt;&gt;&gt;&gt;CCCCCCC65
+
+</code></pre>
+</div>
+
+
+                    <a href="/2017/05/14/fastq_format_explained/">
                         Read the full post...
                     </a>
                 </div>
@@ -134,44 +142,40 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/fun/tools/2015/01/30/gamification-in-science/">
-                            Gamification for positive habits
+                        <a href="/2017/05/03/remoteBlast/">
+                            Introduction to BLAST
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2015-01-29T20:30:27-05:00" class="post-date is-small">
-   29 Jan 2015</time>
+   <time datetime="2017-05-03T00:00:00-04:00" class="post-date is-small">
+   03 May 2017</time>
    </span>
                     
-                    <a href="/tag/fun/">
+                    <a href="/tag/bioinformatics/">
         <span class="tag is-primary">
-              fun
+              bioinformatics
         </span>
                     </a>
                     
-                    <a href="/tag/gamification/">
+                    <a href="/tag/ukblast/">
         <span class="tag is-primary">
-              gamification
-        </span>
-                    </a>
-                    
-                    <a href="/tag/habits/">
-        <span class="tag is-primary">
-              habits
+              ukblast
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p style="text-align: left;">
-  For as long as I can remember, I&#8217;ve enjoyed video games.  If there&#8217;s leveling up, character optimization, or strategic battles to be had, I&#8217;m in.  At my worst, I can burn an entire Sunday; I&#8217;ll admit that I&#8217;ve banned myself from playing <a href="http://blog.dota2.com/">DOTA2</a> after one too many late nights.
-</p>
+                    <h4 id="uk-blast-workshop-2016">UK-BLAST workshop 2016</h4>
+
+<p>This tutorial was developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.</p>
+
+<p>UK-BLAST is a bioinformatics working group for undergraduate researchers.  In small labs, students often tackle the bioinformatician role in with little to no technical guidance.  The group may not have anyone with a computer science background, or the task may be beyond the skills of current personnel.  In these cases, a working group headed by a technical mentor (myself) allows students to bypass some of the pitfalls and headaches associated with learning computer science all alone.</p>
 
 
-                    <a href="/fun/tools/2015/01/30/gamification-in-science/">
+                    <a href="/2017/05/03/remoteBlast/">
                         Read the full post...
                     </a>
                 </div>
@@ -181,42 +185,40 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/tools/2014/10/29/lab-notebook-software/">
-                            Lab notebook software
+                        <a href="/2017/04/23/exploringPATH/">
+                            PATH, a guide to finding one's way
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2014-10-29T13:56:51-04:00" class="post-date is-small">
-   29 Oct 2014</time>
+   <time datetime="2017-04-23T00:00:00-04:00" class="post-date is-small">
+   23 Apr 2017</time>
    </span>
                     
-                    <a href="/tag/lab notebook/">
+                    <a href="/tag/bioinformatics/">
         <span class="tag is-primary">
-              lab notebook
+              bioinformatics
         </span>
                     </a>
                     
-                    <a href="/tag/science/">
+                    <a href="/tag/ukblast/">
         <span class="tag is-primary">
-              science
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software/">
-        <span class="tag is-primary">
-              software
+              ukblast
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>Last year, I wrote about <a href="http://bradfordcondon.wordpress.com/2013/07/18/a-digital-notebook/" title="A digital notebook">using Evernote as my digital lab notebook.</a>  With the release of <a href="http://findingsapp.com/">Findings, a new digital notebook software</a> from the people who created my <a href="http://bradfordcondon.wordpress.com/2013/07/07/papers-as-a-reference-manager/" title="Papers as a reference manager">favorite reference management software Papers</a>, I thought I would reflect on my digital notebook needs.</p>
+                    <h4 id="uk-blast-workshop-2016">UK-BLAST workshop 2016</h4>
+
+<p>These exercises were developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.</p>
+
+<p>UK-BLAST is a bioinformatics working group for undergraduate researchers.  In small labs, students often tackle the bioinformatician role in with little to no technical guidance.  The group may not have anyone with a computer science background, or the task may be beyond the skills of current personnel.  In these cases, a working group headed by a technical mentor (myself) allows students to bypass some of the pitfalls and headaches associated with learning computer science all alone.</p>
 
 
-                    <a href="/tools/2014/10/29/lab-notebook-software/">
+                    <a href="/2017/04/23/exploringPATH/">
                         Read the full post...
                     </a>
                 </div>
@@ -226,42 +228,23 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/fun/2014/08/06/who-are-cybervor/">
-                            Who are CyberVor?
+                        <a href="/2017/04/20/learningProtege/">
+                            Learningprotege
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2014-08-06T17:22:27-04:00" class="post-date is-small">
-   06 Aug 2014</time>
+   <time datetime="2017-04-20T17:25:03-04:00" class="post-date is-small">
+   20 Apr 2017</time>
    </span>
-                    
-                    <a href="/tag/CyberVor/">
-        <span class="tag is-primary">
-              CyberVor
-        </span>
-                    </a>
-                    
-                    <a href="/tag/news/">
-        <span class="tag is-primary">
-              news
-        </span>
-                    </a>
-                    
-                    <a href="/tag/security/">
-        <span class="tag is-primary">
-              security
-        </span>
-                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>Well, the <a href="http://www.bbc.com/news/technology-28654613">BBC</a> and The <a href="http://www.nytimes.com/2014/08/06/technology/russian-gang-said-to-amass-more-than-a-billion-stolen-internet-credentials.html?hp&amp;action=click&amp;pgtype=Homepage&amp;version=LedeSum&amp;module=first-column-region&amp;region=top-news&amp;WT.nav=top-news&amp;_r=0">New York Times</a> have both published pieces on the Russian hackers “CyberVor”.  The claim is that  1.2 billion user names and passwords from some 420,000 websites have been hacked.  The sites/users affected, nature of the vulnerability, and severity of the threat have not been disclosed.</p>
+                    
 
-
-                    <a href="/fun/2014/08/06/who-are-cybervor/">
+                    <a href="/2017/04/20/learningProtege/">
                         Read the full post...
                     </a>
                 </div>
@@ -271,42 +254,42 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/uncategorized/2014/07/04/moocs-and-me/">
-                            MOOCs and me
+                        <a href="/2017/04/19/fixHeaderTabs/">
+                            fixing tabs
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2014-07-04T15:52:41-04:00" class="post-date is-small">
-   04 Jul 2014</time>
+   <time datetime="2017-04-19T00:00:00-04:00" class="post-date is-small">
+   19 Apr 2017</time>
    </span>
                     
-                    <a href="/tag/education/">
+                    <a href="/tag/jekyll/">
         <span class="tag is-primary">
-              education
+              jekyll
         </span>
                     </a>
                     
-                    <a href="/tag/MOOCs/">
+                    <a href="/tag/web-dev/">
         <span class="tag is-primary">
-              MOOCs
-        </span>
-                    </a>
-                    
-                    <a href="/tag/teaching/">
-        <span class="tag is-primary">
-              teaching
+              web-dev
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>MOOCs (Massive Open Online Courses)  are an interesting development in higher education.  At their most impressive, they are a way for brilliant educators to reach thousands of students at a time, all across the world.  MOOCs have the potential to remove educational barriers like learning disabilities, economic constraints, geographic realities, or busy life schedules.  My alma mater, Cornell, <a href="http://www.news.cornell.edu/stories/2013/10/cornell-s-first-four-moocs-launch-next-semester">launched their first wave of MOOCs last semester.</a>  Cornell prides itself on catering to “any person, any study” and its not hard to see how MOOCs can drive this mission forward.</p>
+                    <p>As you can see below, the navigation tabs I’m using at the top of my page didn’t properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.</p>
+
+<blockquote>
+  <p><img src="/assets/img/tabsFix2017/tabIssue.png" alt="tabs not working!" /></p>
+</blockquote>
+
+<p>So how do we fix it?</p>
 
 
-                    <a href="/uncategorized/2014/07/04/moocs-and-me/">
+                    <a href="/2017/04/19/fixHeaderTabs/">
                         Read the full post...
                     </a>
                 </div>
@@ -316,48 +299,30 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/fun/2014/04/28/scientific-writing-is-dry-but-thats-ok/">
-                            Scientific writing is dry (but that&#8217;s OK)
+                        <a href="/2017/04/17/floraCliffUpdate/">
+                            Floracliff mushroom workshop
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2014-04-28T11:55:59-04:00" class="post-date is-small">
-   28 Apr 2014</time>
+   <time datetime="2017-04-17T00:00:00-04:00" class="post-date is-small">
+   17 Apr 2017</time>
    </span>
                     
-                    <a href="/tag/biology/">
+                    <a href="/tag/mycology/">
         <span class="tag is-primary">
-              biology
-        </span>
-                    </a>
-                    
-                    <a href="/tag/fungi/">
-        <span class="tag is-primary">
-              fungi
-        </span>
-                    </a>
-                    
-                    <a href="/tag/science/">
-        <span class="tag is-primary">
-              science
-        </span>
-                    </a>
-                    
-                    <a href="/tag/writing/">
-        <span class="tag is-primary">
-              writing
+              mycology
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>This morning I was delighted to come across the <a href="http://www.imafungus.org/">IMA Fungus journal</a>.  Put out by the International Mycological Association , the journal title (which primarily publishes species announcements and descriptions) playfully introduces each organism with a friendly “Hello, I’m a fungus!”  The truth is, scientific literature is seldom so fun and informal.</p>
+                    <p><a href="http://www.bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/">I previously announced a Workshop we hosted at Floracliff on mushroom identification In October 2016</a>.  It’s been a while but I wanted to share a little bit about the experience and post materials.</p>
 
 
-                    <a href="/fun/2014/04/28/scientific-writing-is-dry-but-thats-ok/">
+                    <a href="/2017/04/17/floraCliffUpdate/">
                         Read the full post...
                     </a>
                 </div>
@@ -367,48 +332,36 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/fun/2014/03/17/how-many-copies-of-my-thesisdissertation-should-i-order/">
-                            How many copies of my thesis/dissertation should I order?
+                        <a href="/2017/04/11/testKnitr/">
+                            Knitting to Jekyll
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2014-03-16T23:23:00-04:00" class="post-date is-small">
-   16 Mar 2014</time>
+   <time datetime="2017-04-11T00:00:00-04:00" class="post-date is-small">
+   11 Apr 2017</time>
    </span>
-                    
-                    <a href="/tag/dissertation/">
-        <span class="tag is-primary">
-              dissertation
-        </span>
-                    </a>
-                    
-                    <a href="/tag/grad school/">
-        <span class="tag is-primary">
-              grad school
-        </span>
-                    </a>
-                    
-                    <a href="/tag/thesis/">
-        <span class="tag is-primary">
-              thesis
-        </span>
-                    </a>
-                    
-                    <a href="/tag/writing/">
-        <span class="tag is-primary">
-              writing
-        </span>
-                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p><em> </em></p>
+                    <h2 id="knitting-r-markdown-to-jekyll">Knitting R Markdown to Jekyll</h2>
+
+<p>This is a test of the Knittr package and Jekyll.</p>
+
+<p>It looks like the original package for using knitr with Jekyll <a href="https://github.com/yihui/knitr-jekyll">here</a> has fallen out of favor for Hugo, a GO-based static web-site generator.  Pretty cool, but let’s see how easy it is to knit into Jekyll without using any packages.</p>
+
+<h2 id="load-in-some-libraries-and-data">Load in some libraries and data</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>require(ggplot2)
+require(knitr)
+attach(mtcars)
+</code></pre>
+</div>
 
 
-                    <a href="/fun/2014/03/17/how-many-copies-of-my-thesisdissertation-should-i-order/">
+                    <a href="/2017/04/11/testKnitr/">
                         Read the full post...
                     </a>
                 </div>
@@ -418,42 +371,38 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/fun/2014/02/28/celebrity-burgers-a-reality/">
-                            Celebrity burgers a reality
+                        <a href="/2017/04/09/introToJekyll/">
+                            Moving to Jekyll
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2014-02-28T12:53:03-05:00" class="post-date is-small">
-   28 Feb 2014</time>
+   <time datetime="2017-04-09T00:00:00-04:00" class="post-date is-small">
+   09 Apr 2017</time>
    </span>
-                    
-                    <a href="/tag/biology/">
-        <span class="tag is-primary">
-              biology
-        </span>
-                    </a>
-                    
-                    <a href="/tag/science/">
-        <span class="tag is-primary">
-              science
-        </span>
-                    </a>
-                    
-                    <a href="/tag/stem-cell burgers/">
-        <span class="tag is-primary">
-              stem-cell burgers
-        </span>
-                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>Back in September last year, <a href="http://bradfordcondon.wordpress.com/2013/09/14/ethical-implications-of-the-stem-cell-burger/">I explored some possibilities that the “Stem Cell burger” opened up.</a>  Perhaps the most far-fetched idea I had was to produce meat from cloned celebrity stem cells.</p>
+                    <h2 id="switching-to-jekyll">Switching to Jekyll</h2>
+
+<p>This weekend I switched my site from a Wordpress site hosted by bluehost to a Jekyll site hosted on githubpages.  I’m excited about this for plenty of reasons.</p>
+
+<ul>
+  <li>Free hostings on GithubPages</li>
+  <li>Manage all aspects of the site, including layout and posts, on github</li>
+  <li>Write in Markdown</li>
+  <li>Use R plugins to script in R Markdown (I’ll share my experience with this later!)</li>
+  <li>An excuse to practice CSS and Ruby</li>
+</ul>
+
+<p>It’s pretty win-win.</p>
+
+<p>If you’re looking to try this out for yourself, you’ll want Ruby/RVM, Jekyll, and github set up.</p>
 
 
-                    <a href="/fun/2014/02/28/celebrity-burgers-a-reality/">
+                    <a href="/2017/04/09/introToJekyll/">
                         Read the full post...
                     </a>
                 </div>
@@ -463,60 +412,24 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/tools/2014/01/10/scoop-it-and-content-curation/">
-                            Scoop.it! and content curation
+                        <a href="/2017/04/07/migrating-to-github/">
+                            Moving to Github Pages
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2014-01-10T11:35:07-05:00" class="post-date is-small">
-   10 Jan 2014</time>
+   <time datetime="2017-04-07T00:00:00-04:00" class="post-date is-small">
+   07 Apr 2017</time>
    </span>
-                    
-                    <a href="/tag/curation/">
-        <span class="tag is-primary">
-              curation
-        </span>
-                    </a>
-                    
-                    <a href="/tag/news/">
-        <span class="tag is-primary">
-              news
-        </span>
-                    </a>
-                    
-                    <a href="/tag/RSS/">
-        <span class="tag is-primary">
-              RSS
-        </span>
-                    </a>
-                    
-                    <a href="/tag/science/">
-        <span class="tag is-primary">
-              science
-        </span>
-                    </a>
-                    
-                    <a href="/tag/tips/">
-        <span class="tag is-primary">
-              tips
-        </span>
-                    </a>
-                    
-                    <a href="/tag/tools/">
-        <span class="tag is-primary">
-              tools
-        </span>
-                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>In the past, I’ve written about the <a href="http://bradfordcondon.wordpress.com/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/" title="Let the literature come to you: custom pubmed RSS feeds">importance of setting up custom newsfeeds</a> for current publications in your field, and using <a href="http://bradfordcondon.wordpress.com/2013/04/28/16/" title="Tools for science: Citeulike">Citeulike to share references</a>.  While these tools can be useful for discovering and archiving content, they are not ideal for sharing and disseminating it.  Gathering content and distilling it for others is an art: the art of content curation.</p>
+                    <p>I’m moving to a Markdown-based blog using Jekyll and github pages hosting!</p>
 
 
-                    <a href="/tools/2014/01/10/scoop-it-and-content-curation/">
+                    <a href="/2017/04/07/migrating-to-github/">
                         Read the full post...
                     </a>
                 </div>
@@ -526,42 +439,24 @@ This is such an important life skill because at this point in time, blogs, newsp
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/fun/2013/12/03/consider-the-ostracod/">
-                            Consider the ostracod
+                        <a href="/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/">
+                            Expanding Your Horizons comes to Kentucky
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2013-12-03T16:18:24-05:00" class="post-date is-small">
-   03 Dec 2013</time>
+   <time datetime="2017-01-10T14:00:07-05:00" class="post-date is-small">
+   10 Jan 2017</time>
    </span>
-                    
-                    <a href="/tag/biology/">
-        <span class="tag is-primary">
-              biology
-        </span>
-                    </a>
-                    
-                    <a href="/tag/essays/">
-        <span class="tag is-primary">
-              essays
-        </span>
-                    </a>
-                    
-                    <a href="/tag/science/">
-        <span class="tag is-primary">
-              science
-        </span>
-                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>What does it mean to be a scientist?  I present to you some overly poetic thoughts on the topic.</p>
+                    <p>I’m excited to announce that, a collaboration between Dr. Ellen Crocker, Dr. Susan Odom and myself has secured an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research) grant to bring a science conference for young girls to University of Kentucky.  The conference, an extension of the <a href="http://www.eyhn.org/">Expanding Your Horizons (EYH) network</a>, is a great opportunity for young girls, as well as undergraduate and graduate students.  The conference will be held April 29, 2017.</p>
 
 
-                    <a href="/fun/2013/12/03/consider-the-ostracod/">
+                    <a href="/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/">
                         Read the full post...
                     </a>
                 </div>
@@ -597,7 +492,7 @@ This is such an important life skill because at this point in time, blogs, newsp
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2017-11-27T16:07:52-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2017-12-18T16:12:03-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

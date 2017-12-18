@@ -4,13 +4,146 @@
  <title>Bradford Condon PhD</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-11-27T16:07:52-05:00</updated>
+ <updated>2017-12-18T16:12:03-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Lessons From My First Software Carpentry Workshop: Planning</title>
+   <link href="http://localhost:4000/2017/12/18/12-18-17_swc_lessons/"/>
+   <updated>2017-12-18T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/12/18/12-18-17_swc_lessons</id>
+   <content type="html">&lt;h1 id=&quot;introduction&quot;&gt;introduction&lt;/h1&gt;
+
+&lt;p&gt;I hosted my first Software Carpentry workshop on December 18th and 19th 2017 in Knoxville Tennessee with my coinstructors Meg Staton and Drew Steen.&lt;/p&gt;
+
+&lt;p&gt;I tried to follow the general recommendations and most things worked out great.  Here are some lessons learned.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/s_carp.png&quot; alt=&quot;The Software Carpentry logo&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;preparation&quot;&gt;Preparation&lt;/h2&gt;
+
+&lt;h3 id=&quot;consider-digital-and-print-flyers&quot;&gt;Consider digital and print flyers&lt;/h3&gt;
+
+&lt;p&gt;I liked the inclusion of “tear off” tags for our flyer workshop.  When I saw it on this digital display, I had to laugh.  Next time we’ll distribute &lt;em&gt;print&lt;/em&gt; and &lt;em&gt;digital&lt;/em&gt; versions of the flyer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/swc_flyer_tearoff.jPG&quot; alt=&quot;Our flyer&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;charging-a-registration-fee&quot;&gt;Charging a registration fee&lt;/h3&gt;
+
+&lt;p&gt;The Software Carpentry recommends charging a nominal registration fee to reduce no-shows.  Unfortunately this added a layer of administrative red tape for us, so we kept registration free.  How did that work out for us?&lt;/p&gt;
+
+&lt;p&gt;Well, we sold out for 35 tickets within 24 hours, with a waitlist of 25.  I emailed out a week before and 72 hours before asking for people to cancel if they could not make it.  This netted me 11 cancellations, but the workshop started on a monday!  This meant that most waitlisters were notified over the weekend and did not end up claiming their tickets.  This is in addition to the five students who no-showed without notice.&lt;/p&gt;
+
+&lt;p&gt;So ultimately we ended up with 31 out of 35 seats filled, which isn’t so bad.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-eventbrite&quot;&gt;Using Eventbrite&lt;/h3&gt;
+
+&lt;p&gt;Because our workshop was free, there was no fee for using Eventbrite.  Eventbrite provides the basic functions necessary to manage the event: you can download an attendee list including email, or you can contact attendees via Eventbrite.&lt;/p&gt;
+
+&lt;p&gt;Eventbrite also has a waitlist functionality.  After the tickets sold out, I enabled the waitlist and people could join the waitlist, managed entirely by Eventbrite.  When I recieved cancellations, I just had to “release the tickets” and the waitlister has a set period of time (i set it to 24 hours) to respond and claim their ticket.&lt;/p&gt;
+
+&lt;p&gt;Eventbrite also has a widget that lets particpants purchase tickets right on your course website.
+&lt;img src=&quot;/assets/img/carpentry/eventbrite_widget.png&quot; alt=&quot;The eventbrite widget on our software carpentry website&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All together this is great.  Managing an attendee list and waitlist via emails is a deceptively time consuming task.  Even though its quite easy, not getting barraged with emails (almost 70 emails with people registering alone!) is a great perk.  I would use Eventbrite again, at least for free events.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/eventbrite.png&quot; alt=&quot;The eventbrite page&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;preparing-your-lectures&quot;&gt;Preparing Your Lectures&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pre-generate your ether pad with questions.  I am sharing my pregenerated etherpads: Unix, R, Git&lt;/li&gt;
+  &lt;li&gt;Create slides for the images in the material.&lt;/li&gt;
+  &lt;li&gt;Look at the github repo for the lessons and know the issues and alternatives.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The carpentry workshops are live code only without slides.  The thing is, graphics are great for mental models, and slides can help with instructor pacing a lot better than the free-text of the lesson plans.&lt;/p&gt;
+
+&lt;p&gt;The open-source nature of Software Carpentry materials means that people have all sorts of suggestions for how to do things differently.  Some lessons may have variants available online that you will prefer.  The Git lesson, for example, is command-line heavy.&lt;/p&gt;
+
+&lt;h2 id=&quot;day-of-suggestions&quot;&gt;Day of suggestions&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Share links liberally.  In the chatbox of etherpad, on the website, within each etherpad.  Link to data downloads, the etherpads, the course website.&lt;/li&gt;
+  &lt;li&gt;Encourage your students to share a bit about themselves and why they are attending.  If the workshop is too big to do this verbally, do it digitally.  Knowing what your students expect to learn can help you trim topics if (when) you run out of time.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Plan on running out of time!  The Software Carpentry workshops have time estimates but they are beyond optimistic.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.eventbrite.com/e/ut-knoxville-scientific-computing-software-carpentry-workshop-tickets-40189132778?aff=eprofsaved&quot;&gt;Course website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.eventbrite.com/e/ut-knoxville-scientific-computing-software-carpentry-workshop-tickets-40189132778?aff=eprofsaved&quot;&gt;EventBrite page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pad.software-carpentry.org/2017-12-18-UTK-unix&quot;&gt;Unix pad&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pad.software-carpentry.org/2017-12-18-UTK-R&quot;&gt;R pad&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Understanding_chado_mage</title>
+   <link href="http://localhost:4000/2017/12/13/understanding_chado_mage/"/>
+   <updated>2017-12-13T11:18:19-05:00</updated>
+   <id>http://localhost:4000/2017/12/13/understanding_chado_mage</id>
+   <content type="html">
+&lt;p&gt;In the process of upgrading the Tripal Analysis Expression module from Tripal 2 to Tripal 3 compatible, I had to learn a lot about the underlying data storage.  Tripal Analysis Expression uses the &lt;a href=&quot;http://gmod.org/wiki/Chado_Mage_Module&quot;&gt;Chado Mage&lt;/a&gt; module to store data.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-mage-schema&quot;&gt;The Mage schema&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;assets/img/tripal/mage_schema.png&quot; alt=&quot;The chado mage schema&quot; /&gt;
+The Chado Mage schema as available &lt;a href=&quot;http://gmod.org/wiki/Chado_Mage_Module&quot;&gt;here&lt;/a&gt;.  Red tables are mage tables.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Expression data is loaded as expression values from biosamples mapped to features.  It’s a long road to go from a biosample (biomaterial in Chado language) to the expression value.  The expression value is stored in the &lt;em&gt;signal&lt;/em&gt; column of &lt;code class=&quot;highlighter-rouge&quot;&gt;elementresult&lt;/code&gt;.  This is linked through the &lt;code class=&quot;highlighter-rouge&quot;&gt;quantification&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;acquisition&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;assay&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;assay_biomaterial&lt;/code&gt; tables to our end point of &lt;code class=&quot;highlighter-rouge&quot;&gt;biomaterial&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;acquisitions-quantifications-assays-elements-and-arraydesigns-oh-my&quot;&gt;Acquisitions, quantifications, assays, elements, and arraydesigns, oh my&lt;/h3&gt;
+
+&lt;p&gt;Tripal 3&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building a D3.js plot</title>
+   <link href="http://localhost:4000/2017/12/09/d3/"/>
+   <updated>2017-12-09T20:43:24-05:00</updated>
+   <id>http://localhost:4000/2017/12/09/d3</id>
+   <content type="html">&lt;p&gt;This is a multipost article on creating plots with D3.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/bradfordcondon/3b4d12a875b73dfca74f26d3142ecf9c.js&quot;&gt;&lt;/script&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Trying_expo</title>
+   <link href="http://localhost:4000/2017/12/09/trying_expo/"/>
+   <updated>2017-12-09T15:08:35-05:00</updated>
+   <id>http://localhost:4000/2017/12/09/trying_expo</id>
+   <content type="html">
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Today we’re going to mess around with Expo.  This assumes you’ve got some basic knowledge about…&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;React Native&lt;/li&gt;
+  &lt;li&gt;d3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;expo&quot;&gt;Expo&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://expo.io/&quot;&gt;Expo&lt;/a&gt; is a service for building and serving React Naive apps.  Using Expo, you could release an app without ever opening XCode or Android Studio.  React Native is great, but there’s still a lot of work that goes into testing and releasing for the seperate platforms.&lt;/p&gt;
+
+&lt;p&gt;I’m going to assume you know the basics of React-Native. If not, &lt;a href=&quot;http://facebook.github.io/react-native/docs/tutorial.html&quot;&gt;follow their quick&lt;/a&gt; getting started tutorial to get up to speed.&lt;/p&gt;
+
+&lt;p&gt;Even cooler, Expo lets you share snippets of React-Native apps, much like JS-Fiddle.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Upcoming Software Carpentry Workshop: December 18th &amp; 19th</title>
@@ -29,6 +162,242 @@
 &lt;/ul&gt;
 
 &lt;p&gt;Please visit the &lt;a href=&quot;https://statonlab.github.io/2017-12-18-carpentry-workshop/&quot;&gt;workshop website for more information and registration links&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Jquery_and_drupal_7</title>
+   <link href="http://localhost:4000/2017/11/02/Jquery_and_Drupal_7/"/>
+   <updated>2017-11-02T20:29:13-04:00</updated>
+   <id>http://localhost:4000/2017/11/02/Jquery_and_Drupal_7</id>
+   <content type="html">
+&lt;p&gt;I wonder if Drupal development makes sense to experienced web developers, or if theres always something that seems to come out of left field.&lt;/p&gt;
+
+&lt;h3 id=&quot;add-the-js&quot;&gt;Add the js&lt;/h3&gt;
+
+&lt;h3 id=&quot;add-the-thing&quot;&gt;Add the thing&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-{js}&quot;&gt;   Drupal.behaviors.tripal_analysis_expression = {
+              attach: function (context, settings) {
+                var $ = jQuery;
+                expNormal();
+                $(document).on(&quot;tripal_ds_pane_expanded&quot;, function(event) {
+                    if($(event.id).text().indexOf(&quot;Hover the mouse&quot;) &amp;gt; -1) {
+                      expNormal();
+                    }
+                });
+              }
+            };
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Go_introduction</title>
+   <link href="http://localhost:4000/2017/10/19/GO_introduction/"/>
+   <updated>2017-10-19T19:56:48-04:00</updated>
+   <id>http://localhost:4000/2017/10/19/GO_introduction</id>
+   <content type="html">
+&lt;h1 id=&quot;go&quot;&gt;GO!&lt;/h1&gt;
+
+&lt;p&gt;Why GO?&lt;/p&gt;
+
+&lt;p&gt;It builds a single binary when you package.&lt;/p&gt;
+
+&lt;p&gt;Good at parallel programming.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tour.golang.org/welcome/1&quot;&gt;There is a great tutorial&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Go doesnt use objects, it uses structures.  You still have functions.&lt;/p&gt;
+
+&lt;p&gt;Everything is public to the structure.  Anything defined in package main is public to package main.  But if you define your function with an upper case it will be globally exported.  So capitals are exported.&lt;/p&gt;
+
+&lt;p&gt;x, y, int&lt;/p&gt;
+
+&lt;p&gt;func Add(x, y int)int{&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;func split (sum int) (x, y int){&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;x, y int there is 
+first int says x and y are ints
+second int says that it returns an int.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var (
+	v1 = Vertex{1, 2}  // has type Vertex
+	v2 = Vertex{X: 1}  // Y:0 is implicit
+	v3 = Vertex{}      // X:0 and Y:0
+	p  = &amp;amp;Vertex{1, 2} // has type *Vertex
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Dockerizing your environment</title>
+   <link href="http://localhost:4000/2017/10/17/dockerizing/"/>
+   <updated>2017-10-17T14:23:25-04:00</updated>
+   <id>http://localhost:4000/2017/10/17/dockerizing</id>
+   <content type="html">&lt;p&gt;For a long time, I’ve been using Homestead to set up my web developer environment.  It’s easy to set up, and most importantly, I could understand where my files were.&lt;/p&gt;
+
+&lt;p&gt;The problem is that as a novice developer, I make mistakes, a lot.  I insert all sorts of junk into my database writing new code, and after a few months, I need to destroy my machine and start over.  To recreate a Tripal site, I need to reinstall Drupal, Tripal, all of my modules, and then re-load data.  After the second time I knew I had to implement a different solution.  I had to figure out this Docker thing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.docker.com/sites/default/files/vertical_large.png&quot; alt=&quot;Docker logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find the final, pre-loaded developer image &lt;a href=&quot;https://hub.docker.com/r/bcondon/docker_tripal3/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;dockerizing-as-simple-as-possible&quot;&gt;Dockerizing as simple as possible.&lt;/h1&gt;
+
+&lt;p&gt;My big realization is that you &lt;strong&gt;dont have to use a DockerFile and start from scratch to create an image&lt;/strong&gt;.  If like me you aren’t yet a savvy systems administrator, I would recommend starting from an existing container that does &lt;strong&gt;almost everything you want&lt;/strong&gt;.  Because I’m running a Tripal site, there are two fully-functional containers to choose from (I used (Ming Chen’s Tripal 3 container)[]). I tried, and failed, to set up an environment with docker compose hosting several services starting from the base Ubuntu images.  In hindsight, I bit off more than I could chew.  I need to get something running and tinker with it, not build a complex system from scratch knowing nothing.&lt;/p&gt;
+
+&lt;p&gt;To get started, simply run a container with &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;, make some changes to it, and then commit your new, modified copy.  Hopefully the repo you are starting from provides some basic instructions for using the image.  For example, the instructions for our starting Tripal 3 container are &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 mingchen0919/docker-tripal-v3 /bin/bash&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;After running the container, fiddle around and set up your environemnt a bit more.  IN my case, I wanted to load some organisms, sequences, install some modules and themes, etc.  Once you’re happy, save the new container so you can start from a freshly set up environment!  First, set up an account and repo &lt;a href=&quot;https://hub.docker.com/&quot;&gt;on Docker hub&lt;/a&gt;. Then use &lt;code class=&quot;highlighter-rouge&quot;&gt;docker commit&lt;/code&gt; to save your image.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#docs
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+#an example commit
+docker commit my_test_container [bcondon/test_image]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Then just use docker push to put the image on Docker Hub.  With our example, we would execute &lt;code class=&quot;highlighter-rouge&quot;&gt;docker push bcondon/test_image&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That’s it.&lt;/p&gt;
+
+&lt;p&gt;The next time I want to run my container, I simply replace the Dockerhub URL i started with.  &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 mingchen0919/docker-tripal-v3 /bin/bash&lt;/code&gt; becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 bcondon/test_image /bin/bash&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Learning more and setting up my own image from scratch exactly how I want it comes next.  Getting started, however, is priceless.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>File extensions</title>
+   <link href="http://localhost:4000/2017/10/17/fileExtensions/"/>
+   <updated>2017-10-17T14:22:18-04:00</updated>
+   <id>http://localhost:4000/2017/10/17/fileExtensions</id>
+   <content type="html">&lt;p&gt;This post is the first in a series on understanding biological file formats.  This material is developed for use in the KBRIN Next Generation Sequencing workshop 2017 hosted at the University of Kentucky.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Before I get into explaining the specific output of different common programs, I first need to answer a simple question: what is a file format?  Simple questions are often redirected to the dictionary (or in this day and age, &lt;a href=&quot;https://en.wikipedia.org/wiki/File_format&quot;&gt;Wikipedia&lt;/a&gt;).&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A file format is a standard way that information is encoded for storage in a computer file. It specifies how bits are used to encode information in a digital storage medium.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;binary&quot;&gt;Binary&lt;/h3&gt;
+&lt;p&gt;These characters are encoded in binary using the &lt;a href=&quot;https://en.wikipedia.org/wiki/ASCII&quot;&gt;ASCII characters rules&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;utf&quot;&gt;UTF&lt;/h3&gt;
+
+&lt;h3 id=&quot;fasta&quot;&gt;FASTA&lt;/h3&gt;
+
+&lt;p&gt;If we’re thinking about bioinformatics data, we are usually thinking about &lt;em&gt;strings&lt;/em&gt; which can be written out in a text file.  For example, a protein represented in FASTA format is written out in FASTA format as&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;gt;SequenceABC heat shock protein
+	AALLRALYNKKLAYQ
+	&amp;gt;sequence D
+	....
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;In FASTA format, each new sequence is seperated by a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; character.  All other characters after the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; until the next line are part of the header.  Everything up until the first space (&lt;code class=&quot;highlighter-rouge&quot;&gt; &lt;/code&gt;) is the sequence name, and everything after is part of the sequence description.&lt;/p&gt;
+
+&lt;p&gt;How does the file describe that the description is over, and the sequence has started?  After all, it’s made up of the same character types- letters.  In fact, there is a special character called the newline character that signifies the line break.  All characters not on the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; line are part of the sequence.  This means that Sequence A and sequence B below are identical.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;Sequence A
+AAAA
+&amp;gt;Sequence B
+AA
+AA
+&amp;gt;Sequenc
+e C 
+AAAA
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Sequence C, on the other hand, is actually &lt;code class=&quot;highlighter-rouge&quot;&gt;sequenc&lt;/code&gt; with everything follows as part of the sequence.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fasta and spaces, do they get ignored?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;the-newline-character&quot;&gt;The newline character&lt;/h4&gt;
+
+&lt;p&gt;It’s worth taking a break and pointing out that &lt;strong&gt;different file systems use different newline characters&lt;/strong&gt;.  A common rookie mistake is to open a file such as a FASTA file in Microsoft Word, do some editing, and save the file.&lt;/p&gt;
+
+&lt;p&gt;On Windows, a newline is actually two characters: &lt;code class=&quot;highlighter-rouge&quot;&gt;/r/n&lt;/code&gt;.  On Linux, it is only &lt;code class=&quot;highlighter-rouge&quot;&gt;/n&lt;/code&gt;.  This is only just the beginning: all sorts of extra information is included in a Microsoft word file, such as &lt;strong&gt;bold&lt;/strong&gt; characters, fonts, colors, line spacing, etc.  This is why I usually recommend fledgeling bioinformaticists learn to use a basic text editor and never look back.  In writing this article I’ve learned that there are actually plugins for &lt;a href=&quot;https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-13-124&quot;&gt;working with bioinformatics data in Microsoft Word&lt;/a&gt;, but the safer route is to learn to work with one of the many, free, basic text editors out there.&lt;/p&gt;
+
+&lt;h3 id=&quot;after-the-dot&quot;&gt;After the dot&lt;/h3&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>TwoBit format</title>
+   <link href="http://localhost:4000/2017/10/06/TwoBit/"/>
+   <updated>2017-10-06T10:46:59-04:00</updated>
+   <id>http://localhost:4000/2017/10/06/TwoBit</id>
+   <content type="html">&lt;h1 id=&quot;what-is-twobit&quot;&gt;What is TwoBit&lt;/h1&gt;
+
+&lt;h1 id=&quot;creating-a-twobit-file&quot;&gt;Creating a TwoBit file&lt;/h1&gt;
+
+&lt;p&gt;We can follow the guide on the &lt;a href=&quot;https://genome.ucsc.edu/goldenpath/help/twoBit.html&quot;&gt;UCSC website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, the OSX formatted versions can be downloaded &lt;a href=&quot;http://hgdownload.soe.ucsc.edu/admin/exe/macOSX.x86_64/&quot;&gt;here&lt;/a&gt;.  If you’re new to computer science, you might not be sure whatto do with these.&lt;/p&gt;
+
+&lt;h3 id=&quot;move-the-file-into-your-path&quot;&gt;Move the file into your $PATH&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt;.  the path &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt; should be somewhere in the alphabet soup.  This is a place we can install software so that it can be accessed wherever we are in our file system.&lt;/p&gt;
+
+&lt;h3 id=&quot;change-permissions-on-the-file&quot;&gt;Change permissions on the file&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod a+x /usr/local/bin/faToTwoBit&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;what-does-the-command-do&quot;&gt;What does the command do?&lt;/h3&gt;
+
+&lt;p&gt;If we try to run the command with no arguments by simply executing ` faToTwoBit`, we’ll get the command’s usage arguments.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;faToTwoBit - Convert DNA from fasta to 2bit format
+usage:
+   faToTwoBit &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;.fa &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;in2.fa in3.fa ...] out.2bit
+options:
+   -long          use 64-bit offsets &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;index.   Allow &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;twoBit to contain more than 4Gb of sequence.
+                  NOT COMPATIBLE WITH OLDER CODE.
+   -noMask        Ignore lower-case masking &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;fa file.
+   -stripVersion  Strip off version number after &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;GenBank accessions.
+   -ignoreDups    Convert first sequence only &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;there are duplicate sequence
+                  names.  Use &lt;span class=&quot;s1&quot;&gt;'twoBitDup'&lt;/span&gt; to find duplicate sequences.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;convert-the-fasta-file&quot;&gt;Convert the FASTA file&lt;/h3&gt;
+&lt;p&gt;Run the below command.  Be sure to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;input.fasta&lt;/code&gt; with the fasta file you are attempting to convert.  Make sure you are in the same folder as your &lt;code class=&quot;highlighter-rouge&quot;&gt;input.fasta&lt;/code&gt; file: if you are not, you will have to provide the relative or absolute path for the command to work!&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;faToTwoBit input.fasta output.2bit&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;convert-gff&quot;&gt;Convert GFF&lt;/h3&gt;
+
+&lt;p&gt;Biodalliance supports bigwig and bigbed.&lt;/p&gt;
+
+&lt;p&gt;https://www.biostars.org/p/4070/&lt;/p&gt;
+
+&lt;p&gt;https://toolshed.g2.bx.psu.edu/repository/display_tool?repository_id=afcb6456d8e300ed&amp;amp;tool_config=%2Fsrv%2Ftoolshed%2Fmain%2Fvar%2Fdata%2Frepos%2F000%2Frepo_21%2Fgff_to_bed.xml&amp;amp;changeset_revision=5c6f33e20fcc&lt;/p&gt;
+
+&lt;p&gt;So we wrap GFF to BED.
+Then BED to WIG.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Step 1. Create a wig format file following the directions here. When converting a wig file to a bigWig file, you are limited to one track of data in your input file; therefore, you must create a separate wig file for each data track.
+Step 2. Remove any existing “track” or “browser” lines from your wig file so that it contains only data.
+Step 3. Download the wigToBigWig program from the binary utilities directory.
+Step 4. Use the fetchChromSizes script from the same directory to create the chrom.sizes file for the UCSC database with which you are working (e.g., hg19).
+Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file:&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
  </entry>
  
@@ -123,6 +492,626 @@
 &lt;p&gt;&lt;a href=&quot;https://software-carpentry.org/lessons/&quot;&gt;Software Carpentry&lt;/a&gt; and its sister organisation &lt;a href=&quot;http://www.datacarpentry.org/&quot;&gt;Data Carpentry&lt;/a&gt; are really impressive.  All of their lessons are on GitHub, so you can access them for free, contribute, or see older versions.  If you are an instructor, you’d be crazy not to at least look at the lessons.  You can use them in your own class, for free, under a &lt;a href=&quot;https://software-carpentry.org/license/&quot;&gt;Creative Commons - Attribution License&lt;/a&gt;!  Not only that but there are video recordings of the lessons available online.&lt;/p&gt;
 
 &lt;p&gt;Looking forward to the instructor workshop!  I hope to post some thoughts and learning outcomes here next week.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Programming for Biologists</title>
+   <link href="http://localhost:4000/2017/08/02/programmingForBio/"/>
+   <updated>2017-08-02T14:53:55-04:00</updated>
+   <id>http://localhost:4000/2017/08/02/programmingForBio</id>
+   <content type="html">&lt;p&gt;Ten years ago, I was a biology PhD student beginning to study bioinformatics.  Today, I’m a mobile and web developer.  I want to share a curriculum of computer science concepts and tools that I think can benefit &lt;em&gt;any&lt;/em&gt; biologist doing bioinformatics.&lt;/p&gt;
+
+&lt;h1 id=&quot;unix&quot;&gt;UNIX&lt;/h1&gt;
+&lt;p&gt;There are&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Grep_basics</title>
+   <link href="http://localhost:4000/2017/08/02/grep_basics/"/>
+   <updated>2017-08-02T14:50:08-04:00</updated>
+   <id>http://localhost:4000/2017/08/02/grep_basics</id>
+   <content type="html">
+&lt;h2 id=&quot;grep-cheatsheet&quot;&gt;Grep cheatsheet&lt;/h2&gt;
+
+&lt;p&gt;NOTE these are for me.  If I wanted to post this, I should generate my own examples.
+https://www.panix.com/~elflord/unix/grep.html&lt;/p&gt;
+
+&lt;p&gt;basic:
+Return lines matching a search time:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;grep 'searchterm' file&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1&gt;#&lt;/h1&gt;
+
+&lt;h3 id=&quot;-operator&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;?&lt;/code&gt; operator&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;an expression consisting of a character followed by an escaped question mark matches one or zero instances of that character.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bugg\?y&lt;/code&gt; matches all of the following: bugy, buggy but not bugggy&lt;/p&gt;
+
+&lt;p&gt;So, that second g becomes &lt;em&gt;optional&lt;/em&gt; thanks to &lt;code class=&quot;highlighter-rouge&quot;&gt;\?&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;stuff&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\(stuff\)&lt;/code&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;An expression surrounded by “escaped” parentheses is treated by a single character.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Fred\(eric\)\?&lt;/code&gt; 
+So combine.  We search for Fred, and we allow, optionally, the single character &lt;strong&gt;eric&lt;/strong&gt; afterwards.&lt;/p&gt;
+
+&lt;h2 id=&quot;matching-a-list-of-characters&quot;&gt;Matching a list of characters&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; matches a list.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0-3] is the same as [0123] 
+[a-k] is the same as [abcdefghijk]
+[A-C] is the same as [ABC]
+[A-Ca-k] is the same as 
+[ABCabcdefghijk]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;useful full text:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[[:alpha:]] is the same as [a-zA-Z]
+[[:upper:]] is the same as [A-Z]
+[[:lower:]] is the same as [a-z]
+[[:digit:]] is the same as [0-9]
+[[:alnum:]] is the same as [0-9a-zA-Z]
+[[:space:]] matches any white space including tabs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The [] may be used to search for non-matches. This is done by putting a carat ^ as the first character inside the square brackets.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;non-matches-with-&quot;&gt;Non matches with [^]&lt;/h3&gt;
+&lt;p&gt;`[^7091] Will exclude 7, 0, 9, and 1&lt;/p&gt;
+
+&lt;h3 id=&quot;matching-a-specific-number-of-repetitions-of-a-pattern&quot;&gt;Matching a Specific Number Of Repetitions of a Pattern&lt;/h3&gt;
+
+&lt;p&gt;This grep searches for phone numbers.
+` “[[:digit:]]{3}[ -]\?[[:digit:]]{4}”`&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[[:digit:]]&lt;/code&gt; any digit
+&lt;code class=&quot;highlighter-rouge&quot;&gt;\{3\}&lt;/code&gt; this searches for any three digits.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ -]\?&lt;/code&gt; searches for a dash or white space.  No dash or white space is OK too.&lt;/p&gt;
+
+&lt;h2 id=&quot;matching-the-start-or-end-of-the-line&quot;&gt;Matching the start or end of the line&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The $ character matches the end of the line. The ^ character matches the beginning of the line.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;^From.*mscharmi&quot;&lt;/code&gt; This searches for things where From is the start of the line, then mscharmi is the person im looking for after.&lt;/p&gt;
+
+&lt;h2 id=&quot;matching-eitheror&quot;&gt;Matching either/or&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;I am a \(cat\|dog\)&quot;&lt;/code&gt;  this will find I am a cat &lt;strong&gt;or&lt;/strong&gt; I am a dog.&lt;/p&gt;
+
+&lt;h2 id=&quot;backreferences&quot;&gt;Backreferences&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The expression \n where n is a number, matches the contents of the n’th set of parentheses in the expression&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;H\([1-6]\).*&amp;lt;/H\1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;in other words… we search for H1,2,3,4,5,6 then anything, then a closing tag matching that opening tag.&lt;/p&gt;
+
+&lt;p&gt;#special/escaped characters&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;?  \  .  [  ]  ^  $
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Unsupportedgems</title>
+   <link href="http://localhost:4000/2017/07/20/unsupportedGems/"/>
+   <updated>2017-07-20T16:23:49-04:00</updated>
+   <id>http://localhost:4000/2017/07/20/unsupportedGems</id>
+   <content type="html">
+&lt;p&gt;I redesigned the landing page of my site, and wanted to host my blog posts at &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/index.html&lt;/code&gt; instead of the main &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;.  In theory this should be possible, &lt;a href=&quot;https://github.com/jekyll/jekyll-paginate/issues/37&quot;&gt;but there are issues&lt;/a&gt;.   Unfortunately, I could not get the default paginator to work properly at any location other than &lt;code class=&quot;highlighter-rouge&quot;&gt;/index.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I thought a simple solution would be to use a different gem: &lt;a href=&quot;https://github.com/octopress/paginate&quot;&gt;&lt;em&gt;octopress-paginate&lt;/em&gt;&lt;/a&gt;.  This worked like a charm and easily supported paginating at &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/&lt;/code&gt;… but, the site no longer built on Github pages!  This is because Github pages &lt;strong&gt;only supports default jekyll gems&lt;/strong&gt;.  I looked into more advanced solutions involving &lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt; (a fantastic tool which I plan on incorporating into my other projects) but for this blog, it was just too much.
+ The alternative solution was to simply build the site myself locally and push that.  To do this, all I needed to do was…&lt;/p&gt;
+
+&lt;p&gt;## Change my repo name&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot;&gt;GitHub Pages documentation&lt;/a&gt; states that any site hosted at &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; &lt;em&gt;must&lt;/em&gt; be hosted off the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch.  Host the page elsewhere to change the source.&lt;/p&gt;
+
+&lt;p&gt;## Change my GitHub Pages source from &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/docs&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Hosting off of a folder in our directory instead of the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch lets me keep a build of my site in the same repo hosting the code.&lt;/p&gt;
+
+&lt;p&gt;## Set Jekyll to build to &lt;code class=&quot;highlighter-rouge&quot;&gt;/docs&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; we can change the default build location from &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;docs&lt;/code&gt;.  Now when we build our final site and push to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, GitHub Pages will use that build.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>creating synteny mappings</title>
+   <link href="http://localhost:4000/2017/07/20/iadhore/"/>
+   <updated>2017-07-20T16:23:49-04:00</updated>
+   <id>http://localhost:4000/2017/07/20/iadhore</id>
+   <content type="html">&lt;h1 id=&quot;goal&quot;&gt;Goal&lt;/h1&gt;
+
+&lt;p&gt;The primary goal here is to create a track of synteny mappings for all genomes for jbrowse.  Any number of synteny calculations could work.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mummer&lt;/li&gt;
+  &lt;li&gt;i-adhore 3.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;mummer&quot;&gt;Mummer&lt;/h1&gt;
+&lt;p&gt;This module will allow converting nucmer coordinates to a gff file.  https://metacpan.org/pod/distribution/Bio-Gonzales/bin/coords2gff.pl&lt;/p&gt;
+
+&lt;h1 id=&quot;i-adhore&quot;&gt;i-adhore&lt;/h1&gt;
+
+&lt;p&gt;The software can be downloaded &lt;a href=&quot;http://bioinformatics.psb.ugent.be/webtools/i-adhore/licensing/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Reference&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Proost, S. et al. i-ADHoRe 3.0—fast and sensitive detection of genomic homology in extremely large data sets. Nucl. Acids Res. 40, e11–e11 (2012).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;installation-and-set-up&quot;&gt;Installation and set up&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tar -xzvf i-adhore-xxx.tar.gz
+cd i-adhore-xxx
+
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=usr/local/bin/i-adhore
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Unfortunately make fails&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+[  9%] Building CXX object src/alignment/CMakeFiles/alignment.dir/GGAligner.cpp.o
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:5:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../GeneList.h:7:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../headers.h:30:
+/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:
+      use of undeclared identifier '__stl_hash_string'
+        { return __stl_hash_string(s.c_str()); }
+                         ^
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:6:
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Possible solution: https://github.com/Kentzo/armv6-rpi-linux-gnueabihf/issues/5&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install gcc&lt;/code&gt; will be very slow, so instead we try &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install gcc48&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;if this doenst ork
+need to tell cmake to use a specific compiler&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export CC=/usr/local/bin/gcc
+export CXX=/usr/local/bin/g++ ##  4.8 wahtever , find path
+export CXX=/usr/local/Cellar/gcc@4.8/4.8.5
+cmake /path/to/your/project
+make
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/Cellar/gcc@4.8/4.8.5&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;other-solution-from-neil&quot;&gt;Other solution from Neil&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In the above file,
+change &lt;code class=&quot;highlighter-rouge&quot;&gt;__stl_hash_string(s.c_str())&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;std::hash(s.c_str())&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We create a script that runs i-adhore with a new tmp directory: &lt;code class=&quot;highlighter-rouge&quot;&gt;TMPDIR=/tmp i-adhore&lt;/code&gt;.  The script also must pass arguments to the command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#! /bin/sh&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;TMPDIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/tmp
+&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; /usr/local/bin/i-adhore_3.0/bin/i-adhore  &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;sibelia&quot;&gt;Sibelia&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://bioinf.spbau.ru/sibelia&quot;&gt;Project page&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title></title>
+   <link href="http://localhost:4000/2017/07/20/biologicalGit/"/>
+   <updated>2017-07-20T16:23:49-04:00</updated>
+   <id>http://localhost:4000/2017/07/20/biologicalGit</id>
+   <content type="html">&lt;p&gt;If there’s one thing I wish I’d done earlier in my career, it’s this: automate &lt;em&gt;all&lt;/em&gt; of my bioinformatics workflows and keep it under version control.&lt;/p&gt;
+
+&lt;p&gt;What does this mean?  Any and every task is done on the command line.  The commands executed are stored in a shell script.  The shell script gets stored (and, linked with GitHub, stored online) and any changes made are tracked.&lt;/p&gt;
+
+&lt;p&gt;Here’s the problem: this is hard.  It’s really hard if you aren’t a programmer.  Downloading software, getting it to run, renaming files.  I would cheat with all of this and do it using my operating system’s GUI.  It was faster, I didn’t have to learn new confusing commands like &lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt; to download things or shell scripting.  I get it.  But, if you can keep your bioinformatics notebook under version control, you will reap the rewards.&lt;/p&gt;
+
+&lt;h2 id=&quot;rewards&quot;&gt;Rewards&lt;/h2&gt;
+&lt;h3 id=&quot;rewind&quot;&gt;Rewind&lt;/h3&gt;
+&lt;p&gt;If something worked six months ago, you can rewind your project and it will work again.&lt;/p&gt;
+
+&lt;p&gt;What’s more, if your system gets mucked up, you can start from scratch by re-cloning your repo.  You don’t have to track down all the software, all the dependencies, re-download all the raw data, rename it to match your scripts.  You were smart, and you wrote all that as shell scripts.  Now, you just need to re-execute the command and you’ve got your environment set up.  Maybe your computer is fine but you’ve run out of memory or are migrating your workflow to a remote server.  No problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;reuse-and-modify&quot;&gt;Reuse and modify&lt;/h3&gt;
+
+&lt;h3 id=&quot;collaborate--share&quot;&gt;Collaborate &amp;amp; Share&lt;/h3&gt;
+&lt;p&gt;GitHub is fantastic for collaborating.  Work on projects without fear of overwriting your coworkers changes.  Once you master branching and merging, each piece of the project you work on will be an isolated feature, and multiple people can contribute to different portions of the project at once.
+Collaboration isn’t just about working together.  It’s about distributing your work in a way that others can reproduce it.  Nothing is more reproducible than a project that runs from start to finish by executing a single command.
+Graduate school is about learning skills and building a portfolio.  GitHub is the place to showcase that portfolio.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Qiime</title>
+   <link href="http://localhost:4000/2017/07/20/QIIME/"/>
+   <updated>2017-07-20T16:23:49-04:00</updated>
+   <id>http://localhost:4000/2017/07/20/QIIME</id>
+   <content type="html">
+&lt;h1 id=&quot;scripts-covered&quot;&gt;Scripts covered&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;multiple_join_paired_ends.py&lt;/li&gt;
+  &lt;li&gt;Split-libraries.py&lt;/li&gt;
+  &lt;li&gt;Pick_de_novo_otus.py&lt;/li&gt;
+  &lt;li&gt;biom summarize table&lt;/li&gt;
+  &lt;li&gt;summarize taxa throguh plots&lt;/li&gt;
+  &lt;li&gt;multiple rarefactions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;multiple-joined-paired-ends&quot;&gt;multiple joined paired ends&lt;/h2&gt;
+
+&lt;h2 id=&quot;split-librariespy&quot;&gt;Split-libraries.py&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Three files are generated by split_libraries.py:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.fna&lt;/code&gt; file (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;seqs.fna&lt;/code&gt;) - This is a FASTA file containing all sequences which meet the user-defined parameters, where each sequence identifier now contains its corresponding sample id from mapping file.&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;histograms.txt&lt;/code&gt;- This contains the counts of sequences with a particular length.&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;split_library_log.txt&lt;/code&gt; - This file contains a summary of the split_libraries.py analysis. Specifically, this file includes information regarding the number of sequences that pass quality control (number of seqs written) and how these are distributed across the different samples which, through the use of bar-coding technology, would have been pooled into a single 454 run. The number of sequences that pass quality control will depend on length restrictions, number of ambiguous bases, max homopolymer runs, barcode check, etc. All of these parameters are summarized in this file. If raw sequences do not meet the specified quality thresholds they will be omitted from downstream analysis. Since we never see a perfect 454 sequencing run, the number of sequences written should always be less than the number of raw sequences. The number of sequences that are retained for analysis will depend on the quality of the 454 run itself in addition to the default data filtering thresholds in the split_libraries.py script. The default parameters (minimum quality score = 25, minimum/maximum length = 200/1000, no ambiguous bases allowed, no mismatches allowed in primer sequence) can be adjusted to meet the user’s needs.
+Standard Example:&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;pick-denovo-otus&quot;&gt;Pick denovo OTUs&lt;/h2&gt;
+
+&lt;p&gt;http://qiime.org/scripts/pick_de_novo_otus.html&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This script will produce an OTU mapping file (pick_otus.py), a representative set of sequences (FASTA file from pick_rep_set.py), a sequence alignment file (FASTA file from align_seqs.py), taxonomy assignment file (from assign_taxonomy.py), a filtered sequence alignment (from filter_alignment.py), a phylogenetic tree (Newick file from make_phylogeny.py) and a biom-formatted OTU table (from make_otu_table.py).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;output-files&quot;&gt;Output files&lt;/h2&gt;
+&lt;h3 id=&quot;biom-format&quot;&gt;BIOM format&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;BIOM&lt;/code&gt; format is the &lt;em&gt;Biological Observation Matrix&lt;/em&gt; format.&lt;/p&gt;
+
+&lt;p&gt;You can find the &lt;a href=&quot;http://biom-format.org/documentation/format_versions/biom-2.1.html&quot;&gt;full BIOM format specifications here&lt;/a&gt;.  The example file is reproduced below.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HDF5 &quot;examples/rich_sparse_otu_table_hdf5.biom&quot; {
+GROUP &quot;/&quot; {
+   ATTRIBUTE &quot;creation-date&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;2014-07-29T16:16:36.617320&quot;
+      }
+   }
+   ATTRIBUTE &quot;format-url&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;http://biom-format.org&quot;
+      }
+   }
+   ATTRIBUTE &quot;format-version&quot; {
+      DATATYPE  H5T_STD_I64LE
+      DATASPACE  SIMPLE { ( 2 ) / ( 2 ) }
+      DATA {
+      (0): 2, 1
+      }
+   }
+   ATTRIBUTE &quot;generated-by&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;example&quot;
+      }
+   }
+   ATTRIBUTE &quot;id&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;No Table ID&quot;
+      }
+   }
+   ATTRIBUTE &quot;nnz&quot; {
+      DATATYPE  H5T_STD_I64LE
+      DATASPACE  SCALAR
+      DATA {
+      (0): 15
+      }
+   }
+   ATTRIBUTE &quot;shape&quot; {
+      DATATYPE  H5T_STD_I64LE
+      DATASPACE  SIMPLE { ( 2 ) / ( 2 ) }
+      DATA {
+      (0): 5, 6
+      }
+   }
+   ATTRIBUTE &quot;type&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;otu table&quot;
+      }
+   }
+   GROUP &quot;observation&quot; {
+      GROUP &quot;group-metadata&quot; {
+      }
+      DATASET &quot;ids&quot; {
+         DATATYPE  H5T_STRING {
+            STRSIZE H5T_VARIABLE;
+            STRPAD H5T_STR_NULLTERM;
+            CSET H5T_CSET_ASCII;
+            CTYPE H5T_C_S1;
+         }
+         DATASPACE  SIMPLE { ( 5 ) / ( 5 ) }
+         DATA {
+         (0): &quot;GG_OTU_1&quot;, &quot;GG_OTU_2&quot;, &quot;GG_OTU_3&quot;, &quot;GG_OTU_4&quot;, &quot;GG_OTU_5&quot;
+         }
+      }
+      GROUP &quot;matrix&quot; {
+         DATASET &quot;data&quot; {
+            DATATYPE  H5T_IEEE_F64LE
+            DATASPACE  SIMPLE { ( 15 ) / ( 15 ) }
+            DATA {
+            (0): 1, 5, 1, 2, 3, 1, 1, 4, 2, 2, 1, 1, 1, 1, 1
+            }
+         }
+         DATASET &quot;indices&quot; {
+            DATATYPE  H5T_STD_I32LE
+            DATASPACE  SIMPLE { ( 15 ) / ( 15 ) }
+            DATA {
+            (0): 2, 0, 1, 3, 4, 5, 2, 3, 5, 0, 1, 2, 5, 1, 2
+            }
+         }
+         DATASET &quot;indptr&quot; {
+            DATATYPE  H5T_STD_I32LE
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): 0, 1, 6, 9, 13, 15
+            }
+         }
+      }
+      GROUP &quot;metadata&quot; {
+         DATASET &quot;taxonomy&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_ASCII;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 5, 7 ) / ( 5, 7 ) }
+            DATA {
+            (0,0): &quot;k__Bacteria&quot;, &quot;p__Proteobacteria&quot;,
+            (0,2): &quot;c__Gammaproteobacteria&quot;, &quot;o__Enterobacteriales&quot;,
+            (0,4): &quot;f__Enterobacteriaceae&quot;, &quot;g__Escherichia&quot;, &quot;s__&quot;,
+            (1,0): &quot;k__Bacteria&quot;, &quot;p__Cyanobacteria&quot;, &quot;c__Nostocophycideae&quot;,
+            (1,3): &quot;o__Nostocales&quot;, &quot;f__Nostocaceae&quot;, &quot;g__Dolichospermum&quot;,
+            (1,6): &quot;s__&quot;,
+            (2,0): &quot;k__Archaea&quot;, &quot;p__Euryarchaeota&quot;, &quot;c__Methanomicrobia&quot;,
+            (2,3): &quot;o__Methanosarcinales&quot;, &quot;f__Methanosarcinaceae&quot;,
+            (2,5): &quot;g__Methanosarcina&quot;, &quot;s__&quot;,
+            (3,0): &quot;k__Bacteria&quot;, &quot;p__Firmicutes&quot;, &quot;c__Clostridia&quot;,
+            (3,3): &quot;o__Halanaerobiales&quot;, &quot;f__Halanaerobiaceae&quot;,
+            (3,5): &quot;g__Halanaerobium&quot;, &quot;s__Halanaerobiumsaccharolyticum&quot;,
+            (4,0): &quot;k__Bacteria&quot;, &quot;p__Proteobacteria&quot;,
+            (4,2): &quot;c__Gammaproteobacteria&quot;, &quot;o__Enterobacteriales&quot;,
+            (4,4): &quot;f__Enterobacteriaceae&quot;, &quot;g__Escherichia&quot;, &quot;s__&quot;
+            }
+         }
+      }
+   }
+   GROUP &quot;sample&quot; {
+      GROUP &quot;group-metadata&quot; {
+      }
+      DATASET &quot;ids&quot; {
+         DATATYPE  H5T_STRING {
+            STRSIZE H5T_VARIABLE;
+            STRPAD H5T_STR_NULLTERM;
+            CSET H5T_CSET_ASCII;
+            CTYPE H5T_C_S1;
+         }
+         DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+         DATA {
+         (0): &quot;Sample1&quot;, &quot;Sample2&quot;, &quot;Sample3&quot;, &quot;Sample4&quot;, &quot;Sample5&quot;,
+         (5): &quot;Sample6&quot;
+         }
+      }
+      GROUP &quot;matrix&quot; {
+         DATASET &quot;data&quot; {
+            DATATYPE  H5T_IEEE_F64LE
+            DATASPACE  SIMPLE { ( 15 ) / ( 15 ) }
+            DATA {
+            (0): 5, 2, 1, 1, 1, 1, 1, 1, 1, 2, 4, 3, 1, 2, 1
+            }
+         }
+         DATASET &quot;indices&quot; {
+            DATATYPE  H5T_STD_I32LE
+            DATASPACE  SIMPLE { ( 15 ) / ( 15 ) }
+            DATA {
+            (0): 1, 3, 1, 3, 4, 0, 2, 3, 4, 1, 2, 1, 1, 2, 3
+            }
+         }
+         DATASET &quot;indptr&quot; {
+            DATATYPE  H5T_STD_I32LE
+            DATASPACE  SIMPLE { ( 7 ) / ( 7 ) }
+            DATA {
+            (0): 0, 2, 5, 9, 11, 12, 15
+            }
+         }
+      }
+      GROUP &quot;metadata&quot; {
+         DATASET &quot;BODY_SITE&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_UTF8;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): &quot;gut&quot;, &quot;gut&quot;, &quot;gut&quot;, &quot;skin&quot;, &quot;skin&quot;, &quot;skin&quot;
+            }
+         }
+         DATASET &quot;BarcodeSequence&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_UTF8;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): &quot;CGCTTATCGAGA&quot;, &quot;CATACCAGTAGC&quot;, &quot;CTCTCTACCTGT&quot;,
+            (3): &quot;CTCTCGGCCTGT&quot;, &quot;CTCTCTACCAAT&quot;, &quot;CTAACTACCAAT&quot;
+            }
+         }
+         DATASET &quot;Description&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_UTF8;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): &quot;human gut&quot;, &quot;human gut&quot;, &quot;human gut&quot;, &quot;human skin&quot;,
+            (4): &quot;human skin&quot;, &quot;human skin&quot;
+            }
+         }
+         DATASET &quot;LinkerPrimerSequence&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_UTF8;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): &quot;CATGCTGCCTCCCGTAGGAGT&quot;, &quot;CATGCTGCCTCCCGTAGGAGT&quot;,
+            (2): &quot;CATGCTGCCTCCCGTAGGAGT&quot;, &quot;CATGCTGCCTCCCGTAGGAGT&quot;,
+            (4): &quot;CATGCTGCCTCCCGTAGGAGT&quot;, &quot;CATGCTGCCTCCCGTAGGAGT&quot;
+            }
+         }
+      }
+   }
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;biom-summarize-table&quot;&gt;BIOM summarize table&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Num samples: 19
+Num observations: 1563
+Total count: 133137
+Table density (fraction of non-zero values): 0.191
+
+Counts/sample summary:
+ Min: 2854.0
+ Max: 18129.0
+ Median: 5457.000
+ Mean: 7007.211
+ Std. dev.: 3955.546
+ Sample Metadata Categories: None provided
+ Observation Metadata Categories: taxonomy
+
+Counts/sample detail:
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;anova&quot;&gt;ANOVA&lt;/h2&gt;
+
+&lt;p&gt;We perform the ANOVA test on multiple taxonomic level.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OTU&lt;/td&gt;
+      &lt;td&gt;OTU id&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Test-Statistic&lt;/td&gt;
+      &lt;td&gt;the value of the test statistic for the given test&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P&lt;/td&gt;
+      &lt;td&gt;the raw P value returned by the given test.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FDR_P&lt;/td&gt;
+      &lt;td&gt;the P value corrected by the Benjamini-Hochberg FDR procedure for multiple comparisons.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bonferroni_P&lt;/td&gt;
+      &lt;td&gt;the P value corrected by the Bonferroni procedure for multiple comparisons.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x_mean&lt;/td&gt;
+      &lt;td&gt;there will be as many of these headers as there are unique values in the mapping file under the category passed with the -c option. Each of these fields will contain the mean frequency/abundance/count of the given OTU for the given sample group.  We have two groups in this workshop (early and late) so we will have two columns&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 </content>
  </entry>
  
@@ -930,6 +1919,27 @@ Eterm   5103   5280   +    46   1   0   2   Y73E7A.7
  </entry>
  
  <entry>
+   <title>Appgraphics</title>
+   <link href="http://localhost:4000/2017/06/21/AppGraphics/"/>
+   <updated>2017-06-21T14:03:21-04:00</updated>
+   <id>http://localhost:4000/2017/06/21/AppGraphics</id>
+   <content type="html">&lt;h1 id=&quot;icons&quot;&gt;Icons&lt;/h1&gt;
+
+&lt;p&gt;https://makeappicon.com/&lt;/p&gt;
+
+&lt;h1 id=&quot;android&quot;&gt;Android&lt;/h1&gt;
+
+&lt;p&gt;If you’re totally out of time, &lt;a href=&quot;https://www.norio.be/android-feature-graphic-generator/&quot;&gt;Norio hosts a simple graphic generator that does not require attribution&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you’d like to try your hand at something a little more interesting, browsing the google play store is a great idea.&lt;/p&gt;
+
+&lt;p&gt;Here are some simple to implement templates:&lt;/p&gt;
+
+&lt;p&gt;Have react.Create component bubble.  Push an array.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>BLAST output</title>
    <link href="http://localhost:4000/2017/06/14/BLAST_format_explained/"/>
    <updated>2017-06-14T00:00:00-04:00</updated>
@@ -1207,6 +2217,58 @@ Ultimately the stats files included with the assembly can be more confusing than
 
 &lt;p&gt;These should look familiar to whats in the &lt;code class=&quot;highlighter-rouge&quot;&gt;stats.txt&lt;/code&gt; file.  The ends of K-mers values are the last nucleotides of the k-mers in that node.&lt;/p&gt;
 
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Changing_your_react_native_app_name</title>
+   <link href="http://localhost:4000/2017/06/11/changing_your_react_native_app_name/"/>
+   <updated>2017-06-11T11:52:10-04:00</updated>
+   <id>http://localhost:4000/2017/06/11/changing_your_react_native_app_name</id>
+   <content type="html">
+&lt;h1 id=&quot;renaming-my-app-in-react-native&quot;&gt;Renaming my app in react-native&lt;/h1&gt;
+
+&lt;p&gt;In theory, all you need to do is rename the app in your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file and run &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native upgrade&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In practice, however, I’ve been getting the error: &lt;code class=&quot;highlighter-rouge&quot;&gt;A valid version number for 'react-native' is not specified in your 'package.json' file. Aborting.&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;react-native-cli: 2.0.1
+react-native: 0.42.3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Make sure that react and react-native are pointing to a stable release, for example,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;react&quot;: &quot;^15.4.*&quot;,
+    &quot;react-native&quot;: &quot;^0.42.*&quot;,
+    ```
+
+
+It also suggests using the git upgrader, at `npm install -g react-native-git-upgrade`.  Once the upgrader is installed, run `sudo react-native-git-upgrade`.
+
+
+You should also be sure to run a find-replace to replace your old app name with the new one in all text throughout the app itself.
+
+
+
+### Removing the old app
+
+* Manually delete all of the build specific folders and files in the `ios` and `android` folder.
+
+* Now delete all modules, install, and re-link
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;sudo rm -rf node_modules &amp;amp;&amp;amp; sudo npm install &amp;amp;&amp;amp; react-native link&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+* clear the cache
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;watchman watch-del-all&lt;/p&gt;
+
+&lt;p&gt;npm start –reset-cache
+```&lt;/p&gt;
 </content>
  </entry>
  
@@ -1884,6 +2946,21 @@ ls test_folder
   &lt;li&gt;Relative path&lt;/li&gt;
   &lt;li&gt;How can you make a new folder in your home directory from this remote location?&lt;/li&gt;
 &lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Learningprotege</title>
+   <link href="http://localhost:4000/2017/04/20/learningProtege/"/>
+   <updated>2017-04-20T17:25:03-04:00</updated>
+   <id>http://localhost:4000/2017/04/20/learningProtege</id>
+   <content type="html">
+&lt;h2 id=&quot;what-is-owl&quot;&gt;What is OWL?&lt;/h2&gt;
+
+&lt;p&gt;Owl tutorial slides:  http://protege.stanford.edu/conference/2006/submissions/slides/OWLTutorial_Part1.pdf&lt;/p&gt;
+
+&lt;p&gt;It is its own langauge….  but Tools exist to hide the syntax of the language and make it mostly machine readable.&lt;/p&gt;
 
 </content>
  </entry>

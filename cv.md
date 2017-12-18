@@ -118,6 +118,7 @@ _Full day workshops developed & implemented:_
 
 ##### Workshops
 * [Floracliff mushroom identification workshop](http://www.bradfordcondon.com/2017/04/17/floraCliffUpdate/) Lexington, KY (2016)
+* [AgBioData metadata committee](https://www.agbiodata.org/working_groups/metadata_persistence_wg) Salt Lake City, UT (2017)
 
 ##### Talks
 
@@ -134,6 +135,7 @@ _Full day workshops developed & implemented:_
 * Molecular Plant Microbe Biology, Quebec City, QC (2009)
 * Fungal Genetics Conference, Asilomar, CA (2011)
 * [University of Kentucky Society of Postdoctoral Scholars Research Symposium](http://sops.as.uky.edu/), Lexington, KY (2017) 
+
 
 
 

@@ -24,7 +24,8 @@ I tried to follow the general recommendations and most things worked out great. 
 I liked the inclusion of "tear off" tags for our flyer workshop.  When I saw it on this digital display, I had to laugh.  Next time we'll distribute *print* and *digital* versions of the flyer.
 
  
-![Our flyer](/assets/img/carpentry/swc_flyer_tearoff.jPG)
+>![Our flyer](/assets/img/carpentry/swc_flyer_tearoff.jPG)
+>Our flyer had tear offs which sounds great until you see it on one of those digital bulletin board displays around campus.
 
 ###  Charging a registration fee
 
@@ -41,12 +42,14 @@ Because our workshop was free, there was no fee for using Eventbrite.  Eventbrit
 Eventbrite also has a waitlist functionality.  After the tickets sold out, I enabled the waitlist and people could join the waitlist, managed entirely by Eventbrite.  When I recieved cancellations, I just had to "release the tickets" and the waitlister has a set period of time (i set it to 24 hours) to respond and claim their ticket.
 
 Eventbrite also has a widget that lets particpants purchase tickets right on your course website.
-![The eventbrite widget on our software carpentry website](/assets/img/carpentry/eventbrite_widget.png)
+
+>![The eventbrite widget on our software carpentry website](/assets/img/carpentry/eventbrite_widget.png)
+>The Eventbrite widget will allow your users to purchase tickets right on your website (or in this case, join the waitlist).  
 
 All together this is great.  Managing an attendee list and waitlist via emails is a deceptively time consuming task.  Even though its quite easy, not getting barraged with emails (almost 70 emails with people registering alone!) is a great perk.  I would use Eventbrite again, at least for free events.
 
-![The eventbrite page](/assets/img/carpentry/eventbrite.png)
-
+>![The eventbrite page](/assets/img/carpentry/eventbrite.png)
+>The Eventbrite event management page.
 
 ### Preparing Your Lectures
 

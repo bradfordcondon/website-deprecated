@@ -15,7 +15,7 @@ categories:
   - Uncategorized
 tags:
   - education
-  - MOOCs
+  - moocs
   - teaching
 ---
 MOOCs (Massive Open Online Courses)  are an interesting development in higher education.  At their most impressive, they are a way for brilliant educators to reach thousands of students at a time, all across the world.  MOOCs have the potential to remove educational barriers like learning disabilities, economic constraints, geographic realities, or busy life schedules.  My alma mater, Cornell, [launched their first wave of MOOCs last semester.](http://www.news.cornell.edu/stories/2013/10/cornell-s-first-four-moocs-launch-next-semester)  Cornell prides itself on catering to &#8220;any person, any study&#8221; and its not hard to see how MOOCs can drive this mission forward.

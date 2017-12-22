@@ -7,7 +7,7 @@ layout: post
 guid: http://www.bradfordcondon.com/?p=557
 image: /wp-content/uploads/2016/05/Screen-Shot-2016-05-23-at-2.59.05-PM.png
 categories:
-  - Science
+  - science
   - Tools
 tags:
   - fasta

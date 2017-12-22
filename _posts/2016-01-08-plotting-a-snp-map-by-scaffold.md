@@ -7,7 +7,7 @@ layout: post
 guid: http://www.bradfordcondon.com/?p=541
 image: /wp-content/uploads/2016/01/snpsall.png
 categories:
-  - Science
+  - science
   - Tools
 tags:
   - biology

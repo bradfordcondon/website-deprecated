@@ -10,7 +10,7 @@ excerpt: |
 layout: post
 image: /wp-content/uploads/2015/05/screen-shot-2015-05-28-at-3-59-55-pm-825x510.png
 categories:
-  - Science
+  - science
 tags:
   - news
   - peer-review

@@ -7,12 +7,12 @@ layout: post
 guid: http://www.bradfordcondon.com/?p=501
 image: /wp-content/uploads/2015/12/vignette_nmds.png
 categories:
-  - Science
+  - science
   - Tools
 tags:
   - biology
-  - Ecology
-  - Metagenomics
+  - ecology
+  - metagenomics
   - Phyloseq
   - R
   - science

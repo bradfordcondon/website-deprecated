@@ -7,8 +7,8 @@ layout: post
 image: /wp-content/uploads/2017/01/logo_nonet.jpg
 excerpt_separator: <!--more-->
 categories:
-  - Outreach
-  - Science
+  - outreach
+  - science
 ---
 
 I'm excited to announce that, a collaboration between Dr. Ellen Crocker, Dr. Susan Odom and myself has secured an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research) grant to bring a science conference for young girls to University of Kentucky.  The conference, an extension of the [Expanding Your Horizons (EYH) network](http://www.eyhn.org/), is a great opportunity for young girls, as well as undergraduate and graduate students.  The conference will be held April 29, 2017.

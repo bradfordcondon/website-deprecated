@@ -15,7 +15,6 @@ image: /wp-content/uploads/2014/08/Hackersposter.jpg
 categories:
   - fun
 tags:
-  - CyberVor
   - news
   - security
 ---

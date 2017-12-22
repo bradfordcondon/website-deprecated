@@ -14,7 +14,7 @@ categories:
 tags:
   - biology
   - science
-  - stem-cell burgers
+  - stem-cell-burgers
 ---
 Back in September last year, [I explored some possibilities that the &#8220;Stem Cell burger&#8221; opened up.](http://bradfordcondon.wordpress.com/2013/09/14/ethical-implications-of-the-stem-cell-burger/)  Perhaps the most far-fetched idea I had was to produce meat from cloned celebrity stem cells.
 

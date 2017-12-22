@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 image: /wp-content/uploads/2016/08/cropped_us-150x150.png
 categories:
   - fun
-  - Science
+  - science
 tags:
   - fungi
   - mushrooms

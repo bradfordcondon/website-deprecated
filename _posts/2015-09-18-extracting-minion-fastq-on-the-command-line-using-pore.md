@@ -6,7 +6,7 @@ author: BradfordCondon
 layout: post
 guid: https://bradfordcondon.wordpress.com/?p=429
 categories:
-  - Science
+  - science
 tags:
   - genomics
   - science

@@ -6,13 +6,13 @@ author: bradford.condon@gmail.com
 excerpt_separator: <!--more-->
 layout: post
 categories:
-  - Science
+  - science
   - Tools
 tags:
-  - Bioinformatics
-  - Ecology
-  - Metagenomics
-  - QIIME
+  - bioinformatics
+  - ecology
+  - metagenomics
+  - qiime
 ---
 For those of you running MacQIIME on OSX El Capitan or higher, you may (like me) find that the MacQIIME executable is no longer in your path.
 

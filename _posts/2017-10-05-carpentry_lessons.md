@@ -6,7 +6,7 @@ date: 2017-10-05
 tags:
   - education
   - genomics
-  - Software-Carpentry
+  - software-carpentry
 
 ---
 In a [previous blog post](/2017/09/25/Software_Data_Carpentry/), I announced my excitement for becoming a certified Software and Data Carpentry instructor.  As I complete my checkout process, I also wanted to recap the most important points from the training.  [A lab meeting presentation of this recap cis available on google slides here](https://docs.google.com/presentation/d/e/2PACX-1vQDtbUsYpFS5-I_66uKSixgSKQSSWrQSlmkZ9HdMMiKY8U449nyFwDkzQ14WAEDYf4xiFaZRV70xX9A/pub?start=false&loop=false&delayms=3000).  

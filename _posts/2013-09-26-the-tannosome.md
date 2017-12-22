@@ -8,7 +8,7 @@ guid: http://bradfordcondon.wordpress.com/?p=216
 publicize_twitter_user:
   - BradfordCondon
 categories:
-  - Science
+  - science
 tags:
   - biology
   - news

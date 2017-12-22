@@ -2,7 +2,7 @@
 layout: post
 title: "Plotting with D3 part 1"
 excerpt_separator: <!--more-->
-date: 2017-12-18
+date: 2017-12-22
 tags: 
  - education
  - web

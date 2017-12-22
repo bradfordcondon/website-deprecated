@@ -7,7 +7,7 @@ layout: post
 categories:
   - Tools
 tags:
-  - RSS
+  - rss
   - science
   - tools
 ---

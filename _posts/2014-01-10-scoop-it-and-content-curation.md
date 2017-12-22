@@ -14,7 +14,7 @@ categories:
 tags:
   - curation
   - news
-  - RSS
+  - rss
   - science
   - tips
   - tools

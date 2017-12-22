@@ -7,7 +7,7 @@ layout: post
 categories:
   - Tools
 tags:
-  - Evernote
+  - evernote
   - notebooks
   - notes
   - science

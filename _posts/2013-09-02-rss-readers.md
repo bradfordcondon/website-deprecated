@@ -11,11 +11,11 @@ categories:
   - Tools
 tags:
   - citeulike
-  - Evernote
+  - evernote
   - literature
   - news
   - reading
-  - RSS
+  - rss
   - scoop.it
   - tools
 ---

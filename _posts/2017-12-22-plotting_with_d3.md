@@ -8,7 +8,7 @@ tags:
  - web
  - javascript
  - d3
- - data science
+ - data-science
 ---
 
 ![D3 logo](/assets/img/d3/d3_logo.png)

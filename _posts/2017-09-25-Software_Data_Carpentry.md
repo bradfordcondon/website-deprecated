@@ -6,7 +6,7 @@ excerpt_separator: <!--more-->
 tags:
   - education
   - genomics
-  - Software Carpentry
+  - Software-Carpentry
 
 ---
 

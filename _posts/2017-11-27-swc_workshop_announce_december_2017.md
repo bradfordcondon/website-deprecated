@@ -6,7 +6,7 @@ date: 2017-11-27
 tags:
   - education
   - genomics
-  - Software Carpentry
+  - Software-Carpentry
 
 ---
 

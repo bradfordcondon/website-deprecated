@@ -89,17 +89,19 @@ var data = [{name: "one", property: "a", value: 100},
   
  ```
 
+![Our first d3 plot leaves a lot to be desired](/assets/img/d3/d3_plot_1.png)
+
 There's a couple of problems here, but let's see what we are trying to do.
 
 * We define a data array consisting of objects with some simple key => value pairs.  For now we just use the `name` and `value` property.
 * We define and select the `svg` element which holds our graphics.
 * We enter our data into the `svg` using the `data()` and `enter()` calls.
-* We append append `g` elements to each `.bar` object. 
-* We transform each `g` object by translating it, shifting it along the x-axis
-* We append a `rect` element
+* We append `g` elements to each `.bar` object. 
+* We transform each `g` object by translating it, shifting it along the x-axis.
+* We append a `rect` element.
 * We transform the  `rect` element based on the data.
 
-Pay special attention to `function (d, i) {//code}`.  Because we've entered our data, we can define a function that takes the *ith* element of the `data` array as `d` as an input, and outputs what we want. 
+Pay special attention to `function (d, i) {//code}`.  Because we've entered our data, we can define a function that takes the *`i`th* element of the `data` array as `d` as an input, and outputs what we want. 
 
 
 ### Chaining
@@ -142,7 +144,7 @@ Consider how we style the height in the above code:
  return d.value})
  ```  
 
-rather than returning a fixed height, we use a **function** to dynamically return the height based on `d` and `i`.  `d` is the individual data entry, and `i` is its key.  In our example code, when `i = 2`, `d = {name: "two", property: "a", value: 50}`.
+Rather than returning a fixed height, we use a **function** to dynamically return the height based on `d` and `i`.  `d` is the individual data entry, and `i` is its key.  In our example code, when `i = 2`, `d = {name: "two", property: "a", value: 50}`.
 
 Because our data structure has a `value` key, simply returning `d.value` will set the height of the bar based on the value of that element!  If you are getting confused, I recommend including a `console.log(d)` in your function.  You'll see in your console that each data object in the array is returned one by one.
 

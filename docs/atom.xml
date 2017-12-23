@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2017-12-22T16:00:23-05:00</updated>
+ <updated>2017-12-23T11:58:10-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
@@ -95,19 +95,21 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_plot_1.png&quot; alt=&quot;Our first d3 plot leaves a lot to be desired&quot; /&gt;&lt;/p&gt;
+
 &lt;p&gt;There’s a couple of problems here, but let’s see what we are trying to do.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;We define a data array consisting of objects with some simple key =&amp;gt; value pairs.  For now we just use the &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt; property.&lt;/li&gt;
   &lt;li&gt;We define and select the &lt;code class=&quot;highlighter-rouge&quot;&gt;svg&lt;/code&gt; element which holds our graphics.&lt;/li&gt;
   &lt;li&gt;We enter our data into the &lt;code class=&quot;highlighter-rouge&quot;&gt;svg&lt;/code&gt; using the &lt;code class=&quot;highlighter-rouge&quot;&gt;data()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;enter()&lt;/code&gt; calls.&lt;/li&gt;
-  &lt;li&gt;We append append &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; elements to each &lt;code class=&quot;highlighter-rouge&quot;&gt;.bar&lt;/code&gt; object.&lt;/li&gt;
-  &lt;li&gt;We transform each &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; object by translating it, shifting it along the x-axis&lt;/li&gt;
-  &lt;li&gt;We append a &lt;code class=&quot;highlighter-rouge&quot;&gt;rect&lt;/code&gt; element&lt;/li&gt;
+  &lt;li&gt;We append &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; elements to each &lt;code class=&quot;highlighter-rouge&quot;&gt;.bar&lt;/code&gt; object.&lt;/li&gt;
+  &lt;li&gt;We transform each &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; object by translating it, shifting it along the x-axis.&lt;/li&gt;
+  &lt;li&gt;We append a &lt;code class=&quot;highlighter-rouge&quot;&gt;rect&lt;/code&gt; element.&lt;/li&gt;
   &lt;li&gt;We transform the  &lt;code class=&quot;highlighter-rouge&quot;&gt;rect&lt;/code&gt; element based on the data.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Pay special attention to &lt;code class=&quot;highlighter-rouge&quot;&gt;function (d, i) {//code}&lt;/code&gt;.  Because we’ve entered our data, we can define a function that takes the &lt;em&gt;ith&lt;/em&gt; element of the &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; array as &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; as an input, and outputs what we want.&lt;/p&gt;
+&lt;p&gt;Pay special attention to &lt;code class=&quot;highlighter-rouge&quot;&gt;function (d, i) {//code}&lt;/code&gt;.  Because we’ve entered our data, we can define a function that takes the &lt;em&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;th&lt;/em&gt; element of the &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; array as &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; as an input, and outputs what we want.&lt;/p&gt;
 
 &lt;h3 id=&quot;chaining&quot;&gt;Chaining&lt;/h3&gt;
 &lt;p&gt;D3 allows for &lt;em&gt;chaining&lt;/em&gt; method calls together, much like jQuery.  In the above example, we took advantage of chaining several times.  For example…&lt;/p&gt;
@@ -147,7 +149,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;rather than returning a fixed height, we use a &lt;strong&gt;function&lt;/strong&gt; to dynamically return the height based on &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;.  &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; is the individual data entry, and &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; is its key.  In our example code, when &lt;code class=&quot;highlighter-rouge&quot;&gt;i = 2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;d = {name: &quot;two&quot;, property: &quot;a&quot;, value: 50}&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Rather than returning a fixed height, we use a &lt;strong&gt;function&lt;/strong&gt; to dynamically return the height based on &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;.  &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; is the individual data entry, and &lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt; is its key.  In our example code, when &lt;code class=&quot;highlighter-rouge&quot;&gt;i = 2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;d = {name: &quot;two&quot;, property: &quot;a&quot;, value: 50}&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Because our data structure has a &lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt; key, simply returning &lt;code class=&quot;highlighter-rouge&quot;&gt;d.value&lt;/code&gt; will set the height of the bar based on the value of that element!  If you are getting confused, I recommend including a &lt;code class=&quot;highlighter-rouge&quot;&gt;console.log(d)&lt;/code&gt; in your function.  You’ll see in your console that each data object in the array is returned one by one.&lt;/p&gt;
 

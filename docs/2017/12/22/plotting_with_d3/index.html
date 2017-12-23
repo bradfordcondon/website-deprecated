@@ -167,19 +167,21 @@
 </code></pre>
 </div>
 
+<p><img src="/assets/img/d3/d3_plot_1.png" alt="Our first d3 plot leaves a lot to be desired" /></p>
+
 <p>There’s a couple of problems here, but let’s see what we are trying to do.</p>
 
 <ul>
   <li>We define a data array consisting of objects with some simple key =&gt; value pairs.  For now we just use the <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">value</code> property.</li>
   <li>We define and select the <code class="highlighter-rouge">svg</code> element which holds our graphics.</li>
   <li>We enter our data into the <code class="highlighter-rouge">svg</code> using the <code class="highlighter-rouge">data()</code> and <code class="highlighter-rouge">enter()</code> calls.</li>
-  <li>We append append <code class="highlighter-rouge">g</code> elements to each <code class="highlighter-rouge">.bar</code> object.</li>
-  <li>We transform each <code class="highlighter-rouge">g</code> object by translating it, shifting it along the x-axis</li>
-  <li>We append a <code class="highlighter-rouge">rect</code> element</li>
+  <li>We append <code class="highlighter-rouge">g</code> elements to each <code class="highlighter-rouge">.bar</code> object.</li>
+  <li>We transform each <code class="highlighter-rouge">g</code> object by translating it, shifting it along the x-axis.</li>
+  <li>We append a <code class="highlighter-rouge">rect</code> element.</li>
   <li>We transform the  <code class="highlighter-rouge">rect</code> element based on the data.</li>
 </ul>
 
-<p>Pay special attention to <code class="highlighter-rouge">function (d, i) {//code}</code>.  Because we’ve entered our data, we can define a function that takes the <em>ith</em> element of the <code class="highlighter-rouge">data</code> array as <code class="highlighter-rouge">d</code> as an input, and outputs what we want.</p>
+<p>Pay special attention to <code class="highlighter-rouge">function (d, i) {//code}</code>.  Because we’ve entered our data, we can define a function that takes the <em><code class="highlighter-rouge">i</code>th</em> element of the <code class="highlighter-rouge">data</code> array as <code class="highlighter-rouge">d</code> as an input, and outputs what we want.</p>
 
 <h3 id="chaining">Chaining</h3>
 <p>D3 allows for <em>chaining</em> method calls together, much like jQuery.  In the above example, we took advantage of chaining several times.  For example…</p>
@@ -219,7 +221,7 @@
 </code></pre>
 </div>
 
-<p>rather than returning a fixed height, we use a <strong>function</strong> to dynamically return the height based on <code class="highlighter-rouge">d</code> and <code class="highlighter-rouge">i</code>.  <code class="highlighter-rouge">d</code> is the individual data entry, and <code class="highlighter-rouge">i</code> is its key.  In our example code, when <code class="highlighter-rouge">i = 2</code>, <code class="highlighter-rouge">d = {name: "two", property: "a", value: 50}</code>.</p>
+<p>Rather than returning a fixed height, we use a <strong>function</strong> to dynamically return the height based on <code class="highlighter-rouge">d</code> and <code class="highlighter-rouge">i</code>.  <code class="highlighter-rouge">d</code> is the individual data entry, and <code class="highlighter-rouge">i</code> is its key.  In our example code, when <code class="highlighter-rouge">i = 2</code>, <code class="highlighter-rouge">d = {name: "two", property: "a", value: 50}</code>.</p>
 
 <p>Because our data structure has a <code class="highlighter-rouge">value</code> key, simply returning <code class="highlighter-rouge">d.value</code> will set the height of the bar based on the value of that element!  If you are getting confused, I recommend including a <code class="highlighter-rouge">console.log(d)</code> in your function.  You’ll see in your console that each data object in the array is returned one by one.</p>
 
@@ -285,7 +287,7 @@
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2017-12-22T16:00:23-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2017-12-23T11:58:10-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

@@ -87,23 +87,36 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/10/19/GO_introduction/">
-                            Go_introduction
+                        <a href="/2017/07/02/ZFF/">
+                            ZFF annotations for SNAP
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-10-19T19:56:48-04:00" class="post-date is-small">
-   19 Oct 2017</time>
+   <time datetime="2017-07-02T00:00:00-04:00" class="post-date is-small">
+   02 Jul 2017</time>
    </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/next-generation-sequencing/">
+        <span class="tag is-primary">
+              next-generation-sequencing
+        </span>
+                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    
+                    <p>This post is part 6 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
 
-                    <a href="/2017/10/19/GO_introduction/">
+
+                    <a href="/2017/07/02/ZFF/">
                         Read the full post...
                     </a>
                 </div>
@@ -113,30 +126,36 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/10/17/dockerizing/">
-                            Dockerizing your environment
+                        <a href="/2017/06/14/BLAST_format_explained/">
+                            BLAST output
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-10-17T14:23:25-04:00" class="post-date is-small">
-   17 Oct 2017</time>
+   <time datetime="2017-06-14T00:00:00-04:00" class="post-date is-small">
+   14 Jun 2017</time>
    </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/next-generation-sequencing/">
+        <span class="tag is-primary">
+              next-generation-sequencing
+        </span>
+                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>For a long time, I’ve been using Homestead to set up my web developer environment.  It’s easy to set up, and most importantly, I could understand where my files were.</p>
-
-<p>The problem is that as a novice developer, I make mistakes, a lot.  I insert all sorts of junk into my database writing new code, and after a few months, I need to destroy my machine and start over.  To recreate a Tripal site, I need to reinstall Drupal, Tripal, all of my modules, and then re-load data.  After the second time I knew I had to implement a different solution.  I had to figure out this Docker thing.</p>
-
-<p><img src="https://www.docker.com/sites/default/files/vertical_large.png" alt="Docker logo" /></p>
-
-<p>You can find the final, pre-loaded developer image <a href="https://hub.docker.com/r/bcondon/docker_tripal3/">here</a>.</p>
+                    <p>This post is part 5 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
 
 
-                    <a href="/2017/10/17/dockerizing/">
+                    <a href="/2017/06/14/BLAST_format_explained/">
                         Read the full post...
                     </a>
                 </div>
@@ -146,77 +165,37 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/10/06/TwoBit/">
-                            TwoBit format
+                        <a href="/2017/06/13/velvet_out/">
+                            Velvet assembly output files
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-10-06T10:46:59-04:00" class="post-date is-small">
-   06 Oct 2017</time>
+   <time datetime="2017-06-13T00:00:00-04:00" class="post-date is-small">
+   13 Jun 2017</time>
    </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/next-generation-sequencing/">
+        <span class="tag is-primary">
+              next-generation-sequencing
+        </span>
+                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <h1 id="what-is-twobit">What is TwoBit</h1>
+                    <p>This post is part 4 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next 
+Generation Sequencing Workshop at the University of Kentucky.</p>
 
-<h1 id="creating-a-twobit-file">Creating a TwoBit file</h1>
 
-<p>We can follow the guide on the <a href="https://genome.ucsc.edu/goldenpath/help/twoBit.html">UCSC website</a>.</p>
-
-<p>For example, the OSX formatted versions can be downloaded <a href="http://hgdownload.soe.ucsc.edu/admin/exe/macOSX.x86_64/">here</a>.  If you’re new to computer science, you might not be sure whatto do with these.</p>
-
-<h3 id="move-the-file-into-your-path">Move the file into your $PATH</h3>
-
-<p><code class="highlighter-rouge">echo $PATH</code>.  the path <code class="highlighter-rouge">/usr/local/bin</code> should be somewhere in the alphabet soup.  This is a place we can install software so that it can be accessed wherever we are in our file system.</p>
-
-<h3 id="change-permissions-on-the-file">Change permissions on the file</h3>
-<p><code class="highlighter-rouge">chmod a+x /usr/local/bin/faToTwoBit</code></p>
-
-<h3 id="what-does-the-command-do">What does the command do?</h3>
-
-<p>If we try to run the command with no arguments by simply executing ` faToTwoBit`, we’ll get the command’s usage arguments.</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>faToTwoBit - Convert DNA from fasta to 2bit format
-usage:
-   faToTwoBit <span class="k">in</span>.fa <span class="o">[</span>in2.fa in3.fa ...] out.2bit
-options:
-   -long          use 64-bit offsets <span class="k">for </span>index.   Allow <span class="k">for </span>twoBit to contain more than 4Gb of sequence.
-                  NOT COMPATIBLE WITH OLDER CODE.
-   -noMask        Ignore lower-case masking <span class="k">in </span>fa file.
-   -stripVersion  Strip off version number after <span class="s1">'.'</span> <span class="k">for </span>GenBank accessions.
-   -ignoreDups    Convert first sequence only <span class="k">if </span>there are duplicate sequence
-                  names.  Use <span class="s1">'twoBitDup'</span> to find duplicate sequences.
-</code></pre>
-</div>
-
-<h3 id="convert-the-fasta-file">Convert the FASTA file</h3>
-<p>Run the below command.  Be sure to replace <code class="highlighter-rouge">input.fasta</code> with the fasta file you are attempting to convert.  Make sure you are in the same folder as your <code class="highlighter-rouge">input.fasta</code> file: if you are not, you will have to provide the relative or absolute path for the command to work!</p>
-
-<p><code class="highlighter-rouge">faToTwoBit input.fasta output.2bit</code></p>
-
-<h3 id="convert-gff">Convert GFF</h3>
-
-<p>Biodalliance supports bigwig and bigbed.</p>
-
-<p>https://www.biostars.org/p/4070/</p>
-
-<p>https://toolshed.g2.bx.psu.edu/repository/display_tool?repository_id=afcb6456d8e300ed&amp;tool_config=%2Fsrv%2Ftoolshed%2Fmain%2Fvar%2Fdata%2Frepos%2F000%2Frepo_21%2Fgff_to_bed.xml&amp;changeset_revision=5c6f33e20fcc</p>
-
-<p>So we wrap GFF to BED.
-Then BED to WIG.</p>
-
-<blockquote>
-  <p>Step 1. Create a wig format file following the directions here. When converting a wig file to a bigWig file, you are limited to one track of data in your input file; therefore, you must create a separate wig file for each data track.
-Step 2. Remove any existing “track” or “browser” lines from your wig file so that it contains only data.
-Step 3. Download the wigToBigWig program from the binary utilities directory.
-Step 4. Use the fetchChromSizes script from the same directory to create the chrom.sizes file for the UCSC database with which you are working (e.g., hg19).
-Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file:</p>
-</blockquote>
-
-                    <a href="/2017/10/06/TwoBit/">
+                    <a href="/2017/06/13/velvet_out/">
                         Read the full post...
                     </a>
                 </div>
@@ -226,16 +205,64 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/10/05/carpentry_lessons/">
-                            Software Carpentry TakeAways
+                        <a href="/2017/05/24/GTF/">
+                            GTF (General Transfer Format)
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-10-05T00:00:00-04:00" class="post-date is-small">
-   05 Oct 2017</time>
+   <time datetime="2017-05-24T00:00:00-04:00" class="post-date is-small">
+   24 May 2017</time>
    </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/next-generation-sequencing/">
+        <span class="tag is-primary">
+              next-generation-sequencing
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>This post is part 3 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted <a href="http://www.endophyte.uky.edu/ngs/">here</a>.</p>
+
+<p>General transfer format (GTF), also known as General Feature Format (GFF) 2.0, is the format for transcripts in exercise 4, <strong>RNAseq</strong>.
+For more details, please see the <a href="www.ensembl.org/info/website/upload/gff.html">ensembl guide to GFF</a>.</p>
+
+
+                    <a href="/2017/05/24/GTF/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/05/14/EYHpress/">
+                            Expanding Your Horizons Kentucky 2017
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-05-14T00:00:00-04:00" class="post-date is-small">
+   14 May 2017</time>
+   </span>
+                    
+                    <a href="/tag/outreach/">
+        <span class="tag is-primary">
+              outreach
+        </span>
+                    </a>
                     
                     <a href="/tag/education/">
         <span class="tag is-primary">
@@ -243,29 +270,17 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
         </span>
                     </a>
                     
-                    <a href="/tag/genomics/">
-        <span class="tag is-primary">
-              genomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software-carpentry/">
-        <span class="tag is-primary">
-              software-carpentry
-        </span>
-                    </a>
-                    
                 </div>
 
                 <div class="card-content">
-                    <p>In a <a href="/2017/09/25/Software_Data_Carpentry/">previous blog post</a>, I announced my excitement for becoming a certified Software and Data Carpentry instructor.  As I complete my checkout process, I also wanted to recap the most important points from the training.  <a href="https://docs.google.com/presentation/d/e/2PACX-1vQDtbUsYpFS5-I_66uKSixgSKQSSWrQSlmkZ9HdMMiKY8U449nyFwDkzQ14WAEDYf4xiFaZRV70xX9A/pub?start=false&amp;loop=false&amp;delayms=3000">A lab meeting presentation of this recap cis available on google slides here</a>.</p>
+                    <p><img src="/assets/img/EYH2017/EYHbanner.gif" alt="Expanding your horizons header" /> 
+<img src="/assets/img/EYH2017/sponsor_image.jpg" alt="NSF epscor" /></p>
 
-<p>Looking forward to teaching my first workshop in the next few months!</p>
+<p>On April 29th 2017, the Expanding Your Horizons conference came to Kentucky for the first time.  The conference was funded by an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research for Education and Outreach)  grant which I, along with Ellen Crocker and Susan Odom, was a PI on.
+I’m very grateful for all of the volunteers, corporate partners, parents, teachers, and students who made this conference a success.</p>
 
-<p><img src="/assets/img/carpentry/d_carp.png" alt="Data Carpentry" /> <img src="/assets/img/carpentry/s_carp.png" alt="Software Carpentry" /></p>
 
-
-                    <a href="/2017/10/05/carpentry_lessons/">
+                    <a href="/2017/05/14/EYHpress/">
                         Read the full post...
                     </a>
                 </div>
@@ -275,44 +290,52 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/09/25/Software_Data_Carpentry/">
-                            Software and Data Carpentry
+                        <a href="/2017/05/14/fastq_format_explained/">
+                            FASTQ format explained
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-09-25T00:00:00-04:00" class="post-date is-small">
-   25 Sep 2017</time>
+   <time datetime="2017-05-14T00:00:00-04:00" class="post-date is-small">
+   14 May 2017</time>
    </span>
                     
-                    <a href="/tag/education/">
+                    <a href="/tag/bioinformatics/">
         <span class="tag is-primary">
-              education
+              bioinformatics
         </span>
                     </a>
                     
-                    <a href="/tag/genomics/">
+                    <a href="/tag/next-generation-sequencing/">
         <span class="tag is-primary">
-              genomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software-carpentry/">
-        <span class="tag is-primary">
-              software-carpentry
+              next-generation-sequencing
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>This week(September 25th &amp; 26th 2017), I will be certified as a Software and Data Carpentry instructor.  As of 2017-06-26, there were 968 instructors.  Am I lucky number 1,000?  Probably not.  Still, exciting.</p>
+                    <p>This post is part 2 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted <a href="http://www.endophyte.uky.edu/ngs/">here</a>.</p>
 
-<p><img src="/assets/img/carpentry/d_carp.png" alt="Data Carpentry" /> <img src="/assets/img/carpentry/s_carp.png" alt="Software Carpentry" /></p>
+<p>#FastQ sequence format</p>
+
+<p>FASTQ was originally developed by the Wellcome Trust Sanger Institute to bind together FASTA sequences with their respective quality data.  It is now the standard for high-throughput sequencing output.</p>
+
+<h2 id="the-format">The format</h2>
+
+<p>FASTQ is a four-line per sequence format.  If it looks like the raw sequence of your read takes up more than four lines, you probably have word-wrapping enabled.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@SEQ_ID
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF&gt;&gt;&gt;&gt;&gt;&gt;CCCCCCC65
+
+</code></pre>
+</div>
 
 
-                    <a href="/2017/09/25/Software_Data_Carpentry/">
+                    <a href="/2017/05/14/fastq_format_explained/">
                         Read the full post...
                     </a>
                 </div>
@@ -322,24 +345,40 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/08/13/biologicalGit/">
-                            Using GitHub for bioinformatics
+                        <a href="/2017/05/03/remoteBlast/">
+                            Introduction to BLAST
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-08-13T00:00:00-04:00" class="post-date is-small">
-   13 Aug 2017</time>
+   <time datetime="2017-05-03T00:00:00-04:00" class="post-date is-small">
+   03 May 2017</time>
    </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/ukblast/">
+        <span class="tag is-primary">
+              ukblast
+        </span>
+                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>If there’s one thing I wish I’d done earlier in my career, it’s this: automate <em>all</em> of my bioinformatics workflows and keep it under version control.</p>
+                    <h4 id="uk-blast-workshop-2016">UK-BLAST workshop 2016</h4>
+
+<p>This tutorial was developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.</p>
+
+<p>UK-BLAST is a bioinformatics working group for undergraduate researchers.  In small labs, students often tackle the bioinformatician role in with little to no technical guidance.  The group may not have anyone with a computer science background, or the task may be beyond the skills of current personnel.  In these cases, a working group headed by a technical mentor (myself) allows students to bypass some of the pitfalls and headaches associated with learning computer science all alone.</p>
 
 
-                    <a href="/2017/08/13/biologicalGit/">
+                    <a href="/2017/05/03/remoteBlast/">
                         Read the full post...
                     </a>
                 </div>
@@ -349,26 +388,40 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/08/02/programmingForBio/">
-                            Programming for Biologists
+                        <a href="/2017/04/23/exploringPATH/">
+                            PATH, a guide to finding one's way
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-08-02T14:53:55-04:00" class="post-date is-small">
-   02 Aug 2017</time>
+   <time datetime="2017-04-23T00:00:00-04:00" class="post-date is-small">
+   23 Apr 2017</time>
    </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/ukblast/">
+        <span class="tag is-primary">
+              ukblast
+        </span>
+                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>Ten years ago, I was a biology PhD student beginning to study bioinformatics.  Today, I’m a mobile and web developer.  I want to share a curriculum of computer science concepts and tools that I think can benefit <em>any</em> biologist doing bioinformatics.</p>
+                    <h4 id="uk-blast-workshop-2016">UK-BLAST workshop 2016</h4>
 
-<h1 id="unix">UNIX</h1>
-<p>There are</p>
+<p>These exercises were developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.</p>
 
-                    <a href="/2017/08/02/programmingForBio/">
+<p>UK-BLAST is a bioinformatics working group for undergraduate researchers.  In small labs, students often tackle the bioinformatician role in with little to no technical guidance.  The group may not have anyone with a computer science background, or the task may be beyond the skills of current personnel.  In these cases, a working group headed by a technical mentor (myself) allows students to bypass some of the pitfalls and headaches associated with learning computer science all alone.</p>
+
+
+                    <a href="/2017/04/23/exploringPATH/">
                         Read the full post...
                     </a>
                 </div>
@@ -378,179 +431,75 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/08/02/grep_basics/">
-                            Grep_basics
+                        <a href="/2017/04/19/fixHeaderTabs/">
+                            fixing tabs
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-08-02T14:50:08-04:00" class="post-date is-small">
-   02 Aug 2017</time>
+   <time datetime="2017-04-19T00:00:00-04:00" class="post-date is-small">
+   19 Apr 2017</time>
    </span>
                     
-                </div>
-
-                <div class="card-content">
-                    
-
-                    <a href="/2017/08/02/grep_basics/">
-                        Read the full post...
+                    <a href="/tag/jekyll/">
+        <span class="tag is-primary">
+              jekyll
+        </span>
                     </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/20/unsupportedGems/">
-                            Unsupportedgems
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-20T16:23:49-04:00" class="post-date is-small">
-   20 Jul 2017</time>
-   </span>
                     
-                </div>
-
-                <div class="card-content">
-                    
-<p>I redesigned the landing page of my site, and wanted to host my blog posts at <code class="highlighter-rouge">/blog/index.html</code> instead of the main <code class="highlighter-rouge">index.html</code>.  In theory this should be possible, <a href="https://github.com/jekyll/jekyll-paginate/issues/37">but there are issues</a>.   Unfortunately, I could not get the default paginator to work properly at any location other than <code class="highlighter-rouge">/index.html</code>.</p>
-
-<p>I thought a simple solution would be to use a different gem: <a href="https://github.com/octopress/paginate"><em>octopress-paginate</em></a>.  This worked like a charm and easily supported paginating at <code class="highlighter-rouge">/blog/</code>… but, the site no longer built on Github pages!  This is because Github pages <strong>only supports default jekyll gems</strong>.  I looked into more advanced solutions involving <a href="https://travis-ci.org/">Travis CI</a> (a fantastic tool which I plan on incorporating into my other projects) but for this blog, it was just too much.
- The alternative solution was to simply build the site myself locally and push that.  To do this, all I needed to do was…</p>
-
-<p>## Change my repo name</p>
-
-<p>The <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/">GitHub Pages documentation</a> states that any site hosted at <code class="highlighter-rouge">&lt;username&gt;.github.io</code> <em>must</em> be hosted off the <code class="highlighter-rouge">master</code> branch.  Host the page elsewhere to change the source.</p>
-
-<p>## Change my GitHub Pages source from <code class="highlighter-rouge">master</code> to <code class="highlighter-rouge">/docs</code></p>
-
-<p>Hosting off of a folder in our directory instead of the <code class="highlighter-rouge">master</code> branch lets me keep a build of my site in the same repo hosting the code.</p>
-
-<p>## Set Jekyll to build to <code class="highlighter-rouge">/docs</code></p>
-
-<p>In <code class="highlighter-rouge">_config.yml</code> we can change the default build location from <code class="highlighter-rouge">_site</code> to <code class="highlighter-rouge">docs</code>.  Now when we build our final site and push to <code class="highlighter-rouge">master</code>, GitHub Pages will use that build.</p>
-
-                    <a href="/2017/07/20/unsupportedGems/">
-                        Read the full post...
+                    <a href="/tag/web-dev/">
+        <span class="tag is-primary">
+              web-dev
+        </span>
                     </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/20/iadhore/">
-                            creating synteny mappings
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-20T16:23:49-04:00" class="post-date is-small">
-   20 Jul 2017</time>
-   </span>
                     
                 </div>
 
                 <div class="card-content">
-                    <h1 id="goal">Goal</h1>
-
-<p>The primary goal here is to create a track of synteny mappings for all genomes for jbrowse.  Any number of synteny calculations could work.</p>
-
-<ul>
-  <li>Mummer</li>
-  <li>i-adhore 3.0</li>
-</ul>
-
-<h1 id="mummer">Mummer</h1>
-<p>This module will allow converting nucmer coordinates to a gff file.  https://metacpan.org/pod/distribution/Bio-Gonzales/bin/coords2gff.pl</p>
-
-<h1 id="i-adhore">i-adhore</h1>
-
-<p>The software can be downloaded <a href="http://bioinformatics.psb.ugent.be/webtools/i-adhore/licensing/">here</a>.</p>
-
-<p>Reference</p>
+                    <p>As you can see below, the navigation tabs I’m using at the top of my page didn’t properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.</p>
 
 <blockquote>
-  <p>Proost, S. et al. i-ADHoRe 3.0—fast and sensitive detection of genomic homology in extremely large data sets. Nucl. Acids Res. 40, e11–e11 (2012).</p>
+  <p><img src="/assets/img/tabsFix2017/tabIssue.png" alt="tabs not working!" /></p>
 </blockquote>
 
-<h2 id="installation-and-set-up">Installation and set up</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>tar -xzvf i-adhore-xxx.tar.gz
-cd i-adhore-xxx
-
-mkdir build
-cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=usr/local/bin/i-adhore
-make
-sudo make install
-</code></pre>
-</div>
-
-<p>Unfortunately make fails</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>
-[  9%] Building CXX object src/alignment/CMakeFiles/alignment.dir/GGAligner.cpp.o
-In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
-In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
-In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:5:
-In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../GeneList.h:7:
-In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../headers.h:30:
-/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:
-      use of undeclared identifier '__stl_hash_string'
-        { return __stl_hash_string(s.c_str()); }
-                         ^
-In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
-In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
-In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:6:
-
-</code></pre>
-</div>
-<p>Possible solution: https://github.com/Kentzo/armv6-rpi-linux-gnueabihf/issues/5</p>
-
-<p><code class="highlighter-rouge">brew install gcc</code> will be very slow, so instead we try <code class="highlighter-rouge">brew install gcc48</code>.</p>
-
-<p>if this doenst ork
-need to tell cmake to use a specific compiler</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>export CC=/usr/local/bin/gcc
-export CXX=/usr/local/bin/g++ ##  4.8 wahtever , find path
-export CXX=/usr/local/Cellar/gcc@4.8/4.8.5
-cmake /path/to/your/project
-make
-</code></pre>
-</div>
-<p><code class="highlighter-rouge">/usr/local/Cellar/gcc@4.8/4.8.5</code></p>
-
-<h2 id="other-solution-from-neil">Other solution from Neil</h2>
-
-<p><code class="highlighter-rouge">/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:</code></p>
-
-<p>In the above file,
-change <code class="highlighter-rouge">__stl_hash_string(s.c_str())</code> to <code class="highlighter-rouge">std::hash(s.c_str())</code></p>
-
-<p>We create a script that runs i-adhore with a new tmp directory: <code class="highlighter-rouge">TMPDIR=/tmp i-adhore</code>.  The script also must pass arguments to the command.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#! /bin/sh</span>
-<span class="nv">TMPDIR</span><span class="o">=</span>/tmp
-<span class="nb">exec</span> /usr/local/bin/i-adhore_3.0/bin/i-adhore  <span class="nv">$1</span>
-</code></pre>
-</div>
-
-<h2 id="sibelia">Sibelia</h2>
-
-<p><a href="http://bioinf.spbau.ru/sibelia">Project page</a></p>
+<p>So how do we fix it?</p>
 
 
-                    <a href="/2017/07/20/iadhore/">
+                    <a href="/2017/04/19/fixHeaderTabs/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/04/17/floraCliffUpdate/">
+                            Floracliff mushroom workshop
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-04-17T00:00:00-04:00" class="post-date is-small">
+   17 Apr 2017</time>
+   </span>
+                    
+                    <a href="/tag/mycology/">
+        <span class="tag is-primary">
+              mycology
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p><a href="http://www.bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/">I previously announced a Workshop we hosted at Floracliff on mushroom identification In October 2016</a>.  It’s been a while but I wanted to share a little bit about the experience and post materials.</p>
+
+
+                    <a href="/2017/04/17/floraCliffUpdate/">
                         Read the full post...
                     </a>
                 </div>
@@ -586,7 +535,7 @@ change <code class="highlighter-rouge">__stl_hash_string(s.c_str())</code> to <c
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2017-12-29T17:24:58-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2017-12-29T17:26:31-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

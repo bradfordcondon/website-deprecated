@@ -1,0 +1,17 @@
+
+<p>I redesigned the landing page of my site, and wanted to host my blog posts at <code class="highlighter-rouge">/blog/index.html</code> instead of the main <code class="highlighter-rouge">index.html</code>.  In theory this should be possible, <a href="https://github.com/jekyll/jekyll-paginate/issues/37">but there are issues</a>.   Unfortunately, I could not get the default paginator to work properly at any location other than <code class="highlighter-rouge">/index.html</code>.</p>
+
+<p>I thought a simple solution would be to use a different gem: <a href="https://github.com/octopress/paginate"><em>octopress-paginate</em></a>.  This worked like a charm and easily supported paginating at <code class="highlighter-rouge">/blog/</code>… but, the site no longer built on Github pages!  This is because Github pages <strong>only supports default jekyll gems</strong>.  I looked into more advanced solutions involving <a href="https://travis-ci.org/">Travis CI</a> (a fantastic tool which I plan on incorporating into my other projects) but for this blog, it was just too much.
+ The alternative solution was to simply build the site myself locally and push that.  To do this, all I needed to do was…</p>
+
+<p>## Change my repo name</p>
+
+<p>The <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/">GitHub Pages documentation</a> states that any site hosted at <code class="highlighter-rouge">&lt;username&gt;.github.io</code> <em>must</em> be hosted off the <code class="highlighter-rouge">master</code> branch.  Host the page elsewhere to change the source.</p>
+
+<p>## Change my GitHub Pages source from <code class="highlighter-rouge">master</code> to <code class="highlighter-rouge">/docs</code></p>
+
+<p>Hosting off of a folder in our directory instead of the <code class="highlighter-rouge">master</code> branch lets me keep a build of my site in the same repo hosting the code.</p>
+
+<p>## Set Jekyll to build to <code class="highlighter-rouge">/docs</code></p>
+
+<p>In <code class="highlighter-rouge">_config.yml</code> we can change the default build location from <code class="highlighter-rouge">_site</code> to <code class="highlighter-rouge">docs</code>.  Now when we build our final site and push to <code class="highlighter-rouge">master</code>, GitHub Pages will use that build.</p>

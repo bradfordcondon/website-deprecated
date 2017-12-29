@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Bradford Condon PhD</title>
- <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
- <link href="http://bradfordcondon.com/"/>
- <updated>2017-12-29T17:21:31-05:00</updated>
- <id>http://bradfordcondon.com</id>
+ <link href="http://localhost:4000/atom.xml" rel="self"/>
+ <link href="http://localhost:4000/"/>
+ <updated>2017-12-29T17:24:58-05:00</updated>
+ <id>http://localhost:4000</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
@@ -13,10 +13,259 @@
 
  
  <entry>
+   <title>D3 part two: flipping the plot</title>
+   <link href="http://localhost:4000/2017/12/23/d3_part2_flipping/"/>
+   <updated>2017-12-23T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/12/23/d3_part2_flipping</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_logo.png&quot; alt=&quot;D3 logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In our previous lesson, we created this rudimentary plot.&lt;/p&gt;
+
+&lt;p&gt;Why is it upside down?&lt;/p&gt;
+
+&lt;p&gt;D3 considers the &lt;strong&gt;upper left&lt;/strong&gt; corner of the SVG to be 0,0.  This means that the part of our code defining y values needs to be corrected.&lt;/p&gt;
+
+&lt;p&gt;To correct our inverted plot, let’s introduce &lt;a href=&quot;https://github.com/d3/d3-3.x-api-reference/blob/master/Quantitative-Scales.md&quot;&gt;D3 scales&lt;/a&gt;.  As a quick reminder, we’re using the D3-3.x package: the latest version has slightly different scale function calls.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;what-are-scales&quot;&gt;What Are Scales?&lt;/h2&gt;
+
+&lt;p&gt;Scales are used to define how values will map to the plot.  Your plot might make use of several different scales.  There is mapping the x and y value of your data, for example.  You might also define a scale that &lt;strong&gt;colors&lt;/strong&gt; your datapoint based on a category.&lt;/p&gt;
+
+&lt;p&gt;Let’s start with the y-axis, where we want to translate a numerical value to a place on the plot.  The simplest type of scale is a &lt;strong&gt;linear&lt;/strong&gt; scale, where the input values will be mapped to an output value via a linear function.&lt;/p&gt;
+
+&lt;p&gt;For a linear scale, we need to understand the &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;domain()&lt;/code&gt;&lt;/strong&gt; and the &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;range()&lt;/code&gt;&lt;/strong&gt;.  Both domain and range take an array of numbers as their input.  The domain corresponds to the &lt;strong&gt;input values&lt;/strong&gt; for your plot.  For a continuous plot, you might set the domain to the minimum and maximum value in your dataset for the y-axis.  The range corresponds to the output coordinates in your SVG.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+ 
+&lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//note the range is inverted&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We need to set two things for each bar: the &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; attribute and the &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt;.  The &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; value will simply be the returned yScale value.  The height must compensate for our inverted range: it should be the figure height minus the yScale value.&lt;/p&gt;
+
+&lt;p&gt;The resulting code looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selectAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.bar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'transform'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'translate('&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;',0)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'rect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;height&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)})&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Our plot is now situated at the bottom of the screen where it belongs.&lt;/p&gt;
+
+&lt;h3 id=&quot;x-axis&quot;&gt;X-axis&lt;/h3&gt;
+
+&lt;p&gt;The x-axis can be a simple or complex affair.  Our original plot used the transform attribute to shift each &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; element.  We can instead use an X scale. Let’s plot out each sample in a different location based on its name.  Again, we’ll define a &lt;code class=&quot;highlighter-rouge&quot;&gt;domain()&lt;/code&gt; and a &lt;code class=&quot;highlighter-rouge&quot;&gt;range()&lt;/code&gt;, but instead of a linear scale, we’ll map each name to a specific place on the map with an &lt;strong&gt;Ordinal&lt;/strong&gt; scale.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ordinal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;one&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;two&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;three&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;four&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rangeRoundBands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;As you can see, the domain consists of the discrete values along the X-axis.  Setting the range for an ordinal scale is actually a bit more involved, and we’ll discuss options below.  For now, let’s also update our &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; elements to use the x-axis to place each bar:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selectAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.bar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'transform'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'translate('&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;',0)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'rect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fill'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;red&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;height&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)})&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'width'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;understanding-ordinal-ranges&quot;&gt;Understanding Ordinal Ranges&lt;/h3&gt;
+
+&lt;p&gt;You might &lt;a href=&quot;https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md&quot;&gt;benefit from reading the API here&lt;/a&gt;.  You can use range, rangePoints, rangeRoundPoints, rangeBands, rangeRoundBands. You should typically use the &lt;em&gt;rounded&lt;/em&gt; flavor of each range: it will round the location of each group to an integer, preventing anti-aliasing artifacts at the cost of some extra padding.&lt;/p&gt;
+
+&lt;p&gt;As for using points or bands, the difference is in how the spacing is calculated.  RangePoints will simply return evenly spaced points, whereas RangeBands will define a &lt;strong&gt;band&lt;/strong&gt; spaced out according to the padding argument.&lt;/p&gt;
+
+&lt;h4 id=&quot;range-points&quot;&gt;Range Points&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/1f2b6fd134f82ce192002ec3944eccb09c748abe/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3233303534312f3533383638392f34366438373131382d633139332d313165322d383361622d3230303864663763333661612e706e67&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rangePoints()&lt;/code&gt; takes two arguments: the range, and the padding with the edge of the axis.  This padding is expressed as a &lt;em&gt;multiple of the space between points&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;range-bands&quot;&gt;Range Bands&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/12675eaff20815f41bccd4d1c50643c2b531052e/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3233303534312f3533383638382f34366332393863302d633139332d313165322d396137652d3135643961626366616239622e706e67&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Rather than splitting the axis into dispersed points, &lt;code class=&quot;highlighter-rouge&quot;&gt;rangeBands()&lt;/code&gt; splits the axis into bands, with regular padding between each.&lt;br /&gt;
+RangeBands accepts an array to define the range, as well as &lt;strong&gt;two&lt;/strong&gt; padding values: the outer padding (which is similar to the padding defined in rangePoints) and the step padding.  The step padding is the spacing between bands&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;padding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;outerpadding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ordinal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;one&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;two&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;three&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;four&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rangeRoundBands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outerPadding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Confusing?  The best way to understand is to play with it yourself.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ordinal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;one&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;two&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;three&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;four&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rangeRoundBands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+
+&lt;span class=&quot;nx&quot;&gt;xScaleTwo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ordinal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;one&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;two&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;three&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;four&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rangeRoundBands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;05&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;color-scale&quot;&gt;Color scale&lt;/h3&gt;
+
+&lt;p&gt;Let’s say we want to color each of our bars by the category of the sample.  To do this, we’ll define an ordinal scale like our x-axis, except rather than setting the range output to an axis, we’ll set it to a &lt;em&gt;discrete set of colors&lt;/em&gt;.  Our output range will now be quite simple: an array of colors.   We can define the output color range manually, or we can use predefined palettes like those provided by the ColorBrewer package.  Keep in mind that &lt;em&gt;accessibility&lt;/em&gt; is an important consideration here: approximately one in twelve adult males (one in 200 females) is colorblind.  Packages like ColorBrewer are designed to be universally accessible.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ordinal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Alternatively you can use scales with pre-defined color ranges.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;category10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Next, simply call the scale when setting the &lt;code class=&quot;highlighter-rouge&quot;&gt;fill&lt;/code&gt; style.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fill'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ 	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 	&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;putting-it-back-together&quot;&gt;Putting it back together&lt;/h2&gt;
+
+&lt;p&gt;Here is our new code utilizing x, y, and color scales.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;DOCTYPE&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;axis&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/style&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;svg&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;960&quot;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;500&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/svg&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; 
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://d3js.org/d3.v3.min.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+  
+
+  &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;one&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;two&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;three&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;four&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;57&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;svg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;svg&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+  
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+ 
+&lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+
+&lt;span class=&quot;nx&quot;&gt;outerPadding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;padding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;05&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ordinal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;one&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;two&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;three&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;four&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rangeRoundBands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;outerPadding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;category10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+  
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    
+ &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selectAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.bar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'transform'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'translate('&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;',0)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'rect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'fill'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;colorScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;property&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;height&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;yScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)})&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'width'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now that we’ve defined some scales, let’s look at our plot again.  In the next segment, we’ll look at using a multi-level x-axis to group our plot by category.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Coloring code in Jekyll</title>
+   <link href="http://localhost:4000/2017/12/23/code_coloring_jekyll/"/>
+   <updated>2017-12-23T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/12/23/code_coloring_jekyll</id>
+   <content type="html">&lt;p&gt;I will admit I am spoiled.  When I code, I do so in Sublime Text or PHPStorm.  Both of these programs are stacked with features, but one of my favorites is &lt;strong&gt;code syntax highlighting&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Benefits&lt;/p&gt;
+
+&lt;p&gt;Even vim allows code highlighting.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementing-code-highlighting-on-jekyll&quot;&gt;Implementing Code Highlighting on Jekyll&lt;/h2&gt;
+
+&lt;p&gt;Jekyll 3 uses Rouge by default.  In theory, using liquid tags should work.  In practice, my code is unreadable.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>Plotting with D3 part 1</title>
-   <link href="http://bradfordcondon.com/2017/12/22/plotting_with_d3/"/>
+   <link href="http://localhost:4000/2017/12/22/plotting_with_d3/"/>
    <updated>2017-12-22T00:00:00-05:00</updated>
-   <id>http://bradfordcondon.com/2017/12/22/plotting_with_d3</id>
+   <id>http://localhost:4000/2017/12/22/plotting_with_d3</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_logo.png&quot; alt=&quot;D3 logo&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://d3js.org/&quot;&gt;D3js (Data-Driven Documents)&lt;/a&gt; is a Javascript library that manipulates the DOM and is often used to build SVG plots.  I recently created an interactive plot for differential expression data as part of the &lt;a href=&quot;https://github.com/tripal/tripal_analysis_expression/&quot;&gt;Tripal Analysis Expression module&lt;/a&gt;. Because other Tripal modules use D3 v3.x, I was required to do the same (as opposed to v4, the latest version).  While the &lt;a href=&quot;https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md&quot;&gt;API is available&lt;/a&gt;, I’m the sort of person who learns best from tutorials and examples, and I struggled to find enough v3 examples.&lt;/p&gt;
@@ -114,10 +363,10 @@
 &lt;h3 id=&quot;chaining&quot;&gt;Chaining&lt;/h3&gt;
 &lt;p&gt;D3 allows for &lt;em&gt;chaining&lt;/em&gt; method calls together, much like jQuery.  In the above example, we took advantage of chaining several times.  For example…&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; var bars=  svg.selectAll('.bar')
-	.data(data)
-    .enter()
-    .append('g')
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selectAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.bar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -125,10 +374,10 @@
 
 &lt;p&gt;If chaining confuses you, the above code could be written without chaining, as&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; var bars=  svg.selectAll('.bar')
- bars.data(data)
- bars.enter()
- bars.append('g')
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bars&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;selectAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'.bar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;bars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;bars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+ &lt;span class=&quot;nx&quot;&gt;bars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -144,8 +393,8 @@
 
 &lt;p&gt;Consider how we style the height in the above code:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.style(&quot;height&quot;, function (d, i) {
- return d.value})
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;height&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -166,9 +415,9 @@
  
  <entry>
    <title>Lessons From Planning My First Software Carpentry Workshop</title>
-   <link href="http://bradfordcondon.com/2017/12/18/12-18-17_swc_lessons/"/>
+   <link href="http://localhost:4000/2017/12/18/12-18-17_swc_lessons/"/>
    <updated>2017-12-18T00:00:00-05:00</updated>
-   <id>http://bradfordcondon.com/2017/12/18/12-18-17_swc_lessons</id>
+   <id>http://localhost:4000/2017/12/18/12-18-17_swc_lessons</id>
    <content type="html">&lt;h1 id=&quot;introduction&quot;&gt;introduction&lt;/h1&gt;
 
 &lt;p&gt;I hosted my first Software Carpentry workshop on December 18th and 19th 2017 in Knoxville Tennessee with my co-instructors Meg Staton and Drew Steen.&lt;/p&gt;
@@ -241,10 +490,153 @@ The Eventbrite event management page.&lt;/p&gt;
  </entry>
  
  <entry>
+   <title>Lessons From My First Software Carpentry Workshop: Planning</title>
+   <link href="http://localhost:4000/2017/12/18/12-18-17_swc_lessons/"/>
+   <updated>2017-12-18T00:00:00-05:00</updated>
+   <id>http://localhost:4000/2017/12/18/12-18-17_swc_lessons</id>
+   <content type="html">&lt;h1 id=&quot;introduction&quot;&gt;introduction&lt;/h1&gt;
+
+&lt;p&gt;I hosted my first Software Carpentry workshop on December 18th and 19th 2017 in Knoxville Tennessee with my coinstructors Meg Staton and Drew Steen.&lt;/p&gt;
+
+&lt;p&gt;I tried to follow the general recommendations and most things worked out great.  Here are some lessons learned.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/s_carp.png&quot; alt=&quot;The Software Carpentry logo&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;preparation&quot;&gt;Preparation&lt;/h2&gt;
+
+&lt;h3 id=&quot;consider-digital-and-print-flyers&quot;&gt;Consider digital and print flyers&lt;/h3&gt;
+
+&lt;p&gt;I liked the inclusion of “tear off” tags for our flyer workshop.  When I saw it on this digital display, I had to laugh.  Next time we’ll distribute &lt;em&gt;print&lt;/em&gt; and &lt;em&gt;digital&lt;/em&gt; versions of the flyer.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/swc_flyer_tearoff.jPG&quot; alt=&quot;Our flyer&quot; /&gt;
+Our flyer had tear offs which sounds great until you see it on one of those digital bulletin board displays around campus.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;charging-a-registration-fee&quot;&gt;Charging a registration fee&lt;/h3&gt;
+
+&lt;p&gt;The Software Carpentry recommends charging a nominal registration fee to reduce no-shows.  Unfortunately this added a layer of administrative red tape for us, so we kept registration free.  How did that work out for us?&lt;/p&gt;
+
+&lt;p&gt;Well, we sold out for 35 tickets within 24 hours, with a waitlist of 25.  I emailed out a week before and 72 hours before asking for people to cancel if they could not make it.  This netted me 11 cancellations, but the workshop started on a monday!  This meant that most waitlisters were notified over the weekend and did not end up claiming their tickets.  This is in addition to the five students who no-showed without notice.&lt;/p&gt;
+
+&lt;p&gt;So ultimately we ended up with 31 out of 35 seats filled, which isn’t so bad.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-eventbrite&quot;&gt;Using Eventbrite&lt;/h3&gt;
+
+&lt;p&gt;Because our workshop was free, there was no fee for using Eventbrite.  Eventbrite provides the basic functions necessary to manage the event: you can download an attendee list including email, or you can contact attendees via Eventbrite.&lt;/p&gt;
+
+&lt;p&gt;Eventbrite also has a waitlist functionality.  After the tickets sold out, I enabled the waitlist and people could join the waitlist, managed entirely by Eventbrite.  When I recieved cancellations, I just had to “release the tickets” and the waitlister has a set period of time (i set it to 24 hours) to respond and claim their ticket.&lt;/p&gt;
+
+&lt;p&gt;Eventbrite also has a widget that lets particpants purchase tickets right on your course website.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/eventbrite_widget.png&quot; alt=&quot;The eventbrite widget on our software carpentry website&quot; /&gt;
+The Eventbrite widget will allow your users to purchase tickets right on your website (or in this case, join the waitlist).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;All together this is great.  Managing an attendee list and waitlist via emails is a deceptively time consuming task.  Even though its quite easy, not getting barraged with emails (almost 70 emails with people registering alone!) is a great perk.  I would use Eventbrite again, at least for free events.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/eventbrite.png&quot; alt=&quot;The eventbrite page&quot; /&gt;
+The Eventbrite event management page.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;preparing-your-lectures&quot;&gt;Preparing Your Lectures&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pre-generate your ether pad with questions.  I am sharing my pregenerated etherpads: Unix, R, Git&lt;/li&gt;
+  &lt;li&gt;Create slides for the images in the material.&lt;/li&gt;
+  &lt;li&gt;Look at the github repo for the lessons and know the issues and alternatives.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The carpentry workshops are live code only without slides.  The thing is, graphics are great for mental models, and slides can help with instructor pacing a lot better than the free-text of the lesson plans.&lt;/p&gt;
+
+&lt;p&gt;The open-source nature of Software Carpentry materials means that people have all sorts of suggestions for how to do things differently.  Some lessons may have variants available online that you will prefer.  The Git lesson, for example, is command-line heavy.&lt;/p&gt;
+
+&lt;h2 id=&quot;day-of-suggestions&quot;&gt;Day of suggestions&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Share links liberally.  In the chatbox of etherpad, on the website, within each etherpad.  Link to data downloads, the etherpads, the course website.&lt;/li&gt;
+  &lt;li&gt;Encourage your students to share a bit about themselves and why they are attending.  If the workshop is too big to do this verbally, do it digitally.  Knowing what your students expect to learn can help you trim topics if (when) you run out of time.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Plan on running out of time!  The Software Carpentry workshops have time estimates but they are beyond optimistic.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.eventbrite.com/e/ut-knoxville-scientific-computing-software-carpentry-workshop-tickets-40189132778?aff=eprofsaved&quot;&gt;Course website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.eventbrite.com/e/ut-knoxville-scientific-computing-software-carpentry-workshop-tickets-40189132778?aff=eprofsaved&quot;&gt;EventBrite page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pad.software-carpentry.org/2017-12-18-UTK-unix&quot;&gt;Unix pad&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pad.software-carpentry.org/2017-12-18-UTK-R&quot;&gt;R pad&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Understanding_chado_mage</title>
+   <link href="http://localhost:4000/2017/12/13/understanding_chado_mage/"/>
+   <updated>2017-12-13T11:18:19-05:00</updated>
+   <id>http://localhost:4000/2017/12/13/understanding_chado_mage</id>
+   <content type="html">
+&lt;p&gt;In the process of upgrading the Tripal Analysis Expression module from Tripal 2 to Tripal 3 compatible, I had to learn a lot about the underlying data storage.  Tripal Analysis Expression uses the &lt;a href=&quot;http://gmod.org/wiki/Chado_Mage_Module&quot;&gt;Chado Mage&lt;/a&gt; module to store data.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-mage-schema&quot;&gt;The Mage schema&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;assets/img/tripal/mage_schema.png&quot; alt=&quot;The chado mage schema&quot; /&gt;
+The Chado Mage schema as available &lt;a href=&quot;http://gmod.org/wiki/Chado_Mage_Module&quot;&gt;here&lt;/a&gt;.  Red tables are mage tables.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Expression data is loaded as expression values from biosamples mapped to features.  It’s a long road to go from a biosample (biomaterial in Chado language) to the expression value.  The expression value is stored in the &lt;em&gt;signal&lt;/em&gt; column of &lt;code class=&quot;highlighter-rouge&quot;&gt;elementresult&lt;/code&gt;.  This is linked through the &lt;code class=&quot;highlighter-rouge&quot;&gt;quantification&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;acquisition&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;assay&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;assay_biomaterial&lt;/code&gt; tables to our end point of &lt;code class=&quot;highlighter-rouge&quot;&gt;biomaterial&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;acquisitions-quantifications-assays-elements-and-arraydesigns-oh-my&quot;&gt;Acquisitions, quantifications, assays, elements, and arraydesigns, oh my&lt;/h3&gt;
+
+&lt;p&gt;Tripal 3&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building a D3.js plot</title>
+   <link href="http://localhost:4000/2017/12/09/d3/"/>
+   <updated>2017-12-09T20:43:24-05:00</updated>
+   <id>http://localhost:4000/2017/12/09/d3</id>
+   <content type="html">&lt;p&gt;This is a multipost article on creating plots with D3.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/bradfordcondon/3b4d12a875b73dfca74f26d3142ecf9c.js&quot;&gt;&lt;/script&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Trying_expo</title>
+   <link href="http://localhost:4000/2017/12/09/trying_expo/"/>
+   <updated>2017-12-09T15:08:35-05:00</updated>
+   <id>http://localhost:4000/2017/12/09/trying_expo</id>
+   <content type="html">
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Today we’re going to mess around with Expo.  This assumes you’ve got some basic knowledge about…&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;React Native&lt;/li&gt;
+  &lt;li&gt;d3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;expo&quot;&gt;Expo&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://expo.io/&quot;&gt;Expo&lt;/a&gt; is a service for building and serving React Naive apps.  Using Expo, you could release an app without ever opening XCode or Android Studio.  React Native is great, but there’s still a lot of work that goes into testing and releasing for the seperate platforms.&lt;/p&gt;
+
+&lt;p&gt;I’m going to assume you know the basics of React-Native. If not, &lt;a href=&quot;http://facebook.github.io/react-native/docs/tutorial.html&quot;&gt;follow their quick&lt;/a&gt; getting started tutorial to get up to speed.&lt;/p&gt;
+
+&lt;p&gt;Even cooler, Expo lets you share snippets of React-Native apps, much like JS-Fiddle.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Upcoming Software Carpentry Workshop: December 18th &amp; 19th</title>
-   <link href="http://bradfordcondon.com/2017/11/27/swc_workshop_announce_december_2017/"/>
+   <link href="http://localhost:4000/2017/11/27/swc_workshop_announce_december_2017/"/>
    <updated>2017-11-27T00:00:00-05:00</updated>
-   <id>http://bradfordcondon.com/2017/11/27/swc_workshop_announce_december_2017</id>
+   <id>http://localhost:4000/2017/11/27/swc_workshop_announce_december_2017</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/s_carp.png&quot; alt=&quot;Software Carpentry&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I am happy to announce I will be instructing a Software Carpentry Workshop at the University of Tennessee Knoxville.  The workshop will be taught by myself, Meg Staton, and Drew Steen on December 18th and 19th, 2017 in 702 Strong Hall.&lt;/p&gt;
@@ -261,10 +653,184 @@ The Eventbrite event management page.&lt;/p&gt;
  </entry>
  
  <entry>
+   <title>Jquery_and_drupal_7</title>
+   <link href="http://localhost:4000/2017/11/02/Jquery_and_Drupal_7/"/>
+   <updated>2017-11-02T20:29:13-04:00</updated>
+   <id>http://localhost:4000/2017/11/02/Jquery_and_Drupal_7</id>
+   <content type="html">
+&lt;p&gt;I wonder if Drupal development makes sense to experienced web developers, or if theres always something that seems to come out of left field.&lt;/p&gt;
+
+&lt;h3 id=&quot;add-the-js&quot;&gt;Add the js&lt;/h3&gt;
+
+&lt;h3 id=&quot;add-the-thing&quot;&gt;Add the thing&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-{js}&quot;&gt;   Drupal.behaviors.tripal_analysis_expression = {
+              attach: function (context, settings) {
+                var $ = jQuery;
+                expNormal();
+                $(document).on(&quot;tripal_ds_pane_expanded&quot;, function(event) {
+                    if($(event.id).text().indexOf(&quot;Hover the mouse&quot;) &amp;gt; -1) {
+                      expNormal();
+                    }
+                });
+              }
+            };
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Go_introduction</title>
+   <link href="http://localhost:4000/2017/10/19/GO_introduction/"/>
+   <updated>2017-10-19T19:56:48-04:00</updated>
+   <id>http://localhost:4000/2017/10/19/GO_introduction</id>
+   <content type="html">
+&lt;h1 id=&quot;go&quot;&gt;GO!&lt;/h1&gt;
+
+&lt;p&gt;Why GO?&lt;/p&gt;
+
+&lt;p&gt;It builds a single binary when you package.&lt;/p&gt;
+
+&lt;p&gt;Good at parallel programming.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tour.golang.org/welcome/1&quot;&gt;There is a great tutorial&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Go doesnt use objects, it uses structures.  You still have functions.&lt;/p&gt;
+
+&lt;p&gt;Everything is public to the structure.  Anything defined in package main is public to package main.  But if you define your function with an upper case it will be globally exported.  So capitals are exported.&lt;/p&gt;
+
+&lt;p&gt;x, y, int&lt;/p&gt;
+
+&lt;p&gt;func Add(x, y int)int{&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;func split (sum int) (x, y int){&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;x, y int there is 
+first int says x and y are ints
+second int says that it returns an int.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var (
+	v1 = Vertex{1, 2}  // has type Vertex
+	v2 = Vertex{X: 1}  // Y:0 is implicit
+	v3 = Vertex{}      // X:0 and Y:0
+	p  = &amp;amp;Vertex{1, 2} // has type *Vertex
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Dockerizing your environment</title>
+   <link href="http://localhost:4000/2017/10/17/dockerizing/"/>
+   <updated>2017-10-17T14:23:25-04:00</updated>
+   <id>http://localhost:4000/2017/10/17/dockerizing</id>
+   <content type="html">&lt;p&gt;For a long time, I’ve been using Homestead to set up my web developer environment.  It’s easy to set up, and most importantly, I could understand where my files were.&lt;/p&gt;
+
+&lt;p&gt;The problem is that as a novice developer, I make mistakes, a lot.  I insert all sorts of junk into my database writing new code, and after a few months, I need to destroy my machine and start over.  To recreate a Tripal site, I need to reinstall Drupal, Tripal, all of my modules, and then re-load data.  After the second time I knew I had to implement a different solution.  I had to figure out this Docker thing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.docker.com/sites/default/files/vertical_large.png&quot; alt=&quot;Docker logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find the final, pre-loaded developer image &lt;a href=&quot;https://hub.docker.com/r/bcondon/docker_tripal3/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;dockerizing-as-simple-as-possible&quot;&gt;Dockerizing as simple as possible.&lt;/h1&gt;
+
+&lt;p&gt;My big realization is that you &lt;strong&gt;dont have to use a DockerFile and start from scratch to create an image&lt;/strong&gt;.  If like me you aren’t yet a savvy systems administrator, I would recommend starting from an existing container that does &lt;strong&gt;almost everything you want&lt;/strong&gt;.  Because I’m running a Tripal site, there are two fully-functional containers to choose from (I used (Ming Chen’s Tripal 3 container)[]). I tried, and failed, to set up an environment with docker compose hosting several services starting from the base Ubuntu images.  In hindsight, I bit off more than I could chew.  I need to get something running and tinker with it, not build a complex system from scratch knowing nothing.&lt;/p&gt;
+
+&lt;p&gt;To get started, simply run a container with &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;, make some changes to it, and then commit your new, modified copy.  Hopefully the repo you are starting from provides some basic instructions for using the image.  For example, the instructions for our starting Tripal 3 container are &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 mingchen0919/docker-tripal-v3 /bin/bash&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;After running the container, fiddle around and set up your environemnt a bit more.  IN my case, I wanted to load some organisms, sequences, install some modules and themes, etc.  Once you’re happy, save the new container so you can start from a freshly set up environment!  First, set up an account and repo &lt;a href=&quot;https://hub.docker.com/&quot;&gt;on Docker hub&lt;/a&gt;. Then use &lt;code class=&quot;highlighter-rouge&quot;&gt;docker commit&lt;/code&gt; to save your image.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#docs
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+#an example commit
+docker commit my_test_container [bcondon/test_image]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Then just use docker push to put the image on Docker Hub.  With our example, we would execute &lt;code class=&quot;highlighter-rouge&quot;&gt;docker push bcondon/test_image&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That’s it.&lt;/p&gt;
+
+&lt;p&gt;The next time I want to run my container, I simply replace the Dockerhub URL i started with.  &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 mingchen0919/docker-tripal-v3 /bin/bash&lt;/code&gt; becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 bcondon/test_image /bin/bash&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Learning more and setting up my own image from scratch exactly how I want it comes next.  Getting started, however, is priceless.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>TwoBit format</title>
+   <link href="http://localhost:4000/2017/10/06/TwoBit/"/>
+   <updated>2017-10-06T10:46:59-04:00</updated>
+   <id>http://localhost:4000/2017/10/06/TwoBit</id>
+   <content type="html">&lt;h1 id=&quot;what-is-twobit&quot;&gt;What is TwoBit&lt;/h1&gt;
+
+&lt;h1 id=&quot;creating-a-twobit-file&quot;&gt;Creating a TwoBit file&lt;/h1&gt;
+
+&lt;p&gt;We can follow the guide on the &lt;a href=&quot;https://genome.ucsc.edu/goldenpath/help/twoBit.html&quot;&gt;UCSC website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, the OSX formatted versions can be downloaded &lt;a href=&quot;http://hgdownload.soe.ucsc.edu/admin/exe/macOSX.x86_64/&quot;&gt;here&lt;/a&gt;.  If you’re new to computer science, you might not be sure whatto do with these.&lt;/p&gt;
+
+&lt;h3 id=&quot;move-the-file-into-your-path&quot;&gt;Move the file into your $PATH&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt;.  the path &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt; should be somewhere in the alphabet soup.  This is a place we can install software so that it can be accessed wherever we are in our file system.&lt;/p&gt;
+
+&lt;h3 id=&quot;change-permissions-on-the-file&quot;&gt;Change permissions on the file&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod a+x /usr/local/bin/faToTwoBit&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;what-does-the-command-do&quot;&gt;What does the command do?&lt;/h3&gt;
+
+&lt;p&gt;If we try to run the command with no arguments by simply executing ` faToTwoBit`, we’ll get the command’s usage arguments.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;faToTwoBit - Convert DNA from fasta to 2bit format
+usage:
+   faToTwoBit &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;.fa &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;in2.fa in3.fa ...] out.2bit
+options:
+   -long          use 64-bit offsets &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;index.   Allow &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;twoBit to contain more than 4Gb of sequence.
+                  NOT COMPATIBLE WITH OLDER CODE.
+   -noMask        Ignore lower-case masking &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;fa file.
+   -stripVersion  Strip off version number after &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;GenBank accessions.
+   -ignoreDups    Convert first sequence only &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;there are duplicate sequence
+                  names.  Use &lt;span class=&quot;s1&quot;&gt;'twoBitDup'&lt;/span&gt; to find duplicate sequences.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;convert-the-fasta-file&quot;&gt;Convert the FASTA file&lt;/h3&gt;
+&lt;p&gt;Run the below command.  Be sure to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;input.fasta&lt;/code&gt; with the fasta file you are attempting to convert.  Make sure you are in the same folder as your &lt;code class=&quot;highlighter-rouge&quot;&gt;input.fasta&lt;/code&gt; file: if you are not, you will have to provide the relative or absolute path for the command to work!&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;faToTwoBit input.fasta output.2bit&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;convert-gff&quot;&gt;Convert GFF&lt;/h3&gt;
+
+&lt;p&gt;Biodalliance supports bigwig and bigbed.&lt;/p&gt;
+
+&lt;p&gt;https://www.biostars.org/p/4070/&lt;/p&gt;
+
+&lt;p&gt;https://toolshed.g2.bx.psu.edu/repository/display_tool?repository_id=afcb6456d8e300ed&amp;amp;tool_config=%2Fsrv%2Ftoolshed%2Fmain%2Fvar%2Fdata%2Frepos%2F000%2Frepo_21%2Fgff_to_bed.xml&amp;amp;changeset_revision=5c6f33e20fcc&lt;/p&gt;
+
+&lt;p&gt;So we wrap GFF to BED.
+Then BED to WIG.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Step 1. Create a wig format file following the directions here. When converting a wig file to a bigWig file, you are limited to one track of data in your input file; therefore, you must create a separate wig file for each data track.
+Step 2. Remove any existing “track” or “browser” lines from your wig file so that it contains only data.
+Step 3. Download the wigToBigWig program from the binary utilities directory.
+Step 4. Use the fetchChromSizes script from the same directory to create the chrom.sizes file for the UCSC database with which you are working (e.g., hg19).
+Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file:&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Software Carpentry TakeAways</title>
-   <link href="http://bradfordcondon.com/2017/10/05/carpentry_lessons/"/>
+   <link href="http://localhost:4000/2017/10/05/carpentry_lessons/"/>
    <updated>2017-10-05T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/10/05/carpentry_lessons</id>
+   <id>http://localhost:4000/2017/10/05/carpentry_lessons</id>
    <content type="html">&lt;p&gt;In a &lt;a href=&quot;/2017/09/25/Software_Data_Carpentry/&quot;&gt;previous blog post&lt;/a&gt;, I announced my excitement for becoming a certified Software and Data Carpentry instructor.  As I complete my checkout process, I also wanted to recap the most important points from the training.  &lt;a href=&quot;https://docs.google.com/presentation/d/e/2PACX-1vQDtbUsYpFS5-I_66uKSixgSKQSSWrQSlmkZ9HdMMiKY8U449nyFwDkzQ14WAEDYf4xiFaZRV70xX9A/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000&quot;&gt;A lab meeting presentation of this recap cis available on google slides here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Looking forward to teaching my first workshop in the next few months!&lt;/p&gt;
@@ -339,9 +905,9 @@ The Eventbrite event management page.&lt;/p&gt;
  
  <entry>
    <title>Software and Data Carpentry</title>
-   <link href="http://bradfordcondon.com/2017/09/25/Software_Data_Carpentry/"/>
+   <link href="http://localhost:4000/2017/09/25/Software_Data_Carpentry/"/>
    <updated>2017-09-25T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/09/25/Software_Data_Carpentry</id>
+   <id>http://localhost:4000/2017/09/25/Software_Data_Carpentry</id>
    <content type="html">&lt;p&gt;This week(September 25th &amp;amp; 26th 2017), I will be certified as a Software and Data Carpentry instructor.  As of 2017-06-26, there were 968 instructors.  Am I lucky number 1,000?  Probably not.  Still, exciting.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/d_carp.png&quot; alt=&quot;Data Carpentry&quot; /&gt; &lt;img src=&quot;/assets/img/carpentry/s_carp.png&quot; alt=&quot;Software Carpentry&quot; /&gt;&lt;/p&gt;
@@ -355,10 +921,630 @@ The Eventbrite event management page.&lt;/p&gt;
  </entry>
  
  <entry>
+   <title>Using GitHub for bioinformatics</title>
+   <link href="http://localhost:4000/2017/08/13/biologicalGit/"/>
+   <updated>2017-08-13T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2017/08/13/biologicalGit</id>
+   <content type="html">&lt;p&gt;If there’s one thing I wish I’d done earlier in my career, it’s this: automate &lt;em&gt;all&lt;/em&gt; of my bioinformatics workflows and keep it under version control.&lt;/p&gt;
+
+&lt;p&gt;What does this mean?  Any and every task is done on the command line.  The commands executed are stored in a shell script.  The shell script gets stored (and, linked with GitHub, stored online) and any changes made are tracked.&lt;/p&gt;
+
+&lt;p&gt;Here’s the problem: this is hard.  It’s really hard if you aren’t a programmer.  Downloading software, getting it to run, renaming files.  I would cheat with all of this and do it using my operating system’s GUI.  It was faster, I didn’t have to learn new confusing commands like &lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt; to download things or shell scripting.  I get it.  But, if you can keep your bioinformatics notebook under version control, you will reap the rewards.&lt;/p&gt;
+
+&lt;h2 id=&quot;rewards&quot;&gt;Rewards&lt;/h2&gt;
+&lt;h3 id=&quot;rewind&quot;&gt;Rewind&lt;/h3&gt;
+&lt;p&gt;If something worked six months ago, you can rewind your project and it will work again.&lt;/p&gt;
+
+&lt;p&gt;What’s more, if your system gets mucked up, you can start from scratch by re-cloning your repo.  You don’t have to track down all the software, all the dependencies, re-download all the raw data, rename it to match your scripts.  You were smart, and you wrote all that as shell scripts.  Now, you just need to re-execute the command and you’ve got your environment set up.  Maybe your computer is fine but you’ve run out of memory or are migrating your workflow to a remote server.  No problem.&lt;/p&gt;
+
+&lt;h3 id=&quot;reuse-and-modify&quot;&gt;Reuse and modify&lt;/h3&gt;
+
+&lt;h3 id=&quot;collaborate--share&quot;&gt;Collaborate &amp;amp; Share&lt;/h3&gt;
+&lt;p&gt;GitHub is fantastic for collaborating.  Work on projects without fear of overwriting your coworkers changes.  Once you master branching and merging, each piece of the project you work on will be an isolated feature, and multiple people can contribute to different portions of the project at once.
+Collaboration isn’t just about working together.  It’s about distributing your work in a way that others can reproduce it.  Nothing is more reproducible than a project that runs from start to finish by executing a single command.
+Graduate school is about learning skills and building a portfolio.  GitHub is the place to showcase that portfolio.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Programming for Biologists</title>
+   <link href="http://localhost:4000/2017/08/02/programmingForBio/"/>
+   <updated>2017-08-02T14:53:55-04:00</updated>
+   <id>http://localhost:4000/2017/08/02/programmingForBio</id>
+   <content type="html">&lt;p&gt;Ten years ago, I was a biology PhD student beginning to study bioinformatics.  Today, I’m a mobile and web developer.  I want to share a curriculum of computer science concepts and tools that I think can benefit &lt;em&gt;any&lt;/em&gt; biologist doing bioinformatics.&lt;/p&gt;
+
+&lt;h1 id=&quot;unix&quot;&gt;UNIX&lt;/h1&gt;
+&lt;p&gt;There are&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Grep_basics</title>
+   <link href="http://localhost:4000/2017/08/02/grep_basics/"/>
+   <updated>2017-08-02T14:50:08-04:00</updated>
+   <id>http://localhost:4000/2017/08/02/grep_basics</id>
+   <content type="html">
+&lt;h2 id=&quot;grep-cheatsheet&quot;&gt;Grep cheatsheet&lt;/h2&gt;
+
+&lt;p&gt;NOTE these are for me.  If I wanted to post this, I should generate my own examples.
+https://www.panix.com/~elflord/unix/grep.html&lt;/p&gt;
+
+&lt;p&gt;basic:
+Return lines matching a search time:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;grep 'searchterm' file&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1&gt;#&lt;/h1&gt;
+
+&lt;h3 id=&quot;-operator&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;?&lt;/code&gt; operator&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;an expression consisting of a character followed by an escaped question mark matches one or zero instances of that character.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bugg\?y&lt;/code&gt; matches all of the following: bugy, buggy but not bugggy&lt;/p&gt;
+
+&lt;p&gt;So, that second g becomes &lt;em&gt;optional&lt;/em&gt; thanks to &lt;code class=&quot;highlighter-rouge&quot;&gt;\?&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;stuff&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\(stuff\)&lt;/code&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;An expression surrounded by “escaped” parentheses is treated by a single character.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Fred\(eric\)\?&lt;/code&gt; 
+So combine.  We search for Fred, and we allow, optionally, the single character &lt;strong&gt;eric&lt;/strong&gt; afterwards.&lt;/p&gt;
+
+&lt;h2 id=&quot;matching-a-list-of-characters&quot;&gt;Matching a list of characters&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; matches a list.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[0-3] is the same as [0123] 
+[a-k] is the same as [abcdefghijk]
+[A-C] is the same as [ABC]
+[A-Ca-k] is the same as 
+[ABCabcdefghijk]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;useful full text:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[[:alpha:]] is the same as [a-zA-Z]
+[[:upper:]] is the same as [A-Z]
+[[:lower:]] is the same as [a-z]
+[[:digit:]] is the same as [0-9]
+[[:alnum:]] is the same as [0-9a-zA-Z]
+[[:space:]] matches any white space including tabs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The [] may be used to search for non-matches. This is done by putting a carat ^ as the first character inside the square brackets.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;non-matches-with-&quot;&gt;Non matches with [^]&lt;/h3&gt;
+&lt;p&gt;`[^7091] Will exclude 7, 0, 9, and 1&lt;/p&gt;
+
+&lt;h3 id=&quot;matching-a-specific-number-of-repetitions-of-a-pattern&quot;&gt;Matching a Specific Number Of Repetitions of a Pattern&lt;/h3&gt;
+
+&lt;p&gt;This grep searches for phone numbers.
+` “[[:digit:]]{3}[ -]\?[[:digit:]]{4}”`&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[[:digit:]]&lt;/code&gt; any digit
+&lt;code class=&quot;highlighter-rouge&quot;&gt;\{3\}&lt;/code&gt; this searches for any three digits.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[ -]\?&lt;/code&gt; searches for a dash or white space.  No dash or white space is OK too.&lt;/p&gt;
+
+&lt;h2 id=&quot;matching-the-start-or-end-of-the-line&quot;&gt;Matching the start or end of the line&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The $ character matches the end of the line. The ^ character matches the beginning of the line.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;^From.*mscharmi&quot;&lt;/code&gt; This searches for things where From is the start of the line, then mscharmi is the person im looking for after.&lt;/p&gt;
+
+&lt;h2 id=&quot;matching-eitheror&quot;&gt;Matching either/or&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;I am a \(cat\|dog\)&quot;&lt;/code&gt;  this will find I am a cat &lt;strong&gt;or&lt;/strong&gt; I am a dog.&lt;/p&gt;
+
+&lt;h2 id=&quot;backreferences&quot;&gt;Backreferences&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The expression \n where n is a number, matches the contents of the n’th set of parentheses in the expression&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;H\([1-6]\).*&amp;lt;/H\1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;in other words… we search for H1,2,3,4,5,6 then anything, then a closing tag matching that opening tag.&lt;/p&gt;
+
+&lt;p&gt;#special/escaped characters&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;?  \  .  [  ]  ^  $
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Unsupportedgems</title>
+   <link href="http://localhost:4000/2017/07/20/unsupportedGems/"/>
+   <updated>2017-07-20T16:23:49-04:00</updated>
+   <id>http://localhost:4000/2017/07/20/unsupportedGems</id>
+   <content type="html">
+&lt;p&gt;I redesigned the landing page of my site, and wanted to host my blog posts at &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/index.html&lt;/code&gt; instead of the main &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;.  In theory this should be possible, &lt;a href=&quot;https://github.com/jekyll/jekyll-paginate/issues/37&quot;&gt;but there are issues&lt;/a&gt;.   Unfortunately, I could not get the default paginator to work properly at any location other than &lt;code class=&quot;highlighter-rouge&quot;&gt;/index.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I thought a simple solution would be to use a different gem: &lt;a href=&quot;https://github.com/octopress/paginate&quot;&gt;&lt;em&gt;octopress-paginate&lt;/em&gt;&lt;/a&gt;.  This worked like a charm and easily supported paginating at &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/&lt;/code&gt;… but, the site no longer built on Github pages!  This is because Github pages &lt;strong&gt;only supports default jekyll gems&lt;/strong&gt;.  I looked into more advanced solutions involving &lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt; (a fantastic tool which I plan on incorporating into my other projects) but for this blog, it was just too much.
+ The alternative solution was to simply build the site myself locally and push that.  To do this, all I needed to do was…&lt;/p&gt;
+
+&lt;p&gt;## Change my repo name&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot;&gt;GitHub Pages documentation&lt;/a&gt; states that any site hosted at &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; &lt;em&gt;must&lt;/em&gt; be hosted off the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch.  Host the page elsewhere to change the source.&lt;/p&gt;
+
+&lt;p&gt;## Change my GitHub Pages source from &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/docs&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Hosting off of a folder in our directory instead of the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch lets me keep a build of my site in the same repo hosting the code.&lt;/p&gt;
+
+&lt;p&gt;## Set Jekyll to build to &lt;code class=&quot;highlighter-rouge&quot;&gt;/docs&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; we can change the default build location from &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;docs&lt;/code&gt;.  Now when we build our final site and push to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, GitHub Pages will use that build.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>creating synteny mappings</title>
+   <link href="http://localhost:4000/2017/07/20/iadhore/"/>
+   <updated>2017-07-20T16:23:49-04:00</updated>
+   <id>http://localhost:4000/2017/07/20/iadhore</id>
+   <content type="html">&lt;h1 id=&quot;goal&quot;&gt;Goal&lt;/h1&gt;
+
+&lt;p&gt;The primary goal here is to create a track of synteny mappings for all genomes for jbrowse.  Any number of synteny calculations could work.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mummer&lt;/li&gt;
+  &lt;li&gt;i-adhore 3.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;mummer&quot;&gt;Mummer&lt;/h1&gt;
+&lt;p&gt;This module will allow converting nucmer coordinates to a gff file.  https://metacpan.org/pod/distribution/Bio-Gonzales/bin/coords2gff.pl&lt;/p&gt;
+
+&lt;h1 id=&quot;i-adhore&quot;&gt;i-adhore&lt;/h1&gt;
+
+&lt;p&gt;The software can be downloaded &lt;a href=&quot;http://bioinformatics.psb.ugent.be/webtools/i-adhore/licensing/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Reference&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Proost, S. et al. i-ADHoRe 3.0—fast and sensitive detection of genomic homology in extremely large data sets. Nucl. Acids Res. 40, e11–e11 (2012).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;installation-and-set-up&quot;&gt;Installation and set up&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tar -xzvf i-adhore-xxx.tar.gz
+cd i-adhore-xxx
+
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=usr/local/bin/i-adhore
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Unfortunately make fails&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+[  9%] Building CXX object src/alignment/CMakeFiles/alignment.dir/GGAligner.cpp.o
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:5:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../GeneList.h:7:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../headers.h:30:
+/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:
+      use of undeclared identifier '__stl_hash_string'
+        { return __stl_hash_string(s.c_str()); }
+                         ^
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:6:
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Possible solution: https://github.com/Kentzo/armv6-rpi-linux-gnueabihf/issues/5&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install gcc&lt;/code&gt; will be very slow, so instead we try &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install gcc48&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;if this doenst ork
+need to tell cmake to use a specific compiler&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export CC=/usr/local/bin/gcc
+export CXX=/usr/local/bin/g++ ##  4.8 wahtever , find path
+export CXX=/usr/local/Cellar/gcc@4.8/4.8.5
+cmake /path/to/your/project
+make
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/Cellar/gcc@4.8/4.8.5&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;other-solution-from-neil&quot;&gt;Other solution from Neil&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In the above file,
+change &lt;code class=&quot;highlighter-rouge&quot;&gt;__stl_hash_string(s.c_str())&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;std::hash(s.c_str())&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We create a script that runs i-adhore with a new tmp directory: &lt;code class=&quot;highlighter-rouge&quot;&gt;TMPDIR=/tmp i-adhore&lt;/code&gt;.  The script also must pass arguments to the command.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#! /bin/sh&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;TMPDIR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/tmp
+&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; /usr/local/bin/i-adhore_3.0/bin/i-adhore  &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;sibelia&quot;&gt;Sibelia&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://bioinf.spbau.ru/sibelia&quot;&gt;Project page&lt;/a&gt;&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Qiime</title>
+   <link href="http://localhost:4000/2017/07/20/QIIME/"/>
+   <updated>2017-07-20T16:23:49-04:00</updated>
+   <id>http://localhost:4000/2017/07/20/QIIME</id>
+   <content type="html">
+&lt;h1 id=&quot;scripts-covered&quot;&gt;Scripts covered&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;multiple_join_paired_ends.py&lt;/li&gt;
+  &lt;li&gt;Split-libraries.py&lt;/li&gt;
+  &lt;li&gt;Pick_de_novo_otus.py&lt;/li&gt;
+  &lt;li&gt;biom summarize table&lt;/li&gt;
+  &lt;li&gt;summarize taxa throguh plots&lt;/li&gt;
+  &lt;li&gt;multiple rarefactions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;multiple-joined-paired-ends&quot;&gt;multiple joined paired ends&lt;/h2&gt;
+
+&lt;h2 id=&quot;split-librariespy&quot;&gt;Split-libraries.py&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Three files are generated by split_libraries.py:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.fna&lt;/code&gt; file (e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;seqs.fna&lt;/code&gt;) - This is a FASTA file containing all sequences which meet the user-defined parameters, where each sequence identifier now contains its corresponding sample id from mapping file.&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;histograms.txt&lt;/code&gt;- This contains the counts of sequences with a particular length.&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;split_library_log.txt&lt;/code&gt; - This file contains a summary of the split_libraries.py analysis. Specifically, this file includes information regarding the number of sequences that pass quality control (number of seqs written) and how these are distributed across the different samples which, through the use of bar-coding technology, would have been pooled into a single 454 run. The number of sequences that pass quality control will depend on length restrictions, number of ambiguous bases, max homopolymer runs, barcode check, etc. All of these parameters are summarized in this file. If raw sequences do not meet the specified quality thresholds they will be omitted from downstream analysis. Since we never see a perfect 454 sequencing run, the number of sequences written should always be less than the number of raw sequences. The number of sequences that are retained for analysis will depend on the quality of the 454 run itself in addition to the default data filtering thresholds in the split_libraries.py script. The default parameters (minimum quality score = 25, minimum/maximum length = 200/1000, no ambiguous bases allowed, no mismatches allowed in primer sequence) can be adjusted to meet the user’s needs.
+Standard Example:&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;pick-denovo-otus&quot;&gt;Pick denovo OTUs&lt;/h2&gt;
+
+&lt;p&gt;http://qiime.org/scripts/pick_de_novo_otus.html&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This script will produce an OTU mapping file (pick_otus.py), a representative set of sequences (FASTA file from pick_rep_set.py), a sequence alignment file (FASTA file from align_seqs.py), taxonomy assignment file (from assign_taxonomy.py), a filtered sequence alignment (from filter_alignment.py), a phylogenetic tree (Newick file from make_phylogeny.py) and a biom-formatted OTU table (from make_otu_table.py).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;output-files&quot;&gt;Output files&lt;/h2&gt;
+&lt;h3 id=&quot;biom-format&quot;&gt;BIOM format&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;BIOM&lt;/code&gt; format is the &lt;em&gt;Biological Observation Matrix&lt;/em&gt; format.&lt;/p&gt;
+
+&lt;p&gt;You can find the &lt;a href=&quot;http://biom-format.org/documentation/format_versions/biom-2.1.html&quot;&gt;full BIOM format specifications here&lt;/a&gt;.  The example file is reproduced below.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HDF5 &quot;examples/rich_sparse_otu_table_hdf5.biom&quot; {
+GROUP &quot;/&quot; {
+   ATTRIBUTE &quot;creation-date&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;2014-07-29T16:16:36.617320&quot;
+      }
+   }
+   ATTRIBUTE &quot;format-url&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;http://biom-format.org&quot;
+      }
+   }
+   ATTRIBUTE &quot;format-version&quot; {
+      DATATYPE  H5T_STD_I64LE
+      DATASPACE  SIMPLE { ( 2 ) / ( 2 ) }
+      DATA {
+      (0): 2, 1
+      }
+   }
+   ATTRIBUTE &quot;generated-by&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;example&quot;
+      }
+   }
+   ATTRIBUTE &quot;id&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;No Table ID&quot;
+      }
+   }
+   ATTRIBUTE &quot;nnz&quot; {
+      DATATYPE  H5T_STD_I64LE
+      DATASPACE  SCALAR
+      DATA {
+      (0): 15
+      }
+   }
+   ATTRIBUTE &quot;shape&quot; {
+      DATATYPE  H5T_STD_I64LE
+      DATASPACE  SIMPLE { ( 2 ) / ( 2 ) }
+      DATA {
+      (0): 5, 6
+      }
+   }
+   ATTRIBUTE &quot;type&quot; {
+      DATATYPE  H5T_STRING {
+         STRSIZE H5T_VARIABLE;
+         STRPAD H5T_STR_NULLTERM;
+         CSET H5T_CSET_ASCII;
+         CTYPE H5T_C_S1;
+      }
+      DATASPACE  SCALAR
+      DATA {
+      (0): &quot;otu table&quot;
+      }
+   }
+   GROUP &quot;observation&quot; {
+      GROUP &quot;group-metadata&quot; {
+      }
+      DATASET &quot;ids&quot; {
+         DATATYPE  H5T_STRING {
+            STRSIZE H5T_VARIABLE;
+            STRPAD H5T_STR_NULLTERM;
+            CSET H5T_CSET_ASCII;
+            CTYPE H5T_C_S1;
+         }
+         DATASPACE  SIMPLE { ( 5 ) / ( 5 ) }
+         DATA {
+         (0): &quot;GG_OTU_1&quot;, &quot;GG_OTU_2&quot;, &quot;GG_OTU_3&quot;, &quot;GG_OTU_4&quot;, &quot;GG_OTU_5&quot;
+         }
+      }
+      GROUP &quot;matrix&quot; {
+         DATASET &quot;data&quot; {
+            DATATYPE  H5T_IEEE_F64LE
+            DATASPACE  SIMPLE { ( 15 ) / ( 15 ) }
+            DATA {
+            (0): 1, 5, 1, 2, 3, 1, 1, 4, 2, 2, 1, 1, 1, 1, 1
+            }
+         }
+         DATASET &quot;indices&quot; {
+            DATATYPE  H5T_STD_I32LE
+            DATASPACE  SIMPLE { ( 15 ) / ( 15 ) }
+            DATA {
+            (0): 2, 0, 1, 3, 4, 5, 2, 3, 5, 0, 1, 2, 5, 1, 2
+            }
+         }
+         DATASET &quot;indptr&quot; {
+            DATATYPE  H5T_STD_I32LE
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): 0, 1, 6, 9, 13, 15
+            }
+         }
+      }
+      GROUP &quot;metadata&quot; {
+         DATASET &quot;taxonomy&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_ASCII;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 5, 7 ) / ( 5, 7 ) }
+            DATA {
+            (0,0): &quot;k__Bacteria&quot;, &quot;p__Proteobacteria&quot;,
+            (0,2): &quot;c__Gammaproteobacteria&quot;, &quot;o__Enterobacteriales&quot;,
+            (0,4): &quot;f__Enterobacteriaceae&quot;, &quot;g__Escherichia&quot;, &quot;s__&quot;,
+            (1,0): &quot;k__Bacteria&quot;, &quot;p__Cyanobacteria&quot;, &quot;c__Nostocophycideae&quot;,
+            (1,3): &quot;o__Nostocales&quot;, &quot;f__Nostocaceae&quot;, &quot;g__Dolichospermum&quot;,
+            (1,6): &quot;s__&quot;,
+            (2,0): &quot;k__Archaea&quot;, &quot;p__Euryarchaeota&quot;, &quot;c__Methanomicrobia&quot;,
+            (2,3): &quot;o__Methanosarcinales&quot;, &quot;f__Methanosarcinaceae&quot;,
+            (2,5): &quot;g__Methanosarcina&quot;, &quot;s__&quot;,
+            (3,0): &quot;k__Bacteria&quot;, &quot;p__Firmicutes&quot;, &quot;c__Clostridia&quot;,
+            (3,3): &quot;o__Halanaerobiales&quot;, &quot;f__Halanaerobiaceae&quot;,
+            (3,5): &quot;g__Halanaerobium&quot;, &quot;s__Halanaerobiumsaccharolyticum&quot;,
+            (4,0): &quot;k__Bacteria&quot;, &quot;p__Proteobacteria&quot;,
+            (4,2): &quot;c__Gammaproteobacteria&quot;, &quot;o__Enterobacteriales&quot;,
+            (4,4): &quot;f__Enterobacteriaceae&quot;, &quot;g__Escherichia&quot;, &quot;s__&quot;
+            }
+         }
+      }
+   }
+   GROUP &quot;sample&quot; {
+      GROUP &quot;group-metadata&quot; {
+      }
+      DATASET &quot;ids&quot; {
+         DATATYPE  H5T_STRING {
+            STRSIZE H5T_VARIABLE;
+            STRPAD H5T_STR_NULLTERM;
+            CSET H5T_CSET_ASCII;
+            CTYPE H5T_C_S1;
+         }
+         DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+         DATA {
+         (0): &quot;Sample1&quot;, &quot;Sample2&quot;, &quot;Sample3&quot;, &quot;Sample4&quot;, &quot;Sample5&quot;,
+         (5): &quot;Sample6&quot;
+         }
+      }
+      GROUP &quot;matrix&quot; {
+         DATASET &quot;data&quot; {
+            DATATYPE  H5T_IEEE_F64LE
+            DATASPACE  SIMPLE { ( 15 ) / ( 15 ) }
+            DATA {
+            (0): 5, 2, 1, 1, 1, 1, 1, 1, 1, 2, 4, 3, 1, 2, 1
+            }
+         }
+         DATASET &quot;indices&quot; {
+            DATATYPE  H5T_STD_I32LE
+            DATASPACE  SIMPLE { ( 15 ) / ( 15 ) }
+            DATA {
+            (0): 1, 3, 1, 3, 4, 0, 2, 3, 4, 1, 2, 1, 1, 2, 3
+            }
+         }
+         DATASET &quot;indptr&quot; {
+            DATATYPE  H5T_STD_I32LE
+            DATASPACE  SIMPLE { ( 7 ) / ( 7 ) }
+            DATA {
+            (0): 0, 2, 5, 9, 11, 12, 15
+            }
+         }
+      }
+      GROUP &quot;metadata&quot; {
+         DATASET &quot;BODY_SITE&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_UTF8;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): &quot;gut&quot;, &quot;gut&quot;, &quot;gut&quot;, &quot;skin&quot;, &quot;skin&quot;, &quot;skin&quot;
+            }
+         }
+         DATASET &quot;BarcodeSequence&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_UTF8;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): &quot;CGCTTATCGAGA&quot;, &quot;CATACCAGTAGC&quot;, &quot;CTCTCTACCTGT&quot;,
+            (3): &quot;CTCTCGGCCTGT&quot;, &quot;CTCTCTACCAAT&quot;, &quot;CTAACTACCAAT&quot;
+            }
+         }
+         DATASET &quot;Description&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_UTF8;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): &quot;human gut&quot;, &quot;human gut&quot;, &quot;human gut&quot;, &quot;human skin&quot;,
+            (4): &quot;human skin&quot;, &quot;human skin&quot;
+            }
+         }
+         DATASET &quot;LinkerPrimerSequence&quot; {
+            DATATYPE  H5T_STRING {
+               STRSIZE H5T_VARIABLE;
+               STRPAD H5T_STR_NULLTERM;
+               CSET H5T_CSET_UTF8;
+               CTYPE H5T_C_S1;
+            }
+            DATASPACE  SIMPLE { ( 6 ) / ( 6 ) }
+            DATA {
+            (0): &quot;CATGCTGCCTCCCGTAGGAGT&quot;, &quot;CATGCTGCCTCCCGTAGGAGT&quot;,
+            (2): &quot;CATGCTGCCTCCCGTAGGAGT&quot;, &quot;CATGCTGCCTCCCGTAGGAGT&quot;,
+            (4): &quot;CATGCTGCCTCCCGTAGGAGT&quot;, &quot;CATGCTGCCTCCCGTAGGAGT&quot;
+            }
+         }
+      }
+   }
+}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;biom-summarize-table&quot;&gt;BIOM summarize table&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Num samples: 19
+Num observations: 1563
+Total count: 133137
+Table density (fraction of non-zero values): 0.191
+
+Counts/sample summary:
+ Min: 2854.0
+ Max: 18129.0
+ Median: 5457.000
+ Mean: 7007.211
+ Std. dev.: 3955.546
+ Sample Metadata Categories: None provided
+ Observation Metadata Categories: taxonomy
+
+Counts/sample detail:
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;anova&quot;&gt;ANOVA&lt;/h2&gt;
+
+&lt;p&gt;We perform the ANOVA test on multiple taxonomic level.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OTU&lt;/td&gt;
+      &lt;td&gt;OTU id&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Test-Statistic&lt;/td&gt;
+      &lt;td&gt;the value of the test statistic for the given test&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;P&lt;/td&gt;
+      &lt;td&gt;the raw P value returned by the given test.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FDR_P&lt;/td&gt;
+      &lt;td&gt;the P value corrected by the Benjamini-Hochberg FDR procedure for multiple comparisons.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bonferroni_P&lt;/td&gt;
+      &lt;td&gt;the P value corrected by the Bonferroni procedure for multiple comparisons.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;x_mean&lt;/td&gt;
+      &lt;td&gt;there will be as many of these headers as there are unique values in the mapping file under the category passed with the -c option. Each of these fields will contain the mean frequency/abundance/count of the given OTU for the given sample group.  We have two groups in this workshop (early and late) so we will have two columns&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>TreeSnap release press</title>
-   <link href="http://bradfordcondon.com/2017/07/20/treesnapReleasePress/"/>
+   <link href="http://localhost:4000/2017/07/20/treesnapReleasePress/"/>
    <updated>2017-07-20T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/07/20/treesnapReleasePress</id>
+   <id>http://localhost:4000/2017/07/20/treesnapReleasePress</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/TreeSnap/TreesnapFullLogo_x3.png&quot; alt=&quot;TreeSnap&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Early this year, I joined Meg Staton’s group at the University of Tennessee as a mobile and web developer.  My major project since then has been designing, coding, and releasing the mobile citizen science app TreeSnap.  I think it’s a fantastic project, and I’d love it if you &lt;a href=&quot;https://treesnap.org&quot;&gt;visited the app’s website&lt;/a&gt; to learn more.&lt;/p&gt;
@@ -392,9 +1578,9 @@ The Eventbrite event management page.&lt;/p&gt;
  
  <entry>
    <title>Understanding Discovar output</title>
-   <link href="http://bradfordcondon.com/2017/07/15/discovarOutput/"/>
+   <link href="http://localhost:4000/2017/07/15/discovarOutput/"/>
    <updated>2017-07-15T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/07/15/discovarOutput</id>
+   <id>http://localhost:4000/2017/07/15/discovarOutput</id>
    <content type="html">&lt;p&gt;This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
 Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
@@ -450,9 +1636,9 @@ gv assembly.final.ps
  
  <entry>
    <title>Examining bowtie output</title>
-   <link href="http://bradfordcondon.com/2017/07/13/bowtie2/"/>
+   <link href="http://localhost:4000/2017/07/13/bowtie2/"/>
    <updated>2017-07-13T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/07/13/bowtie2</id>
+   <id>http://localhost:4000/2017/07/13/bowtie2</id>
    <content type="html">&lt;p&gt;This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
 &lt;h3 id=&quot;bowtie-output&quot;&gt;Bowtie output&lt;/h3&gt;
@@ -578,9 +1764,9 @@ gv assembly.final.ps
  
  <entry>
    <title>Guide to newblr output</title>
-   <link href="http://bradfordcondon.com/2017/07/11/newblr/"/>
+   <link href="http://localhost:4000/2017/07/11/newblr/"/>
    <updated>2017-07-11T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/07/11/newblr</id>
+   <id>http://localhost:4000/2017/07/11/newblr</id>
    <content type="html">&lt;p&gt;This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
 Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
@@ -975,9 +2161,9 @@ assembly.&lt;/p&gt;
  
  <entry>
    <title>qual format</title>
-   <link href="http://bradfordcondon.com/2017/07/09/qual_format_phred/"/>
+   <link href="http://localhost:4000/2017/07/09/qual_format_phred/"/>
    <updated>2017-07-09T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/07/09/qual_format_phred</id>
+   <id>http://localhost:4000/2017/07/09/qual_format_phred</id>
    <content type="html">&lt;p&gt;This post is part 7 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
 &lt;h3 id=&quot;qual-format&quot;&gt;qual format&lt;/h3&gt;
@@ -1052,9 +2238,9 @@ At this point, all we need to understand is what are &lt;a href=&quot;https://en
  
  <entry>
    <title>ZFF annotations for SNAP</title>
-   <link href="http://bradfordcondon.com/2017/07/02/ZFF/"/>
+   <link href="http://localhost:4000/2017/07/02/ZFF/"/>
    <updated>2017-07-02T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/07/02/ZFF</id>
+   <id>http://localhost:4000/2017/07/02/ZFF</id>
    <content type="html">&lt;p&gt;This post is part 6 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
 &lt;h3 id=&quot;snap-and-zff&quot;&gt;SNAP and ZFF&lt;/h3&gt;
@@ -1158,10 +2344,31 @@ Eterm   5103   5280   +    46   1   0   2   Y73E7A.7
  </entry>
  
  <entry>
+   <title>Appgraphics</title>
+   <link href="http://localhost:4000/2017/06/21/AppGraphics/"/>
+   <updated>2017-06-21T14:03:21-04:00</updated>
+   <id>http://localhost:4000/2017/06/21/AppGraphics</id>
+   <content type="html">&lt;h1 id=&quot;icons&quot;&gt;Icons&lt;/h1&gt;
+
+&lt;p&gt;https://makeappicon.com/&lt;/p&gt;
+
+&lt;h1 id=&quot;android&quot;&gt;Android&lt;/h1&gt;
+
+&lt;p&gt;If you’re totally out of time, &lt;a href=&quot;https://www.norio.be/android-feature-graphic-generator/&quot;&gt;Norio hosts a simple graphic generator that does not require attribution&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you’d like to try your hand at something a little more interesting, browsing the google play store is a great idea.&lt;/p&gt;
+
+&lt;p&gt;Here are some simple to implement templates:&lt;/p&gt;
+
+&lt;p&gt;Have react.Create component bubble.  Push an array.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>BLAST output</title>
-   <link href="http://bradfordcondon.com/2017/06/14/BLAST_format_explained/"/>
+   <link href="http://localhost:4000/2017/06/14/BLAST_format_explained/"/>
    <updated>2017-06-14T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/06/14/BLAST_format_explained</id>
+   <id>http://localhost:4000/2017/06/14/BLAST_format_explained</id>
    <content type="html">&lt;p&gt;This post is part 5 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
 &lt;h2 id=&quot;blast&quot;&gt;BLAST&lt;/h2&gt;
@@ -1271,9 +2478,9 @@ GGGATATAGAGGCCCCCAACCACACCCCT
  
  <entry>
    <title>Velvet assembly output files</title>
-   <link href="http://bradfordcondon.com/2017/06/13/velvet_out/"/>
+   <link href="http://localhost:4000/2017/06/13/velvet_out/"/>
    <updated>2017-06-13T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/06/13/velvet_out</id>
+   <id>http://localhost:4000/2017/06/13/velvet_out</id>
    <content type="html">&lt;p&gt;This post is part 4 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next 
 Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
@@ -1439,10 +2646,62 @@ Ultimately the stats files included with the assembly can be more confusing than
  </entry>
  
  <entry>
+   <title>Changing_your_react_native_app_name</title>
+   <link href="http://localhost:4000/2017/06/11/changing_your_react_native_app_name/"/>
+   <updated>2017-06-11T11:52:10-04:00</updated>
+   <id>http://localhost:4000/2017/06/11/changing_your_react_native_app_name</id>
+   <content type="html">
+&lt;h1 id=&quot;renaming-my-app-in-react-native&quot;&gt;Renaming my app in react-native&lt;/h1&gt;
+
+&lt;p&gt;In theory, all you need to do is rename the app in your &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; file and run &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native upgrade&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In practice, however, I’ve been getting the error: &lt;code class=&quot;highlighter-rouge&quot;&gt;A valid version number for 'react-native' is not specified in your 'package.json' file. Aborting.&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;react-native-cli: 2.0.1
+react-native: 0.42.3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Make sure that react and react-native are pointing to a stable release, for example,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;react&quot;: &quot;^15.4.*&quot;,
+    &quot;react-native&quot;: &quot;^0.42.*&quot;,
+    ```
+
+
+It also suggests using the git upgrader, at `npm install -g react-native-git-upgrade`.  Once the upgrader is installed, run `sudo react-native-git-upgrade`.
+
+
+You should also be sure to run a find-replace to replace your old app name with the new one in all text throughout the app itself.
+
+
+
+### Removing the old app
+
+* Manually delete all of the build specific folders and files in the `ios` and `android` folder.
+
+* Now delete all modules, install, and re-link
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;sudo rm -rf node_modules &amp;amp;&amp;amp; sudo npm install &amp;amp;&amp;amp; react-native link&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+* clear the cache
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;watchman watch-del-all&lt;/p&gt;
+
+&lt;p&gt;npm start –reset-cache
+```&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>GTF (General Transfer Format)</title>
-   <link href="http://bradfordcondon.com/2017/05/24/GTF/"/>
+   <link href="http://localhost:4000/2017/05/24/GTF/"/>
    <updated>2017-05-24T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/05/24/GTF</id>
+   <id>http://localhost:4000/2017/05/24/GTF</id>
    <content type="html">&lt;p&gt;This post is part 3 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted &lt;a href=&quot;http://www.endophyte.uky.edu/ngs/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;General transfer format (GTF), also known as General Feature Format (GFF) 2.0, is the format for transcripts in exercise 4, &lt;strong&gt;RNAseq&lt;/strong&gt;.
@@ -1483,9 +2742,9 @@ For more details, please see the &lt;a href=&quot;www.ensembl.org/info/website/u
  
  <entry>
    <title>Expanding Your Horizons Kentucky 2017</title>
-   <link href="http://bradfordcondon.com/2017/05/14/EYHpress/"/>
+   <link href="http://localhost:4000/2017/05/14/EYHpress/"/>
    <updated>2017-05-14T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/05/14/EYHpress</id>
+   <id>http://localhost:4000/2017/05/14/EYHpress</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/EYH2017/EYHbanner.gif&quot; alt=&quot;Expanding your horizons header&quot; /&gt; 
 &lt;img src=&quot;/assets/img/EYH2017/sponsor_image.jpg&quot; alt=&quot;NSF epscor&quot; /&gt;&lt;/p&gt;
 
@@ -1568,9 +2827,9 @@ This day-long event will include hands-on activities in science, technology, eng
  
  <entry>
    <title>FASTQ format explained</title>
-   <link href="http://bradfordcondon.com/2017/05/14/fastq_format_explained/"/>
+   <link href="http://localhost:4000/2017/05/14/fastq_format_explained/"/>
    <updated>2017-05-14T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/05/14/fastq_format_explained</id>
+   <id>http://localhost:4000/2017/05/14/fastq_format_explained</id>
    <content type="html">&lt;p&gt;This post is part 2 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted &lt;a href=&quot;http://www.endophyte.uky.edu/ngs/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;#FastQ sequence format&lt;/p&gt;
@@ -1631,9 +2890,9 @@ Sequences off of an illumina machine will follow this format:&lt;/p&gt;
  
  <entry>
    <title>Introduction to BLAST</title>
-   <link href="http://bradfordcondon.com/2017/05/03/remoteBlast/"/>
+   <link href="http://localhost:4000/2017/05/03/remoteBlast/"/>
    <updated>2017-05-03T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/05/03/remoteBlast</id>
+   <id>http://localhost:4000/2017/05/03/remoteBlast</id>
    <content type="html">&lt;h4 id=&quot;uk-blast-workshop-2016&quot;&gt;UK-BLAST workshop 2016&lt;/h4&gt;
 
 &lt;p&gt;This tutorial was developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.&lt;/p&gt;
@@ -1805,9 +3064,9 @@ The assembly page has even more information about this strain’s genome sequenc
  
  <entry>
    <title>PATH, a guide to finding one's way</title>
-   <link href="http://bradfordcondon.com/2017/04/23/exploringPATH/"/>
+   <link href="http://localhost:4000/2017/04/23/exploringPATH/"/>
    <updated>2017-04-23T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/04/23/exploringPATH</id>
+   <id>http://localhost:4000/2017/04/23/exploringPATH</id>
    <content type="html">&lt;h4 id=&quot;uk-blast-workshop-2016&quot;&gt;UK-BLAST workshop 2016&lt;/h4&gt;
 
 &lt;p&gt;These exercises were developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.&lt;/p&gt;
@@ -2117,10 +3376,25 @@ ls test_folder
  </entry>
  
  <entry>
+   <title>Learningprotege</title>
+   <link href="http://localhost:4000/2017/04/20/learningProtege/"/>
+   <updated>2017-04-20T17:25:03-04:00</updated>
+   <id>http://localhost:4000/2017/04/20/learningProtege</id>
+   <content type="html">
+&lt;h2 id=&quot;what-is-owl&quot;&gt;What is OWL?&lt;/h2&gt;
+
+&lt;p&gt;Owl tutorial slides:  http://protege.stanford.edu/conference/2006/submissions/slides/OWLTutorial_Part1.pdf&lt;/p&gt;
+
+&lt;p&gt;It is its own langauge….  but Tools exist to hide the syntax of the language and make it mostly machine readable.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>fixing tabs</title>
-   <link href="http://bradfordcondon.com/2017/04/19/fixHeaderTabs/"/>
+   <link href="http://localhost:4000/2017/04/19/fixHeaderTabs/"/>
    <updated>2017-04-19T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/04/19/fixHeaderTabs</id>
+   <id>http://localhost:4000/2017/04/19/fixHeaderTabs</id>
    <content type="html">&lt;p&gt;As you can see below, the navigation tabs I’m using at the top of my page didn’t properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -2177,9 +3451,9 @@ ls test_folder
  
  <entry>
    <title>Floracliff mushroom workshop</title>
-   <link href="http://bradfordcondon.com/2017/04/17/floraCliffUpdate/"/>
+   <link href="http://localhost:4000/2017/04/17/floraCliffUpdate/"/>
    <updated>2017-04-17T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/04/17/floraCliffUpdate</id>
+   <id>http://localhost:4000/2017/04/17/floraCliffUpdate</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/&quot;&gt;I previously announced a Workshop we hosted at Floracliff on mushroom identification In October 2016&lt;/a&gt;.  It’s been a while but I wanted to share a little bit about the experience and post materials.&lt;/p&gt;
 
 &lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
@@ -2225,9 +3499,9 @@ ls test_folder
  
  <entry>
    <title>Knitting to Jekyll</title>
-   <link href="http://bradfordcondon.com/2017/04/11/testKnitr/"/>
+   <link href="http://localhost:4000/2017/04/11/testKnitr/"/>
    <updated>2017-04-11T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/04/11/testKnitr</id>
+   <id>http://localhost:4000/2017/04/11/testKnitr</id>
    <content type="html">&lt;h2 id=&quot;knitting-r-markdown-to-jekyll&quot;&gt;Knitting R Markdown to Jekyll&lt;/h2&gt;
 
 &lt;p&gt;This is a test of the Knittr package and Jekyll.&lt;/p&gt;
@@ -2274,9 +3548,9 @@ qplot(mpg, drat, data=mtcars, color=cyl, main=&quot;mpg vs drat mtcars&quot;)
  
  <entry>
    <title>Moving to Jekyll</title>
-   <link href="http://bradfordcondon.com/2017/04/09/introToJekyll/"/>
+   <link href="http://localhost:4000/2017/04/09/introToJekyll/"/>
    <updated>2017-04-09T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/04/09/introToJekyll</id>
+   <id>http://localhost:4000/2017/04/09/introToJekyll</id>
    <content type="html">&lt;h2 id=&quot;switching-to-jekyll&quot;&gt;Switching to Jekyll&lt;/h2&gt;
 
 &lt;p&gt;This weekend I switched my site from a Wordpress site hosted by bluehost to a Jekyll site hosted on githubpages.  I’m excited about this for plenty of reasons.&lt;/p&gt;
@@ -2341,9 +3615,9 @@ This is my post that I get to write in *Markdown*!
  
  <entry>
    <title>Moving to Github Pages</title>
-   <link href="http://bradfordcondon.com/2017/04/07/migrating-to-github/"/>
+   <link href="http://localhost:4000/2017/04/07/migrating-to-github/"/>
    <updated>2017-04-07T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2017/04/07/migrating-to-github</id>
+   <id>http://localhost:4000/2017/04/07/migrating-to-github</id>
    <content type="html">&lt;p&gt;I’m moving to a Markdown-based blog using Jekyll and github pages hosting!&lt;/p&gt;
 
 &lt;p&gt;Please excuse the mess while I get my site in working order.  I’m hopeful that this site will be updated more frequently once I make the switch.&lt;/p&gt;
@@ -2356,9 +3630,9 @@ This is my post that I get to write in *Markdown*!
  
  <entry>
    <title>Expanding Your Horizons comes to Kentucky</title>
-   <link href="http://bradfordcondon.com/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/"/>
+   <link href="http://localhost:4000/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/"/>
    <updated>2017-01-10T14:00:07-05:00</updated>
-   <id>http://bradfordcondon.com/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky</id>
+   <id>http://localhost:4000/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky</id>
    <content type="html">&lt;p&gt;I’m excited to announce that, a collaboration between Dr. Ellen Crocker, Dr. Susan Odom and myself has secured an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research) grant to bring a science conference for young girls to University of Kentucky.  The conference, an extension of the &lt;a href=&quot;http://www.eyhn.org/&quot;&gt;Expanding Your Horizons (EYH) network&lt;/a&gt;, is a great opportunity for young girls, as well as undergraduate and graduate students.  The conference will be held April 29, 2017.&lt;/p&gt;
 
 &lt;!--more--&gt;
@@ -2379,9 +3653,9 @@ This is my post that I get to write in *Markdown*!
  
  <entry>
    <title>Upcoming workshop: Mushrooms 101 at Floracliff Nature Sanctuary</title>
-   <link href="http://bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/"/>
+   <link href="http://localhost:4000/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/"/>
    <updated>2016-08-25T14:21:02-04:00</updated>
-   <id>http://bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory</id>
+   <id>http://localhost:4000/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory</id>
    <content type="html">&lt;p&gt;I’m excited to announce that my wife &lt;a href=&quot;https://evcrockerblog.wordpress.com/&quot;&gt;Dr. Ellen Crocker&lt;/a&gt; and I will be teaching a workshop at the &lt;a href=&quot;http://www.floracliff.org/fieldstudies.html&quot;&gt;Floracliff Nature Sanctuary&lt;/a&gt; on Friday and Saturday, October 14th-15th 2016.  I’m particularly proud to partner with Floracliff: it’s a beautiful nature preserve with very cool educational opportunities available to the public.  Ellen has taken Rob Paratley’s fern workshop and she said it was fantastic.&lt;/p&gt;
 
 &lt;p&gt;&lt;!--more--&gt;&lt;/p&gt;
@@ -2407,9 +3681,9 @@ This is my post that I get to write in *Markdown*!
  
  <entry>
    <title>Society of Postdoctoral Scholars technical officer</title>
-   <link href="http://bradfordcondon.com/science/2016/08/09/577/"/>
+   <link href="http://localhost:4000/science/2016/08/09/577/"/>
    <updated>2016-08-09T11:45:48-04:00</updated>
-   <id>http://bradfordcondon.com/science/2016/08/09/577</id>
+   <id>http://localhost:4000/science/2016/08/09/577</id>
    <content type="html">&lt;p&gt;&lt;img class=&quot;size-full wp-image-578&quot; src=&quot;/wp-content/uploads/2016/08/Screen-Shot-2016-08-09-at-11.44.33-AM.png&quot; sizes=&quot;(max-width: 562px) 100vw, 562px&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I am now the technical officer for the University of Kentucky Society of Postdoctoral Scholars (SOPS).&lt;/p&gt;
@@ -2420,9 +3694,9 @@ This is my post that I get to write in *Markdown*!
  
  <entry>
    <title>Where did MaCQIIME go?</title>
-   <link href="http://bradfordcondon.com/science/tools/2016/07/11/where-did-macqiime-go/"/>
+   <link href="http://localhost:4000/science/tools/2016/07/11/where-did-macqiime-go/"/>
    <updated>2016-07-11T14:29:34-04:00</updated>
-   <id>http://bradfordcondon.com/science/tools/2016/07/11/where-did-macqiime-go</id>
+   <id>http://localhost:4000/science/tools/2016/07/11/where-did-macqiime-go</id>
    <content type="html">&lt;p&gt;For those of you running MacQIIME on OSX El Capitan or higher, you may (like me) find that the MacQIIME executable is no longer in your path.&lt;/p&gt;
 
 &lt;p&gt;I was a little confused:I couldn’t find it on my system, although I still had my MacQIIME installation in the default location.  What gives?&lt;/p&gt;
@@ -2440,9 +3714,9 @@ This is my post that I get to write in *Markdown*!
  
  <entry>
    <title>Using the command line and perl to quickly trim files</title>
-   <link href="http://bradfordcondon.com/science/tools/2016/05/23/using-the-command-line-and-perl-to-quickly-trim-files/"/>
+   <link href="http://localhost:4000/science/tools/2016/05/23/using-the-command-line-and-perl-to-quickly-trim-files/"/>
    <updated>2016-05-23T14:58:02-04:00</updated>
-   <id>http://bradfordcondon.com/science/tools/2016/05/23/using-the-command-line-and-perl-to-quickly-trim-files</id>
+   <id>http://localhost:4000/science/tools/2016/05/23/using-the-command-line-and-perl-to-quickly-trim-files</id>
    <content type="html">&lt;p&gt;Sometimes, you have a task where the goal is to remove a certain phrase, set of characters, or trailing characters within a file. This happens all the time working with FASTA files. For whatever reason, the header description might be longer than you like. Some phylogenetics programs, for example, have a character limit on headers. Failure to fix this on your own can result in clipped headers, which in turn can result in non-unique headers and failed scripts.&lt;/p&gt;
 
 &lt;p&gt;The simple solution is to use find and replace in your text editor. This works, but you need to type in exactly what you’d like to remove: there is no pattern matching. Furthermore, what if we have 100s of files to edit? Even if there is only one file to edit, the rule of wasted work states that if you do a task once, you’re going to have to redo it with slightly modified input data.&lt;/p&gt;
@@ -2483,9 +3757,9 @@ This is my post that I get to write in *Markdown*!
  
  <entry>
    <title>Plotting a SNP map by scaffold</title>
-   <link href="http://bradfordcondon.com/science/tools/2016/01/08/plotting-a-snp-map-by-scaffold/"/>
+   <link href="http://localhost:4000/science/tools/2016/01/08/plotting-a-snp-map-by-scaffold/"/>
    <updated>2016-01-08T16:29:37-05:00</updated>
-   <id>http://bradfordcondon.com/science/tools/2016/01/08/plotting-a-snp-map-by-scaffold</id>
+   <id>http://localhost:4000/science/tools/2016/01/08/plotting-a-snp-map-by-scaffold</id>
    <content type="html">&lt;p&gt; &lt;/p&gt;
 
 &lt;p&gt;I wanted to plot out SNPs along a chromosome. I was starting with SNP tables that were roughly equivalent to a .bed file:&lt;/p&gt;
@@ -2549,9 +3823,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Metagenomics in R: Phyloseq</title>
-   <link href="http://bradfordcondon.com/science/tools/2015/12/26/metagenomics-in-r-phyloseq/"/>
+   <link href="http://localhost:4000/science/tools/2015/12/26/metagenomics-in-r-phyloseq/"/>
    <updated>2015-12-26T12:36:19-05:00</updated>
-   <id>http://bradfordcondon.com/science/tools/2015/12/26/metagenomics-in-r-phyloseq</id>
+   <id>http://localhost:4000/science/tools/2015/12/26/metagenomics-in-r-phyloseq</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://joey711.github.io/phyloseq/&quot;&gt;Phyloseq&lt;/a&gt; is a fantastic R package that really helped me get started in R.  If you need to process your metagenomic data but lack the experience in statistics/R to use, say, the ecology stats R package &lt;a href=&quot;https://cran.r-project.org/web/packages/vegan/vegan.pdf&quot;&gt;VEGAN&lt;/a&gt;, I highly recommend giving Phyloseq a try.  Running through the vignettes will produce great heatmaps, taxonomy plots, and PCA/NMDS plots.&lt;/p&gt;
 
 &lt;p&gt; &lt;figure id=&quot;attachment_520&quot; style=&quot;width: 300px&quot; class=&quot;wp-caption aligncenter&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -2574,9 +3848,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Pardon my mess</title>
-   <link href="http://bradfordcondon.com/uncategorized/2015/12/26/pardon-my-mess/"/>
+   <link href="http://localhost:4000/uncategorized/2015/12/26/pardon-my-mess/"/>
    <updated>2015-12-26T12:05:24-05:00</updated>
-   <id>http://bradfordcondon.com/uncategorized/2015/12/26/pardon-my-mess</id>
+   <id>http://localhost:4000/uncategorized/2015/12/26/pardon-my-mess</id>
    <content type="html">&lt;p&gt;Hello, thanks for finding my page!&lt;/p&gt;
 
 &lt;p&gt;I’m currently experimenting with site layout and design.  Things will keep changing while I get the site how I want it.  Feel free to let me know what you think.&lt;/p&gt;
@@ -2591,18 +3865,18 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Extracting MinION fastq on the command line using poRe</title>
-   <link href="http://bradfordcondon.com/science/2015/09/18/extracting-minion-fastq-on-the-command-line-using-pore/"/>
+   <link href="http://localhost:4000/science/2015/09/18/extracting-minion-fastq-on-the-command-line-using-pore/"/>
    <updated>2015-09-18T12:25:02-04:00</updated>
-   <id>http://bradfordcondon.com/science/2015/09/18/extracting-minion-fastq-on-the-command-line-using-pore</id>
+   <id>http://localhost:4000/science/2015/09/18/extracting-minion-fastq-on-the-command-line-using-pore</id>
    <content type="html">&lt;p&gt;Source: &lt;a href=&quot;https://biomickwatson.wordpress.com/2015/09/18/extracting-minion-fastq-on-the-command-line-using-pore/&quot;&gt;Extracting MinION fastq on the command line using poRe&lt;/a&gt;&lt;/p&gt;
 </content>
  </entry>
  
  <entry>
    <title>An unfortunate sweet tooth for sensationalism</title>
-   <link href="http://bradfordcondon.com/science/2015/05/28/an-unfortunate-sweet-tooth-for-sensationalism/"/>
+   <link href="http://localhost:4000/science/2015/05/28/an-unfortunate-sweet-tooth-for-sensationalism/"/>
    <updated>2015-05-28T17:10:09-04:00</updated>
-   <id>http://bradfordcondon.com/science/2015/05/28/an-unfortunate-sweet-tooth-for-sensationalism</id>
+   <id>http://localhost:4000/science/2015/05/28/an-unfortunate-sweet-tooth-for-sensationalism</id>
    <content type="html">&lt;p&gt;When I taught a science for non-science majors at Cornell University, my favorite lecture was on science in the popular media.  My learning objective was straight forward: I wanted students to pick up a newspaper, flip to the science section, and detect bullshit.&lt;/p&gt;
 
 &lt;p&gt;This is such an important life skill because at this point in time, &lt;strong&gt;blogs, newspapers, and magazines print unscientific bullshit.&lt;/strong&gt;  They do it because it sells. &lt;strong&gt; &lt;/strong&gt;I have never seen an article so neatly package all of the problems that lead to this state of affairs than &lt;a href=&quot;http://io9.com/i-fooled-millions-into-thinking-chocolate-helps-weight-1707251800&quot;&gt;John Bohannon’s recent “Chocolate Diet” charade.&lt;/a&gt;  If you haven’t read it yet, please do.  I’ll wait.&lt;/p&gt;
@@ -2673,9 +3947,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Gamification for positive habits</title>
-   <link href="http://bradfordcondon.com/fun/tools/2015/01/30/gamification-in-science/"/>
+   <link href="http://localhost:4000/fun/tools/2015/01/30/gamification-in-science/"/>
    <updated>2015-01-29T20:30:27-05:00</updated>
-   <id>http://bradfordcondon.com/fun/tools/2015/01/30/gamification-in-science</id>
+   <id>http://localhost:4000/fun/tools/2015/01/30/gamification-in-science</id>
    <content type="html">&lt;p style=&quot;text-align: left;&quot;&gt;
   For as long as I can remember, I&amp;#8217;ve enjoyed video games.  If there&amp;#8217;s leveling up, character optimization, or strategic battles to be had, I&amp;#8217;m in.  At my worst, I can burn an entire Sunday; I&amp;#8217;ll admit that I&amp;#8217;ve banned myself from playing &lt;a href=&quot;http://blog.dota2.com/&quot;&gt;DOTA2&lt;/a&gt; after one too many late nights.
 &lt;/p&gt;
@@ -2709,9 +3983,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Lab notebook software</title>
-   <link href="http://bradfordcondon.com/tools/2014/10/29/lab-notebook-software/"/>
+   <link href="http://localhost:4000/tools/2014/10/29/lab-notebook-software/"/>
    <updated>2014-10-29T13:56:51-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2014/10/29/lab-notebook-software</id>
+   <id>http://localhost:4000/tools/2014/10/29/lab-notebook-software</id>
    <content type="html">&lt;p&gt;Last year, I wrote about &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/07/18/a-digital-notebook/&quot; title=&quot;A digital notebook&quot;&gt;using Evernote as my digital lab notebook.&lt;/a&gt;  With the release of &lt;a href=&quot;http://findingsapp.com/&quot;&gt;Findings, a new digital notebook software&lt;/a&gt; from the people who created my &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/07/07/papers-as-a-reference-manager/&quot; title=&quot;Papers as a reference manager&quot;&gt;favorite reference management software Papers&lt;/a&gt;, I thought I would reflect on my digital notebook needs.&lt;/p&gt;
 
 &lt;p&gt;A digital notebook should be:&lt;/p&gt;
@@ -2738,9 +4012,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Who are CyberVor?</title>
-   <link href="http://bradfordcondon.com/fun/2014/08/06/who-are-cybervor/"/>
+   <link href="http://localhost:4000/fun/2014/08/06/who-are-cybervor/"/>
    <updated>2014-08-06T17:22:27-04:00</updated>
-   <id>http://bradfordcondon.com/fun/2014/08/06/who-are-cybervor</id>
+   <id>http://localhost:4000/fun/2014/08/06/who-are-cybervor</id>
    <content type="html">&lt;p&gt;Well, the &lt;a href=&quot;http://www.bbc.com/news/technology-28654613&quot;&gt;BBC&lt;/a&gt; and The &lt;a href=&quot;http://www.nytimes.com/2014/08/06/technology/russian-gang-said-to-amass-more-than-a-billion-stolen-internet-credentials.html?hp&amp;amp;action=click&amp;amp;pgtype=Homepage&amp;amp;version=LedeSum&amp;amp;module=first-column-region&amp;amp;region=top-news&amp;amp;WT.nav=top-news&amp;amp;_r=0&quot;&gt;New York Times&lt;/a&gt; have both published pieces on the Russian hackers “CyberVor”.  The claim is that  1.2 billion user names and passwords from some 420,000 websites have been hacked.  The sites/users affected, nature of the vulnerability, and severity of the threat have not been disclosed.&lt;/p&gt;
 
 &lt;p&gt;Skeptics have pointed out that, well, &lt;a href=&quot;http://www.forbes.com/sites/kashmirhill/2014/08/05/huge-password-breach-shady-antics/&quot;&gt;things don’t really add up.&lt;/a&gt;  The biggest problem is that The New York Times was fed the CyberVor piece by Hold Security firm.  This is the very same firm that stands to profit from this security breach, by charging $120/year for their services.  The New York Times piece, to my eye, does not validate the information provided by Hold Security.  The truth is that its in Hold Security’s interest to exaggerate the breach, and in The New York Times’ interest to report the story as quickly as possible.  Without released facts or data, this entire story could have been fabricated by Hold Security.  This is unlikely, as The New York Times piece claims that two unaffiliated sources verified the database as authentic.  Still, experts seem to think the threat could be exaggerated.&lt;/p&gt;
@@ -2759,9 +4033,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>MOOCs and me</title>
-   <link href="http://bradfordcondon.com/uncategorized/2014/07/04/moocs-and-me/"/>
+   <link href="http://localhost:4000/uncategorized/2014/07/04/moocs-and-me/"/>
    <updated>2014-07-04T15:52:41-04:00</updated>
-   <id>http://bradfordcondon.com/uncategorized/2014/07/04/moocs-and-me</id>
+   <id>http://localhost:4000/uncategorized/2014/07/04/moocs-and-me</id>
    <content type="html">&lt;p&gt;MOOCs (Massive Open Online Courses)  are an interesting development in higher education.  At their most impressive, they are a way for brilliant educators to reach thousands of students at a time, all across the world.  MOOCs have the potential to remove educational barriers like learning disabilities, economic constraints, geographic realities, or busy life schedules.  My alma mater, Cornell, &lt;a href=&quot;http://www.news.cornell.edu/stories/2013/10/cornell-s-first-four-moocs-launch-next-semester&quot;&gt;launched their first wave of MOOCs last semester.&lt;/a&gt;  Cornell prides itself on catering to “any person, any study” and its not hard to see how MOOCs can drive this mission forward.&lt;/p&gt;
 
 &lt;p&gt;Of course, MOOCs are entering the scene at a time when higher education is reconsidering its educational tenets.  A traditional classroom brings to mind stuffy tiered lecture halls with esteemed professors reciting knowledge to enraptured students (Tom Wolfe’s &lt;a href=&quot;http://www.amazon.com/Am-Charlotte-Simmons-Novel/dp/0312424442&quot;&gt;&lt;em&gt;I Am Charlotte Simmons&lt;/em&gt;&lt;/a&gt; comes to mind).  Educators have long suspected that these teaching methods are not ideal, but &lt;a href=&quot;http://www.pnas.org/content/early/2014/05/08/1319030111&quot;&gt;recent high profile publications&lt;/a&gt; have provided clear evidence that there are better ways to engage students.  Active learning is a broad term, but it encompasses classrooms where students participate in activities or discussions. Instead of tuning out a professor (intentionally or not), a student must engage the material.&lt;/p&gt;
@@ -2780,9 +4054,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Scientific writing is dry (but that&amp;#8217;s OK)</title>
-   <link href="http://bradfordcondon.com/fun/2014/04/28/scientific-writing-is-dry-but-thats-ok/"/>
+   <link href="http://localhost:4000/fun/2014/04/28/scientific-writing-is-dry-but-thats-ok/"/>
    <updated>2014-04-28T11:55:59-04:00</updated>
-   <id>http://bradfordcondon.com/fun/2014/04/28/scientific-writing-is-dry-but-thats-ok</id>
+   <id>http://localhost:4000/fun/2014/04/28/scientific-writing-is-dry-but-thats-ok</id>
    <content type="html">&lt;p&gt;This morning I was delighted to come across the &lt;a href=&quot;http://www.imafungus.org/&quot;&gt;IMA Fungus journal&lt;/a&gt;.  Put out by the International Mycological Association , the journal title (which primarily publishes species announcements and descriptions) playfully introduces each organism with a friendly “Hello, I’m a fungus!”  The truth is, scientific literature is seldom so fun and informal.&lt;/p&gt;
 
 &lt;p&gt;When I submitted my PhD dissertation draft to my committee, perhaps the most common complaint I got was that I was having too much fun with the writing.  Given the choice, I  always prefer to be playful than bland in my writing.  In science, this isn’t necessarily a good thing.  Primary scientific writing values clarity and correctness.  In trying to evoke vivid descriptions, I like to describe science with flair, pushing my metaphors to the absurd.  For example, I wrote that fungi forge weapons to wield against the parapets of plant defense, or that they brew novel molecules in musty cellular laboratories.&lt;/p&gt;
@@ -2802,9 +4076,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>How many copies of my thesis/dissertation should I order?</title>
-   <link href="http://bradfordcondon.com/fun/2014/03/17/how-many-copies-of-my-thesisdissertation-should-i-order/"/>
+   <link href="http://localhost:4000/fun/2014/03/17/how-many-copies-of-my-thesisdissertation-should-i-order/"/>
    <updated>2014-03-16T23:23:00-04:00</updated>
-   <id>http://bradfordcondon.com/fun/2014/03/17/how-many-copies-of-my-thesisdissertation-should-i-order</id>
+   <id>http://localhost:4000/fun/2014/03/17/how-many-copies-of-my-thesisdissertation-should-i-order</id>
    <content type="html">&lt;p&gt;&lt;em&gt; &lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;You’re finished!  You’ve spent hours writing and rewriting your thesis or dissertation (such semantics!), braved your defense, and spent even more time addressing your committee revisions (to say nothing of the years of hard work that got you here).  Congratulations.  Time to submit and watch Buffy the Vampire Slayer for eight days straight, right?&lt;/p&gt;
@@ -2854,9 +4128,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Celebrity burgers a reality</title>
-   <link href="http://bradfordcondon.com/fun/2014/02/28/celebrity-burgers-a-reality/"/>
+   <link href="http://localhost:4000/fun/2014/02/28/celebrity-burgers-a-reality/"/>
    <updated>2014-02-28T12:53:03-05:00</updated>
-   <id>http://bradfordcondon.com/fun/2014/02/28/celebrity-burgers-a-reality</id>
+   <id>http://localhost:4000/fun/2014/02/28/celebrity-burgers-a-reality</id>
    <content type="html">&lt;p&gt;Back in September last year, &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/09/14/ethical-implications-of-the-stem-cell-burger/&quot;&gt;I explored some possibilities that the “Stem Cell burger” opened up.&lt;/a&gt;  Perhaps the most far-fetched idea I had was to produce meat from cloned celebrity stem cells.&lt;/p&gt;
 
 &lt;p&gt;It seems this idea wasn’t as absurd as I thought.  A new company has launched called &lt;a href=&quot;http://bitelabs.org/&quot;&gt;Bitelabs&lt;/a&gt;, claiming they will produce celebrity-derived meats in salami-form.&lt;figure style=&quot;width: 487px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -2869,9 +4143,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Scoop.it! and content curation</title>
-   <link href="http://bradfordcondon.com/tools/2014/01/10/scoop-it-and-content-curation/"/>
+   <link href="http://localhost:4000/tools/2014/01/10/scoop-it-and-content-curation/"/>
    <updated>2014-01-10T11:35:07-05:00</updated>
-   <id>http://bradfordcondon.com/tools/2014/01/10/scoop-it-and-content-curation</id>
+   <id>http://localhost:4000/tools/2014/01/10/scoop-it-and-content-curation</id>
    <content type="html">&lt;p&gt;In the past, I’ve written about the &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/&quot; title=&quot;Let the literature come to you: custom pubmed RSS feeds&quot;&gt;importance of setting up custom newsfeeds&lt;/a&gt; for current publications in your field, and using &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/04/28/16/&quot; title=&quot;Tools for science: Citeulike&quot;&gt;Citeulike to share references&lt;/a&gt;.  While these tools can be useful for discovering and archiving content, they are not ideal for sharing and disseminating it.  Gathering content and distilling it for others is an art: the art of content curation.&lt;/p&gt;
 
 &lt;p&gt;Lately I’ve been using &lt;a href=&quot;http://www.scoop.it/&quot;&gt;Scoop.it&lt;/a&gt; for content curation and outreach.  I created two main channels: one for &lt;a href=&quot;http://www.scoop.it/t/popular-bioscience&quot;&gt;science stories in the news,&lt;/a&gt; and another for new research &lt;a href=&quot;http://www.scoop.it/t/fungal-genetics&quot;&gt;in my field of fungal genetics&lt;/a&gt;.  By picking a key paragraph from the discussion or abstract, as well as a catchy image, I can easily pin small blurbs for each article (called scoops) to a news stream.  Each feed is easy to skim through, can be tagged and annotated, and allows me to easily review articles I was interested in.  RSS feeds for each topic can be fed elsewhere, such as a &lt;a href=&quot;http://www.bradfordcondon.com/&quot;&gt;flagship brand&lt;/a&gt; website.&lt;/p&gt;
@@ -2890,9 +4164,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>Consider the ostracod</title>
-   <link href="http://bradfordcondon.com/fun/2013/12/03/consider-the-ostracod/"/>
+   <link href="http://localhost:4000/fun/2013/12/03/consider-the-ostracod/"/>
    <updated>2013-12-03T16:18:24-05:00</updated>
-   <id>http://bradfordcondon.com/fun/2013/12/03/consider-the-ostracod</id>
+   <id>http://localhost:4000/fun/2013/12/03/consider-the-ostracod</id>
    <content type="html">&lt;p&gt;What does it mean to be a scientist?  I present to you some overly poetic thoughts on the topic.&lt;/p&gt;
 
 &lt;p&gt;It was a soggy morning in early Fall when I encountered an ostracod.  I had just submitted my dissertation, I was unsure about my future, I was exhausted.  To celebrate, I went hiking with a party of undergraduate and graduate students led by the intrepid &lt;a href=&quot;http://www.plantpath.cornell.edu/labs/hodge/&quot;&gt;Kathie Hodge&lt;/a&gt; foraging for mushrooms.  We had chased the rain but missed its fungal fruit, finding only a small handful of mushroom gold, &lt;a href=&quot;http://en.wikipedia.org/wiki/Chanterelle&quot;&gt;Chanterelles&lt;/a&gt;.  We decided to return home, and on the walk back,  came across puddles housed in muddy tire tracks.  They were teeming with tiny life.  The sleek tadpoles, buzzing flies, and squirming larvae held our attention for a while, but we soon spotted a most unusual creature.&lt;/p&gt;
@@ -2921,9 +4195,9 @@ scaffold00001   176752  176752
  
  <entry>
    <title>The Tannosome</title>
-   <link href="http://bradfordcondon.com/science/2013/09/26/the-tannosome/"/>
+   <link href="http://localhost:4000/science/2013/09/26/the-tannosome/"/>
    <updated>2013-09-26T16:35:04-04:00</updated>
-   <id>http://bradfordcondon.com/science/2013/09/26/the-tannosome</id>
+   <id>http://localhost:4000/science/2013/09/26/the-tannosome</id>
    <content type="html">&lt;p&gt;An article posted on the &lt;a href=&quot;http://blogs.scientificamerican.com/food-matters/2013/09/20/tannosomes-and-the-trickle-around-effect/&quot;&gt;Scientific American blog&lt;/a&gt; caught my attention recently.  Researchers have discovered the existence of a new organelle, the tannosome, in plants.  It is this organelle that produces tannins, of great interest to wine lovers.  The scientific article in question, posted to &lt;a href=&quot;http://sco.lt/5b1zST&quot;&gt;my scoop.it&lt;/a&gt;, was officially published in the Annals of Botany on September 25th 2013, but it barely created a ripple in the news cycle.  Why not?&lt;/p&gt;
 
 &lt;p&gt;Organelles are extraordinarily important in biology.  An organelle is, by definition, a membrane-bound compartment within a (eukaryotic) cell that performs some specialized function.  Much like each organ within the body performs a specific task, organelles within the cell include the DNA-replicating and transcribing nucleus, the “energy factory” mitochondria, and the “storage center” vacuole.  (Most) plants possess chloroplasts, organelles which house the photosynthetic machinery required to harness energy from light.&lt;/p&gt;
@@ -2959,9 +4233,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>Ethical implications of the Stem Cell Burger</title>
-   <link href="http://bradfordcondon.com/fun/2013/09/14/ethical-implications-of-the-stem-cell-burger/"/>
+   <link href="http://localhost:4000/fun/2013/09/14/ethical-implications-of-the-stem-cell-burger/"/>
    <updated>2013-09-14T05:00:47-04:00</updated>
-   <id>http://bradfordcondon.com/fun/2013/09/14/ethical-implications-of-the-stem-cell-burger</id>
+   <id>http://localhost:4000/fun/2013/09/14/ethical-implications-of-the-stem-cell-burger</id>
    <content type="html">&lt;p&gt;I am  writing a short piece on the &lt;a href=&quot;http://www.cnn.com/2013/08/05/world/europe/europe-stem-cell-burger-ott&quot;&gt;Stem Cell Burger&lt;/a&gt; which was unveiled early last month.  The &lt;a href=&quot;http://culturedbeef.net/&quot;&gt;Cultured Beef website&lt;/a&gt; is eager to point out the many benefits this technology could have for global research usage and animal ethics.  &lt;a href=&quot;http://www.huffingtonpost.com/paul-knoepfler/test-tube-burger_b_3726288.html&quot;&gt;Opponents&lt;/a&gt; are just as quick to point out the possibility of unknown side-effects.&lt;/p&gt;
 
 &lt;p style=&quot;text-align:left;&quot;&gt;
@@ -3006,9 +4280,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>Twitter bootcamp</title>
-   <link href="http://bradfordcondon.com/2013/09/02/twitter-bootcamp/"/>
+   <link href="http://localhost:4000/2013/09/02/twitter-bootcamp/"/>
    <updated>2013-09-02T13:25:54-04:00</updated>
-   <id>http://bradfordcondon.com/2013/09/02/twitter-bootcamp</id>
+   <id>http://localhost:4000/2013/09/02/twitter-bootcamp</id>
    <content type="html">&lt;p&gt;&lt;img class=&quot;alignnone&quot; alt=&quot;&quot; src=&quot;https://i2.wp.com/abs.twimg.com/a/1377795275/images/resources/twitter-bird-blue-on-white.png?resize=300%2C300&amp;#038;ssl=1&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://twitbootcamp.tumblr.com/&quot;&gt;Twitter bootcamp&lt;/a&gt; starts today!  It’s &lt;a href=&quot;http://twitbootcamp.tumblr.com/about&quot;&gt;put together&lt;/a&gt; by my fellow Oberlin alumn Ma’ayan Plaut, who is a social media role model.  If you’ve never quite “gotten” Twitter, or if you feel like you aren’t getting enough out of it, check it out!  I’ll be participating!&lt;/p&gt;
@@ -3017,9 +4291,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>RSS readers</title>
-   <link href="http://bradfordcondon.com/tools/2013/09/02/rss-readers/"/>
+   <link href="http://localhost:4000/tools/2013/09/02/rss-readers/"/>
    <updated>2013-09-02T13:18:56-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/09/02/rss-readers</id>
+   <id>http://localhost:4000/tools/2013/09/02/rss-readers</id>
    <content type="html">&lt;p&gt;(This post is a continuation of my science RSS series, found &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/&quot; title=&quot;Let the literature come to you: custom pubmed RSS feeds&quot;&gt;here&lt;/a&gt;)&lt;/p&gt;
 
 &lt;p&gt;Once you’ve identified RSS feeds you’d like to follow, you need to choose an RSS reader.  This is where the fruits of selective RSS subscription are much sweeter than signing up for email notifications.  Notifications go to my inbox, where they are drowned out by the day-to-day requirements of the academic life.&lt;/p&gt;
@@ -3047,9 +4321,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>A digital notebook</title>
-   <link href="http://bradfordcondon.com/tools/2013/07/18/a-digital-notebook/"/>
+   <link href="http://localhost:4000/tools/2013/07/18/a-digital-notebook/"/>
    <updated>2013-07-18T18:13:37-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/07/18/a-digital-notebook</id>
+   <id>http://localhost:4000/tools/2013/07/18/a-digital-notebook</id>
    <content type="html">&lt;p&gt;When I first started graduate school, I kept an old-fashioned notebook.  A 4×4 quad ruled Roaring Spring Lab Notebook.&lt;/p&gt;
 
 &lt;p&gt;It had gridlines, it had carbon paper (The carbon sheets remain, unperturbed, at the back of the notebook), it had Thomas Edison on the cover scienceing it up.  It was everything I thought science would and should be.&lt;/p&gt;
@@ -3085,9 +4359,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>Emotion matters: Zimmerman vs Alexander</title>
-   <link href="http://bradfordcondon.com/uncategorized/2013/07/14/emotion-matters-zimmerman-vs-alexander/"/>
+   <link href="http://localhost:4000/uncategorized/2013/07/14/emotion-matters-zimmerman-vs-alexander/"/>
    <updated>2013-07-14T01:22:50-04:00</updated>
-   <id>http://bradfordcondon.com/uncategorized/2013/07/14/emotion-matters-zimmerman-vs-alexander</id>
+   <id>http://localhost:4000/uncategorized/2013/07/14/emotion-matters-zimmerman-vs-alexander</id>
    <content type="html">&lt;p&gt;The Florida Stand Your Ground controversy has everyone talking (and nevermind that neither case officially invoked said law).  And a mother (Marissa Alexander) getting 20 years &lt;a href=&quot;http://www.huffingtonpost.com/2012/05/11/marissa-alexander-sentenced_n_1510113.html&quot;&gt;(a minimum sentence for firing a gun during a crime)&lt;/a&gt; for firing warning shots at an abusive husband looks pretty shitty next time a man (George Zimmerman) shooting a 17-year old boy and &lt;a href=&quot;http://www.nytimes.com/2013/07/14/us/george-zimmerman-verdict-trayvon-martin.html?pagewanted=all&quot;&gt;being acquitted of all charges&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;What I find amazing here is the central role emotions play.  Not just in the public’s reaction to these verdicts in sentences: but in how those verdicts were reached.&lt;/p&gt;
@@ -3107,9 +4381,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>Papers as a reference manager</title>
-   <link href="http://bradfordcondon.com/uncategorized/2013/07/07/papers-as-a-reference-manager/"/>
+   <link href="http://localhost:4000/uncategorized/2013/07/07/papers-as-a-reference-manager/"/>
    <updated>2013-07-07T14:15:04-04:00</updated>
-   <id>http://bradfordcondon.com/uncategorized/2013/07/07/papers-as-a-reference-manager</id>
+   <id>http://localhost:4000/uncategorized/2013/07/07/papers-as-a-reference-manager</id>
    <content type="html">&lt;p&gt;I love Mekentosj’s &lt;a href=&quot;http://www.papersapp.com/&quot;&gt;Papers&lt;/a&gt;, and &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/05/05/citation-management-papers/&quot; title=&quot;Citation management: Papers&quot;&gt;encourage you to check it out if you are on a mac and keep digital literature.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;One of the things that drove me nuts using my advisor’s Endnote library was that I couldn’t change it.  Each publication, each grant, it would be my task to go through and manually “spruce up” the references.  Each time I would plea to change the actual source library, and each time I’d be told we had no time as it was the 11th hour.  Everything was inevitably inconsistent.  Author names, journal abbreviations, italicizing species name.  What a mess.&lt;/p&gt;
@@ -3141,9 +4415,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>Mycozombies of The Last of Us</title>
-   <link href="http://bradfordcondon.com/fun/2013/06/22/the-last-of-us/"/>
+   <link href="http://localhost:4000/fun/2013/06/22/the-last-of-us/"/>
    <updated>2013-06-22T16:33:43-04:00</updated>
-   <id>http://bradfordcondon.com/fun/2013/06/22/the-last-of-us</id>
+   <id>http://localhost:4000/fun/2013/06/22/the-last-of-us</id>
    <content type="html">&lt;p&gt;Warning:  probably some incredibly mild spoilers below regarding the game.&lt;/p&gt;
 
 &lt;p&gt;The Last of Us is a &lt;a href=&quot;http://en.wikipedia.org/wiki/The_Last_of_Us&quot;&gt;new survival action horror&lt;/a&gt; videogame for the Playstation 3.   The game is inspired by a &lt;a href=&quot;http://thelastofus.wikia.com/wiki/Ophiocordyceps_unilateralis&quot;&gt;real life fungus, &lt;em&gt;Ophiocordyceps unilateralis&lt;/em&gt;&lt;/a&gt;_.  _Any time fungi get love in popular culture, I’m pretty happy.  I’ve long thought that fungi are a hugely underused resource for science fiction, and I think that cordyceps species are starting to gain some traction in the popular press.&lt;/p&gt;
@@ -3195,9 +4469,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>Snack Writing</title>
-   <link href="http://bradfordcondon.com/writing/2013/06/16/snack-writing/"/>
+   <link href="http://localhost:4000/writing/2013/06/16/snack-writing/"/>
    <updated>2013-06-16T10:19:55-04:00</updated>
-   <id>http://bradfordcondon.com/writing/2013/06/16/snack-writing</id>
+   <id>http://localhost:4000/writing/2013/06/16/snack-writing</id>
    <content type="html">&lt;p&gt;I was reading &lt;a href=&quot;http://www.nature.com/naturejobs/science/articles/10.1038/nj7354-129a&quot;&gt;this Nature article&lt;/a&gt; by Kim Gardiner and Hugh Kearns on snack writing.  Their argument is that scientists who write in a small, fixed window, 45 minutes a day, every day, write more than “block writers” who blackout entire days for writing.&lt;/p&gt;
 
 &lt;p&gt;I’ve been a block writer my entire graduate career, that’s for sure.  But I can see the merit of snack writing, especially when it comes to methodology.  The worst feeling of writing a paper is digging through stacks of ancient data from experiments you don’t remember doing, trying to remember which of the six primer pairs you designed actually worked (let alone what annealing temperature they worked at.)  Writing up results as they are generated is a Godsend, &lt;em&gt;especially when things don’t work out.&lt;/em&gt;&lt;/p&gt;
@@ -3210,9 +4484,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>Scientifink!</title>
-   <link href="http://bradfordcondon.com/fun/2013/06/13/scientifink/"/>
+   <link href="http://localhost:4000/fun/2013/06/13/scientifink/"/>
    <updated>2013-06-13T11:32:47-04:00</updated>
-   <id>http://bradfordcondon.com/fun/2013/06/13/scientifink</id>
+   <id>http://localhost:4000/fun/2013/06/13/scientifink</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://cornellcals.tumblr.com/post/52869381183/scientifink-bradford-condon&quot;&gt;I am featured in this week’s CALS “scientifink” writeup!&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I happen to love my ascospore tattoo, and am happy to share it with the world.&lt;/p&gt;
@@ -3243,9 +4517,9 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  
  <entry>
    <title>Having trouble learning?  Get some rest</title>
-   <link href="http://bradfordcondon.com/writing/2013/06/08/having-trouble-learning-get-some-rest/"/>
+   <link href="http://localhost:4000/writing/2013/06/08/having-trouble-learning-get-some-rest/"/>
    <updated>2013-06-08T14:33:11-04:00</updated>
-   <id>http://bradfordcondon.com/writing/2013/06/08/having-trouble-learning-get-some-rest</id>
+   <id>http://localhost:4000/writing/2013/06/08/having-trouble-learning-get-some-rest</id>
    <content type="html">&lt;p&gt;Do you schedule breaks and rests during your working, writing, and learning?  Do you make time for sleep in your life?   A new article by Ingrid L. C. Nieuwenhuis et al., &lt;a href=&quot;http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0065046&quot;&gt;published June 5th in the journal PLOS ONE,&lt;/a&gt; provides another piece of evidence that you should.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/wp-content/uploads/2013/06/sleeping-girl.jpg&quot;&gt;&lt;img class=&quot; wp-image-108  &quot; alt=&quot;Sleep is an important step for proper learning.  Photo source: Wikipedia&quot; src=&quot;https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?resize=300%2C199&quot; srcset=&quot;https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?w=1024 1024w, https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?resize=300%2C200 300w&quot; sizes=&quot;(max-width: 300px) 100vw, 300px&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -3279,9 +4553,9 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  
  <entry>
    <title>Multitasking help: Slicer</title>
-   <link href="http://bradfordcondon.com/tools/2013/06/07/multitasking-help-slicer/"/>
+   <link href="http://localhost:4000/tools/2013/06/07/multitasking-help-slicer/"/>
    <updated>2013-06-07T13:37:57-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/06/07/multitasking-help-slicer</id>
+   <id>http://localhost:4000/tools/2013/06/07/multitasking-help-slicer</id>
    <content type="html">&lt;p&gt;Sometimes it’s the little things that make a big difference.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://slicerapp.com/&quot;&gt;Slicer&lt;/a&gt; is a tiny app.  Its sole function is to reduce the active screen window to 50%, 33%, or 66% of the screen height.&lt;/p&gt;
@@ -3301,9 +4575,9 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  
  <entry>
    <title>Four ways to get writing</title>
-   <link href="http://bradfordcondon.com/writing/2013/06/04/four-ways-to-get-writing/"/>
+   <link href="http://localhost:4000/writing/2013/06/04/four-ways-to-get-writing/"/>
    <updated>2013-06-04T17:17:47-04:00</updated>
-   <id>http://bradfordcondon.com/writing/2013/06/04/four-ways-to-get-writing</id>
+   <id>http://localhost:4000/writing/2013/06/04/four-ways-to-get-writing</id>
    <content type="html">&lt;p&gt;I am trying to write my PhD dissertation.&lt;/p&gt;
 
 &lt;p&gt;It’s going OK, thanks for asking.  But it’s not going OK all the time.&lt;/p&gt;
@@ -3354,9 +4628,9 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  
  <entry>
    <title>Get your work on the cloud: Dropbox</title>
-   <link href="http://bradfordcondon.com/tools/2013/05/18/get-your-work-on-the-cloud-dropbox/"/>
+   <link href="http://localhost:4000/tools/2013/05/18/get-your-work-on-the-cloud-dropbox/"/>
    <updated>2013-05-18T17:04:28-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/05/18/get-your-work-on-the-cloud-dropbox</id>
+   <id>http://localhost:4000/tools/2013/05/18/get-your-work-on-the-cloud-dropbox</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/&quot;&gt;Dropbox&lt;/a&gt; is simple and intuitive.  Make a folder on your computer that is automatically backed up to a cloud storage account.  Suddenly, the files you work on and the data you access syncs across devices, at home and at work.  Plus, you can dropbox folders with others.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2013/05/screen-shot-2013-05-18-at-5-04-58-pm.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
@@ -3375,9 +4649,9 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  
  <entry>
    <title>Let the literature come to you: custom pubmed RSS feeds</title>
-   <link href="http://bradfordcondon.com/tools/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/"/>
+   <link href="http://localhost:4000/tools/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/"/>
    <updated>2013-05-10T16:23:45-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds</id>
+   <id>http://localhost:4000/tools/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds</id>
    <content type="html">&lt;p&gt;RSS (rich site summary, or, really simple syndication) is an invaluable tool for all academics.  If you ever wish it was easier to stay up the current academic literature, then this is tool for you.&lt;/p&gt;
 
 &lt;p&gt;So what is RSS?  It’s a way of publishing work so that readers can be notified of updates.  In this day and age, almost every journal has an RSS feed- all you have to do is hook your RSS reader up to the journal’s RSS feed, and you will have every new issue delivered to your virtual doorstep.  You’ll find RSS feeds everywhere: there’s one lurking at the bottom of the sidebar.&lt;/p&gt;
@@ -3397,9 +4671,9 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  
  <entry>
    <title>Citation management: Papers</title>
-   <link href="http://bradfordcondon.com/tools/2013/05/05/citation-management-papers/"/>
+   <link href="http://localhost:4000/tools/2013/05/05/citation-management-papers/"/>
    <updated>2013-05-05T16:55:41-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/05/05/citation-management-papers</id>
+   <id>http://localhost:4000/tools/2013/05/05/citation-management-papers</id>
    <content type="html">&lt;p&gt;Before you can do good science, you must read good science.   A lot of it.  The good, the bad.&lt;/p&gt;
 
 &lt;p&gt;But how to manage your scientific reading?  Do you print out everything you can possibly hope to read some day?  File it away somewhere?&lt;/p&gt;
@@ -3426,9 +4700,9 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  
  <entry>
    <title>Tools for science: Citeulike</title>
-   <link href="http://bradfordcondon.com/tools/2013/04/28/16/"/>
+   <link href="http://localhost:4000/tools/2013/04/28/16/"/>
    <updated>2013-04-27T23:08:04-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/04/28/16</id>
+   <id>http://localhost:4000/tools/2013/04/28/16</id>
    <content type="html">&lt;p&gt;I’m pretty sure I have too many gadgets for managing my academic references.  I’d surely be better off if I spent more time reading the literature, and less time setting up new accounts that I’ll neglect (this blog being a perfect case in point).&lt;/p&gt;
 
 &lt;p&gt;Every year for my journal club, I try to get people to use &lt;a href=&quot;http://www.citeulike.org/home&quot; target=&quot;_blank&quot;&gt;Citeulike&lt;/a&gt;.  It’s a great concept- install a browser bookmark, and with one click, import all of the metadata for a paper to your personal library.  Tag it (which I always neglect), and there you go.  It’s pretty tough to stump the import tool (this wasn’t always so), so without much effort, it pulls the title, author, abstract, and journal info.
@@ -3446,9 +4720,9 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  
  <entry>
    <title>Tools for science: Citeulike</title>
-   <link href="http://bradfordcondon.com/?p=16"/>
+   <link href="http://localhost:4000/?p=16"/>
    <updated>2013-04-27T23:08:04-04:00</updated>
-   <id>http://bradfordcondon.com/16-Citeulike</id>
+   <id>http://localhost:4000/16-Citeulike</id>
    <content type="html">&lt;p&gt;I’m pretty sure I have too many gadgets for managing my academic references.  I’d surely be better off if I spent more time reading the literature, and less time setting up new accounts that I’ll neglect (this blog being a perfect case in point).&lt;/p&gt;
 
 &lt;p&gt;Every year for my journal club, I try to get people to use &lt;a href=&quot;http://www.citeulike.org/home&quot; target=&quot;_blank&quot;&gt;Citeulike&lt;/a&gt;.  It’s a great concept- install a browser bookmark, and with one click, import all of the metadata for a paper to your personal library.  Tag it (which I always neglect), and there you go.  It’s pretty tough to stump the import tool (this wasn’t always so), so without much effort, it pulls the title, author, abstract, and journal info.

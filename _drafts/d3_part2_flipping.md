@@ -49,7 +49,7 @@ We need to set two things for each bar: the `y` attribute and the `height`.  The
 
 The resulting code looks like this:
 
-```javascript
+```js
  var bars=  svg.selectAll('.bar')
     .data(data)
     .enter()
@@ -73,7 +73,7 @@ Our plot is now situated at the bottom of the screen where it belongs.
 
 The x-axis can be a simple or complex affair.  Our original plot used the transform attribute to shift each `g` element.  We can instead use an X scale. Let's plot out each sample in a different location based on its name.  Again, we'll define a `domain()` and a `range()`, but instead of a linear scale, we'll map each name to a specific place on the map with an **Ordinal** scale.  
 
-```javascript
+```js
 var xScale = d3.scale.ordinal()
 xScale.domain(["one", "two", "three", "four"])
     .rangeRoundBands([0, 500]);
@@ -81,7 +81,7 @@ xScale.domain(["one", "two", "three", "four"])
 ```
 As you can see, the domain consists of the discrete values along the X-axis.  Setting the range for an ordinal scale is actually a bit more involved, and we'll discuss options below.  For now, let's also update our `g` elements to use the x-axis to place each bar:
 
-```
+```js
 var bars=  svg.selectAll('.bar')
     .data(data)
     .enter()
@@ -124,7 +124,7 @@ Rather than splitting the axis into dispersed points, `rangeBands()` splits the 
 RangeBands accepts an array to define the range, as well as **two** padding values: the outer padding (which is similar to the padding defined in rangePoints) and the step padding.  The step padding is the spacing between bands
 
 
-```
+```js
 padding = 1
 
 outerpadding = .2
@@ -138,8 +138,7 @@ xScale.domain(["one", "two", "three", "four"])
 
 Confusing?  The best way to understand is to play with it yourself.
 
-```
-
+```js
 var xScale = d3.scale.ordinal()
 xScale.domain(["one", "two", "three", "four"])
     .rangeRoundBands([0, 500]);
@@ -158,7 +157,7 @@ xScale.domain(["one", "two", "three", "four"])
 Let's say we want to color each of our bars by the category of the sample.  To do this, we'll define an ordinal scale like our x-axis, except rather than setting the range output to an axis, we'll set it to a *discrete set of colors*.  Our output range will now be quite simple: an array of colors.   We can define the output color range manually, or we can use predefined palettes like those provided by the ColorBrewer package.  Keep in mind that *accessibility* is an important consideration here: approximately one in twelve adult males (one in 200 females) is colorblind.  Packages like ColorBrewer are designed to be universally accessible.  
 
 
-```
+```js
 var colorScale = d3.scale.ordinal()
 colorScale.domain()
 colorScale.range()
@@ -166,7 +165,7 @@ colorScale.range()
 
 Alternatively you can use scales with pre-defined color ranges.
 
-```
+```js
 var colorScale = d3.scale.category10()
 colorScale.domain()
 
@@ -174,7 +173,7 @@ colorScale.domain()
 
 Next, simply call the scale when setting the `fill` style.  
 
-```
+```js
  .style('fill', function(d) {
  	return colorScale(d.property)
  	})
@@ -186,7 +185,7 @@ Next, simply call the scale when setting the `fill` style.
 
 Here is our new code utilizing x, y, and color scales.
 
-```
+```js
 
 <!DOCTYPE html>
 <style>

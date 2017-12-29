@@ -1,0 +1,20 @@
+
+<p>I wonder if Drupal development makes sense to experienced web developers, or if theres always something that seems to come out of left field.</p>
+
+<h3 id="add-the-js">Add the js</h3>
+
+<h3 id="add-the-thing">Add the thing</h3>
+
+<pre><code class="language-{js}">   Drupal.behaviors.tripal_analysis_expression = {
+              attach: function (context, settings) {
+                var $ = jQuery;
+                expNormal();
+                $(document).on("tripal_ds_pane_expanded", function(event) {
+                    if($(event.id).text().indexOf("Hover the mouse") &gt; -1) {
+                      expNormal();
+                    }
+                });
+              }
+            };
+}
+</code></pre>

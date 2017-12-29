@@ -107,7 +107,7 @@ Pay special attention to `function (d, i) {//code}`.  Because we've entered our 
 ### Chaining
 D3 allows for *chaining* method calls together, much like jQuery.  In the above example, we took advantage of chaining several times.  For example...
 
-```
+```js
  var bars=  svg.selectAll('.bar')
 	.data(data)
     .enter()
@@ -118,7 +118,7 @@ What's important to understand is that the chain is executed in order, and each 
 
 If chaining confuses you, the above code could be written without chaining, as 
 
-```
+```js
  var bars=  svg.selectAll('.bar')
  bars.data(data)
  bars.enter()
@@ -139,7 +139,7 @@ You may be confused how each element gets "told" what its height and x-position 
 Consider how we style the height in the above code:
 
 
-```
+```js
 .style("height", function (d, i) {
  return d.value})
  ```  

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head>
+  <title>Bradford Condon, Developer and Bioinformaticist</title>
+<meta charset="utf-8">
+<meta name="author" content="Bradford Condon">
+<meta name="description" content="Website, CV, and Blog of Bradford Condon.  Bradford is a web and mobile developer.  Bradford also holds a PhD in plant pathology and is an expert in genomics, bioinformatics.">
+</head>
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                <a href="/" title="Home">
+                    Bradford Condon PhD
+                </a>
+            </h1>
+            <h2 class="subtitle">
+                Bioinformatics, Web & Mobile Development
+            </h2>
+        </div>
+
+    </div>
+    <div class="hero-foot">
+        <nav class="tabs is-boxed nav-menu has-shadow">
+            <div class="nav-center">
+                <ul>
+
+                    <li >
+                    <a href="/">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-home fa-stack-1x"></i>
+          </span>
+                        Home</a></li>
+                    <li >
+
+                    <a href="/blog/">
+
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-newspaper-o fa-stack-1x"></i>
+          </span>
+                        Blog</a>
+                    </li>
+                    <li >
+
+                    <a href="/about/">
+                   <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-question fa-stack-1x"></i>
+                    </span>
+                        About</a>
+
+                    </li>
+                    <li >
+
+                    <a href="/cv.html">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-id-card fa-stack-1x"></i>
+                   </span>
+                        CV</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<link rel="stylesheet" href="/assets/css/application.css" />
+<link rel="stylesheet" href="/assets/css/prism.css" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+      href="/public/apple-touch-icon-precomposed.png">
+<link rel="shortcut icon" href="/public/favicon.ico">
+<link rel="alternate" type="application/atom+xml" title="Bradford Condon PhD" href="/atom.xml">
+
+<br/>
+
+<body>
+<div class="container content">
+    <main>
+          <div class="box">
+<article class="post">
+  <h1 class="post-title">D3 part two: flipping the plot</h1>
+<!--   <img src=>
+ -->  <time datetime="2017-12-23T00:00:00-05:00" class="post-date">23 Dec 2017</time>
+  <div class="card-content">
+  <p><img src="/assets/img/d3/d3_logo.png" alt="D3 logo" /></p>
+
+<p>In our previous lesson, we created this rudimentary plot.</p>
+
+<p>Why is it upside down?</p>
+
+<p>D3 considers the <strong>upper left</strong> corner of the SVG to be 0,0.  This means that the part of our code defining y values needs to be corrected.</p>
+
+<p>To correct our inverted plot, let’s introduce <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Quantitative-Scales.md">D3 scales</a>.  As a quick reminder, we’re using the D3-3.x package: the latest version has slightly different scale function calls.</p>
+
+<!--more-->
+
+<h2 id="what-are-scales">What Are Scales?</h2>
+
+<p>Scales are used to define how values will map to the plot.  Your plot might make use of several different scales.  There is mapping the x and y value of your data, for example.  You might also define a scale that <strong>colors</strong> your datapoint based on a category.</p>
+
+<p>Let’s start with the y-axis, where we want to translate a numerical value to a place on the plot.  The simplest type of scale is a <strong>linear</strong> scale, where the input values will be mapped to an output value via a linear function.</p>
+
+<p>For a linear scale, we need to understand the <strong><code class="highlighter-rouge">domain()</code></strong> and the <strong><code class="highlighter-rouge">range()</code></strong>.  Both domain and range take an array of numbers as their input.  The domain corresponds to the <strong>input values</strong> for your plot.  For a continuous plot, you might set the domain to the minimum and maximum value in your dataset for the y-axis.  The range corresponds to the output coordinates in your SVG.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">height</span> <span class="o">=</span> <span class="mi">400</span>
+
+<span class="kd">var</span> <span class="nx">yScale</span> <span class="o">=</span>  <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">linear</span><span class="p">()</span>
+ 
+<span class="nx">yScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="nx">yScale</span><span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="nx">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="c1">//note the range is inverted</span>
+
+</code></pre>
+</div>
+
+<p>We need to set two things for each bar: the <code class="highlighter-rouge">y</code> attribute and the <code class="highlighter-rouge">height</code>.  The <code class="highlighter-rouge">y</code> value will simply be the returned yScale value.  The height must compensate for our inverted range: it should be the figure height minus the yScale value.</p>
+
+<p>The resulting code looks like this:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code> <span class="kd">var</span> <span class="nx">bars</span><span class="o">=</span>  <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.bar'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+   <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="p">(</span><span class="mi">20</span> <span class="o">+</span> <span class="nx">i</span><span class="o">*</span> <span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="s1">',0)'</span><span class="p">;</span> 
+  <span class="p">}).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'rect'</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+ <span class="p">}</span>
+  <span class="p">)</span>
+ <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="nx">height</span> <span class="o">-</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)})</span>
+
+</code></pre>
+</div>
+
+<p>Our plot is now situated at the bottom of the screen where it belongs.</p>
+
+<h3 id="x-axis">X-axis</h3>
+
+<p>The x-axis can be a simple or complex affair.  Our original plot used the transform attribute to shift each <code class="highlighter-rouge">g</code> element.  We can instead use an X scale. Let’s plot out each sample in a different location based on its name.  Again, we’ll define a <code class="highlighter-rouge">domain()</code> and a <code class="highlighter-rouge">range()</code>, but instead of a linear scale, we’ll map each name to a specific place on the map with an <strong>Ordinal</strong> scale.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+<span class="nx">xScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rangeRoundBands</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">]);</span>
+
+</code></pre>
+</div>
+<p>As you can see, the domain consists of the discrete values along the X-axis.  Setting the range for an ordinal scale is actually a bit more involved, and we’ll discuss options below.  For now, let’s also update our <code class="highlighter-rouge">g</code> elements to use the x-axis to place each bar:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">bars</span><span class="o">=</span>  <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.bar'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+   <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">',0)'</span><span class="p">;</span> 
+  <span class="p">}).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'rect'</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">'fill'</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+ <span class="p">}</span>
+  <span class="p">)</span>
+ <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="nx">height</span> <span class="o">-</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)})</span>
+ <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<h3 id="understanding-ordinal-ranges">Understanding Ordinal Ranges</h3>
+
+<p>You might <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md">benefit from reading the API here</a>.  You can use range, rangePoints, rangeRoundPoints, rangeBands, rangeRoundBands. You should typically use the <em>rounded</em> flavor of each range: it will round the location of each group to an integer, preventing anti-aliasing artifacts at the cost of some extra padding.</p>
+
+<p>As for using points or bands, the difference is in how the spacing is calculated.  RangePoints will simply return evenly spaced points, whereas RangeBands will define a <strong>band</strong> spaced out according to the padding argument.</p>
+
+<h4 id="range-points">Range Points</h4>
+
+<p><img src="https://camo.githubusercontent.com/1f2b6fd134f82ce192002ec3944eccb09c748abe/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3233303534312f3533383638392f34366438373131382d633139332d313165322d383361622d3230303864663763333661612e706e67" /></p>
+
+<p><code class="highlighter-rouge">rangePoints()</code> takes two arguments: the range, and the padding with the edge of the axis.  This padding is expressed as a <em>multiple of the space between points</em>.</p>
+
+<h4 id="range-bands">Range Bands</h4>
+
+<p><img src="https://camo.githubusercontent.com/12675eaff20815f41bccd4d1c50643c2b531052e/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3233303534312f3533383638382f34366332393863302d633139332d313165322d396137652d3135643961626366616239622e706e67" /></p>
+
+<p>Rather than splitting the axis into dispersed points, <code class="highlighter-rouge">rangeBands()</code> splits the axis into bands, with regular padding between each.<br />
+RangeBands accepts an array to define the range, as well as <strong>two</strong> padding values: the outer padding (which is similar to the padding defined in rangePoints) and the step padding.  The step padding is the spacing between bands</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">padding</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="nx">outerpadding</span> <span class="o">=</span> <span class="p">.</span><span class="mi">2</span>
+
+
+<span class="kd">var</span> <span class="nx">xScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+<span class="nx">xScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rangeRoundBands</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="nx">padding</span><span class="p">,</span> <span class="nx">outerPadding</span><span class="p">);</span>
+
+</code></pre>
+</div>
+
+<p>Confusing?  The best way to understand is to play with it yourself.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+<span class="nx">xScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rangeRoundBands</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">]);</span>
+
+
+<span class="nx">xScaleTwo</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+<span class="nx">xScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rangeRoundBands</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="p">.</span><span class="mi">1</span><span class="p">,</span> <span class="p">.</span><span class="mi">05</span><span class="p">);</span>
+
+</code></pre>
+</div>
+
+<h3 id="color-scale">Color scale</h3>
+
+<p>Let’s say we want to color each of our bars by the category of the sample.  To do this, we’ll define an ordinal scale like our x-axis, except rather than setting the range output to an axis, we’ll set it to a <em>discrete set of colors</em>.  Our output range will now be quite simple: an array of colors.   We can define the output color range manually, or we can use predefined palettes like those provided by the ColorBrewer package.  Keep in mind that <em>accessibility</em> is an important consideration here: approximately one in twelve adult males (one in 200 females) is colorblind.  Packages like ColorBrewer are designed to be universally accessible.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">colorScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+<span class="nx">colorScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">()</span>
+<span class="nx">colorScale</span><span class="p">.</span><span class="nx">range</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Alternatively you can use scales with pre-defined color ranges.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">colorScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">category10</span><span class="p">()</span>
+<span class="nx">colorScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">()</span>
+
+</code></pre>
+</div>
+
+<p>Next, simply call the scale when setting the <code class="highlighter-rouge">fill</code> style.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code> <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">'fill'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+ 	<span class="k">return</span> <span class="nx">colorScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">property</span><span class="p">)</span>
+ 	<span class="p">})</span>
+
+</code></pre>
+</div>
+
+<h2 id="putting-it-back-together">Putting it back together</h2>
+
+<p>Here is our new code utilizing x, y, and color scales.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+<span class="p">.</span><span class="nx">axis</span> <span class="p">.</span><span class="nx">domain</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nx">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">svg</span> <span class="nx">width</span><span class="o">=</span><span class="s2">"960"</span> <span class="nx">height</span><span class="o">=</span><span class="s2">"500"</span><span class="o">&gt;&lt;</span><span class="sr">/svg&gt;</span><span class="err"> 
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://d3js.org/d3.v3.min.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+  
+
+  <span class="nx">height</span> <span class="o">=</span> <span class="mi">400</span>
+
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"one"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"two"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
+              <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"three"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"four"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">57</span><span class="p">},</span> <span class="p">];</span>
+  
+  <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">)</span> 
+  
+  <span class="kd">var</span> <span class="nx">yScale</span> <span class="o">=</span>  <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">linear</span><span class="p">()</span>
+ 
+<span class="nx">yScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="p">.</span><span class="nx">range</span><span class="p">([</span> <span class="nx">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+
+<span class="nx">outerPadding</span> <span class="o">=</span> <span class="p">.</span><span class="mi">1</span>
+<span class="nx">padding</span> <span class="o">=</span> <span class="p">.</span><span class="mi">05</span>
+
+<span class="kd">var</span> <span class="nx">xScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+<span class="nx">xScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"one"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"four"</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">rangeRoundBands</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="nx">padding</span><span class="p">,</span> <span class="nx">outerPadding</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">colorScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">category10</span><span class="p">()</span>
+<span class="nx">colorScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">])</span>
+  
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">colorScale</span><span class="p">.</span><span class="nx">range</span><span class="p">())</span>
+    
+ <span class="kd">var</span> <span class="nx">bars</span><span class="o">=</span>  <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.bar'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+   <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">',0)'</span><span class="p">;</span> 
+  <span class="p">}).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'rect'</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">'fill'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">colorScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">property</span><span class="p">)</span>
+  <span class="p">})</span>
+ <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+ <span class="p">}</span>
+  <span class="p">)</span>
+ <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="nx">height</span> <span class="o">-</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)})</span>
+ <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+   
+  <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+</code></pre>
+</div>
+
+<p>Now that we’ve defined some scales, let’s look at our plot again.  In the next segment, we’ll look at using a multi-level x-axis to group our plot by category.</p>
+
+  </div>
+  </div>
+</article>
+
+
+ <div class="box">
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2017/12/23/code_coloring_jekyll/">
+          Coloring code in Jekyll
+          <small><time datetime="2017-12-23T00:00:00-05:00">23 Dec 2017</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/22/plotting_with_d3/">
+          Plotting with D3 part 1
+          <small><time datetime="2017-12-22T00:00:00-05:00">22 Dec 2017</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2017/12/18/12-18-17_swc_lessons/">
+          Lessons From Planning My First Software Carpentry Workshop
+          <small><time datetime="2017-12-18T00:00:00-05:00">18 Dec 2017</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+<
+
+
+    </main>
+</div>
+
+<footer class="footer">
+      <div class="container">
+
+      <div class="content has-text-centered">
+      <span>
+        <a href="https://github.com/bradfordcondon"><i class="fa fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/BradfordCondon"><i class="fa fa-twitter-square fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/bradford-condon-0843823b/"><i class="fa fa-linkedin-square fa-3x"></i></a>
+
+        </span>
+        </div>
+              <div class="content has-text-centered">
+
+          <p>
+          <time datetime="2017-12-29T17:24:58-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          </p> 
+          </div>
+      
+        </div>
+        
+      </footer>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71775012-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

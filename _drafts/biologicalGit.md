@@ -2,7 +2,6 @@
 layout: post
 title: Using GitHub for bioinformatics
 date: 2017-08-13
-tags;
 ---
 
 If there's one thing I wish I'd done earlier in my career, it's this: automate *all* of my bioinformatics workflows and keep it under version control.

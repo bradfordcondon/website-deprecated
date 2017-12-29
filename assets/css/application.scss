@@ -5,7 +5,6 @@
 
 //@import "variables";
 
-
 // Bulma.io CSS Framework
 @import "_variables";
 @import "bulma/utilities/_all";
@@ -19,6 +18,7 @@
 @import "font-awesome/font-awesome.scss";
 
 // Custom
+@import "_syntax-highlighting.scss";
 
 
 .nav-brand {

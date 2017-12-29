@@ -7,7 +7,5 @@ This site uses [Jekyll](http://jekyllrb.com) with the [Bulma CSS framework](http
 
 ### To do 
 
-Trying out search: [Lunr](https://learn.cloudcannon.com/jekyll/jekyll-search-using-lunr-js/).
-
 
 -Bradford

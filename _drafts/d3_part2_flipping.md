@@ -3,7 +3,16 @@ layout: post
 title: "D3 part two: flipping the plot"
 excerpt_separator: <!--more-->
 date: 2017-12-23
+tags: 
+ - education
+ - web
+ - javascript
+ - d3
+ - data-science
 ---
+
+![D3 logo](/assets/img/d3/d3_logo.png)
+
 
 In our previous lesson, we created this rudimentary plot.
 
@@ -19,27 +28,28 @@ To correct our inverted plot, let's introduce [D3 scales](https://github.com/d3/
 
 Scales are used to define how values will map to the plot.  Your plot might make use of several different scales.  There is mapping the x and y value of your data, for example.  You might also define a scale that **colors** your datapoint based on a category. 
 
-
 Let's start with the y-axis, where we want to translate a numerical value to a place on the plot.  The simplest type of scale is a **linear** scale, where the input values will be mapped to an output value via a linear function.
 
 For a linear scale, we need to understand the **`domain()`** and the **`range()`**.  Both domain and range take an array of numbers as their input.  The domain corresponds to the **input values** for your plot.  For a continuous plot, you might set the domain to the minimum and maximum value in your dataset for the y-axis.  The range corresponds to the output coordinates in your SVG.
 
 
- ```
- var height = 400
+```js
+var height = 400
 
- var yScale =  d3.scale.linear()
+var yScale =  d3.scale.linear()
  
 yScale.domain([0, 100])
 yScale.range([height, 0])//note the range is inverted
 
- ```
+```
+
+
 
 We need to set two things for each bar: the `y` attribute and the `height`.  The `y` value will simply be the returned yScale value.  The height must compensate for our inverted range: it should be the figure height minus the yScale value.
 
 The resulting code looks like this:
 
-```
+```javascript
  var bars=  svg.selectAll('.bar')
     .data(data)
     .enter()
@@ -63,10 +73,7 @@ Our plot is now situated at the bottom of the screen where it belongs.
 
 The x-axis can be a simple or complex affair.  Our original plot used the transform attribute to shift each `g` element.  We can instead use an X scale. Let's plot out each sample in a different location based on its name.  Again, we'll define a `domain()` and a `range()`, but instead of a linear scale, we'll map each name to a specific place on the map with an **Ordinal** scale.  
 
-
-```
-
-
+```javascript
 var xScale = d3.scale.ordinal()
 xScale.domain(["one", "two", "three", "four"])
     .rangeRoundBands([0, 500]);
@@ -100,16 +107,25 @@ You might [benefit from reading the API here](https://github.com/d3/d3-3.x-api-r
 
 As for using points or bands, the difference is in how the spacing is calculated.  RangePoints will simply return evenly spaced points, whereas RangeBands will define a **band** spaced out according to the padding argument.  
 
-**Range Points**
+#### Range Points
+
+
 <img src="https://camo.githubusercontent.com/1f2b6fd134f82ce192002ec3944eccb09c748abe/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3233303534312f3533383638392f34366438373131382d633139332d313165322d383361622d3230303864663763333661612e706e67">
+
+
+`rangePoints()` takes two arguments: the range, and the padding with the edge of the axis.  This padding is expressed as a *multiple of the space between points*.  
+
 
 #### Range Bands
 
-RangeBands accepts an array to define the arrange, as well as stepPadding and outerPadding values (see the below figure). This allows you to define the padding on either side of the axis and the spacing between bars, respectively.
+<img src="https://camo.githubusercontent.com/12675eaff20815f41bccd4d1c50643c2b531052e/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3233303534312f3533383638382f34366332393863302d633139332d313165322d396137652d3135643961626366616239622e706e67">
+
+Rather than splitting the axis into dispersed points, `rangeBands()` splits the axis into bands, with regular padding between each.  
+RangeBands accepts an array to define the range, as well as **two** padding values: the outer padding (which is similar to the padding defined in rangePoints) and the step padding.  The step padding is the spacing between bands
 
 
 ```
-padding = .1
+padding = 1
 
 outerpadding = .2
 
@@ -119,12 +135,6 @@ xScale.domain(["one", "two", "three", "four"])
     .rangeRoundBands([0, 500], padding, outerPadding);
 
 ```
-
-
-**Range Bands**
-<img src="https://camo.githubusercontent.com/12675eaff20815f41bccd4d1c50643c2b531052e/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3233303534312f3533383638382f34366332393863302d633139332d313165322d396137652d3135643961626366616239622e706e67">
-
-
 
 Confusing?  The best way to understand is to play with it yourself.
 
@@ -145,7 +155,7 @@ xScale.domain(["one", "two", "three", "four"])
 
 ### Color scale
 
-Let's say we want to color each of our bars by the category of the sample.  To do this, we'll define an ordinal scale like our x-axis, except rather than setting the range output to an axis, we'll set it to a *discrete set of colors*.  We can define the output color range manually, or we can use predefined palettes like those provided by the ColorBrewer package.  Keep in mind that *accessibility* is an important consideration here: approximately one in twelve adult males (one in 200 females) is colorblind.  Packages like ColorBrewer are designed to be universally accessible.  
+Let's say we want to color each of our bars by the category of the sample.  To do this, we'll define an ordinal scale like our x-axis, except rather than setting the range output to an axis, we'll set it to a *discrete set of colors*.  Our output range will now be quite simple: an array of colors.   We can define the output color range manually, or we can use predefined palettes like those provided by the ColorBrewer package.  Keep in mind that *accessibility* is an important consideration here: approximately one in twelve adult males (one in 200 females) is colorblind.  Packages like ColorBrewer are designed to be universally accessible.  
 
 
 ```
@@ -154,7 +164,89 @@ colorScale.domain()
 colorScale.range()
 ```
 
+Alternatively you can use scales with pre-defined color ranges.
+
+```
+var colorScale = d3.scale.category10()
+colorScale.domain()
+
+```
+
+Next, simply call the scale when setting the `fill` style.  
+
+```
+ .style('fill', function(d) {
+ 	return colorScale(d.property)
+ 	})
+
+```
+
+
 ## Putting it back together
 
+Here is our new code utilizing x, y, and color scales.
 
-Now that we've defined some scales, let's look at our plot again.
+```
+
+<!DOCTYPE html>
+<style>
+.axis .domain {
+  display: none;
+}
+</style>
+<svg width="960" height="500"></svg> 
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script>
+  
+
+  height = 400
+
+var data = [{name: "one", property: "a", value: 100},
+             {name: "two", property: "a", value: 50},
+              {name: "three", property: "b", value: 20},
+             {name: "four", property: "b", value: 57}, ];
+  
+  var svg = d3.select("svg") 
+  
+  var yScale =  d3.scale.linear()
+ 
+yScale.domain([0, 100])
+.range([ height, 0])
+
+
+outerPadding = .1
+padding = .05
+
+var xScale = d3.scale.ordinal()
+xScale.domain(["one", "two", "three", "four"])
+    .rangeRoundBands([0, 500], padding, outerPadding);
+
+var colorScale = d3.scale.category10()
+colorScale.domain(["a", "b"])
+  
+  console.log(colorScale.range())
+    
+ var bars=  svg.selectAll('.bar')
+    .data(data)
+    .enter()
+    .append('g')
+   .attr('transform', function (d, i) {
+  return 'translate(' + xScale(d.name) + ',0)'; 
+  }).append('rect')
+ .style('fill', function(d) {
+  return colorScale(d.property)
+  })
+ .attr('y', function(d) {
+  return yScale(d.value)
+ }
+  )
+ .style("height", function (d, i) {
+ return height - yScale(d.value)})
+ .attr('width', 10)
+   
+  </script>
+
+  ```
+
+
+Now that we've defined some scales, let's look at our plot again.  In the next segment, we'll look at using a multi-level x-axis to group our plot by category.

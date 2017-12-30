@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2017-12-30T10:47:18-05:00</updated>
+ <updated>2017-12-30T11:14:23-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
@@ -94,8 +94,9 @@
 &lt;/span&gt;  
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;Below is the resulting plot.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_plot_1.png&quot; alt=&quot;Our first d3 plot leaves a lot to be desired&quot; /&gt;&lt;/p&gt;
+&lt;div id=&quot;output_plot&quot;&gt;&lt;/div&gt;
 
 &lt;p&gt;There’s a couple of problems here, but let’s see what we are trying to do.&lt;/p&gt;
 

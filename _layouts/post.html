@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
+<div>
   <div class="box">
 <article class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-<!--   <img src={{post.image}}>
- -->  <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
+ <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
   <div class="card-content">
   {{ content }}
   </div>
-  </div>
 </article>
+  </div>
+
 
 {% if site.related_posts != empty %}
  <div class="box">
@@ -27,5 +28,13 @@ layout: default
     {% endfor %}
   </ul>
 </aside>
-<
+ </div>
 {% endif %}
+
+   {% if page.custom_js %}
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    {% for js_file in page.custom_js %}
+   <script src='/javascripts/{{ js_file }}' type="text/javascript"></script>
+   {% endfor %}
+   {% endif %}
+ </div>

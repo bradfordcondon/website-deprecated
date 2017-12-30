@@ -3,6 +3,7 @@ layout: post
 title: "Plotting with D3 part 1"
 excerpt_separator: <!--more-->
 date: 2017-12-22
+custom_js: d3_graph_1.js
 tags: 
  - education
  - web
@@ -88,8 +89,10 @@ var data = [{name: "one", property: "a", value: 100},
   </script>
   
  ```
+Below is the resulting plot.
 
-![Our first d3 plot leaves a lot to be desired](/assets/img/d3/d3_plot_1.png)
+<div id="output_plot"></div>
+
 
 There's a couple of problems here, but let's see what we are trying to do.
 

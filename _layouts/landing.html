@@ -12,7 +12,9 @@
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-256x256">
-                                <img src="/assets/img/condon_face.jpg" class="figure-small-on-xs" alt="Bradford Condon PhD">
+                                <img src="/assets/img/condon_face.jpg"
+                                     class="figure-small-on-xs"
+                                     alt="Bradford Condon PhD">
                             </figure>
                         </div>
                         <div class="card-content">
@@ -36,73 +38,78 @@
                 <div class="tile is-child">
                     <div class="card">
                         <a href="http://hardwoodgenomics.org/">
-                        <div class="card-header">
-                            <div class="card-header-icon">
-                                <figure class="image is-64x64">
-                                    <img src="/assets/img/HWG/hwg_square.png">
-                                </figure>
+                            <div class="card-header">
+                                <div class="card-header-icon">
+                                    <figure class="image is-64x64">
+                                        <img src="/assets/img/HWG/hwg_square.png">
+                                    </figure>
+                                </div>
+                                <div class="card-header-title">
+                                    HardWoodGenomics
+                                </div>
                             </div>
-                            <div class="card-header-title">
-                                HardWoodGenomics
+                            <div class="card-content">
+                                Web and Database Developer
                             </div>
-                        </div>
-                        <div class="card-content">
-                            Web and Database Developer
-                        </div>
                         </a>
                     </div>
                 </div>
                 <div class="tile is-child">
                     <div class="card">
                         <a href="http://TreeSnap.org/">
+                            <div class="card-header">
+                                <div class="card-header-icon">
+                                    <figure class="image is-64x64">
+                                        <img src="/assets/img/TreeSnap/ts-logo-768.jpg">
+                                    </figure>
+                                </div>
+                                <div class="card-header-title">
+                                    <strong>Tree</strong>Snap
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                App manager, Web and Database Developer
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="tile is-child">
+                    <div class="card">
+                        <a href="http://tripal.info/">
                         <div class="card-header">
                             <div class="card-header-icon">
                                 <figure class="image is-64x64">
-                                    <img src="/assets/img/TreeSnap/ts-logo-768.jpg">
+                                    <img src="/assets/img/TripalLogo_dark.png">
                                 </figure>
-                            </div>
-                            <div class="card-header-title">
-                                <strong>Tree</strong>Snap
+                                <div class="card-header-title">
+                                    Tripal
+                                </div>
                             </div>
                         </div>
                         <div class="card-content">
-                            App manager, Web and Database Developer
+                            Module developer
                         </div>
                         </a>
                     </div>
                 </div>
                 <div class="tile is-child">
-                    <a href="/2017/05/14/EYHpress/">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-header-icon">
-                                <figure class="image is-by1">
-                                    <img src="/assets/img/EYH_logo.png">
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            Youth STEM conference coordinator
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="tile is-child">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-header-icon">
-                                <figure class="image is-64x64">
-                                    <img src="/assets/img/sops_square.png">
-                                </figure>
-                                <div class="card-header-title">
-                                    Society of Postdoctoral Scholars
+                    <a href="https://github.com/bradfordcondon/">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-header-icon">
+                                    <figure class="image is-64by64">
+                                        <img src="/assets/img/GitHub-Mark-64px.png">
+                                    </figure>
+                                    <div class="card-header-title">
+                                        GitHub
+                                    </div>
                                 </div>
                             </div>
+                            <div class="card-content">
+                                Find my work on GitHub
+                            </div>
                         </div>
-                        <div class="card-content">
-                            Chief Technical Officer
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -115,19 +122,19 @@
                 <div class="container">
                     <h1 class="title">Blog </h1>
                     <h2 class="subtitle">Popular topics </h2>
-                        {% for tag in site.tags %}
-                        {% assign t = tag | first %}
-                        {% assign count = tag | last | size %}
-                        {% if count > 2 %}
+                    {% for tag in site.tags %}
+                    {% assign t = tag | first %}
+                    {% assign count = tag | last | size %}
+                    {% if count > 2 %}
                     <a href="/tag/{{t}}/">
-                                <span class="tag is-light">
-                                    {{ t }} {{ count }}
-                                </span>
+                        <span class="tag is-light">
+                            {{ t }} {{ count }}
+                        </span>
 
                     </a>
 
-                        {% endif %}
-                        {% endfor %}
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </section>

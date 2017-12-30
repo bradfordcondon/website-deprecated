@@ -5,7 +5,6 @@ var data = [{name: "one", property: "a", value: 100},
   {name: "four", property: "b", value: 57}, ];
 
 var svg = d3.select("#output_plot").append("svg")
-console.log("I am running")
 var bars=  svg.selectAll('.bar')
     .data(data)
     .enter()

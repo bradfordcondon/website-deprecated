@@ -2,7 +2,7 @@
 layout: post
 title: "D3 part two: flipping the plot"
 excerpt_separator: <!--more-->
-date: 2017-12-23
+date: 2017-12-31
 custom_js: d3_graph_2.js
 tags: 
  - education
@@ -16,14 +16,18 @@ tags:
 
 In our [previous lesson](2017/12/22/plotting_with_d3/), we created this rudimentary plot.
 
-><div id="starting_plot"></div>
-> This is our plot from the previous lesson.  It's upside-down!
-
 D3 considers the **upper left** corner of the SVG to be 0,0.  This means that the part of our code defining y values needs to be corrected.
 
 To correct our inverted plot, let's introduce [D3 scales](https://github.com/d3/d3-3.x-api-reference/blob/master/Quantitative-Scales.md).  As a quick reminder, we're using the D3-3.x package: the latest version has slightly different scale function calls.
 
 <!--more-->
+
+
+
+><div id="starting_plot"></div>
+> This is our plot from the previous lesson.  It's upside-down!
+
+
 
 ## What Are Scales?
 
@@ -107,9 +111,10 @@ var bars=  svg.selectAll('.bar')
 
  ```
 
-<div id="plot_mk_2"></div>
+> <div id="plot_mk_2"></div>
+> Using x & y scales makes our plots easier to develop.  This default plot is a little spread out: let's learn about padding to fix this.
 
-### Understanding Ordinal Ranges
+### Understanding Ordinal Scale Ranges
 
 You might [benefit from reading the API here](https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md).  You can use range, rangePoints, rangeRoundPoints, rangeBands, rangeRoundBands. You should typically use the *rounded* flavor of each range: it will round the location of each group to an integer, preventing anti-aliasing artifacts at the cost of some extra padding. 
 

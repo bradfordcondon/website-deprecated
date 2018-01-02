@@ -105,6 +105,208 @@
         <div class="card">
             <div class="card-header">
                 <p class="card-header-title">
+                    <a href="/2018/01/01/d3_part3_nesting/">
+                        D3 part three: Nesting
+                    </a>
+                </p>
+            </div>
+            <div class="media-content" style="padding: .5rem">
+            <span class="tag">
+   <time datetime="2018-01-01T22:05:12-05:00" class="post-date is-small">
+   01 Jan 2018</time>
+   </span>
+                
+                <a href="/tag/education/">
+        <span class="tag is-primary">
+              education
+        </span>
+                </a>
+                
+                <a href="/tag/web/">
+        <span class="tag is-primary">
+              web
+        </span>
+                </a>
+                
+                <a href="/tag/javascript/">
+        <span class="tag is-primary">
+              javascript
+        </span>
+                </a>
+                
+                <a href="/tag/d3/">
+        <span class="tag is-primary">
+              d3
+        </span>
+                </a>
+                
+                <a href="/tag/data-science/">
+        <span class="tag is-primary">
+              data-science
+        </span>
+                </a>
+                
+            </div>
+            <div class="card-content">
+                <blockquote>
+  <div id="plot_previous"></div>
+  <p>Our graph at the end of the previous section.</p>
+</blockquote>
+
+<blockquote>
+  <div id="plot_previous_new_data"></div>
+  <p>This is the same plot-generating code, but we’ve added some more data to demonstrate grouping by property.</p>
+</blockquote>
+
+<h2 id="nesting">Nesting</h2>
+
+<p>A common desire when laying out a plot is to have data grouped along the x-axis by some property.  We can accomplish this by <strong>nesting</strong> our data according to the property we would like to group by.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"one"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"two"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"two"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"four"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">57</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"five"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">17</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"six"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"seven"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">52</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"eight"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"nine"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">81</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"ten"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">62</span><span class="p">},</span>     
+              <span class="p">];</span>
+</code></pre>
+</div>
+<p>What does our nested output look like?  We can <code class="highlighter-rouge">console.log</code> the nested data to take a look.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">[</span>  <span class="p">{</span> <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span>
+     <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"one"</span><span class="p">,</span>
+        <span class="s2">"property"</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span>
+        <span class="s2">"value"</span><span class="p">:</span> <span class="mi">100</span>
+      <span class="p">},</span>
+    <span class="c1">//...</span>
+    <span class="c1">// additional values removed for readability      </span>
+      <span class="p">]</span>
+
+  <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span>
+    <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"three"</span><span class="p">,</span>
+        <span class="s2">"property"</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span>
+        <span class="s2">"value"</span><span class="p">:</span> <span class="mi">20</span>
+      <span class="p">},</span>
+      <span class="p">{</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"four"</span><span class="p">,</span>
+        <span class="s2">"property"</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span>
+        <span class="s2">"value"</span><span class="p">:</span> <span class="mi">57</span>
+      <span class="p">},</span>
+      <span class="c1">//...</span>
+      <span class="c1">// additonal values removed for readability</span>
+     <span class="p">]</span>
+  <span class="p">}]</span>
+</code></pre>
+</div>
+<p>As you can see, we now have an array of objects, where each object has two keys: a <code class="highlighter-rouge">key</code> that corresponds to the property name we nested by, and a <code class="highlighter-rouge">values</code> that holds an array of all the data matching that property.</p>
+
+<p>Now that our data is nested, how do we place it appropriately on our graph?  This is where <strong>Ordinal Scale Bands</strong> comes in.  Each property group will correspond to a single band, with individual samples distributed within it.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+  <span class="nx">xScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">key</span>
+  <span class="p">}))</span>
+    <span class="p">.</span><span class="nx">rangeRoundBands</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">],</span> <span class="nx">padding</span><span class="p">,</span> <span class="nx">outerPadding</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Our X-scale has two locations now: one for each of our two properties (“a” or “b”).  Our next scale needs to map to <strong>within one of these domains</strong> based on the <strong>sample name</strong>.  Most of the examples I could find online use a uniform set of samples within each band: (<a href="https://bl.ocks.org/mbostock/3887051">see here for an example</a>).  For some data this will be the case: each property group is made of male/female, or the same set of time points.  In our case, we don’t know that the each sample won’t appear in each group.  In fact, we don’t even know if we have even property groups.  How can we deal with this?</p>
+
+<p>The solution I came up with is to build a scale index.  Each property group gets its <strong>own scale</strong> in addition to the main scale.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>  <span class="nx">x2Scales</span> <span class="o">=</span> <span class="p">{}</span><span class="c1">//create a scale tracker</span>
+
+  <span class="c1">//go through the data and generated an individual scale for each group.</span>
+  <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">propertyGroup</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">entriesInProperty</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nx">key</span>               <span class="o">=</span> <span class="nx">propertyGroup</span><span class="p">.</span><span class="nx">key</span>
+    <span class="nx">propertyGroup</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">entriesInProperty</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="nx">newScale</span>      <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">entriesInProperty</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">rangeRoundPoints</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">xScale</span><span class="p">.</span><span class="nx">rangeBand</span><span class="p">()])</span>
+    <span class="nx">x2Scales</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">newScale</span>
+  <span class="p">})</span>
+</code></pre>
+</div>
+<p>Now our <code class="highlighter-rouge">x2Scales</code> object holds all the scales we need, index by the property group name.</p>
+
+<h3 id="inputing-nested-data">Inputing nested data</h3>
+
+<p>Something you may find confusing is how to access our nested data.  We input our nested data the same way we do our unnested data: using the <code class="highlighter-rouge">selectAll('.newGroupClass').data(data).enter().append()</code> chain.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">barGroups</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.barGroup'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">',0)'</span>
+    <span class="p">})</span>    
+</code></pre>
+</div>
+<p>Where before the <code class="highlighter-rouge">d</code> object was the individual entry, now it’s actually an object with a <code class="highlighter-rouge">key</code> and <code class="highlighter-rouge">values</code> index, with the entries we want to loop through under <code class="highlighter-rouge">values</code>.  How do we access them?  By performing <strong>another</strong> <code class="highlighter-rouge">selectAll().data().enter().append()</code> chain!  Rather than passing in a data object into the <code class="highlighter-rouge">.data()</code> call, we pass in a function that retrieves the entry!</p>
+
+<p>Once the data is entered, it’s a matter of styling each bar in the bargroup: setting the height and fill, as before, but also transforming the x-value <strong>again</strong> to compensate for its locatio</p>
+
+<p>Notice that we use the <code class="highlighter-rouge">barGroups</code> variable we defined earlier, and then append <code class="highlighter-rouge">.bar</code> elements.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">bars</span> <span class="o">=</span> <span class="nx">barGroups</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.bar'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">values</span>
+      <span class="p">}).</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'rect'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">'fill'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">colorScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">property</span><span class="p">)</span>
+    <span class="p">})</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">scale</span> <span class="o">=</span> <span class="nx">x2Scales</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">property</span><span class="p">]</span><span class="c1">//fetch the scale</span>
+        <span class="c1">//shift this bar by its location in the scale</span>
+        <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span>  <span class="nx">scale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">',0)'</span>
+      <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">'height'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">height</span> <span class="o">-</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <div id="plot_three"></div>
+</blockquote>
+
+                <a href="/2018/01/01/d3_part3_nesting/">
+                    Read the full post...
+                </a>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        <div class="card">
+            <div class="card-header">
+                <p class="card-header-title">
                     <a href="/2017/12/31/d3_part2_flipping/">
                         D3 part two: flipping the plot
                     </a>
@@ -162,6 +364,14 @@
                 </a>
             </div>
         </div>
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -717,6 +927,40 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </main>
 </div>
 
@@ -738,7 +982,7 @@
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2017-12-31T14:13:46-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2018-01-02T07:51:30-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

@@ -87,6 +87,197 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
+                        <a href="/2018/01/01/d3_part3_nesting/">
+                            D3 part three: Nesting
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2018-01-01T22:05:12-05:00" class="post-date is-small">
+   01 Jan 2018</time>
+   </span>
+                    
+                    <a href="/tag/education/">
+        <span class="tag is-primary">
+              education
+        </span>
+                    </a>
+                    
+                    <a href="/tag/web/">
+        <span class="tag is-primary">
+              web
+        </span>
+                    </a>
+                    
+                    <a href="/tag/javascript/">
+        <span class="tag is-primary">
+              javascript
+        </span>
+                    </a>
+                    
+                    <a href="/tag/d3/">
+        <span class="tag is-primary">
+              d3
+        </span>
+                    </a>
+                    
+                    <a href="/tag/data-science/">
+        <span class="tag is-primary">
+              data-science
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <blockquote>
+  <div id="plot_previous"></div>
+  <p>Our graph at the end of the previous section.</p>
+</blockquote>
+
+<blockquote>
+  <div id="plot_previous_new_data"></div>
+  <p>This is the same plot-generating code, but we’ve added some more data to demonstrate grouping by property.</p>
+</blockquote>
+
+<h2 id="nesting">Nesting</h2>
+
+<p>A common desire when laying out a plot is to have data grouped along the x-axis by some property.  We can accomplish this by <strong>nesting</strong> our data according to the property we would like to group by.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"one"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"two"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"two"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"four"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">57</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"five"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">17</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"six"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"seven"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">52</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"eight"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"nine"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">81</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"ten"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">62</span><span class="p">},</span>     
+              <span class="p">];</span>
+</code></pre>
+</div>
+<p>What does our nested output look like?  We can <code class="highlighter-rouge">console.log</code> the nested data to take a look.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">[</span>  <span class="p">{</span> <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span>
+     <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"one"</span><span class="p">,</span>
+        <span class="s2">"property"</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span>
+        <span class="s2">"value"</span><span class="p">:</span> <span class="mi">100</span>
+      <span class="p">},</span>
+    <span class="c1">//...</span>
+    <span class="c1">// additional values removed for readability      </span>
+      <span class="p">]</span>
+
+  <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">"key"</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span>
+    <span class="s2">"values"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"three"</span><span class="p">,</span>
+        <span class="s2">"property"</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span>
+        <span class="s2">"value"</span><span class="p">:</span> <span class="mi">20</span>
+      <span class="p">},</span>
+      <span class="p">{</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"four"</span><span class="p">,</span>
+        <span class="s2">"property"</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span>
+        <span class="s2">"value"</span><span class="p">:</span> <span class="mi">57</span>
+      <span class="p">},</span>
+      <span class="c1">//...</span>
+      <span class="c1">// additonal values removed for readability</span>
+     <span class="p">]</span>
+  <span class="p">}]</span>
+</code></pre>
+</div>
+<p>As you can see, we now have an array of objects, where each object has two keys: a <code class="highlighter-rouge">key</code> that corresponds to the property name we nested by, and a <code class="highlighter-rouge">values</code> that holds an array of all the data matching that property.</p>
+
+<p>Now that our data is nested, how do we place it appropriately on our graph?  This is where <strong>Ordinal Scale Bands</strong> comes in.  Each property group will correspond to a single band, with individual samples distributed within it.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">xScale</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+  <span class="nx">xScale</span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">key</span>
+  <span class="p">}))</span>
+    <span class="p">.</span><span class="nx">rangeRoundBands</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">],</span> <span class="nx">padding</span><span class="p">,</span> <span class="nx">outerPadding</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Our X-scale has two locations now: one for each of our two properties (“a” or “b”).  Our next scale needs to map to <strong>within one of these domains</strong> based on the <strong>sample name</strong>.  Most of the examples I could find online use a uniform set of samples within each band: (<a href="https://bl.ocks.org/mbostock/3887051">see here for an example</a>).  For some data this will be the case: each property group is made of male/female, or the same set of time points.  In our case, we don’t know that the each sample won’t appear in each group.  In fact, we don’t even know if we have even property groups.  How can we deal with this?</p>
+
+<p>The solution I came up with is to build a scale index.  Each property group gets its <strong>own scale</strong> in addition to the main scale.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>  <span class="nx">x2Scales</span> <span class="o">=</span> <span class="p">{}</span><span class="c1">//create a scale tracker</span>
+
+  <span class="c1">//go through the data and generated an individual scale for each group.</span>
+  <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">propertyGroup</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">entriesInProperty</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nx">key</span>               <span class="o">=</span> <span class="nx">propertyGroup</span><span class="p">.</span><span class="nx">key</span>
+    <span class="nx">propertyGroup</span><span class="p">.</span><span class="nx">values</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">entry</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">entriesInProperty</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="nx">newScale</span>      <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">ordinal</span><span class="p">()</span>
+      <span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">entriesInProperty</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">rangeRoundPoints</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">xScale</span><span class="p">.</span><span class="nx">rangeBand</span><span class="p">()])</span>
+    <span class="nx">x2Scales</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">newScale</span>
+  <span class="p">})</span>
+</code></pre>
+</div>
+<p>Now our <code class="highlighter-rouge">x2Scales</code> object holds all the scales we need, index by the property group name.</p>
+
+<h3 id="inputing-nested-data">Inputing nested data</h3>
+
+<p>Something you may find confusing is how to access our nested data.  We input our nested data the same way we do our unnested data: using the <code class="highlighter-rouge">selectAll('.newGroupClass').data(data).enter().append()</code> chain.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">barGroups</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.barGroup'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">',0)'</span>
+    <span class="p">})</span>    
+</code></pre>
+</div>
+<p>Where before the <code class="highlighter-rouge">d</code> object was the individual entry, now it’s actually an object with a <code class="highlighter-rouge">key</code> and <code class="highlighter-rouge">values</code> index, with the entries we want to loop through under <code class="highlighter-rouge">values</code>.  How do we access them?  By performing <strong>another</strong> <code class="highlighter-rouge">selectAll().data().enter().append()</code> chain!  Rather than passing in a data object into the <code class="highlighter-rouge">.data()</code> call, we pass in a function that retrieves the entry!</p>
+
+<p>Once the data is entered, it’s a matter of styling each bar in the bargroup: setting the height and fill, as before, but also transforming the x-value <strong>again</strong> to compensate for its locatio</p>
+
+<p>Notice that we use the <code class="highlighter-rouge">barGroups</code> variable we defined earlier, and then append <code class="highlighter-rouge">.bar</code> elements.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">bars</span> <span class="o">=</span> <span class="nx">barGroups</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.bar'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">values</span>
+      <span class="p">}).</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'rect'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">'fill'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">colorScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">property</span><span class="p">)</span>
+    <span class="p">})</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+        <span class="kd">var</span> <span class="nx">scale</span> <span class="o">=</span> <span class="nx">x2Scales</span><span class="p">[</span><span class="nx">d</span><span class="p">.</span><span class="nx">property</span><span class="p">]</span><span class="c1">//fetch the scale</span>
+        <span class="c1">//shift this bar by its location in the scale</span>
+        <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span>  <span class="nx">scale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">',0)'</span>
+      <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+      <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">'height'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">height</span> <span class="o">-</span> <span class="nx">yScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <div id="plot_three"></div>
+</blockquote>
+
+                    <a href="/2018/01/01/d3_part3_nesting/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
                         <a href="/2017/12/31/d3_part2_flipping/">
                             D3 part two: flipping the plot
                         </a>
@@ -141,6 +332,59 @@
 
 
                     <a href="/2017/12/31/d3_part2_flipping/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/12/23/code_coloring_jekyll/">
+                            Coloring code in Jekyll
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-12-23T00:00:00-05:00" class="post-date is-small">
+   23 Dec 2017</time>
+   </span>
+                    
+                    <a href="/tag/jekyll/">
+        <span class="tag is-primary">
+              jekyll
+        </span>
+                    </a>
+                    
+                    <a href="/tag/web/">
+        <span class="tag is-primary">
+              web
+        </span>
+                    </a>
+                    
+                    <a href="/tag/javascript/">
+        <span class="tag is-primary">
+              javascript
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>I will admit I am spoiled.  When I code, I do so in Sublime Text or PHPStorm.  Both of these programs are stacked with features, but one of my favorites is <strong>code syntax highlighting</strong>.</p>
+
+<p>Benefits</p>
+
+<p>Even vim allows code highlighting.</p>
+
+<h2 id="implementing-code-highlighting-on-jekyll">Implementing Code Highlighting on Jekyll</h2>
+
+<p>Jekyll 3 uses Rouge by default.  In theory, using liquid tags should work.  In practice, my code is unreadable.</p>
+
+
+                    <a href="/2017/12/23/code_coloring_jekyll/">
                         Read the full post...
                     </a>
                 </div>
@@ -260,6 +504,120 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
+                        <a href="/2017/12/18/12-18-17_swc_lessons/">
+                            Lessons From My First Software Carpentry Workshop: Planning
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-12-18T00:00:00-05:00" class="post-date is-small">
+   18 Dec 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <h1 id="introduction">introduction</h1>
+
+<p>I hosted my first Software Carpentry workshop on December 18th and 19th 2017 in Knoxville Tennessee with my coinstructors Meg Staton and Drew Steen.</p>
+
+<p>I tried to follow the general recommendations and most things worked out great.  Here are some lessons learned.</p>
+
+<p><img src="/assets/img/carpentry/s_carp.png" alt="The Software Carpentry logo" /></p>
+
+
+                    <a href="/2017/12/18/12-18-17_swc_lessons/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/12/13/understanding_chado_mage/">
+                            Understanding_chado_mage
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-12-13T11:18:19-05:00" class="post-date is-small">
+   13 Dec 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    
+
+                    <a href="/2017/12/13/understanding_chado_mage/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/12/09/d3/">
+                            Building a D3.js plot
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-12-09T20:43:24-05:00" class="post-date is-small">
+   09 Dec 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>This is a multipost article on creating plots with D3.</p>
+
+<script src="https://gist.github.com/bradfordcondon/3b4d12a875b73dfca74f26d3142ecf9c.js"></script>
+
+
+                    <a href="/2017/12/09/d3/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/12/09/trying_expo/">
+                            Trying_expo
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-12-09T15:08:35-05:00" class="post-date is-small">
+   09 Dec 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    
+
+                    <a href="/2017/12/09/trying_expo/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
                         <a href="/2017/11/27/swc_workshop_announce_december_2017/">
                             Upcoming Software Carpentry Workshop: December 18th & 19th
                         </a>
@@ -312,258 +670,6 @@
             </div>
             <br>
             
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/10/05/carpentry_lessons/">
-                            Software Carpentry TakeAways
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-10-05T00:00:00-04:00" class="post-date is-small">
-   05 Oct 2017</time>
-   </span>
-                    
-                    <a href="/tag/education/">
-        <span class="tag is-primary">
-              education
-        </span>
-                    </a>
-                    
-                    <a href="/tag/genomics/">
-        <span class="tag is-primary">
-              genomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software-carpentry/">
-        <span class="tag is-primary">
-              software-carpentry
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>In a <a href="/2017/09/25/Software_Data_Carpentry/">previous blog post</a>, I announced my excitement for becoming a certified Software and Data Carpentry instructor.  As I complete my checkout process, I also wanted to recap the most important points from the training.  <a href="https://docs.google.com/presentation/d/e/2PACX-1vQDtbUsYpFS5-I_66uKSixgSKQSSWrQSlmkZ9HdMMiKY8U449nyFwDkzQ14WAEDYf4xiFaZRV70xX9A/pub?start=false&amp;loop=false&amp;delayms=3000">A lab meeting presentation of this recap cis available on google slides here</a>.</p>
-
-<p>Looking forward to teaching my first workshop in the next few months!</p>
-
-<p><img src="/assets/img/carpentry/d_carp.png" alt="Data Carpentry" /> <img src="/assets/img/carpentry/s_carp.png" alt="Software Carpentry" /></p>
-
-
-                    <a href="/2017/10/05/carpentry_lessons/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/09/25/Software_Data_Carpentry/">
-                            Software and Data Carpentry
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-09-25T00:00:00-04:00" class="post-date is-small">
-   25 Sep 2017</time>
-   </span>
-                    
-                    <a href="/tag/education/">
-        <span class="tag is-primary">
-              education
-        </span>
-                    </a>
-                    
-                    <a href="/tag/genomics/">
-        <span class="tag is-primary">
-              genomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software-carpentry/">
-        <span class="tag is-primary">
-              software-carpentry
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This week(September 25th &amp; 26th 2017), I will be certified as a Software and Data Carpentry instructor.  As of 2017-06-26, there were 968 instructors.  Am I lucky number 1,000?  Probably not.  Still, exciting.</p>
-
-<p><img src="/assets/img/carpentry/d_carp.png" alt="Data Carpentry" /> <img src="/assets/img/carpentry/s_carp.png" alt="Software Carpentry" /></p>
-
-
-                    <a href="/2017/09/25/Software_Data_Carpentry/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/20/treesnapReleasePress/">
-                            TreeSnap release press
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-20T00:00:00-04:00" class="post-date is-small">
-   20 Jul 2017</time>
-   </span>
-                    
-                    <a href="/tag/treesnap/">
-        <span class="tag is-primary">
-              treesnap
-        </span>
-                    </a>
-                    
-                    <a href="/tag/citizen-science/">
-        <span class="tag is-primary">
-              citizen-science
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p><img src="/assets/img/TreeSnap/TreesnapFullLogo_x3.png" alt="TreeSnap" /></p>
-
-<p>Early this year, I joined Meg Staton’s group at the University of Tennessee as a mobile and web developer.  My major project since then has been designing, coding, and releasing the mobile citizen science app TreeSnap.  I think it’s a fantastic project, and I’d love it if you <a href="https://treesnap.org">visited the app’s website</a> to learn more.</p>
-
-
-                    <a href="/2017/07/20/treesnapReleasePress/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/15/discovarOutput/">
-                            Understanding Discovar output
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-15T00:00:00-04:00" class="post-date is-small">
-   15 Jul 2017</time>
-   </span>
-                    
-                    <a href="/tag/bioinformatics/">
-        <span class="tag is-primary">
-              bioinformatics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/next-generation-sequencing/">
-        <span class="tag is-primary">
-              next-generation-sequencing
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
-Generation Sequencing Workshop at the University of Kentucky.</p>
-
-<h2 id="discovar">Discovar</h2>
-
-<p>DISCOVAR is a new genome assembler and variant caller developed by the broad institute. As of this writing,it takes as input Illumina reads of length 250 or longer produced on MiSeq or HiSeq 2500.  To learn more, read the entire DISCOVAR manual <a href="https://docs.google.com/document/d/1U_o-Z0dJ0QKiJn86AV2o_YHiFzUtW9c57eh3tYjkINc/edit">here</a>.</p>
-
-<h3 id="the-assembly-output">The assembly output</h3>
-
-<p>The final output assembly will take the form of <code class="highlighter-rouge">OUT_HEAD.final.*</code>, where <code class="highlighter-rouge">OUT_HEAD</code> is set by the user.  Below let’s assume we’ve set <code class="highlighter-rouge">OUT_HEAD</code> to out.</p>
-
-
-                    <a href="/2017/07/15/discovarOutput/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/13/bowtie2/">
-                            Examining bowtie output
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-13T00:00:00-04:00" class="post-date is-small">
-   13 Jul 2017</time>
-   </span>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
-
-
-                    <a href="/2017/07/13/bowtie2/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/11/newblr/">
-                            Guide to newblr output
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-11T00:00:00-04:00" class="post-date is-small">
-   11 Jul 2017</time>
-   </span>
-                    
-                    <a href="/tag/bioinformatics/">
-        <span class="tag is-primary">
-              bioinformatics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/next-generation-sequencing/">
-        <span class="tag is-primary">
-              next-generation-sequencing
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
-Generation Sequencing Workshop at the University of Kentucky.</p>
-
-
-                    <a href="/2017/07/11/newblr/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
         </div>
 
 
@@ -592,7 +698,7 @@ Generation Sequencing Workshop at the University of Kentucky.</p>
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2017-12-31T14:13:46-05:00"> Bradford Condon 2017</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2018-01-02T07:51:30-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

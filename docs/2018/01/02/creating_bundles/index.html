@@ -86,13 +86,42 @@
         <div>
   <div class="box">
 <article class="post">
-  <h1 class="post-title">Programming for Biologists</h1>
- <time datetime="2017-08-02T14:53:55-04:00" class="post-date">02 Aug 2017</time>
+  <h1 class="post-title">Creating Tripal Bundles</h1>
+ <time datetime="2018-01-02T16:39:27-05:00" class="post-date">02 Jan 2018</time>
   <div class="card-content">
-  <p>Ten years ago, I was a biology PhD student beginning to study bioinformatics.  Today, I’m a mobile and web developer.  I want to share a curriculum of computer science concepts and tools that I think can benefit <em>any</em> biologist doing bioinformatics.</p>
+  <p>The function <code class="highlighter-rouge">tripal_chado_chado_bundle_schema()</code> tells us all we need to know to create more advanced Tripal Chado bundles.</p>
 
-<h1 id="unix">UNIX</h1>
-<p>There are</p>
+<p>CREATE TABLE HERE INSTEAD:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>      'type_linker_table' =&gt; array(
+        'description' =&gt; 'If a linker table (e.g. cvterm/prop) is needed to uniquely identify a content type then that table name is provided here.',
+        'type' =&gt; 'varchar',
+        'length' =&gt; 128,
+        'not null' =&gt; FALSE,
+        'default' =&gt; '',
+      ),
+      'type_column' =&gt; array(
+        'description' =&gt; 'The column in the data table or linker table that distinguishes the data type. This must be in a foreign key relationship to the cvterm table.',
+        'type' =&gt; 'varchar',
+        'length' =&gt; 128,
+        'not null' =&gt; FALSE,
+        'default' =&gt; '',
+      ),
+      'type_id' =&gt; array(
+        'description' =&gt; 'If a type_column is set then this is the cvterm_id of the data type that this bundle maps to.',
+        'type' =&gt; 'varchar',
+        'length' =&gt; 128,
+        'not null' =&gt; TRUE,
+        'default' =&gt; '',
+      ),
+      'type_value' =&gt; array(
+        'description' =&gt; 'If a property table is used for a linker, then the value that should be matched to identify this content type is stored here.',
+        'type' =&gt; 'text',
+        'not null' =&gt; FALSE,
+        'default' =&gt; '',
+      )
+</code></pre>
+</div>
 
   </div>
 </article>
@@ -106,23 +135,23 @@
   <ul class="related-posts">
     
       <li>
-        <a href="/2018/01/01/d3_part3_nesting/">
-          D3 part three: Nesting
-          <small><time datetime="2018-01-01T22:05:12-05:00">01 Jan 2018</time></small>
+        <a href="/2018/01/07/d3_4_labels/">
+          D3 part four: Labeling
+          <small><time datetime="2018-01-07T14:03:41-05:00">07 Jan 2018</time></small>
         </a>
       </li>
     
       <li>
-        <a href="/2017/12/31/d3_part2_flipping/">
-          D3 part two: flipping the plot
-          <small><time datetime="2017-12-31T00:00:00-05:00">31 Dec 2017</time></small>
+        <a href="/2018/01/06/dockerizing/">
+          Dockerizing your environment
+          <small><time datetime="2018-01-06T21:23:37-05:00">06 Jan 2018</time></small>
         </a>
       </li>
     
       <li>
-        <a href="/2017/12/23/code_coloring_jekyll/">
-          Coloring code in Jekyll
-          <small><time datetime="2017-12-23T00:00:00-05:00">23 Dec 2017</time></small>
+        <a href="/2018/01/06/TwoBit/">
+          TwoBit format
+          <small><time datetime="2018-01-06T21:23:18-05:00">06 Jan 2018</time></small>
         </a>
       </li>
     
@@ -150,7 +179,7 @@
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2018-01-02T07:51:30-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2018-01-07T14:05:49-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

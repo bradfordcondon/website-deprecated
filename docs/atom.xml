@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2018-01-02T07:51:30-05:00</updated>
+ <updated>2018-01-07T14:05:49-05:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Bradford Condon</name>
@@ -13,11 +13,146 @@
 
  
  <entry>
+   <title>D3 part four: Labeling</title>
+   <link href="http://localhost:4000/2018/01/07/d3_4_labels/"/>
+   <updated>2018-01-07T14:03:41-05:00</updated>
+   <id>http://localhost:4000/2018/01/07/d3_4_labels</id>
+   <content type="html">&lt;p&gt;In previous posts we’ve learned about nesting our data and utilizing scales.  This post we’ll discuss graph labels.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;blockquote&gt;
+  &lt;div id=&quot;starting_plot&quot;&gt;&lt;/div&gt;
+  &lt;p&gt;our starting plot from previous lessons.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What labels you add where will be entirely case dependent.  In general, though, we’ll want to label our X and Y axes, and provide a title.&lt;/p&gt;
+
+&lt;h3 id=&quot;padding&quot;&gt;Padding&lt;/h3&gt;
+
+&lt;p&gt;Before we can add labels, we need to make room for them.  A good practice is to define your four margins at the beginning of your plot which will hold your various labels and axes.  Then, when defining your dimensions, be mindful of this layout.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;padding&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Dockerizing your environment</title>
+   <link href="http://localhost:4000/2018/01/06/dockerizing/"/>
+   <updated>2018-01-06T21:23:37-05:00</updated>
+   <id>http://localhost:4000/2018/01/06/dockerizing</id>
+   <content type="html">&lt;p&gt;For a long time, I’ve been using Homestead to set up my web developer environment.  It’s easy to set up, and most importantly, I could understand where my files were.&lt;/p&gt;
+
+&lt;p&gt;The problem is that as a novice developer, I make mistakes, a lot.  I insert all sorts of junk into my database writing new code, and after a few months, I need to destroy my machine and start over.  To recreate a Tripal site, I need to reinstall Drupal, Tripal, all of my modules, and then re-load data.  After the second time I knew I had to implement a different solution.  I had to figure out this Docker thing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.docker.com/sites/default/files/vertical_large.png&quot; alt=&quot;Docker logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find the final, pre-loaded developer image &lt;a href=&quot;https://hub.docker.com/r/bcondon/docker_tripal3/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;dockerizing-as-simple-as-possible&quot;&gt;Dockerizing as simple as possible.&lt;/h1&gt;
+
+&lt;p&gt;My big realization is that you &lt;strong&gt;dont have to use a DockerFile and start from scratch to create an image&lt;/strong&gt;.  If like me you aren’t yet a savvy systems administrator, I would recommend starting from an existing container that does &lt;strong&gt;almost everything you want&lt;/strong&gt;.  Because I’m running a Tripal site, there are two fully-functional containers to choose from (I used (Ming Chen’s Tripal 3 container)[]). I tried, and failed, to set up an environment with docker compose hosting several services starting from the base Ubuntu images.  In hindsight, I bit off more than I could chew.  I need to get something running and tinker with it, not build a complex system from scratch knowing nothing.&lt;/p&gt;
+
+&lt;p&gt;To get started, simply run a container with &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;, make some changes to it, and then commit your new, modified copy.  Hopefully the repo you are starting from provides some basic instructions for using the image.  For example, the instructions for our starting Tripal 3 container are &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 mingchen0919/docker-tripal-v3 /bin/bash&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;After running the container, fiddle around and set up your environemnt a bit more.  IN my case, I wanted to load some organisms, sequences, install some modules and themes, etc.  Once you’re happy, save the new container so you can start from a freshly set up environment!  First, set up an account and repo &lt;a href=&quot;https://hub.docker.com/&quot;&gt;on Docker hub&lt;/a&gt;. Then use &lt;code class=&quot;highlighter-rouge&quot;&gt;docker commit&lt;/code&gt; to save your image.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#docs
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+#an example commit
+docker commit my_test_container [bcondon/test_image]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Then just use docker push to put the image on Docker Hub.  With our example, we would execute &lt;code class=&quot;highlighter-rouge&quot;&gt;docker push bcondon/test_image&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That’s it.&lt;/p&gt;
+
+&lt;p&gt;The next time I want to run my container, I simply replace the Dockerhub URL i started with.  &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 mingchen0919/docker-tripal-v3 /bin/bash&lt;/code&gt; becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 bcondon/test_image /bin/bash&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Learning more and setting up my own image from scratch exactly how I want it comes next.  Getting started, however, is priceless.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>TwoBit format</title>
+   <link href="http://localhost:4000/2018/01/06/TwoBit/"/>
+   <updated>2018-01-06T21:23:18-05:00</updated>
+   <id>http://localhost:4000/2018/01/06/TwoBit</id>
+   <content type="html">&lt;h1 id=&quot;what-is-twobit&quot;&gt;What is TwoBit&lt;/h1&gt;
+
+&lt;h1 id=&quot;creating-a-twobit-file&quot;&gt;Creating a TwoBit file&lt;/h1&gt;
+
+&lt;p&gt;We can follow the guide on the &lt;a href=&quot;https://genome.ucsc.edu/goldenpath/help/twoBit.html&quot;&gt;UCSC website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, the OSX formatted versions can be downloaded &lt;a href=&quot;http://hgdownload.soe.ucsc.edu/admin/exe/macOSX.x86_64/&quot;&gt;here&lt;/a&gt;.  If you’re new to computer science, you might not be sure whatto do with these.&lt;/p&gt;
+
+&lt;h3 id=&quot;move-the-file-into-your-path&quot;&gt;Move the file into your $PATH&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt;.  the path &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt; should be somewhere in the alphabet soup.  This is a place we can install software so that it can be accessed wherever we are in our file system.&lt;/p&gt;
+
+&lt;h3 id=&quot;change-permissions-on-the-file&quot;&gt;Change permissions on the file&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod a+x /usr/local/bin/faToTwoBit&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;what-does-the-command-do&quot;&gt;What does the command do?&lt;/h3&gt;
+
+&lt;p&gt;If we try to run the command with no arguments by simply executing ` faToTwoBit`, we’ll get the command’s usage arguments.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;faToTwoBit - Convert DNA from fasta to 2bit format
+usage:
+   faToTwoBit &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;.fa &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;in2.fa in3.fa ...] out.2bit
+options:
+   -long          use 64-bit offsets &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;index.   Allow &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;twoBit to contain more than 4Gb of sequence.
+                  NOT COMPATIBLE WITH OLDER CODE.
+   -noMask        Ignore lower-case masking &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;fa file.
+   -stripVersion  Strip off version number after &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;GenBank accessions.
+   -ignoreDups    Convert first sequence only &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;there are duplicate sequence
+                  names.  Use &lt;span class=&quot;s1&quot;&gt;'twoBitDup'&lt;/span&gt; to find duplicate sequences.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;convert-the-fasta-file&quot;&gt;Convert the FASTA file&lt;/h3&gt;
+&lt;p&gt;Run the below command.  Be sure to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;input.fasta&lt;/code&gt; with the fasta file you are attempting to convert.  Make sure you are in the same folder as your &lt;code class=&quot;highlighter-rouge&quot;&gt;input.fasta&lt;/code&gt; file: if you are not, you will have to provide the relative or absolute path for the command to work!&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;faToTwoBit input.fasta output.2bit&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;convert-gff&quot;&gt;Convert GFF&lt;/h3&gt;
+
+&lt;p&gt;Biodalliance supports bigwig and bigbed.&lt;/p&gt;
+
+&lt;p&gt;https://www.biostars.org/p/4070/&lt;/p&gt;
+
+&lt;p&gt;https://toolshed.g2.bx.psu.edu/repository/display_tool?repository_id=afcb6456d8e300ed&amp;amp;tool_config=%2Fsrv%2Ftoolshed%2Fmain%2Fvar%2Fdata%2Frepos%2F000%2Frepo_21%2Fgff_to_bed.xml&amp;amp;changeset_revision=5c6f33e20fcc&lt;/p&gt;
+
+&lt;p&gt;So we wrap GFF to BED.
+Then BED to WIG.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Step 1. Create a wig format file following the directions here. When converting a wig file to a bigWig file, you are limited to one track of data in your input file; therefore, you must create a separate wig file for each data track.
+Step 2. Remove any existing “track” or “browser” lines from your wig file so that it contains only data.
+Step 3. Download the wigToBigWig program from the binary utilities directory.
+Step 4. Use the fetchChromSizes script from the same directory to create the chrom.sizes file for the UCSC database with which you are working (e.g., hg19).
+Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file:&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>D3 part three: Nesting</title>
-   <link href="http://localhost:4000/2018/01/01/d3_part3_nesting/"/>
-   <updated>2018-01-01T22:05:12-05:00</updated>
-   <id>http://localhost:4000/2018/01/01/d3_part3_nesting</id>
-   <content type="html">&lt;blockquote&gt;
+   <link href="http://localhost:4000/2018/01/06/d3_part3_nesting/"/>
+   <updated>2018-01-06T21:23:00-05:00</updated>
+   <id>http://localhost:4000/2018/01/06/d3_part3_nesting</id>
+   <content type="html">&lt;p&gt;In the previous post, we learned about using scales to format our x and y axes, s well as our bar coloring.&lt;/p&gt;
+
+&lt;p&gt;In this post I want to address how to &lt;strong&gt;nest&lt;/strong&gt; data with D3.  We will use the nest method to automatically sort our samples by property, and we’ll use multiple x-scales to group them along the x-axis.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;blockquote&gt;
   &lt;div id=&quot;plot_previous&quot;&gt;&lt;/div&gt;
   &lt;p&gt;Our graph at the end of the previous section.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -117,7 +252,7 @@
     &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'g'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'transform'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'translate('&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xScale&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;',0)'&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;    
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;  
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Where before the &lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt; object was the individual entry, now it’s actually an object with a &lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;values&lt;/code&gt; index, with the entries we want to loop through under &lt;code class=&quot;highlighter-rouge&quot;&gt;values&lt;/code&gt;.  How do we access them?  By performing &lt;strong&gt;another&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;selectAll().data().enter().append()&lt;/code&gt; chain!  Rather than passing in a data object into the &lt;code class=&quot;highlighter-rouge&quot;&gt;.data()&lt;/code&gt; call, we pass in a function that retrieves the entry!&lt;/p&gt;
@@ -152,7 +287,52 @@
 
 &lt;blockquote&gt;
   &lt;div id=&quot;plot_three&quot;&gt;&lt;/div&gt;
+  &lt;p&gt;Our plot now separates samples into groups.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;An interesting challenge is dealing with uneven groups.  With this approach, every group has the same bandwidth, and the spacing within groups are calculated for each one individually.  This can be result in tightly packed groups and dispersed groups in the same plot.  We can adjust the padding for each group based on the number of samples, but we’re still left with unused space in our plot for smaller groups.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Creating Tripal Bundles</title>
+   <link href="http://localhost:4000/2018/01/02/creating_bundles/"/>
+   <updated>2018-01-02T16:39:27-05:00</updated>
+   <id>http://localhost:4000/2018/01/02/creating_bundles</id>
+   <content type="html">&lt;p&gt;The function &lt;code class=&quot;highlighter-rouge&quot;&gt;tripal_chado_chado_bundle_schema()&lt;/code&gt; tells us all we need to know to create more advanced Tripal Chado bundles.&lt;/p&gt;
+
+&lt;p&gt;CREATE TABLE HERE INSTEAD:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      'type_linker_table' =&amp;gt; array(
+        'description' =&amp;gt; 'If a linker table (e.g. cvterm/prop) is needed to uniquely identify a content type then that table name is provided here.',
+        'type' =&amp;gt; 'varchar',
+        'length' =&amp;gt; 128,
+        'not null' =&amp;gt; FALSE,
+        'default' =&amp;gt; '',
+      ),
+      'type_column' =&amp;gt; array(
+        'description' =&amp;gt; 'The column in the data table or linker table that distinguishes the data type. This must be in a foreign key relationship to the cvterm table.',
+        'type' =&amp;gt; 'varchar',
+        'length' =&amp;gt; 128,
+        'not null' =&amp;gt; FALSE,
+        'default' =&amp;gt; '',
+      ),
+      'type_id' =&amp;gt; array(
+        'description' =&amp;gt; 'If a type_column is set then this is the cvterm_id of the data type that this bundle maps to.',
+        'type' =&amp;gt; 'varchar',
+        'length' =&amp;gt; 128,
+        'not null' =&amp;gt; TRUE,
+        'default' =&amp;gt; '',
+      ),
+      'type_value' =&amp;gt; array(
+        'description' =&amp;gt; 'If a property table is used for a linker, then the value that should be matched to identify this content type is stored here.',
+        'type' =&amp;gt; 'text',
+        'not null' =&amp;gt; FALSE,
+        'default' =&amp;gt; '',
+      )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </content>
  </entry>
  
@@ -764,43 +944,6 @@ The Chado Mage schema as available &lt;a href=&quot;http://gmod.org/wiki/Chado_M
  </entry>
  
  <entry>
-   <title>Building a D3.js plot</title>
-   <link href="http://localhost:4000/2017/12/09/d3/"/>
-   <updated>2017-12-09T20:43:24-05:00</updated>
-   <id>http://localhost:4000/2017/12/09/d3</id>
-   <content type="html">&lt;p&gt;This is a multipost article on creating plots with D3.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/bradfordcondon/3b4d12a875b73dfca74f26d3142ecf9c.js&quot;&gt;&lt;/script&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Trying_expo</title>
-   <link href="http://localhost:4000/2017/12/09/trying_expo/"/>
-   <updated>2017-12-09T15:08:35-05:00</updated>
-   <id>http://localhost:4000/2017/12/09/trying_expo</id>
-   <content type="html">
-&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-
-&lt;p&gt;Today we’re going to mess around with Expo.  This assumes you’ve got some basic knowledge about…&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;React Native&lt;/li&gt;
-  &lt;li&gt;d3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;expo&quot;&gt;Expo&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://expo.io/&quot;&gt;Expo&lt;/a&gt; is a service for building and serving React Naive apps.  Using Expo, you could release an app without ever opening XCode or Android Studio.  React Native is great, but there’s still a lot of work that goes into testing and releasing for the seperate platforms.&lt;/p&gt;
-
-&lt;p&gt;I’m going to assume you know the basics of React-Native. If not, &lt;a href=&quot;http://facebook.github.io/react-native/docs/tutorial.html&quot;&gt;follow their quick&lt;/a&gt; getting started tutorial to get up to speed.&lt;/p&gt;
-
-&lt;p&gt;Even cooler, Expo lets you share snippets of React-Native apps, much like JS-Fiddle.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>Upcoming Software Carpentry Workshop: December 18th &amp; 19th</title>
    <link href="http://localhost:4000/2017/11/27/swc_workshop_announce_december_2017/"/>
    <updated>2017-11-27T00:00:00-05:00</updated>
@@ -890,107 +1033,6 @@ second int says that it returns an int.&lt;/p&gt;
 )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Dockerizing your environment</title>
-   <link href="http://localhost:4000/2017/10/17/dockerizing/"/>
-   <updated>2017-10-17T14:23:25-04:00</updated>
-   <id>http://localhost:4000/2017/10/17/dockerizing</id>
-   <content type="html">&lt;p&gt;For a long time, I’ve been using Homestead to set up my web developer environment.  It’s easy to set up, and most importantly, I could understand where my files were.&lt;/p&gt;
-
-&lt;p&gt;The problem is that as a novice developer, I make mistakes, a lot.  I insert all sorts of junk into my database writing new code, and after a few months, I need to destroy my machine and start over.  To recreate a Tripal site, I need to reinstall Drupal, Tripal, all of my modules, and then re-load data.  After the second time I knew I had to implement a different solution.  I had to figure out this Docker thing.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://www.docker.com/sites/default/files/vertical_large.png&quot; alt=&quot;Docker logo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;You can find the final, pre-loaded developer image &lt;a href=&quot;https://hub.docker.com/r/bcondon/docker_tripal3/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h1 id=&quot;dockerizing-as-simple-as-possible&quot;&gt;Dockerizing as simple as possible.&lt;/h1&gt;
-
-&lt;p&gt;My big realization is that you &lt;strong&gt;dont have to use a DockerFile and start from scratch to create an image&lt;/strong&gt;.  If like me you aren’t yet a savvy systems administrator, I would recommend starting from an existing container that does &lt;strong&gt;almost everything you want&lt;/strong&gt;.  Because I’m running a Tripal site, there are two fully-functional containers to choose from (I used (Ming Chen’s Tripal 3 container)[]). I tried, and failed, to set up an environment with docker compose hosting several services starting from the base Ubuntu images.  In hindsight, I bit off more than I could chew.  I need to get something running and tinker with it, not build a complex system from scratch knowing nothing.&lt;/p&gt;
-
-&lt;p&gt;To get started, simply run a container with &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;, make some changes to it, and then commit your new, modified copy.  Hopefully the repo you are starting from provides some basic instructions for using the image.  For example, the instructions for our starting Tripal 3 container are &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 mingchen0919/docker-tripal-v3 /bin/bash&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;After running the container, fiddle around and set up your environemnt a bit more.  IN my case, I wanted to load some organisms, sequences, install some modules and themes, etc.  Once you’re happy, save the new container so you can start from a freshly set up environment!  First, set up an account and repo &lt;a href=&quot;https://hub.docker.com/&quot;&gt;on Docker hub&lt;/a&gt;. Then use &lt;code class=&quot;highlighter-rouge&quot;&gt;docker commit&lt;/code&gt; to save your image.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#docs
-docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
-#an example commit
-docker commit my_test_container [bcondon/test_image]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Then just use docker push to put the image on Docker Hub.  With our example, we would execute &lt;code class=&quot;highlighter-rouge&quot;&gt;docker push bcondon/test_image&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;That’s it.&lt;/p&gt;
-
-&lt;p&gt;The next time I want to run my container, I simply replace the Dockerhub URL i started with.  &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 mingchen0919/docker-tripal-v3 /bin/bash&lt;/code&gt; becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run -it -p 8080:80 bcondon/test_image /bin/bash&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Learning more and setting up my own image from scratch exactly how I want it comes next.  Getting started, however, is priceless.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>TwoBit format</title>
-   <link href="http://localhost:4000/2017/10/06/TwoBit/"/>
-   <updated>2017-10-06T10:46:59-04:00</updated>
-   <id>http://localhost:4000/2017/10/06/TwoBit</id>
-   <content type="html">&lt;h1 id=&quot;what-is-twobit&quot;&gt;What is TwoBit&lt;/h1&gt;
-
-&lt;h1 id=&quot;creating-a-twobit-file&quot;&gt;Creating a TwoBit file&lt;/h1&gt;
-
-&lt;p&gt;We can follow the guide on the &lt;a href=&quot;https://genome.ucsc.edu/goldenpath/help/twoBit.html&quot;&gt;UCSC website&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;For example, the OSX formatted versions can be downloaded &lt;a href=&quot;http://hgdownload.soe.ucsc.edu/admin/exe/macOSX.x86_64/&quot;&gt;here&lt;/a&gt;.  If you’re new to computer science, you might not be sure whatto do with these.&lt;/p&gt;
-
-&lt;h3 id=&quot;move-the-file-into-your-path&quot;&gt;Move the file into your $PATH&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;echo $PATH&lt;/code&gt;.  the path &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/local/bin&lt;/code&gt; should be somewhere in the alphabet soup.  This is a place we can install software so that it can be accessed wherever we are in our file system.&lt;/p&gt;
-
-&lt;h3 id=&quot;change-permissions-on-the-file&quot;&gt;Change permissions on the file&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod a+x /usr/local/bin/faToTwoBit&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;what-does-the-command-do&quot;&gt;What does the command do?&lt;/h3&gt;
-
-&lt;p&gt;If we try to run the command with no arguments by simply executing ` faToTwoBit`, we’ll get the command’s usage arguments.&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;faToTwoBit - Convert DNA from fasta to 2bit format
-usage:
-   faToTwoBit &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;.fa &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;in2.fa in3.fa ...] out.2bit
-options:
-   -long          use 64-bit offsets &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;index.   Allow &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;twoBit to contain more than 4Gb of sequence.
-                  NOT COMPATIBLE WITH OLDER CODE.
-   -noMask        Ignore lower-case masking &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;fa file.
-   -stripVersion  Strip off version number after &lt;span class=&quot;s1&quot;&gt;'.'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;GenBank accessions.
-   -ignoreDups    Convert first sequence only &lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;there are duplicate sequence
-                  names.  Use &lt;span class=&quot;s1&quot;&gt;'twoBitDup'&lt;/span&gt; to find duplicate sequences.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;convert-the-fasta-file&quot;&gt;Convert the FASTA file&lt;/h3&gt;
-&lt;p&gt;Run the below command.  Be sure to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;input.fasta&lt;/code&gt; with the fasta file you are attempting to convert.  Make sure you are in the same folder as your &lt;code class=&quot;highlighter-rouge&quot;&gt;input.fasta&lt;/code&gt; file: if you are not, you will have to provide the relative or absolute path for the command to work!&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;faToTwoBit input.fasta output.2bit&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;convert-gff&quot;&gt;Convert GFF&lt;/h3&gt;
-
-&lt;p&gt;Biodalliance supports bigwig and bigbed.&lt;/p&gt;
-
-&lt;p&gt;https://www.biostars.org/p/4070/&lt;/p&gt;
-
-&lt;p&gt;https://toolshed.g2.bx.psu.edu/repository/display_tool?repository_id=afcb6456d8e300ed&amp;amp;tool_config=%2Fsrv%2Ftoolshed%2Fmain%2Fvar%2Fdata%2Frepos%2F000%2Frepo_21%2Fgff_to_bed.xml&amp;amp;changeset_revision=5c6f33e20fcc&lt;/p&gt;
-
-&lt;p&gt;So we wrap GFF to BED.
-Then BED to WIG.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Step 1. Create a wig format file following the directions here. When converting a wig file to a bigWig file, you are limited to one track of data in your input file; therefore, you must create a separate wig file for each data track.
-Step 2. Remove any existing “track” or “browser” lines from your wig file so that it contains only data.
-Step 3. Download the wigToBigWig program from the binary utilities directory.
-Step 4. Use the fetchChromSizes script from the same directory to create the chrom.sizes file for the UCSC database with which you are working (e.g., hg19).
-Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file:&lt;/p&gt;
-&lt;/blockquote&gt;
 </content>
  </entry>
  
@@ -1115,18 +1157,6 @@ Graduate school is about learning skills and building a portfolio.  GitHub is th
  </entry>
  
  <entry>
-   <title>Programming for Biologists</title>
-   <link href="http://localhost:4000/2017/08/02/programmingForBio/"/>
-   <updated>2017-08-02T14:53:55-04:00</updated>
-   <id>http://localhost:4000/2017/08/02/programmingForBio</id>
-   <content type="html">&lt;p&gt;Ten years ago, I was a biology PhD student beginning to study bioinformatics.  Today, I’m a mobile and web developer.  I want to share a curriculum of computer science concepts and tools that I think can benefit &lt;em&gt;any&lt;/em&gt; biologist doing bioinformatics.&lt;/p&gt;
-
-&lt;h1 id=&quot;unix&quot;&gt;UNIX&lt;/h1&gt;
-&lt;p&gt;There are&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>Grep_basics</title>
    <link href="http://localhost:4000/2017/08/02/grep_basics/"/>
    <updated>2017-08-02T14:50:08-04:00</updated>
@@ -1228,31 +1258,6 @@ So combine.  We search for Fred, and we allow, optionally, the single character 
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Unsupportedgems</title>
-   <link href="http://localhost:4000/2017/07/20/unsupportedGems/"/>
-   <updated>2017-07-20T16:23:49-04:00</updated>
-   <id>http://localhost:4000/2017/07/20/unsupportedGems</id>
-   <content type="html">
-&lt;p&gt;I redesigned the landing page of my site, and wanted to host my blog posts at &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/index.html&lt;/code&gt; instead of the main &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;.  In theory this should be possible, &lt;a href=&quot;https://github.com/jekyll/jekyll-paginate/issues/37&quot;&gt;but there are issues&lt;/a&gt;.   Unfortunately, I could not get the default paginator to work properly at any location other than &lt;code class=&quot;highlighter-rouge&quot;&gt;/index.html&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;I thought a simple solution would be to use a different gem: &lt;a href=&quot;https://github.com/octopress/paginate&quot;&gt;&lt;em&gt;octopress-paginate&lt;/em&gt;&lt;/a&gt;.  This worked like a charm and easily supported paginating at &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/&lt;/code&gt;… but, the site no longer built on Github pages!  This is because Github pages &lt;strong&gt;only supports default jekyll gems&lt;/strong&gt;.  I looked into more advanced solutions involving &lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt; (a fantastic tool which I plan on incorporating into my other projects) but for this blog, it was just too much.
- The alternative solution was to simply build the site myself locally and push that.  To do this, all I needed to do was…&lt;/p&gt;
-
-&lt;p&gt;## Change my repo name&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/&quot;&gt;GitHub Pages documentation&lt;/a&gt; states that any site hosted at &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;username&amp;gt;.github.io&lt;/code&gt; &lt;em&gt;must&lt;/em&gt; be hosted off the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch.  Host the page elsewhere to change the source.&lt;/p&gt;
-
-&lt;p&gt;## Change my GitHub Pages source from &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;/docs&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Hosting off of a folder in our directory instead of the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch lets me keep a build of my site in the same repo hosting the code.&lt;/p&gt;
-
-&lt;p&gt;## Set Jekyll to build to &lt;code class=&quot;highlighter-rouge&quot;&gt;/docs&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;In &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; we can change the default build location from &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;docs&lt;/code&gt;.  Now when we build our final site and push to &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;, GitHub Pages will use that build.&lt;/p&gt;
 </content>
  </entry>
  
@@ -3539,21 +3544,6 @@ ls test_folder
   &lt;li&gt;Relative path&lt;/li&gt;
   &lt;li&gt;How can you make a new folder in your home directory from this remote location?&lt;/li&gt;
 &lt;/ul&gt;
-
-</content>
- </entry>
- 
- <entry>
-   <title>Learningprotege</title>
-   <link href="http://localhost:4000/2017/04/20/learningProtege/"/>
-   <updated>2017-04-20T17:25:03-04:00</updated>
-   <id>http://localhost:4000/2017/04/20/learningProtege</id>
-   <content type="html">
-&lt;h2 id=&quot;what-is-owl&quot;&gt;What is OWL?&lt;/h2&gt;
-
-&lt;p&gt;Owl tutorial slides:  http://protege.stanford.edu/conference/2006/submissions/slides/OWLTutorial_Part1.pdf&lt;/p&gt;
-
-&lt;p&gt;It is its own langauge….  but Tools exist to hide the syntax of the language and make it mostly machine readable.&lt;/p&gt;
 
 </content>
  </entry>

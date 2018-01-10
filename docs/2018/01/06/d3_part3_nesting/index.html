@@ -87,9 +87,15 @@
   <div class="box">
 <article class="post">
   <h1 class="post-title">D3 part three: Nesting</h1>
- <time datetime="2018-01-01T22:05:12-05:00" class="post-date">01 Jan 2018</time>
+ <time datetime="2018-01-06T21:23:00-05:00" class="post-date">06 Jan 2018</time>
   <div class="card-content">
-  <blockquote>
+  <p>In the previous post, we learned about using scales to format our x and y axes, s well as our bar coloring.</p>
+
+<p>In this post I want to address how to <strong>nest</strong> data with D3.  We will use the nest method to automatically sort our samples by property, and we’ll use multiple x-scales to group them along the x-axis.</p>
+
+<!--more-->
+
+<blockquote>
   <div id="plot_previous"></div>
   <p>Our graph at the end of the previous section.</p>
 </blockquote>
@@ -189,7 +195,7 @@
     <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="nx">xScale</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">',0)'</span>
-    <span class="p">})</span>    
+    <span class="p">})</span>  
 </code></pre>
 </div>
 <p>Where before the <code class="highlighter-rouge">d</code> object was the individual entry, now it’s actually an object with a <code class="highlighter-rouge">key</code> and <code class="highlighter-rouge">values</code> index, with the entries we want to loop through under <code class="highlighter-rouge">values</code>.  How do we access them?  By performing <strong>another</strong> <code class="highlighter-rouge">selectAll().data().enter().append()</code> chain!  Rather than passing in a data object into the <code class="highlighter-rouge">.data()</code> call, we pass in a function that retrieves the entry!</p>
@@ -224,7 +230,11 @@
 
 <blockquote>
   <div id="plot_three"></div>
+  <p>Our plot now separates samples into groups.</p>
 </blockquote>
+
+<p>An interesting challenge is dealing with uneven groups.  With this approach, every group has the same bandwidth, and the spacing within groups are calculated for each one individually.  This can be result in tightly packed groups and dispersed groups in the same plot.  We can adjust the padding for each group based on the number of samples, but we’re still left with unused space in our plot for smaller groups.</p>
+
 
   </div>
 </article>
@@ -238,23 +248,23 @@
   <ul class="related-posts">
     
       <li>
-        <a href="/2017/12/31/d3_part2_flipping/">
-          D3 part two: flipping the plot
-          <small><time datetime="2017-12-31T00:00:00-05:00">31 Dec 2017</time></small>
+        <a href="/2018/01/07/d3_4_labels/">
+          D3 part four: Labeling
+          <small><time datetime="2018-01-07T14:03:41-05:00">07 Jan 2018</time></small>
         </a>
       </li>
     
       <li>
-        <a href="/2017/12/23/code_coloring_jekyll/">
-          Coloring code in Jekyll
-          <small><time datetime="2017-12-23T00:00:00-05:00">23 Dec 2017</time></small>
+        <a href="/2018/01/06/dockerizing/">
+          Dockerizing your environment
+          <small><time datetime="2018-01-06T21:23:37-05:00">06 Jan 2018</time></small>
         </a>
       </li>
     
       <li>
-        <a href="/2017/12/22/plotting_with_d3/">
-          Plotting with D3 part 1
-          <small><time datetime="2017-12-22T00:00:00-05:00">22 Dec 2017</time></small>
+        <a href="/2018/01/06/TwoBit/">
+          TwoBit format
+          <small><time datetime="2018-01-06T21:23:18-05:00">06 Jan 2018</time></small>
         </a>
       </li>
     
@@ -287,7 +297,7 @@
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2018-01-02T07:51:30-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2018-01-07T14:05:49-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

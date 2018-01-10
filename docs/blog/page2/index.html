@@ -87,6 +87,87 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
+                        <a href="/2017/12/13/understanding_chado_mage/">
+                            Understanding_chado_mage
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-12-13T11:18:19-05:00" class="post-date is-small">
+   13 Dec 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    
+
+                    <a href="/2017/12/13/understanding_chado_mage/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/11/27/swc_workshop_announce_december_2017/">
+                            Upcoming Software Carpentry Workshop: December 18th & 19th
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-11-27T00:00:00-05:00" class="post-date is-small">
+   27 Nov 2017</time>
+   </span>
+                    
+                    <a href="/tag/education/">
+        <span class="tag is-primary">
+              education
+        </span>
+                    </a>
+                    
+                    <a href="/tag/genomics/">
+        <span class="tag is-primary">
+              genomics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/software-carpentry/">
+        <span class="tag is-primary">
+              software-carpentry
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p><img src="/assets/img/carpentry/s_carp.png" alt="Software Carpentry" /></p>
+
+<p>I am happy to announce I will be instructing a Software Carpentry Workshop at the University of Tennessee Knoxville.  The workshop will be taught by myself, Meg Staton, and Drew Steen on December 18th and 19th, 2017 in 702 Strong Hall.</p>
+
+<p>This workshop will cover the basics of:</p>
+<ul>
+  <li>Unix Shell</li>
+  <li>Git</li>
+  <li>R</li>
+</ul>
+
+<p>Please visit the <a href="https://statonlab.github.io/2017-12-18-carpentry-workshop/">workshop website for more information and registration links</a>.</p>
+
+                    <a href="/2017/11/27/swc_workshop_announce_december_2017/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
                         <a href="/2017/11/02/Jquery_and_Drupal_7/">
                             Jquery_and_drupal_7
                         </a>
@@ -130,119 +211,6 @@
                     
 
                     <a href="/2017/10/19/GO_introduction/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/10/17/dockerizing/">
-                            Dockerizing your environment
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-10-17T14:23:25-04:00" class="post-date is-small">
-   17 Oct 2017</time>
-   </span>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>For a long time, I’ve been using Homestead to set up my web developer environment.  It’s easy to set up, and most importantly, I could understand where my files were.</p>
-
-<p>The problem is that as a novice developer, I make mistakes, a lot.  I insert all sorts of junk into my database writing new code, and after a few months, I need to destroy my machine and start over.  To recreate a Tripal site, I need to reinstall Drupal, Tripal, all of my modules, and then re-load data.  After the second time I knew I had to implement a different solution.  I had to figure out this Docker thing.</p>
-
-<p><img src="https://www.docker.com/sites/default/files/vertical_large.png" alt="Docker logo" /></p>
-
-<p>You can find the final, pre-loaded developer image <a href="https://hub.docker.com/r/bcondon/docker_tripal3/">here</a>.</p>
-
-
-                    <a href="/2017/10/17/dockerizing/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/10/06/TwoBit/">
-                            TwoBit format
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-10-06T10:46:59-04:00" class="post-date is-small">
-   06 Oct 2017</time>
-   </span>
-                    
-                </div>
-
-                <div class="card-content">
-                    <h1 id="what-is-twobit">What is TwoBit</h1>
-
-<h1 id="creating-a-twobit-file">Creating a TwoBit file</h1>
-
-<p>We can follow the guide on the <a href="https://genome.ucsc.edu/goldenpath/help/twoBit.html">UCSC website</a>.</p>
-
-<p>For example, the OSX formatted versions can be downloaded <a href="http://hgdownload.soe.ucsc.edu/admin/exe/macOSX.x86_64/">here</a>.  If you’re new to computer science, you might not be sure whatto do with these.</p>
-
-<h3 id="move-the-file-into-your-path">Move the file into your $PATH</h3>
-
-<p><code class="highlighter-rouge">echo $PATH</code>.  the path <code class="highlighter-rouge">/usr/local/bin</code> should be somewhere in the alphabet soup.  This is a place we can install software so that it can be accessed wherever we are in our file system.</p>
-
-<h3 id="change-permissions-on-the-file">Change permissions on the file</h3>
-<p><code class="highlighter-rouge">chmod a+x /usr/local/bin/faToTwoBit</code></p>
-
-<h3 id="what-does-the-command-do">What does the command do?</h3>
-
-<p>If we try to run the command with no arguments by simply executing ` faToTwoBit`, we’ll get the command’s usage arguments.</p>
-
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>faToTwoBit - Convert DNA from fasta to 2bit format
-usage:
-   faToTwoBit <span class="k">in</span>.fa <span class="o">[</span>in2.fa in3.fa ...] out.2bit
-options:
-   -long          use 64-bit offsets <span class="k">for </span>index.   Allow <span class="k">for </span>twoBit to contain more than 4Gb of sequence.
-                  NOT COMPATIBLE WITH OLDER CODE.
-   -noMask        Ignore lower-case masking <span class="k">in </span>fa file.
-   -stripVersion  Strip off version number after <span class="s1">'.'</span> <span class="k">for </span>GenBank accessions.
-   -ignoreDups    Convert first sequence only <span class="k">if </span>there are duplicate sequence
-                  names.  Use <span class="s1">'twoBitDup'</span> to find duplicate sequences.
-</code></pre>
-</div>
-
-<h3 id="convert-the-fasta-file">Convert the FASTA file</h3>
-<p>Run the below command.  Be sure to replace <code class="highlighter-rouge">input.fasta</code> with the fasta file you are attempting to convert.  Make sure you are in the same folder as your <code class="highlighter-rouge">input.fasta</code> file: if you are not, you will have to provide the relative or absolute path for the command to work!</p>
-
-<p><code class="highlighter-rouge">faToTwoBit input.fasta output.2bit</code></p>
-
-<h3 id="convert-gff">Convert GFF</h3>
-
-<p>Biodalliance supports bigwig and bigbed.</p>
-
-<p>https://www.biostars.org/p/4070/</p>
-
-<p>https://toolshed.g2.bx.psu.edu/repository/display_tool?repository_id=afcb6456d8e300ed&amp;tool_config=%2Fsrv%2Ftoolshed%2Fmain%2Fvar%2Fdata%2Frepos%2F000%2Frepo_21%2Fgff_to_bed.xml&amp;changeset_revision=5c6f33e20fcc</p>
-
-<p>So we wrap GFF to BED.
-Then BED to WIG.</p>
-
-<blockquote>
-  <p>Step 1. Create a wig format file following the directions here. When converting a wig file to a bigWig file, you are limited to one track of data in your input file; therefore, you must create a separate wig file for each data track.
-Step 2. Remove any existing “track” or “browser” lines from your wig file so that it contains only data.
-Step 3. Download the wigToBigWig program from the binary utilities directory.
-Step 4. Use the fetchChromSizes script from the same directory to create the chrom.sizes file for the UCSC database with which you are working (e.g., hg19).
-Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file:</p>
-</blockquote>
-
-                    <a href="/2017/10/06/TwoBit/">
                         Read the full post...
                     </a>
                 </div>
@@ -375,35 +343,6 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/08/02/programmingForBio/">
-                            Programming for Biologists
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-08-02T14:53:55-04:00" class="post-date is-small">
-   02 Aug 2017</time>
-   </span>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>Ten years ago, I was a biology PhD student beginning to study bioinformatics.  Today, I’m a mobile and web developer.  I want to share a curriculum of computer science concepts and tools that I think can benefit <em>any</em> biologist doing bioinformatics.</p>
-
-<h1 id="unix">UNIX</h1>
-<p>There are</p>
-
-                    <a href="/2017/08/02/programmingForBio/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
                         <a href="/2017/08/02/grep_basics/">
                             Grep_basics
                         </a>
@@ -430,8 +369,122 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/07/20/unsupportedGems/">
-                            Unsupportedgems
+                        <a href="/2017/07/20/iadhore/">
+                            creating synteny mappings
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-07-20T16:23:49-04:00" class="post-date is-small">
+   20 Jul 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <h1 id="goal">Goal</h1>
+
+<p>The primary goal here is to create a track of synteny mappings for all genomes for jbrowse.  Any number of synteny calculations could work.</p>
+
+<ul>
+  <li>Mummer</li>
+  <li>i-adhore 3.0</li>
+</ul>
+
+<h1 id="mummer">Mummer</h1>
+<p>This module will allow converting nucmer coordinates to a gff file.  https://metacpan.org/pod/distribution/Bio-Gonzales/bin/coords2gff.pl</p>
+
+<h1 id="i-adhore">i-adhore</h1>
+
+<p>The software can be downloaded <a href="http://bioinformatics.psb.ugent.be/webtools/i-adhore/licensing/">here</a>.</p>
+
+<p>Reference</p>
+
+<blockquote>
+  <p>Proost, S. et al. i-ADHoRe 3.0—fast and sensitive detection of genomic homology in extremely large data sets. Nucl. Acids Res. 40, e11–e11 (2012).</p>
+</blockquote>
+
+<h2 id="installation-and-set-up">Installation and set up</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>tar -xzvf i-adhore-xxx.tar.gz
+cd i-adhore-xxx
+
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=usr/local/bin/i-adhore
+make
+sudo make install
+</code></pre>
+</div>
+
+<p>Unfortunately make fails</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+[  9%] Building CXX object src/alignment/CMakeFiles/alignment.dir/GGAligner.cpp.o
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:5:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../GeneList.h:7:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../headers.h:30:
+/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:
+      use of undeclared identifier '__stl_hash_string'
+        { return __stl_hash_string(s.c_str()); }
+                         ^
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:6:
+
+</code></pre>
+</div>
+<p>Possible solution: https://github.com/Kentzo/armv6-rpi-linux-gnueabihf/issues/5</p>
+
+<p><code class="highlighter-rouge">brew install gcc</code> will be very slow, so instead we try <code class="highlighter-rouge">brew install gcc48</code>.</p>
+
+<p>if this doenst ork
+need to tell cmake to use a specific compiler</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export CC=/usr/local/bin/gcc
+export CXX=/usr/local/bin/g++ ##  4.8 wahtever , find path
+export CXX=/usr/local/Cellar/gcc@4.8/4.8.5
+cmake /path/to/your/project
+make
+</code></pre>
+</div>
+<p><code class="highlighter-rouge">/usr/local/Cellar/gcc@4.8/4.8.5</code></p>
+
+<h2 id="other-solution-from-neil">Other solution from Neil</h2>
+
+<p><code class="highlighter-rouge">/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:</code></p>
+
+<p>In the above file,
+change <code class="highlighter-rouge">__stl_hash_string(s.c_str())</code> to <code class="highlighter-rouge">std::hash(s.c_str())</code></p>
+
+<p>We create a script that runs i-adhore with a new tmp directory: <code class="highlighter-rouge">TMPDIR=/tmp i-adhore</code>.  The script also must pass arguments to the command.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#! /bin/sh</span>
+<span class="nv">TMPDIR</span><span class="o">=</span>/tmp
+<span class="nb">exec</span> /usr/local/bin/i-adhore_3.0/bin/i-adhore  <span class="nv">$1</span>
+</code></pre>
+</div>
+
+<h2 id="sibelia">Sibelia</h2>
+
+<p><a href="http://bioinf.spbau.ru/sibelia">Project page</a></p>
+
+
+                    <a href="/2017/07/20/iadhore/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/07/20/QIIME/">
+                            Qiime
                         </a>
                     </p>
                 </div>
@@ -445,24 +498,18 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
 
                 <div class="card-content">
                     
-<p>I redesigned the landing page of my site, and wanted to host my blog posts at <code class="highlighter-rouge">/blog/index.html</code> instead of the main <code class="highlighter-rouge">index.html</code>.  In theory this should be possible, <a href="https://github.com/jekyll/jekyll-paginate/issues/37">but there are issues</a>.   Unfortunately, I could not get the default paginator to work properly at any location other than <code class="highlighter-rouge">/index.html</code>.</p>
+<h1 id="scripts-covered">Scripts covered</h1>
+<ul>
+  <li>multiple_join_paired_ends.py</li>
+  <li>Split-libraries.py</li>
+  <li>Pick_de_novo_otus.py</li>
+  <li>biom summarize table</li>
+  <li>summarize taxa throguh plots</li>
+  <li>multiple rarefactions</li>
+</ul>
 
-<p>I thought a simple solution would be to use a different gem: <a href="https://github.com/octopress/paginate"><em>octopress-paginate</em></a>.  This worked like a charm and easily supported paginating at <code class="highlighter-rouge">/blog/</code>… but, the site no longer built on Github pages!  This is because Github pages <strong>only supports default jekyll gems</strong>.  I looked into more advanced solutions involving <a href="https://travis-ci.org/">Travis CI</a> (a fantastic tool which I plan on incorporating into my other projects) but for this blog, it was just too much.
- The alternative solution was to simply build the site myself locally and push that.  To do this, all I needed to do was…</p>
 
-<p>## Change my repo name</p>
-
-<p>The <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/">GitHub Pages documentation</a> states that any site hosted at <code class="highlighter-rouge">&lt;username&gt;.github.io</code> <em>must</em> be hosted off the <code class="highlighter-rouge">master</code> branch.  Host the page elsewhere to change the source.</p>
-
-<p>## Change my GitHub Pages source from <code class="highlighter-rouge">master</code> to <code class="highlighter-rouge">/docs</code></p>
-
-<p>Hosting off of a folder in our directory instead of the <code class="highlighter-rouge">master</code> branch lets me keep a build of my site in the same repo hosting the code.</p>
-
-<p>## Set Jekyll to build to <code class="highlighter-rouge">/docs</code></p>
-
-<p>In <code class="highlighter-rouge">_config.yml</code> we can change the default build location from <code class="highlighter-rouge">_site</code> to <code class="highlighter-rouge">docs</code>.  Now when we build our final site and push to <code class="highlighter-rouge">master</code>, GitHub Pages will use that build.</p>
-
-                    <a href="/2017/07/20/unsupportedGems/">
+                    <a href="/2017/07/20/QIIME/">
                         Read the full post...
                     </a>
                 </div>
@@ -498,7 +545,7 @@ Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2018-01-02T07:51:30-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2018-01-07T14:05:49-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

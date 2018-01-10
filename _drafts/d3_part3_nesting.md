@@ -11,6 +11,12 @@ tags:
  - data-science
 ---
 
+In the previous post, we learned about using scales to format our x and y axes, s well as our bar coloring.
+
+In this post I want to address how to **nest** data with D3.  We will use the nest method to automatically sort our samples by property, and we'll use multiple x-scales to group them along the x-axis.
+
+<!--more-->
+
 ><div id="plot_previous"></div>
 >Our graph at the end of the previous section.
 
@@ -112,7 +118,7 @@ Something you may find confusing is how to access our nested data.  We input our
     .append('g')
     .attr('transform', function (d) {
       return 'translate(' + xScale(d.key) + ',0)'
-    })    
+    })  
 ```
 Where before the `d` object was the individual entry, now it's actually an object with a `key` and `values` index, with the entries we want to loop through under `values`.  How do we access them?  By performing **another** `selectAll().data().enter().append()` chain!  Rather than passing in a data object into the `.data()` call, we pass in a function that retrieves the entry!
 
@@ -147,3 +153,9 @@ var bars = barGroups.selectAll('.bar')
 ```
 
 ><div id="plot_three"></div>
+> Our plot now separates samples into groups.
+
+
+An interesting challenge is dealing with uneven groups.  With this approach, every group has the same bandwidth, and the spacing within groups are calculated for each one individually.  This can be result in tightly packed groups and dispersed groups in the same plot.  We can adjust the padding for each group based on the number of samples, but we're still left with unused space in our plot for smaller groups.  
+
+

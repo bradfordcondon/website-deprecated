@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-01-12T08:53:39-05:00</updated>
+ <updated>2018-01-12T09:02:32-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
@@ -54,9 +54,9 @@
 
 &lt;p&gt;What does this actually mean?&lt;/p&gt;
 
-&lt;p&gt;Imagine I am entering Biological samples into my Chado database, and I want to assign a record property for the tissue the sample was collected from.  I would use the CVTerm tissue, and and a value that says what tissue: leaf, bud, flower, stem, root.  Only tissue gets a CVterm: the others are free text!  Now I can easily leverage, say, the &lt;a href=&quot;http://www.obofoundry.org/ontology/to.html&quot;&gt;Plant Trait Ontology&lt;/a&gt;, so I can use a Cvterm to set not just tissue by the tissue value!&lt;/p&gt;
+&lt;p&gt;Imagine I am entering Biological samples into my Chado database, and I want to assign a record property for the tissue the sample was collected from.  I would use the CVterm tissue, and a value that says what tissue: leaf, bud, flower, stem, root.  Only tissue gets a CVterm: the others are free text!  Now I can easily leverage, say, the &lt;a href=&quot;http://www.obofoundry.org/ontology/to.html&quot;&gt;Plant Trait Ontology&lt;/a&gt;, so I can use a Cvterm to set not just tissue by the tissue value!&lt;/p&gt;
 
-&lt;p&gt;The Tripal Analysis Expression module currently allows you to assign biosample property types to CVTerms.  With this change, I look forward to implementing property &lt;strong&gt;value&lt;/strong&gt; CVTerm assignment as well.&lt;/p&gt;
+&lt;p&gt;The Tripal Analysis Expression module currently allows you to assign biosample property types to CVterms.  With this change, I look forward to implementing property &lt;strong&gt;value&lt;/strong&gt; CVterm assignment as well.&lt;/p&gt;
 
 &lt;p&gt;As we keep on working on v1.4, hopefully I can write more posts on Chado updates and what Tripal developers need to know.&lt;/p&gt;
 </content>

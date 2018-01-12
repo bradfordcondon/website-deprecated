@@ -87,38 +87,42 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/07/20/treesnapReleasePress/">
-                            TreeSnap release press
+                        <a href="/2017/04/19/fixHeaderTabs/">
+                            fixing tabs
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-07-20T00:00:00-04:00" class="post-date is-small">
-   20 Jul 2017</time>
+   <time datetime="2017-04-19T00:00:00-04:00" class="post-date is-small">
+   19 Apr 2017</time>
    </span>
                     
-                    <a href="/tag/treesnap/">
+                    <a href="/tag/jekyll/">
         <span class="tag is-primary">
-              treesnap
+              jekyll
         </span>
                     </a>
                     
-                    <a href="/tag/citizen-science/">
+                    <a href="/tag/web-dev/">
         <span class="tag is-primary">
-              citizen-science
+              web-dev
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p><img src="/assets/img/TreeSnap/TreesnapFullLogo_x3.png" alt="TreeSnap" /></p>
+                    <p>As you can see below, the navigation tabs I’m using at the top of my page didn’t properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.</p>
 
-<p>Early this year, I joined Meg Staton’s group at the University of Tennessee as a mobile and web developer.  My major project since then has been designing, coding, and releasing the mobile citizen science app TreeSnap.  I think it’s a fantastic project, and I’d love it if you <a href="https://treesnap.org">visited the app’s website</a> to learn more.</p>
+<blockquote>
+  <p><img src="/assets/img/tabsFix2017/tabIssue.png" alt="tabs not working!" /></p>
+</blockquote>
+
+<p>So how do we fix it?</p>
 
 
-                    <a href="/2017/07/20/treesnapReleasePress/">
+                    <a href="/2017/04/19/fixHeaderTabs/">
                         Read the full post...
                     </a>
                 </div>
@@ -128,15 +132,266 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/07/15/discovarOutput/">
-                            Understanding Discovar output
+                        <a href="/2017/04/17/floraCliffUpdate/">
+                            Floracliff mushroom workshop
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-07-15T00:00:00-04:00" class="post-date is-small">
-   15 Jul 2017</time>
+   <time datetime="2017-04-17T00:00:00-04:00" class="post-date is-small">
+   17 Apr 2017</time>
+   </span>
+                    
+                    <a href="/tag/mycology/">
+        <span class="tag is-primary">
+              mycology
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p><a href="http://www.bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/">I previously announced a Workshop we hosted at Floracliff on mushroom identification In October 2016</a>.  It’s been a while but I wanted to share a little bit about the experience and post materials.</p>
+
+
+                    <a href="/2017/04/17/floraCliffUpdate/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/04/11/testKnitr/">
+                            Knitting to Jekyll
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-04-11T00:00:00-04:00" class="post-date is-small">
+   11 Apr 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <h2 id="knitting-r-markdown-to-jekyll">Knitting R Markdown to Jekyll</h2>
+
+<p>This is a test of the Knittr package and Jekyll.</p>
+
+<p>It looks like the original package for using knitr with Jekyll <a href="https://github.com/yihui/knitr-jekyll">here</a> has fallen out of favor for Hugo, a GO-based static web-site generator.  Pretty cool, but let’s see how easy it is to knit into Jekyll without using any packages.</p>
+
+<h2 id="load-in-some-libraries-and-data">Load in some libraries and data</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>require(ggplot2)
+require(knitr)
+attach(mtcars)
+</code></pre>
+</div>
+
+
+                    <a href="/2017/04/11/testKnitr/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/04/09/introToJekyll/">
+                            Moving to Jekyll
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-04-09T00:00:00-04:00" class="post-date is-small">
+   09 Apr 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <h2 id="switching-to-jekyll">Switching to Jekyll</h2>
+
+<p>This weekend I switched my site from a Wordpress site hosted by bluehost to a Jekyll site hosted on githubpages.  I’m excited about this for plenty of reasons.</p>
+
+<ul>
+  <li>Free hostings on GithubPages</li>
+  <li>Manage all aspects of the site, including layout and posts, on github</li>
+  <li>Write in Markdown</li>
+  <li>Use R plugins to script in R Markdown (I’ll share my experience with this later!)</li>
+  <li>An excuse to practice CSS and Ruby</li>
+</ul>
+
+<p>It’s pretty win-win.</p>
+
+<p>If you’re looking to try this out for yourself, you’ll want Ruby/RVM, Jekyll, and github set up.</p>
+
+
+                    <a href="/2017/04/09/introToJekyll/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/04/07/migrating-to-github/">
+                            Moving to Github Pages
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-04-07T00:00:00-04:00" class="post-date is-small">
+   07 Apr 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>I’m moving to a Markdown-based blog using Jekyll and github pages hosting!</p>
+
+
+                    <a href="/2017/04/07/migrating-to-github/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/">
+                            Expanding Your Horizons comes to Kentucky
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-01-10T14:00:07-05:00" class="post-date is-small">
+   10 Jan 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>I’m excited to announce that, a collaboration between Dr. Ellen Crocker, Dr. Susan Odom and myself has secured an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research) grant to bring a science conference for young girls to University of Kentucky.  The conference, an extension of the <a href="http://www.eyhn.org/">Expanding Your Horizons (EYH) network</a>, is a great opportunity for young girls, as well as undergraduate and graduate students.  The conference will be held April 29, 2017.</p>
+
+
+                    <a href="/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/">
+                            Upcoming workshop: Mushrooms 101 at Floracliff Nature Sanctuary
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2016-08-25T14:21:02-04:00" class="post-date is-small">
+   25 Aug 2016</time>
+   </span>
+                    
+                    <a href="/tag/fungi/">
+        <span class="tag is-primary">
+              fungi
+        </span>
+                    </a>
+                    
+                    <a href="/tag/mushrooms/">
+        <span class="tag is-primary">
+              mushrooms
+        </span>
+                    </a>
+                    
+                    <a href="/tag/science/">
+        <span class="tag is-primary">
+              science
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>I’m excited to announce that my wife <a href="https://evcrockerblog.wordpress.com/">Dr. Ellen Crocker</a> and I will be teaching a workshop at the <a href="http://www.floracliff.org/fieldstudies.html">Floracliff Nature Sanctuary</a> on Friday and Saturday, October 14th-15th 2016.  I’m particularly proud to partner with Floracliff: it’s a beautiful nature preserve with very cool educational opportunities available to the public.  Ellen has taken Rob Paratley’s fern workshop and she said it was fantastic.</p>
+
+
+                    <a href="/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/science/2016/08/09/577/">
+                            Society of Postdoctoral Scholars technical officer
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2016-08-09T11:45:48-04:00" class="post-date is-small">
+   09 Aug 2016</time>
+   </span>
+                    
+                    <a href="/tag/professional societies/">
+        <span class="tag is-primary">
+              professional societies
+        </span>
+                    </a>
+                    
+                    <a href="/tag/web publishing/">
+        <span class="tag is-primary">
+              web publishing
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p><img class="size-full wp-image-578" src="/wp-content/uploads/2016/08/Screen-Shot-2016-08-09-at-11.44.33-AM.png" sizes="(max-width: 562px) 100vw, 562px" data-recalc-dims="1" /></p>
+
+
+                    <a href="/science/2016/08/09/577/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/science/tools/2016/07/11/where-did-macqiime-go/">
+                            Where did MaCQIIME go?
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2016-07-11T14:29:34-04:00" class="post-date is-small">
+   11 Jul 2016</time>
    </span>
                     
                     <a href="/tag/bioinformatics/">
@@ -145,28 +400,33 @@
         </span>
                     </a>
                     
-                    <a href="/tag/next-generation-sequencing/">
+                    <a href="/tag/ecology/">
         <span class="tag is-primary">
-              next-generation-sequencing
+              ecology
+        </span>
+                    </a>
+                    
+                    <a href="/tag/metagenomics/">
+        <span class="tag is-primary">
+              metagenomics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/qiime/">
+        <span class="tag is-primary">
+              qiime
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
-Generation Sequencing Workshop at the University of Kentucky.</p>
+                    <p>For those of you running MacQIIME on OSX El Capitan or higher, you may (like me) find that the MacQIIME executable is no longer in your path.</p>
 
-<h2 id="discovar">Discovar</h2>
-
-<p>DISCOVAR is a new genome assembler and variant caller developed by the broad institute. As of this writing,it takes as input Illumina reads of length 250 or longer produced on MiSeq or HiSeq 2500.  To learn more, read the entire DISCOVAR manual <a href="https://docs.google.com/document/d/1U_o-Z0dJ0QKiJn86AV2o_YHiFzUtW9c57eh3tYjkINc/edit">here</a>.</p>
-
-<h3 id="the-assembly-output">The assembly output</h3>
-
-<p>The final output assembly will take the form of <code class="highlighter-rouge">OUT_HEAD.final.*</code>, where <code class="highlighter-rouge">OUT_HEAD</code> is set by the user.  Below let’s assume we’ve set <code class="highlighter-rouge">OUT_HEAD</code> to out.</p>
+<p>I was a little confused:I couldn’t find it on my system, although I still had my MacQIIME installation in the default location.  What gives?</p>
 
 
-                    <a href="/2017/07/15/discovarOutput/">
+                    <a href="/science/tools/2016/07/11/where-did-macqiime-go/">
                         Read the full post...
                     </a>
                 </div>
@@ -176,276 +436,60 @@ Generation Sequencing Workshop at the University of Kentucky.</p>
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/07/13/bowtie2/">
-                            Examining bowtie output
+                        <a href="/science/tools/2016/05/23/using-the-command-line-and-perl-to-quickly-trim-files/">
+                            Using the command line and perl to quickly trim files
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-07-13T00:00:00-04:00" class="post-date is-small">
-   13 Jul 2017</time>
+   <time datetime="2016-05-23T14:58:02-04:00" class="post-date is-small">
+   23 May 2016</time>
    </span>
                     
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
-
-
-                    <a href="/2017/07/13/bowtie2/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/11/newblr/">
-                            Guide to newblr output
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-11T00:00:00-04:00" class="post-date is-small">
-   11 Jul 2017</time>
-   </span>
-                    
-                    <a href="/tag/bioinformatics/">
+                    <a href="/tag/fasta/">
         <span class="tag is-primary">
-              bioinformatics
+              fasta
         </span>
                     </a>
                     
-                    <a href="/tag/next-generation-sequencing/">
+                    <a href="/tag/genomics/">
         <span class="tag is-primary">
-              next-generation-sequencing
+              genomics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/perl/">
+        <span class="tag is-primary">
+              perl
+        </span>
+                    </a>
+                    
+                    <a href="/tag/productivity/">
+        <span class="tag is-primary">
+              productivity
+        </span>
+                    </a>
+                    
+                    <a href="/tag/science/">
+        <span class="tag is-primary">
+              science
+        </span>
+                    </a>
+                    
+                    <a href="/tag/scripts/">
+        <span class="tag is-primary">
+              scripts
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
-Generation Sequencing Workshop at the University of Kentucky.</p>
+                    <p>Sometimes, you have a task where the goal is to remove a certain phrase, set of characters, or trailing characters within a file. This happens all the time working with FASTA files. For whatever reason, the header description might be longer than you like. Some phylogenetics programs, for example, have a character limit on headers. Failure to fix this on your own can result in clipped headers, which in turn can result in non-unique headers and failed scripts.</p>
 
 
-                    <a href="/2017/07/11/newblr/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/09/qual_format_phred/">
-                            qual format
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-09T00:00:00-04:00" class="post-date is-small">
-   09 Jul 2017</time>
-   </span>
-                    
-                    <a href="/tag/bioinformatics/">
-        <span class="tag is-primary">
-              bioinformatics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/next-generation-sequencing/">
-        <span class="tag is-primary">
-              next-generation-sequencing
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 7 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
-
-
-                    <a href="/2017/07/09/qual_format_phred/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/02/ZFF/">
-                            ZFF annotations for SNAP
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-02T00:00:00-04:00" class="post-date is-small">
-   02 Jul 2017</time>
-   </span>
-                    
-                    <a href="/tag/bioinformatics/">
-        <span class="tag is-primary">
-              bioinformatics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/next-generation-sequencing/">
-        <span class="tag is-primary">
-              next-generation-sequencing
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 6 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
-
-
-                    <a href="/2017/07/02/ZFF/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/06/21/AppGraphics/">
-                            Appgraphics
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-06-21T14:03:21-04:00" class="post-date is-small">
-   21 Jun 2017</time>
-   </span>
-                    
-                </div>
-
-                <div class="card-content">
-                    <h1 id="icons">Icons</h1>
-
-
-                    <a href="/2017/06/21/AppGraphics/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/06/14/BLAST_format_explained/">
-                            BLAST output
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-06-14T00:00:00-04:00" class="post-date is-small">
-   14 Jun 2017</time>
-   </span>
-                    
-                    <a href="/tag/bioinformatics/">
-        <span class="tag is-primary">
-              bioinformatics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/next-generation-sequencing/">
-        <span class="tag is-primary">
-              next-generation-sequencing
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 5 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
-
-
-                    <a href="/2017/06/14/BLAST_format_explained/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/06/13/velvet_out/">
-                            Velvet assembly output files
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-06-13T00:00:00-04:00" class="post-date is-small">
-   13 Jun 2017</time>
-   </span>
-                    
-                    <a href="/tag/bioinformatics/">
-        <span class="tag is-primary">
-              bioinformatics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/next-generation-sequencing/">
-        <span class="tag is-primary">
-              next-generation-sequencing
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 4 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next 
-Generation Sequencing Workshop at the University of Kentucky.</p>
-
-
-                    <a href="/2017/06/13/velvet_out/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/06/11/changing_your_react_native_app_name/">
-                            Changing_your_react_native_app_name
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-06-11T11:52:10-04:00" class="post-date is-small">
-   11 Jun 2017</time>
-   </span>
-                    
-                </div>
-
-                <div class="card-content">
-                    
-<h1 id="renaming-my-app-in-react-native">Renaming my app in react-native</h1>
-
-
-                    <a href="/2017/06/11/changing_your_react_native_app_name/">
+                    <a href="/science/tools/2016/05/23/using-the-command-line-and-perl-to-quickly-trim-files/">
                         Read the full post...
                     </a>
                 </div>
@@ -481,7 +525,7 @@ Generation Sequencing Workshop at the University of Kentucky.</p>
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2018-01-07T14:05:49-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2018-01-12T08:53:39-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

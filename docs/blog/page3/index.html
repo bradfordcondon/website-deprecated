@@ -87,40 +87,24 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/04/23/exploringPATH/">
-                            PATH, a guide to finding one's way
+                        <a href="/2017/08/13/biologicalGit/">
+                            Using GitHub for bioinformatics
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-04-23T00:00:00-04:00" class="post-date is-small">
-   23 Apr 2017</time>
+   <time datetime="2017-08-13T00:00:00-04:00" class="post-date is-small">
+   13 Aug 2017</time>
    </span>
-                    
-                    <a href="/tag/bioinformatics/">
-        <span class="tag is-primary">
-              bioinformatics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/ukblast/">
-        <span class="tag is-primary">
-              ukblast
-        </span>
-                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <h4 id="uk-blast-workshop-2016">UK-BLAST workshop 2016</h4>
-
-<p>These exercises were developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.</p>
-
-<p>UK-BLAST is a bioinformatics working group for undergraduate researchers.  In small labs, students often tackle the bioinformatician role in with little to no technical guidance.  The group may not have anyone with a computer science background, or the task may be beyond the skills of current personnel.  In these cases, a working group headed by a technical mentor (myself) allows students to bypass some of the pitfalls and headaches associated with learning computer science all alone.</p>
+                    <p>If there’s one thing I wish I’d done earlier in my career, it’s this: automate <em>all</em> of my bioinformatics workflows and keep it under version control.</p>
 
 
-                    <a href="/2017/04/23/exploringPATH/">
+                    <a href="/2017/08/13/biologicalGit/">
                         Read the full post...
                     </a>
                 </div>
@@ -130,114 +114,137 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/04/19/fixHeaderTabs/">
-                            fixing tabs
+                        <a href="/2017/08/02/grep_basics/">
+                            Grep_basics
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-04-19T00:00:00-04:00" class="post-date is-small">
-   19 Apr 2017</time>
+   <time datetime="2017-08-02T14:50:08-04:00" class="post-date is-small">
+   02 Aug 2017</time>
    </span>
-                    
-                    <a href="/tag/jekyll/">
-        <span class="tag is-primary">
-              jekyll
-        </span>
-                    </a>
-                    
-                    <a href="/tag/web-dev/">
-        <span class="tag is-primary">
-              web-dev
-        </span>
-                    </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>As you can see below, the navigation tabs I’m using at the top of my page didn’t properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.</p>
+                    
+
+                    <a href="/2017/08/02/grep_basics/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/07/20/iadhore/">
+                            creating synteny mappings
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-07-20T16:23:49-04:00" class="post-date is-small">
+   20 Jul 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <h1 id="goal">Goal</h1>
+
+<p>The primary goal here is to create a track of synteny mappings for all genomes for jbrowse.  Any number of synteny calculations could work.</p>
+
+<ul>
+  <li>Mummer</li>
+  <li>i-adhore 3.0</li>
+</ul>
+
+<h1 id="mummer">Mummer</h1>
+<p>This module will allow converting nucmer coordinates to a gff file.  https://metacpan.org/pod/distribution/Bio-Gonzales/bin/coords2gff.pl</p>
+
+<h1 id="i-adhore">i-adhore</h1>
+
+<p>The software can be downloaded <a href="http://bioinformatics.psb.ugent.be/webtools/i-adhore/licensing/">here</a>.</p>
+
+<p>Reference</p>
 
 <blockquote>
-  <p><img src="/assets/img/tabsFix2017/tabIssue.png" alt="tabs not working!" /></p>
+  <p>Proost, S. et al. i-ADHoRe 3.0—fast and sensitive detection of genomic homology in extremely large data sets. Nucl. Acids Res. 40, e11–e11 (2012).</p>
 </blockquote>
 
-<p>So how do we fix it?</p>
+<h2 id="installation-and-set-up">Installation and set up</h2>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>tar -xzvf i-adhore-xxx.tar.gz
+cd i-adhore-xxx
 
-                    <a href="/2017/04/19/fixHeaderTabs/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/04/17/floraCliffUpdate/">
-                            Floracliff mushroom workshop
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-04-17T00:00:00-04:00" class="post-date is-small">
-   17 Apr 2017</time>
-   </span>
-                    
-                    <a href="/tag/mycology/">
-        <span class="tag is-primary">
-              mycology
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p><a href="http://www.bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/">I previously announced a Workshop we hosted at Floracliff on mushroom identification In October 2016</a>.  It’s been a while but I wanted to share a little bit about the experience and post materials.</p>
-
-
-                    <a href="/2017/04/17/floraCliffUpdate/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/04/11/testKnitr/">
-                            Knitting to Jekyll
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-04-11T00:00:00-04:00" class="post-date is-small">
-   11 Apr 2017</time>
-   </span>
-                    
-                </div>
-
-                <div class="card-content">
-                    <h2 id="knitting-r-markdown-to-jekyll">Knitting R Markdown to Jekyll</h2>
-
-<p>This is a test of the Knittr package and Jekyll.</p>
-
-<p>It looks like the original package for using knitr with Jekyll <a href="https://github.com/yihui/knitr-jekyll">here</a> has fallen out of favor for Hugo, a GO-based static web-site generator.  Pretty cool, but let’s see how easy it is to knit into Jekyll without using any packages.</p>
-
-<h2 id="load-in-some-libraries-and-data">Load in some libraries and data</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>require(ggplot2)
-require(knitr)
-attach(mtcars)
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=usr/local/bin/i-adhore
+make
+sudo make install
 </code></pre>
 </div>
 
+<p>Unfortunately make fails</p>
 
-                    <a href="/2017/04/11/testKnitr/">
+<div class="highlighter-rouge"><pre class="highlight"><code>
+[  9%] Building CXX object src/alignment/CMakeFiles/alignment.dir/GGAligner.cpp.o
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:5:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../GeneList.h:7:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../headers.h:30:
+/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:
+      use of undeclared identifier '__stl_hash_string'
+        { return __stl_hash_string(s.c_str()); }
+                         ^
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.cpp:1:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/GGAligner.h:6:
+In file included from /Users/chet/Downloads/i-adhore-3.0.01/src/alignment/Aligner.h:6:
+
+</code></pre>
+</div>
+<p>Possible solution: https://github.com/Kentzo/armv6-rpi-linux-gnueabihf/issues/5</p>
+
+<p><code class="highlighter-rouge">brew install gcc</code> will be very slow, so instead we try <code class="highlighter-rouge">brew install gcc48</code>.</p>
+
+<p>if this doenst ork
+need to tell cmake to use a specific compiler</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export CC=/usr/local/bin/gcc
+export CXX=/usr/local/bin/g++ ##  4.8 wahtever , find path
+export CXX=/usr/local/Cellar/gcc@4.8/4.8.5
+cmake /path/to/your/project
+make
+</code></pre>
+</div>
+<p><code class="highlighter-rouge">/usr/local/Cellar/gcc@4.8/4.8.5</code></p>
+
+<h2 id="other-solution-from-neil">Other solution from Neil</h2>
+
+<p><code class="highlighter-rouge">/Users/chet/Downloads/i-adhore-3.0.01/src/alignment/../datastructures/stringhash.h:15:11: error:</code></p>
+
+<p>In the above file,
+change <code class="highlighter-rouge">__stl_hash_string(s.c_str())</code> to <code class="highlighter-rouge">std::hash(s.c_str())</code></p>
+
+<p>We create a script that runs i-adhore with a new tmp directory: <code class="highlighter-rouge">TMPDIR=/tmp i-adhore</code>.  The script also must pass arguments to the command.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#! /bin/sh</span>
+<span class="nv">TMPDIR</span><span class="o">=</span>/tmp
+<span class="nb">exec</span> /usr/local/bin/i-adhore_3.0/bin/i-adhore  <span class="nv">$1</span>
+</code></pre>
+</div>
+
+<h2 id="sibelia">Sibelia</h2>
+
+<p><a href="http://bioinf.spbau.ru/sibelia">Project page</a></p>
+
+
+                    <a href="/2017/07/20/iadhore/">
                         Read the full post...
                     </a>
                 </div>
@@ -247,38 +254,33 @@ attach(mtcars)
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/04/09/introToJekyll/">
-                            Moving to Jekyll
+                        <a href="/2017/07/20/QIIME/">
+                            Qiime
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-04-09T00:00:00-04:00" class="post-date is-small">
-   09 Apr 2017</time>
+   <time datetime="2017-07-20T16:23:49-04:00" class="post-date is-small">
+   20 Jul 2017</time>
    </span>
                     
                 </div>
 
                 <div class="card-content">
-                    <h2 id="switching-to-jekyll">Switching to Jekyll</h2>
-
-<p>This weekend I switched my site from a Wordpress site hosted by bluehost to a Jekyll site hosted on githubpages.  I’m excited about this for plenty of reasons.</p>
-
+                    
+<h1 id="scripts-covered">Scripts covered</h1>
 <ul>
-  <li>Free hostings on GithubPages</li>
-  <li>Manage all aspects of the site, including layout and posts, on github</li>
-  <li>Write in Markdown</li>
-  <li>Use R plugins to script in R Markdown (I’ll share my experience with this later!)</li>
-  <li>An excuse to practice CSS and Ruby</li>
+  <li>multiple_join_paired_ends.py</li>
+  <li>Split-libraries.py</li>
+  <li>Pick_de_novo_otus.py</li>
+  <li>biom summarize table</li>
+  <li>summarize taxa throguh plots</li>
+  <li>multiple rarefactions</li>
 </ul>
 
-<p>It’s pretty win-win.</p>
 
-<p>If you’re looking to try this out for yourself, you’ll want Ruby/RVM, Jekyll, and github set up.</p>
-
-
-                    <a href="/2017/04/09/introToJekyll/">
+                    <a href="/2017/07/20/QIIME/">
                         Read the full post...
                     </a>
                 </div>
@@ -288,96 +290,38 @@ attach(mtcars)
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/2017/04/07/migrating-to-github/">
-                            Moving to Github Pages
+                        <a href="/2017/07/20/treesnapReleasePress/">
+                            TreeSnap release press
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2017-04-07T00:00:00-04:00" class="post-date is-small">
-   07 Apr 2017</time>
+   <time datetime="2017-07-20T00:00:00-04:00" class="post-date is-small">
+   20 Jul 2017</time>
    </span>
                     
-                </div>
-
-                <div class="card-content">
-                    <p>I’m moving to a Markdown-based blog using Jekyll and github pages hosting!</p>
-
-
-                    <a href="/2017/04/07/migrating-to-github/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/">
-                            Expanding Your Horizons comes to Kentucky
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-01-10T14:00:07-05:00" class="post-date is-small">
-   10 Jan 2017</time>
-   </span>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>I’m excited to announce that, a collaboration between Dr. Ellen Crocker, Dr. Susan Odom and myself has secured an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research) grant to bring a science conference for young girls to University of Kentucky.  The conference, an extension of the <a href="http://www.eyhn.org/">Expanding Your Horizons (EYH) network</a>, is a great opportunity for young girls, as well as undergraduate and graduate students.  The conference will be held April 29, 2017.</p>
-
-
-                    <a href="/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/">
-                            Upcoming workshop: Mushrooms 101 at Floracliff Nature Sanctuary
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2016-08-25T14:21:02-04:00" class="post-date is-small">
-   25 Aug 2016</time>
-   </span>
-                    
-                    <a href="/tag/fungi/">
+                    <a href="/tag/treesnap/">
         <span class="tag is-primary">
-              fungi
+              treesnap
         </span>
                     </a>
                     
-                    <a href="/tag/mushrooms/">
+                    <a href="/tag/citizen-science/">
         <span class="tag is-primary">
-              mushrooms
-        </span>
-                    </a>
-                    
-                    <a href="/tag/science/">
-        <span class="tag is-primary">
-              science
+              citizen-science
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>I’m excited to announce that my wife <a href="https://evcrockerblog.wordpress.com/">Dr. Ellen Crocker</a> and I will be teaching a workshop at the <a href="http://www.floracliff.org/fieldstudies.html">Floracliff Nature Sanctuary</a> on Friday and Saturday, October 14th-15th 2016.  I’m particularly proud to partner with Floracliff: it’s a beautiful nature preserve with very cool educational opportunities available to the public.  Ellen has taken Rob Paratley’s fern workshop and she said it was fantastic.</p>
+                    <p><img src="/assets/img/TreeSnap/TreesnapFullLogo_x3.png" alt="TreeSnap" /></p>
+
+<p>Early this year, I joined Meg Staton’s group at the University of Tennessee as a mobile and web developer.  My major project since then has been designing, coding, and releasing the mobile citizen science app TreeSnap.  I think it’s a fantastic project, and I’d love it if you <a href="https://treesnap.org">visited the app’s website</a> to learn more.</p>
 
 
-                    <a href="/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/">
+                    <a href="/2017/07/20/treesnapReleasePress/">
                         Read the full post...
                     </a>
                 </div>
@@ -387,54 +331,15 @@ attach(mtcars)
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
-                        <a href="/science/2016/08/09/577/">
-                            Society of Postdoctoral Scholars technical officer
+                        <a href="/2017/07/15/discovarOutput/">
+                            Understanding Discovar output
                         </a>
                     </p>
                 </div>
                 <div class="media-content" style="padding: .5rem">
         <span class="tag">
-   <time datetime="2016-08-09T11:45:48-04:00" class="post-date is-small">
-   09 Aug 2016</time>
-   </span>
-                    
-                    <a href="/tag/professional societies/">
-        <span class="tag is-primary">
-              professional societies
-        </span>
-                    </a>
-                    
-                    <a href="/tag/web publishing/">
-        <span class="tag is-primary">
-              web publishing
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p><img class="size-full wp-image-578" src="/wp-content/uploads/2016/08/Screen-Shot-2016-08-09-at-11.44.33-AM.png" sizes="(max-width: 562px) 100vw, 562px" data-recalc-dims="1" /></p>
-
-
-                    <a href="/science/2016/08/09/577/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/science/tools/2016/07/11/where-did-macqiime-go/">
-                            Where did MaCQIIME go?
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2016-07-11T14:29:34-04:00" class="post-date is-small">
-   11 Jul 2016</time>
+   <time datetime="2017-07-15T00:00:00-04:00" class="post-date is-small">
+   15 Jul 2017</time>
    </span>
                     
                     <a href="/tag/bioinformatics/">
@@ -443,33 +348,173 @@ attach(mtcars)
         </span>
                     </a>
                     
-                    <a href="/tag/ecology/">
+                    <a href="/tag/next-generation-sequencing/">
         <span class="tag is-primary">
-              ecology
-        </span>
-                    </a>
-                    
-                    <a href="/tag/metagenomics/">
-        <span class="tag is-primary">
-              metagenomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/qiime/">
-        <span class="tag is-primary">
-              qiime
+              next-generation-sequencing
         </span>
                     </a>
                     
                 </div>
 
                 <div class="card-content">
-                    <p>For those of you running MacQIIME on OSX El Capitan or higher, you may (like me) find that the MacQIIME executable is no longer in your path.</p>
+                    <p>This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
+Generation Sequencing Workshop at the University of Kentucky.</p>
 
-<p>I was a little confused:I couldn’t find it on my system, although I still had my MacQIIME installation in the default location.  What gives?</p>
+<h2 id="discovar">Discovar</h2>
+
+<p>DISCOVAR is a new genome assembler and variant caller developed by the broad institute. As of this writing,it takes as input Illumina reads of length 250 or longer produced on MiSeq or HiSeq 2500.  To learn more, read the entire DISCOVAR manual <a href="https://docs.google.com/document/d/1U_o-Z0dJ0QKiJn86AV2o_YHiFzUtW9c57eh3tYjkINc/edit">here</a>.</p>
+
+<h3 id="the-assembly-output">The assembly output</h3>
+
+<p>The final output assembly will take the form of <code class="highlighter-rouge">OUT_HEAD.final.*</code>, where <code class="highlighter-rouge">OUT_HEAD</code> is set by the user.  Below let’s assume we’ve set <code class="highlighter-rouge">OUT_HEAD</code> to out.</p>
 
 
-                    <a href="/science/tools/2016/07/11/where-did-macqiime-go/">
+                    <a href="/2017/07/15/discovarOutput/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/07/13/bowtie2/">
+                            Examining bowtie output
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-07-13T00:00:00-04:00" class="post-date is-small">
+   13 Jul 2017</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
+
+
+                    <a href="/2017/07/13/bowtie2/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/07/11/newblr/">
+                            Guide to newblr output
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-07-11T00:00:00-04:00" class="post-date is-small">
+   11 Jul 2017</time>
+   </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/next-generation-sequencing/">
+        <span class="tag is-primary">
+              next-generation-sequencing
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
+Generation Sequencing Workshop at the University of Kentucky.</p>
+
+
+                    <a href="/2017/07/11/newblr/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/07/09/qual_format_phred/">
+                            qual format
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-07-09T00:00:00-04:00" class="post-date is-small">
+   09 Jul 2017</time>
+   </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/next-generation-sequencing/">
+        <span class="tag is-primary">
+              next-generation-sequencing
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>This post is part 7 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
+
+
+                    <a href="/2017/07/09/qual_format_phred/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2017/07/02/ZFF/">
+                            ZFF annotations for SNAP
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2017-07-02T00:00:00-04:00" class="post-date is-small">
+   02 Jul 2017</time>
+   </span>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/next-generation-sequencing/">
+        <span class="tag is-primary">
+              next-generation-sequencing
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>This post is part 6 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
+
+
+                    <a href="/2017/07/02/ZFF/">
                         Read the full post...
                     </a>
                 </div>
@@ -505,7 +550,7 @@ attach(mtcars)
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2018-01-17T21:56:26-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2018-01-17T22:12:36-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

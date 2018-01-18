@@ -12,13 +12,13 @@ tags:
  - mysql
 ---
 
-I want to thank everyone who came out to the Tripal workshop at the 2018 Plant & Animal Genome Conference for making it a success.  Special thanks to Meg Staton for organizing.  
+![Tripal Logo](/assets/img/TripalLogo_dark.png)
 
-PAG LOGO
+The 2018 Tripal hackathon took place at the Plant & Animal Genomes conference in San Diego January 11th & 12th. I'd post the itinerary and workshop sessions were, but I didn't take great notes.  Instead, I'll share about the sessions I took part in. Thursday we discussed Controlled Vocabularies in the morning, and Tripal Core issues (generally Tripal 3 issues) in the afternoon.  Friday was a general round-table and a Tripal 3 bundles and fields live demo.
 
-TRIPAL LOGO
+<!--more-->
 
-I'd post what all the workshop sessions were, but I didn't take great notes.  From what I participated in, Thursday we discussed Controlled Vocabularies in the morning, and Tripal Core issues (generally Tripal 3 issues) in the afternoon.
+I want to thank everyone who came out to the Tripal workshop at the 2018 Plant & Animal Genome Conference for making it a success.  Special thanks to Meg Staton and Ethy Cannon for organizing.  
 
 ## Day One
 ### Controlled Vocabularies

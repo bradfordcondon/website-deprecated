@@ -87,6 +87,77 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
+                        <a href="/2018/01/17/tripal_at_pag_2018/">
+                            Tripal at the 2018 GMOD hackathon
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2018-01-17T22:12:35-05:00" class="post-date is-small">
+   17 Jan 2018</time>
+   </span>
+                    
+                    <a href="/tag/drupal/">
+        <span class="tag is-primary">
+              drupal
+        </span>
+                    </a>
+                    
+                    <a href="/tag/tripal/">
+        <span class="tag is-primary">
+              tripal
+        </span>
+                    </a>
+                    
+                    <a href="/tag/chado/">
+        <span class="tag is-primary">
+              chado
+        </span>
+                    </a>
+                    
+                    <a href="/tag/web-dev/">
+        <span class="tag is-primary">
+              web-dev
+        </span>
+                    </a>
+                    
+                    <a href="/tag/bioinformatics/">
+        <span class="tag is-primary">
+              bioinformatics
+        </span>
+                    </a>
+                    
+                    <a href="/tag/databases/">
+        <span class="tag is-primary">
+              databases
+        </span>
+                    </a>
+                    
+                    <a href="/tag/mysql/">
+        <span class="tag is-primary">
+              mysql
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p><img src="/assets/img/TripalLogo_dark.png" alt="Tripal Logo" /></p>
+
+<p>The 2018 Tripal hackathon took place at the Plant &amp; Animal Genomes conference in San Diego January 11th &amp; 12th. I’d post the itinerary and workshop sessions were, but I didn’t take great notes.  Instead, I’ll share about the sessions I took part in. Thursday we discussed Controlled Vocabularies in the morning, and Tripal Core issues (generally Tripal 3 issues) in the afternoon.  Friday was a general round-table and a Tripal 3 bundles and fields live demo.</p>
+
+
+                    <a href="/2018/01/17/tripal_at_pag_2018/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
                         <a href="/2018/01/17/d3_part3_nesting/">
                             D3 part three: Nesting
                         </a>
@@ -139,6 +210,190 @@
 
 
                     <a href="/2018/01/17/d3_part3_nesting/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2018/01/13/tripal_country/">
+                            Travels in Tripal Country: A Developer's FieldGuide
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2018-01-13T21:15:36-05:00" class="post-date is-small">
+   13 Jan 2018</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <h1 id="introduction">Introduction</h1>
+
+
+                    <a href="/2018/01/13/tripal_country/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2018/01/12/untitled/">
+                            Untitled
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2018-01-12T08:54:58-05:00" class="post-date is-small">
+   12 Jan 2018</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    
+create table cell_lineprop (
+	cell_lineprop_id bigserial not null,
+	primary key (cell_lineprop_id),
+	cell_line_id bigint not null,
+	foreign key (cell_line_id) references cell_line (cell_line_id) on delete cascade INITIALLY DEFERRED,
+	type_id bigint not null,
+	foreign key (type_id) references cvterm (cvterm_id) on delete cascade INITIALLY DEFERRED,
+	value text null,
+	rank int not null default 0,
+	cvalue_id bigint,
+  FOREIGN KEY (cvalue_id) REFERENCES cvterm (cvterm_id) ON DELETE SET NULL,
+	constraint cell_lineprop_c1 unique (cell_line_id,type_id,rank)
+);
+CREATE INDEX cell_lineprop_idx1 ON cell_lineprop (cvalue_id);
+COMMENT ON COLUMN cell_lineprop.cvalue_id IS 'The value of the property if that value should be the name of a controlled vocabulary term.  It is preferred that a property either use the value or cvalue_id column but not both.  For example, if the property type is "color" then the cvalue_id could be a term named "green".';
+
+
+                    <a href="/2018/01/12/untitled/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2018/01/12/d3_4_labels/">
+                            D3 part four: Labeling
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2018-01-12T08:54:58-05:00" class="post-date is-small">
+   12 Jan 2018</time>
+   </span>
+                    
+                    <a href="/tag/education/">
+        <span class="tag is-primary">
+              education
+        </span>
+                    </a>
+                    
+                    <a href="/tag/web/">
+        <span class="tag is-primary">
+              web
+        </span>
+                    </a>
+                    
+                    <a href="/tag/javascript/">
+        <span class="tag is-primary">
+              javascript
+        </span>
+                    </a>
+                    
+                    <a href="/tag/d3/">
+        <span class="tag is-primary">
+              d3
+        </span>
+                    </a>
+                    
+                    <a href="/tag/data-science/">
+        <span class="tag is-primary">
+              data-science
+        </span>
+                    </a>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>In previous posts we’ve learned about nesting our data and utilizing scales.  This post we’ll discuss graph labels.</p>
+
+
+                    <a href="/2018/01/12/d3_4_labels/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2018/01/12/creating_bundles/">
+                            Creating Tripal Bundles
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2018-01-12T08:54:58-05:00" class="post-date is-small">
+   12 Jan 2018</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>The function <code class="highlighter-rouge">tripal_chado_chado_bundle_schema()</code> tells us all we need to know to create more advanced Tripal Chado bundles.</p>
+
+<p>CREATE TABLE HERE INSTEAD:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>      'type_linker_table' =&gt; array(
+        'description' =&gt; 'If a linker table (e.g. cvterm/prop) is needed to uniquely identify a content type then that table name is provided here.',
+        'type' =&gt; 'varchar',
+        'length' =&gt; 128,
+        'not null' =&gt; FALSE,
+        'default' =&gt; '',
+      ),
+      'type_column' =&gt; array(
+        'description' =&gt; 'The column in the data table or linker table that distinguishes the data type. This must be in a foreign key relationship to the cvterm table.',
+        'type' =&gt; 'varchar',
+        'length' =&gt; 128,
+        'not null' =&gt; FALSE,
+        'default' =&gt; '',
+      ),
+      'type_id' =&gt; array(
+        'description' =&gt; 'If a type_column is set then this is the cvterm_id of the data type that this bundle maps to.',
+        'type' =&gt; 'varchar',
+        'length' =&gt; 128,
+        'not null' =&gt; TRUE,
+        'default' =&gt; '',
+      ),
+      'type_value' =&gt; array(
+        'description' =&gt; 'If a property table is used for a linker, then the value that should be matched to identify this content type is stored here.',
+        'type' =&gt; 'text',
+        'not null' =&gt; FALSE,
+        'default' =&gt; '',
+      )
+</code></pre>
+</div>
+
+                    <a href="/2018/01/12/creating_bundles/">
                         Read the full post...
                     </a>
                 </div>
@@ -220,6 +475,119 @@
             <div class="card">
                 <div class="card-header">
                     <p class="card-header-title">
+                        <a href="/2018/01/06/dockerizing/">
+                            Dockerizing your environment
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2018-01-06T21:23:37-05:00" class="post-date is-small">
+   06 Jan 2018</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <p>For a long time, I’ve been using Homestead to set up my web developer environment.  It’s easy to set up, and most importantly, I could understand where my files were.</p>
+
+<p>The problem is that as a novice developer, I make mistakes, a lot.  I insert all sorts of junk into my database writing new code, and after a few months, I need to destroy my machine and start over.  To recreate a Tripal site, I need to reinstall Drupal, Tripal, all of my modules, and then re-load data.  After the second time I knew I had to implement a different solution.  I had to figure out this Docker thing.</p>
+
+<p><img src="https://www.docker.com/sites/default/files/vertical_large.png" alt="Docker logo" /></p>
+
+<p>You can find the final, pre-loaded developer image <a href="https://hub.docker.com/r/bcondon/docker_tripal3/">here</a>.</p>
+
+
+                    <a href="/2018/01/06/dockerizing/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
+                        <a href="/2018/01/06/TwoBit/">
+                            TwoBit format
+                        </a>
+                    </p>
+                </div>
+                <div class="media-content" style="padding: .5rem">
+        <span class="tag">
+   <time datetime="2018-01-06T21:23:18-05:00" class="post-date is-small">
+   06 Jan 2018</time>
+   </span>
+                    
+                </div>
+
+                <div class="card-content">
+                    <h1 id="what-is-twobit">What is TwoBit</h1>
+
+<h1 id="creating-a-twobit-file">Creating a TwoBit file</h1>
+
+<p>We can follow the guide on the <a href="https://genome.ucsc.edu/goldenpath/help/twoBit.html">UCSC website</a>.</p>
+
+<p>For example, the OSX formatted versions can be downloaded <a href="http://hgdownload.soe.ucsc.edu/admin/exe/macOSX.x86_64/">here</a>.  If you’re new to computer science, you might not be sure whatto do with these.</p>
+
+<h3 id="move-the-file-into-your-path">Move the file into your $PATH</h3>
+
+<p><code class="highlighter-rouge">echo $PATH</code>.  the path <code class="highlighter-rouge">/usr/local/bin</code> should be somewhere in the alphabet soup.  This is a place we can install software so that it can be accessed wherever we are in our file system.</p>
+
+<h3 id="change-permissions-on-the-file">Change permissions on the file</h3>
+<p><code class="highlighter-rouge">chmod a+x /usr/local/bin/faToTwoBit</code></p>
+
+<h3 id="what-does-the-command-do">What does the command do?</h3>
+
+<p>If we try to run the command with no arguments by simply executing ` faToTwoBit`, we’ll get the command’s usage arguments.</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>faToTwoBit - Convert DNA from fasta to 2bit format
+usage:
+   faToTwoBit <span class="k">in</span>.fa <span class="o">[</span>in2.fa in3.fa ...] out.2bit
+options:
+   -long          use 64-bit offsets <span class="k">for </span>index.   Allow <span class="k">for </span>twoBit to contain more than 4Gb of sequence.
+                  NOT COMPATIBLE WITH OLDER CODE.
+   -noMask        Ignore lower-case masking <span class="k">in </span>fa file.
+   -stripVersion  Strip off version number after <span class="s1">'.'</span> <span class="k">for </span>GenBank accessions.
+   -ignoreDups    Convert first sequence only <span class="k">if </span>there are duplicate sequence
+                  names.  Use <span class="s1">'twoBitDup'</span> to find duplicate sequences.
+</code></pre>
+</div>
+
+<h3 id="convert-the-fasta-file">Convert the FASTA file</h3>
+<p>Run the below command.  Be sure to replace <code class="highlighter-rouge">input.fasta</code> with the fasta file you are attempting to convert.  Make sure you are in the same folder as your <code class="highlighter-rouge">input.fasta</code> file: if you are not, you will have to provide the relative or absolute path for the command to work!</p>
+
+<p><code class="highlighter-rouge">faToTwoBit input.fasta output.2bit</code></p>
+
+<h3 id="convert-gff">Convert GFF</h3>
+
+<p>Biodalliance supports bigwig and bigbed.</p>
+
+<p>https://www.biostars.org/p/4070/</p>
+
+<p>https://toolshed.g2.bx.psu.edu/repository/display_tool?repository_id=afcb6456d8e300ed&amp;tool_config=%2Fsrv%2Ftoolshed%2Fmain%2Fvar%2Fdata%2Frepos%2F000%2Frepo_21%2Fgff_to_bed.xml&amp;changeset_revision=5c6f33e20fcc</p>
+
+<p>So we wrap GFF to BED.
+Then BED to WIG.</p>
+
+<blockquote>
+  <p>Step 1. Create a wig format file following the directions here. When converting a wig file to a bigWig file, you are limited to one track of data in your input file; therefore, you must create a separate wig file for each data track.
+Step 2. Remove any existing “track” or “browser” lines from your wig file so that it contains only data.
+Step 3. Download the wigToBigWig program from the binary utilities directory.
+Step 4. Use the fetchChromSizes script from the same directory to create the chrom.sizes file for the UCSC database with which you are working (e.g., hg19).
+Step 5. Use the wigToBigWig utility to create the bigWig file from your wig file:</p>
+</blockquote>
+
+                    <a href="/2018/01/06/TwoBit/">
+                        Read the full post...
+                    </a>
+                </div>
+            </div>
+            <br>
+            
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">
                         <a href="/2017/12/31/d3_part2_flipping/">
                             D3 part two: flipping the plot
                         </a>
@@ -280,356 +648,6 @@
             </div>
             <br>
             
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/12/22/plotting_with_d3/">
-                            Plotting with D3 part 1
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-12-22T00:00:00-05:00" class="post-date is-small">
-   22 Dec 2017</time>
-   </span>
-                    
-                    <a href="/tag/education/">
-        <span class="tag is-primary">
-              education
-        </span>
-                    </a>
-                    
-                    <a href="/tag/web/">
-        <span class="tag is-primary">
-              web
-        </span>
-                    </a>
-                    
-                    <a href="/tag/javascript/">
-        <span class="tag is-primary">
-              javascript
-        </span>
-                    </a>
-                    
-                    <a href="/tag/d3/">
-        <span class="tag is-primary">
-              d3
-        </span>
-                    </a>
-                    
-                    <a href="/tag/data-science/">
-        <span class="tag is-primary">
-              data-science
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p><img src="/assets/img/d3/d3_logo.png" alt="D3 logo" /></p>
-
-<p><a href="https://d3js.org/">D3js (Data-Driven Documents)</a> is a Javascript library that manipulates the DOM and is often used to build SVG plots.  I recently created an interactive plot for differential expression data as part of the <a href="https://github.com/tripal/tripal_analysis_expression/">Tripal Analysis Expression module</a>. Because other Tripal modules use D3 v3.x, I was required to do the same (as opposed to v4, the latest version).  While the <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md">API is available</a>, I’m the sort of person who learns best from tutorials and examples, and I struggled to find enough v3 examples.</p>
-
-
-                    <a href="/2017/12/22/plotting_with_d3/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/12/18/12-18-17_swc_lessons/">
-                            Lessons From Planning My First Software Carpentry Workshop
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-12-18T00:00:00-05:00" class="post-date is-small">
-   18 Dec 2017</time>
-   </span>
-                    
-                    <a href="/tag/education/">
-        <span class="tag is-primary">
-              education
-        </span>
-                    </a>
-                    
-                    <a href="/tag/genomics/">
-        <span class="tag is-primary">
-              genomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software-carpentry/">
-        <span class="tag is-primary">
-              software-carpentry
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <h1 id="introduction">introduction</h1>
-
-<p>I hosted my first Software Carpentry workshop on December 18th and 19th 2017 in Knoxville Tennessee with my co-instructors Meg Staton and Drew Steen.</p>
-
-<p>I tried to follow the general recommendations and most things worked out great.  Here are some lessons learned.</p>
-
-<p><img src="/assets/img/carpentry/s_carp.png" alt="The Software Carpentry logo" /></p>
-
-
-                    <a href="/2017/12/18/12-18-17_swc_lessons/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/11/27/swc_workshop_announce_december_2017/">
-                            Upcoming Software Carpentry Workshop: December 18th & 19th
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-11-27T00:00:00-05:00" class="post-date is-small">
-   27 Nov 2017</time>
-   </span>
-                    
-                    <a href="/tag/education/">
-        <span class="tag is-primary">
-              education
-        </span>
-                    </a>
-                    
-                    <a href="/tag/genomics/">
-        <span class="tag is-primary">
-              genomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software-carpentry/">
-        <span class="tag is-primary">
-              software-carpentry
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p><img src="/assets/img/carpentry/s_carp.png" alt="Software Carpentry" /></p>
-
-<p>I am happy to announce I will be instructing a Software Carpentry Workshop at the University of Tennessee Knoxville.  The workshop will be taught by myself, Meg Staton, and Drew Steen on December 18th and 19th, 2017 in 702 Strong Hall.</p>
-
-<p>This workshop will cover the basics of:</p>
-<ul>
-  <li>Unix Shell</li>
-  <li>Git</li>
-  <li>R</li>
-</ul>
-
-<p>Please visit the <a href="https://statonlab.github.io/2017-12-18-carpentry-workshop/">workshop website for more information and registration links</a>.</p>
-
-                    <a href="/2017/11/27/swc_workshop_announce_december_2017/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/10/05/carpentry_lessons/">
-                            Software Carpentry TakeAways
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-10-05T00:00:00-04:00" class="post-date is-small">
-   05 Oct 2017</time>
-   </span>
-                    
-                    <a href="/tag/education/">
-        <span class="tag is-primary">
-              education
-        </span>
-                    </a>
-                    
-                    <a href="/tag/genomics/">
-        <span class="tag is-primary">
-              genomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software-carpentry/">
-        <span class="tag is-primary">
-              software-carpentry
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>In a <a href="/2017/09/25/Software_Data_Carpentry/">previous blog post</a>, I announced my excitement for becoming a certified Software and Data Carpentry instructor.  As I complete my checkout process, I also wanted to recap the most important points from the training.  <a href="https://docs.google.com/presentation/d/e/2PACX-1vQDtbUsYpFS5-I_66uKSixgSKQSSWrQSlmkZ9HdMMiKY8U449nyFwDkzQ14WAEDYf4xiFaZRV70xX9A/pub?start=false&amp;loop=false&amp;delayms=3000">A lab meeting presentation of this recap cis available on google slides here</a>.</p>
-
-<p>Looking forward to teaching my first workshop in the next few months!</p>
-
-<p><img src="/assets/img/carpentry/d_carp.png" alt="Data Carpentry" /> <img src="/assets/img/carpentry/s_carp.png" alt="Software Carpentry" /></p>
-
-
-                    <a href="/2017/10/05/carpentry_lessons/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/09/25/Software_Data_Carpentry/">
-                            Software and Data Carpentry
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-09-25T00:00:00-04:00" class="post-date is-small">
-   25 Sep 2017</time>
-   </span>
-                    
-                    <a href="/tag/education/">
-        <span class="tag is-primary">
-              education
-        </span>
-                    </a>
-                    
-                    <a href="/tag/genomics/">
-        <span class="tag is-primary">
-              genomics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/software-carpentry/">
-        <span class="tag is-primary">
-              software-carpentry
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This week(September 25th &amp; 26th 2017), I will be certified as a Software and Data Carpentry instructor.  As of 2017-06-26, there were 968 instructors.  Am I lucky number 1,000?  Probably not.  Still, exciting.</p>
-
-<p><img src="/assets/img/carpentry/d_carp.png" alt="Data Carpentry" /> <img src="/assets/img/carpentry/s_carp.png" alt="Software Carpentry" /></p>
-
-
-                    <a href="/2017/09/25/Software_Data_Carpentry/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/20/treesnapReleasePress/">
-                            TreeSnap release press
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-20T00:00:00-04:00" class="post-date is-small">
-   20 Jul 2017</time>
-   </span>
-                    
-                    <a href="/tag/treesnap/">
-        <span class="tag is-primary">
-              treesnap
-        </span>
-                    </a>
-                    
-                    <a href="/tag/citizen-science/">
-        <span class="tag is-primary">
-              citizen-science
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p><img src="/assets/img/TreeSnap/TreesnapFullLogo_x3.png" alt="TreeSnap" /></p>
-
-<p>Early this year, I joined Meg Staton’s group at the University of Tennessee as a mobile and web developer.  My major project since then has been designing, coding, and releasing the mobile citizen science app TreeSnap.  I think it’s a fantastic project, and I’d love it if you <a href="https://treesnap.org">visited the app’s website</a> to learn more.</p>
-
-
-                    <a href="/2017/07/20/treesnapReleasePress/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-header-title">
-                        <a href="/2017/07/15/discovarOutput/">
-                            Understanding Discovar output
-                        </a>
-                    </p>
-                </div>
-                <div class="media-content" style="padding: .5rem">
-        <span class="tag">
-   <time datetime="2017-07-15T00:00:00-04:00" class="post-date is-small">
-   15 Jul 2017</time>
-   </span>
-                    
-                    <a href="/tag/bioinformatics/">
-        <span class="tag is-primary">
-              bioinformatics
-        </span>
-                    </a>
-                    
-                    <a href="/tag/next-generation-sequencing/">
-        <span class="tag is-primary">
-              next-generation-sequencing
-        </span>
-                    </a>
-                    
-                </div>
-
-                <div class="card-content">
-                    <p>This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
-Generation Sequencing Workshop at the University of Kentucky.</p>
-
-<h2 id="discovar">Discovar</h2>
-
-<p>DISCOVAR is a new genome assembler and variant caller developed by the broad institute. As of this writing,it takes as input Illumina reads of length 250 or longer produced on MiSeq or HiSeq 2500.  To learn more, read the entire DISCOVAR manual <a href="https://docs.google.com/document/d/1U_o-Z0dJ0QKiJn86AV2o_YHiFzUtW9c57eh3tYjkINc/edit">here</a>.</p>
-
-<h3 id="the-assembly-output">The assembly output</h3>
-
-<p>The final output assembly will take the form of <code class="highlighter-rouge">OUT_HEAD.final.*</code>, where <code class="highlighter-rouge">OUT_HEAD</code> is set by the user.  Below let’s assume we’ve set <code class="highlighter-rouge">OUT_HEAD</code> to out.</p>
-
-
-                    <a href="/2017/07/15/discovarOutput/">
-                        Read the full post...
-                    </a>
-                </div>
-            </div>
-            <br>
-            
         </div>
 
 
@@ -658,7 +676,7 @@ Generation Sequencing Workshop at the University of Kentucky.</p>
               <div class="content has-text-centered">
 
           <p>
-          <time datetime="2018-01-17T21:56:26-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          <time datetime="2018-01-17T22:12:36-05:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
           </p> 
           </div>
       

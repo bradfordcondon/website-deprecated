@@ -1,0 +1,16 @@
+
+<p>In the process of upgrading the Tripal Analysis Expression module from Tripal 2 to Tripal 3 compatible, I had to learn a lot about the underlying data storage.  Tripal Analysis Expression uses the <a href="http://gmod.org/wiki/Chado_Mage_Module">Chado Mage</a> module to store data.</p>
+
+<h3 id="the-mage-schema">The Mage schema</h3>
+
+<blockquote>
+  <p><img src="assets/img/tripal/mage_schema.png" alt="The chado mage schema" />
+The Chado Mage schema as available <a href="http://gmod.org/wiki/Chado_Mage_Module">here</a>.  Red tables are mage tables.</p>
+</blockquote>
+
+<p>Expression data is loaded as expression values from biosamples mapped to features.  It’s a long road to go from a biosample (biomaterial in Chado language) to the expression value.  The expression value is stored in the <em>signal</em> column of <code class="highlighter-rouge">elementresult</code>.  This is linked through the <code class="highlighter-rouge">quantification</code>, <code class="highlighter-rouge">acquisition</code>,  <code class="highlighter-rouge">assay</code>, and <code class="highlighter-rouge">assay_biomaterial</code> tables to our end point of <code class="highlighter-rouge">biomaterial</code>.</p>
+
+<h3 id="acquisitions-quantifications-assays-elements-and-arraydesigns-oh-my">Acquisitions, quantifications, assays, elements, and arraydesigns, oh my</h3>
+
+<p>Tripal 3</p>
+

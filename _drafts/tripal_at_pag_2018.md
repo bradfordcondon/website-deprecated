@@ -43,7 +43,7 @@ It was clear the first day that the Tripal community is ready to start thinking 
   For those not in the know, Tripal is a Drupal module, and the [Drupal development lifecycle](https://www.drupal.org/core/release-cycle-overview) dictates that as new versions of Drupal get released, old ones enter long term support (LTS), security fixes only, and finally, deprecation.  Once security fixes are no longer released for a version, it's only a matter of time before new exploits are developed and sites running old Drupal releases 
 
 
-![drupal release lifecycle](https://www.drupal.org/files/release_schedule_caveat_0.jpg)
-
+>![drupal release lifecycle](https://www.drupal.org/files/release_schedule_caveat_0.jpg)
+>Don't freak out!  The Drupal production life cycle means that as new versions get released, support for old versions drops.
 
 Tripal 3 is the first step in getting the community ready for the death of Drupal 7.  My hope is that I can share some what I've learned in the upgrade process, as a neophyte to Drupal, Chado, and Tripal.  Hopefully it will solidify what I've learned, and perhaps it will ease the transition of other sites.

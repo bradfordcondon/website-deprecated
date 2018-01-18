@@ -41,6 +41,21 @@ What entities do allow is more site administrator control of how entities look o
 
 If you're thinking in terms of Chado, then you can learn that all entities are actually the same type, `TripalEntity`, and then promptly forget it.
 
+
+#### Simplified
+
+* Before, nodes handled loading your data into Chado or database of choice, editing, deleting, as well as viewing the content.
+* Bundles and fields distribute that job.
+* TripalLoader handles bulk-loading data. Bundles handle creation of single entities.
+* Bundles are just aggregates of fields.
+* Rather than doing everything, the bundle delegates the creation, editing, and display of each individual piece of data to a field.
+
+The most important thing I can tell you is this: before you create a field, make sure 
+* the field doesn't already exist
+* the field you want wouldn't better be handled by a Chado property
+
+
+
 ### What are bundles and fields?  
 
 * A bundle is a collection of fields.

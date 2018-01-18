@@ -3,6 +3,7 @@ layout: post
 title: "D3 part three: Nesting"
 excerpt_separator: <!--more-->
 custom_js: d3_graph_3.js
+date: 2018-01-17
 tags: 
  - education
  - web
@@ -11,7 +12,9 @@ tags:
  - data-science
 ---
 
-In the previous post, we learned about using scales to format our x and y axes, s well as our bar coloring.
+![D3 logo](/assets/img/d3/d3_logo.png)
+
+In the [previous post](2018/01/17/d3_part2_flipping/), we learned about using scales to format our x and y axes, s well as our bar coloring.
 
 In this post I want to address how to **nest** data with D3.  We will use the nest method to automatically sort our samples by property, and we'll use multiple x-scales to group them along the x-axis.
 
@@ -67,7 +70,7 @@ What does our nested output look like?  We can `console.log` the nested data to 
         "value": 57
       },
       //...
-      // additonal values removed for readability
+      // additional values removed for readability
      ]
   }]
 ```

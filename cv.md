@@ -29,6 +29,13 @@ June 2014 to December 2015: Postdoctoral associate, Department of Ecology, Evolu
 
 August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department of Plant Pathology & Plant-Microbe Interactions, Cornell University, advised by Dr. [B Gillian Turgeon](http://www.plantpath.cornell.edu/labs/turgeon/index.html)
 
+## Accomplishments
+
+* Upgraded [HardwoodGenomics](https://hardwoodgenomics.org/) to Tripal 3, performed bioinformatic analyses and uploaded new data to site.
+* Co-developer of [TreeSnap](https://treesnap.org/), mobile citizen science app
+* Rewrote [Tripal Analysis Expression](https://github.com/tripal/tripal_analysis_expression) for Tripal 3
+* Created [Fields Generator](https://github.com/statonlab/fields_generator) and [Tripal Alchemist](https://github.com/statonlab/tripal_alchemist/), tools for developing in Tripal.
+
 ## Skills
 
 #### Bioinformatics and programming

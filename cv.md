@@ -77,10 +77,13 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 
 ##### Data and Software Carpentry Certified Instructor 2017
 Trained and certified as a [Data Carpentry](http://www.datacarpentry.org/) and [Software Carpentry](https://software-carpentry.org/) Instructor. 
+
 [Blog posts regarding SWC/DC](/tag/software-carpentry/).
+
 **Hosted Workshops**
+
 * [December 18th-19th 2017, Knoxville, TN](https://statonlab.github.io/2017-12-18-carpentry-workshop/)
- - Topics covered: Unix, Git, and R 
+  - Topics covered: Unix, Git, and R 
 
 ##### KBRIN Next Generation Sequencing and Data Analysis Workshop, *University of Kentucky* 2017
  

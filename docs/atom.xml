@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-01-18T09:00:37-05:00</updated>
+ <updated>2018-01-18T15:53:26-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
@@ -19,7 +19,7 @@
    <id>http://bradfordcondon.com/2018/01/17/d3_part3_nesting</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_logo.png&quot; alt=&quot;D3 logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In the &lt;a href=&quot;2018/01/17/d3_part2_flipping/&quot;&gt;previous post&lt;/a&gt;, we learned about using scales to format our x and y axes, s well as our bar coloring.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href=&quot;/2018/01/17/d3_part2_flipping/&quot;&gt;previous post&lt;/a&gt;, we learned about using scales to format our x and y axes, s well as our bar coloring.&lt;/p&gt;
 
 &lt;p&gt;In this post I want to address how to &lt;strong&gt;nest&lt;/strong&gt; data with D3.  We will use the nest method to automatically sort our samples by property, and we’ll use multiple x-scales to group them along the x-axis.&lt;/p&gt;
 

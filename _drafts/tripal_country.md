@@ -12,7 +12,7 @@ I am not a developer by training, originally.  I am a geneticist.  I recognize t
 I am, however, a man who has spent the past year learning Tripal 3.
 
 Rather than presume to write the guide on Tripal (which I am not skilled enough to do), I would like to share my travel notes with you as I explore the new features and paradigms of Tripal 3.
-
+  
 
 
 # The basics
@@ -227,3 +227,113 @@ function tripal_biomaterial_bundle_instances_info($entity_type, $bundle) {
 ### Attaching a field to multiple bundles
 
 You'll notice that many of the default Tripal fields can attach to multiple bundles.  What magic is that?  To perform the same feat, you must code your field to be bundle agnostic, or at least bundle-flexible.  
+
+
+
+
+# Field methods
+
+
+## Load
+
+The record is what we're attached to.  There's going to be a protocol_id column.  The protocol can be that object, and we'll have access to everything in the protocol table because its a foreign key.
+In general, we'll see get the stuff that is NOT NULL in our linker field.
+
+```
+
+    $protocol = $record->protocol_id;
+
+// our field is going to be cautious and just display the NOT NULL columns
+    $protocol_id = $protocol->protocol_id;
+    $protocol_name = $protocol->name;
+    $protocol_type = $protocol->type_id;
+
+```
+
+Now that we've done that: we need to get the keys we're going to associate it with.
+
+for our label, we can just use rdfs:label.
+Otherwise we'll use `tripal_get_chado_semweb_term` to get the term, and that put that term in the **field array**.
+
+
+```
+
+    $label_term = 'rdfs:label';
+    $type_id_term = tripal_get_chado_semweb_term('protocol', 'type_id');
+
+    $entity->{$field_name}['und'][0]['value'] = [
+      $label_term = $protocol_name,
+      $type_id_term = $protocol_type
+    ];
+
+    // Is there a published entity for this protocol?
+    if (property_exists($record->{$field_column}, 'entity_id')) {
+      $entity->{$field_name}['und'][0]['value']['entity'] = 'TripalEntity:' . $record->{$field_column}->entity_id;
+    }
+```
+
+
+### ElementsInfo
+
+The cliffnotes:
+
+Everything that went into our field above needs to have an element info entry.
+
+
+ *elementInfo* gives you the opportunity to describe every COLUMN of the array of ELEMENTs your field will return.
+So if your field is a linker field of some sort (ie organism field thats going to attach to stuff) then you want elementinfo to correspond to every column of the organism base table.
+
+
+
+```
+
+    Provides the list of elements returned by the 'value' of the field.
+   
+    The elements provided by this function are used to integrate with
+    Drupal Views and Web services.  The return value is an associative array
+    that contains all of the elements that will be returned by the
+    'value' of this field. If the value field returns an element which
+    is not defined here a warning will be generated.
+   
+    The array structure should contain at the top-level a key of the form
+    {db}:{accession}. This represents the term that this field belongs to.
+    The value of this top-level key is an array with the following keys:
+      -name: this key is not actually used but is availble to improve
+        readability of the array.  Because the key is a vocabulary term
+        conaining only the accession it's not always clear what it means.
+        Providing a 'name' key helps other's know what the term is.
+      -searchable:  TRUE if the element can be used for filtering the content
+        type to which tis field is attached.  FALSE if not.
+      -operations:  an array of filtering operations that can be used for this
+        field.  These include: 'eq', 'ne', 'contains', 'starts', 'gt', 'lt',
+        'gte', 'lte'.  These opertaions are applicable to strings: 'eq', 'ne',
+        'contains', and 'starts'.  These operations are applicable for numeric
+        values: 'gt', 'lt', 'gte', 'lte'.
+      -label: The label (if applicable) to appear for the elmeent. The default
+        is to use the term's name.
+      -help: Help text (if applicable) to appear for the element. The default
+        is to use the term's definition.
+      -type: The data type: e.g. 'string' or 'numeric'. Default is 'string'.
+      -sortable: TRUE if the element can be sorted.  FALSE if not.
+      -elements:  If this field value is a simple scalar (i.e. string or
+        number) then this key is not needed. But, if the 'value' of the
+        field is an array with sub keys then those subkeys must be defined
+        using this key.  The members of the element array follows the same
+        format as the top-level key and the above subkeys can be used as well.
+   
+    The following code provides an example for describing the value elements
+    of this field.  The Tripal Chado module provides an obi__organism field
+    that attaches organism details to content types such as genes, mRNA,
+    stocks, etc.  It provides a label containing the full scientific name of
+    the organism as well as the genus, species, infraspecific name,
+    and infraspecific type. If the organism to which the field belong is
+    published then an entity ID is provided.  The following array describes
+    all of these.
+
+```
+
+### Query
+
+Query 
+
+###  Query Order

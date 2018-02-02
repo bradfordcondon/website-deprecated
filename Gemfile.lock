@@ -6,8 +6,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.5.1)
-      public_suffix (~> 2.0, >= 2.0.2)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -147,8 +147,8 @@ GEM
       jekyll (~> 3.3)
     jekyll-titles-from-headings (0.2.0)
       jekyll (~> 3.3)
-    jekyll-watch (1.5.0)
-      listen (~> 3.0, < 3.1)
+    jekyll-watch (1.5.1)
+      listen (~> 3.0)
     jemoji (0.8.0)
       activesupport (~> 4.0)
       gemoji (~> 3.0)
@@ -175,7 +175,7 @@ GEM
       jekyll (>= 2.0)
     octopress-paginate (1.2.0)
       octopress-hooks
-    pathutil (0.14.0)
+    pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
     rb-fsevent (0.10.2)
@@ -183,7 +183,7 @@ GEM
       ffi (>= 0.5.0, < 2)
     rouge (1.11.1)
     safe_yaml (1.0.4)
-    sass (3.5.1)
+    sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -211,4 +211,4 @@ DEPENDENCIES
   octopress-paginate
 
 BUNDLED WITH
-   1.15.2
+   1.16.1

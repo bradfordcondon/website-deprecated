@@ -15,7 +15,7 @@
 
 # And after, you can change this function to what you want to do to build your project:
 function build {
-	bash ./build.sh
+	bash ./script/cibuild.sh
 }
 
 # I am using some Travis environment variables like `TRAVIS` or `TRAVIS_COMMIT` here, you can look their output in [Travis CI Documentation](https://docs.travis-ci.com/user/environment-variables/#Default-Environment-Variables)

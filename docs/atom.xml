@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-02-03T17:06:00-05:00</updated>
+ <updated>2018-02-03T22:28:52+00:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>Tripal Country: Manually Creating New Bundle Types</title>
    <link href="http://bradfordcondon.com/2018/02/01/tripal_manually_creating_bundles/"/>
-   <updated>2018-02-01T00:00:00-05:00</updated>
+   <updated>2018-02-01T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2018/02/01/tripal_manually_creating_bundles</id>
    <content type="html">&lt;p&gt;Welcome to Tripal Country!&lt;/p&gt;
 
@@ -99,7 +99,7 @@ In this example, we specify our bundle type in the analysisprop table.  There is
  <entry>
    <title>Tripal at the 2018 GMOD hackathon</title>
    <link href="http://bradfordcondon.com/2018/01/17/tripal_at_pag_2018/"/>
-   <updated>2018-01-17T00:00:00-05:00</updated>
+   <updated>2018-01-17T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2018/01/17/tripal_at_pag_2018</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/TripalLogo_dark.png&quot; alt=&quot;Tripal Logo&quot; /&gt;&lt;/p&gt;
 
@@ -140,7 +140,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
  <entry>
    <title>D3 part three: Nesting</title>
    <link href="http://bradfordcondon.com/2018/01/17/d3_part3_nesting/"/>
-   <updated>2018-01-17T00:00:00-05:00</updated>
+   <updated>2018-01-17T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2018/01/17/d3_part3_nesting</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_logo.png&quot; alt=&quot;D3 logo&quot; /&gt;&lt;/p&gt;
 
@@ -296,7 +296,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
  <entry>
    <title>Chado 1.4 at the 2018 GMOD hackathon</title>
    <link href="http://bradfordcondon.com/2018/01/12/gmod_day_1_2018/"/>
-   <updated>2018-01-12T00:00:00-05:00</updated>
+   <updated>2018-01-12T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2018/01/12/gmod_day_1_2018</id>
    <content type="html">&lt;p&gt;As a Tripal developer, one of the fun things I get to do is contribute not only to the Tripal project, but also other parts of GMOD, the &lt;a href=&quot;http://gmod.org/wiki/Main_Page&quot;&gt;Generic Model Organism Database Project&lt;/a&gt;.  I attended the January 10th 2018 GMOD hackathon at the &lt;a href=&quot;http://www.intlpag.org/2018/program/program-overview&quot;&gt;Plant and Animal Genome XXVI conference&lt;/a&gt; hoping to make a few small changes to Chado, the SQL database schema that &lt;a href=&quot;http://hardwoodgenomics.org/&quot;&gt;HardwoodGenomics&lt;/a&gt; uses with Tripal.&lt;/p&gt;
 
@@ -346,7 +346,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
  <entry>
    <title>D3 part two: flipping the plot</title>
    <link href="http://bradfordcondon.com/2017/12/31/d3_part2_flipping/"/>
-   <updated>2017-12-31T00:00:00-05:00</updated>
+   <updated>2017-12-31T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/12/31/d3_part2_flipping</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_logo.png&quot; alt=&quot;D3 logo&quot; /&gt;&lt;/p&gt;
 
@@ -598,7 +598,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
  <entry>
    <title>Plotting with D3 part 1</title>
    <link href="http://bradfordcondon.com/2017/12/22/plotting_with_d3/"/>
-   <updated>2017-12-22T00:00:00-05:00</updated>
+   <updated>2017-12-22T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/12/22/plotting_with_d3</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_logo.png&quot; alt=&quot;D3 logo&quot; /&gt;&lt;/p&gt;
 
@@ -753,7 +753,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
  <entry>
    <title>Lessons From Planning My First Software Carpentry Workshop</title>
    <link href="http://bradfordcondon.com/2017/12/18/12-18-17_swc_lessons/"/>
-   <updated>2017-12-18T00:00:00-05:00</updated>
+   <updated>2017-12-18T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/12/18/12-18-17_swc_lessons</id>
    <content type="html">&lt;h1 id=&quot;introduction&quot;&gt;introduction&lt;/h1&gt;
 
@@ -829,7 +829,7 @@ The Eventbrite event management page.&lt;/p&gt;
  <entry>
    <title>Upcoming Software Carpentry Workshop: December 18th &amp; 19th</title>
    <link href="http://bradfordcondon.com/2017/11/27/swc_workshop_announce_december_2017/"/>
-   <updated>2017-11-27T00:00:00-05:00</updated>
+   <updated>2017-11-27T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/11/27/swc_workshop_announce_december_2017</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/carpentry/s_carp.png&quot; alt=&quot;Software Carpentry&quot; /&gt;&lt;/p&gt;
 
@@ -849,7 +849,7 @@ The Eventbrite event management page.&lt;/p&gt;
  <entry>
    <title>Software Carpentry TakeAways</title>
    <link href="http://bradfordcondon.com/2017/10/05/carpentry_lessons/"/>
-   <updated>2017-10-05T00:00:00-04:00</updated>
+   <updated>2017-10-05T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/10/05/carpentry_lessons</id>
    <content type="html">&lt;p&gt;In a &lt;a href=&quot;/2017/09/25/Software_Data_Carpentry/&quot;&gt;previous blog post&lt;/a&gt;, I announced my excitement for becoming a certified Software and Data Carpentry instructor.  As I complete my checkout process, I also wanted to recap the most important points from the training.  &lt;a href=&quot;https://docs.google.com/presentation/d/e/2PACX-1vQDtbUsYpFS5-I_66uKSixgSKQSSWrQSlmkZ9HdMMiKY8U449nyFwDkzQ14WAEDYf4xiFaZRV70xX9A/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000&quot;&gt;A lab meeting presentation of this recap cis available on google slides here&lt;/a&gt;.&lt;/p&gt;
 
@@ -926,7 +926,7 @@ The Eventbrite event management page.&lt;/p&gt;
  <entry>
    <title>Software and Data Carpentry</title>
    <link href="http://bradfordcondon.com/2017/09/25/Software_Data_Carpentry/"/>
-   <updated>2017-09-25T00:00:00-04:00</updated>
+   <updated>2017-09-25T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/09/25/Software_Data_Carpentry</id>
    <content type="html">&lt;p&gt;This week(September 25th &amp;amp; 26th 2017), I will be certified as a Software and Data Carpentry instructor.  As of 2017-06-26, there were 968 instructors.  Am I lucky number 1,000?  Probably not.  Still, exciting.&lt;/p&gt;
 
@@ -943,7 +943,7 @@ The Eventbrite event management page.&lt;/p&gt;
  <entry>
    <title>TreeSnap release press</title>
    <link href="http://bradfordcondon.com/2017/07/20/treesnapReleasePress/"/>
-   <updated>2017-07-20T00:00:00-04:00</updated>
+   <updated>2017-07-20T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/07/20/treesnapReleasePress</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/TreeSnap/TreesnapFullLogo_x3.png&quot; alt=&quot;TreeSnap&quot; /&gt;&lt;/p&gt;
 
@@ -979,7 +979,7 @@ The Eventbrite event management page.&lt;/p&gt;
  <entry>
    <title>Understanding Discovar output</title>
    <link href="http://bradfordcondon.com/2017/07/15/discovarOutput/"/>
-   <updated>2017-07-15T00:00:00-04:00</updated>
+   <updated>2017-07-15T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/07/15/discovarOutput</id>
    <content type="html">&lt;p&gt;This post is part 10 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
 Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
@@ -1037,7 +1037,7 @@ gv assembly.final.ps
  <entry>
    <title>Examining bowtie output</title>
    <link href="http://bradfordcondon.com/2017/07/13/bowtie2/"/>
-   <updated>2017-07-13T00:00:00-04:00</updated>
+   <updated>2017-07-13T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/07/13/bowtie2</id>
    <content type="html">&lt;p&gt;This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
@@ -1165,7 +1165,7 @@ gv assembly.final.ps
  <entry>
    <title>Guide to newblr output</title>
    <link href="http://bradfordcondon.com/2017/07/11/newblr/"/>
-   <updated>2017-07-11T00:00:00-04:00</updated>
+   <updated>2017-07-11T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/07/11/newblr</id>
    <content type="html">&lt;p&gt;This post is part 8 of a series on bioinformatics file formats, written for the 2017 UK-KBRIN Essentials of Next 
 Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
@@ -1562,7 +1562,7 @@ assembly.&lt;/p&gt;
  <entry>
    <title>qual format</title>
    <link href="http://bradfordcondon.com/2017/07/09/qual_format_phred/"/>
-   <updated>2017-07-09T00:00:00-04:00</updated>
+   <updated>2017-07-09T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/07/09/qual_format_phred</id>
    <content type="html">&lt;p&gt;This post is part 7 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
@@ -1639,7 +1639,7 @@ At this point, all we need to understand is what are &lt;a href=&quot;https://en
  <entry>
    <title>ZFF annotations for SNAP</title>
    <link href="http://bradfordcondon.com/2017/07/02/ZFF/"/>
-   <updated>2017-07-02T00:00:00-04:00</updated>
+   <updated>2017-07-02T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/07/02/ZFF</id>
    <content type="html">&lt;p&gt;This post is part 6 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
@@ -1746,7 +1746,7 @@ Eterm   5103   5280   +    46   1   0   2   Y73E7A.7
  <entry>
    <title>BLAST output</title>
    <link href="http://bradfordcondon.com/2017/06/14/BLAST_format_explained/"/>
-   <updated>2017-06-14T00:00:00-04:00</updated>
+   <updated>2017-06-14T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/06/14/BLAST_format_explained</id>
    <content type="html">&lt;p&gt;This post is part 5 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
 
@@ -1858,7 +1858,7 @@ GGGATATAGAGGCCCCCAACCACACCCCT
  <entry>
    <title>Velvet assembly output files</title>
    <link href="http://bradfordcondon.com/2017/06/13/velvet_out/"/>
-   <updated>2017-06-13T00:00:00-04:00</updated>
+   <updated>2017-06-13T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/06/13/velvet_out</id>
    <content type="html">&lt;p&gt;This post is part 4 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next 
 Generation Sequencing Workshop at the University of Kentucky.&lt;/p&gt;
@@ -2027,7 +2027,7 @@ Ultimately the stats files included with the assembly can be more confusing than
  <entry>
    <title>GTF (General Transfer Format)</title>
    <link href="http://bradfordcondon.com/2017/05/24/GTF/"/>
-   <updated>2017-05-24T00:00:00-04:00</updated>
+   <updated>2017-05-24T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/05/24/GTF</id>
    <content type="html">&lt;p&gt;This post is part 3 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted &lt;a href=&quot;http://www.endophyte.uky.edu/ngs/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -2070,7 +2070,7 @@ For more details, please see the &lt;a href=&quot;www.ensembl.org/info/website/u
  <entry>
    <title>Expanding Your Horizons Kentucky 2017</title>
    <link href="http://bradfordcondon.com/2017/05/14/EYHpress/"/>
-   <updated>2017-05-14T00:00:00-04:00</updated>
+   <updated>2017-05-14T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/05/14/EYHpress</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/EYH2017/EYHbanner.gif&quot; alt=&quot;Expanding your horizons header&quot; /&gt; 
 &lt;img src=&quot;/assets/img/EYH2017/sponsor_image.jpg&quot; alt=&quot;NSF epscor&quot; /&gt;&lt;/p&gt;
@@ -2155,7 +2155,7 @@ This day-long event will include hands-on activities in science, technology, eng
  <entry>
    <title>FASTQ format explained</title>
    <link href="http://bradfordcondon.com/2017/05/14/fastq_format_explained/"/>
-   <updated>2017-05-14T00:00:00-04:00</updated>
+   <updated>2017-05-14T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/05/14/fastq_format_explained</id>
    <content type="html">&lt;p&gt;This post is part 2 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.  The conference website is hosted &lt;a href=&quot;http://www.endophyte.uky.edu/ngs/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -2218,7 +2218,7 @@ Sequences off of an illumina machine will follow this format:&lt;/p&gt;
  <entry>
    <title>Introduction to BLAST</title>
    <link href="http://bradfordcondon.com/2017/05/03/remoteBlast/"/>
-   <updated>2017-05-03T00:00:00-04:00</updated>
+   <updated>2017-05-03T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/05/03/remoteBlast</id>
    <content type="html">&lt;h4 id=&quot;uk-blast-workshop-2016&quot;&gt;UK-BLAST workshop 2016&lt;/h4&gt;
 
@@ -2392,7 +2392,7 @@ The assembly page has even more information about this strain’s genome sequenc
  <entry>
    <title>PATH, a guide to finding one's way</title>
    <link href="http://bradfordcondon.com/2017/04/23/exploringPATH/"/>
-   <updated>2017-04-23T00:00:00-04:00</updated>
+   <updated>2017-04-23T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/04/23/exploringPATH</id>
    <content type="html">&lt;h4 id=&quot;uk-blast-workshop-2016&quot;&gt;UK-BLAST workshop 2016&lt;/h4&gt;
 
@@ -2705,7 +2705,7 @@ ls test_folder
  <entry>
    <title>fixing tabs</title>
    <link href="http://bradfordcondon.com/2017/04/19/fixHeaderTabs/"/>
-   <updated>2017-04-19T00:00:00-04:00</updated>
+   <updated>2017-04-19T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/04/19/fixHeaderTabs</id>
    <content type="html">&lt;p&gt;As you can see below, the navigation tabs I’m using at the top of my page didn’t properly update depending on what page the user is at.  While on the CV page, the CV tab should be selected, not home.&lt;/p&gt;
 
@@ -2764,7 +2764,7 @@ ls test_folder
  <entry>
    <title>Floracliff mushroom workshop</title>
    <link href="http://bradfordcondon.com/2017/04/17/floraCliffUpdate/"/>
-   <updated>2017-04-17T00:00:00-04:00</updated>
+   <updated>2017-04-17T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/04/17/floraCliffUpdate</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/&quot;&gt;I previously announced a Workshop we hosted at Floracliff on mushroom identification In October 2016&lt;/a&gt;.  It’s been a while but I wanted to share a little bit about the experience and post materials.&lt;/p&gt;
 
@@ -2812,7 +2812,7 @@ ls test_folder
  <entry>
    <title>Knitting to Jekyll</title>
    <link href="http://bradfordcondon.com/2017/04/11/testKnitr/"/>
-   <updated>2017-04-11T00:00:00-04:00</updated>
+   <updated>2017-04-11T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/04/11/testKnitr</id>
    <content type="html">&lt;h2 id=&quot;knitting-r-markdown-to-jekyll&quot;&gt;Knitting R Markdown to Jekyll&lt;/h2&gt;
 
@@ -2861,7 +2861,7 @@ qplot(mpg, drat, data=mtcars, color=cyl, main=&quot;mpg vs drat mtcars&quot;)
  <entry>
    <title>Moving to Jekyll</title>
    <link href="http://bradfordcondon.com/2017/04/09/introToJekyll/"/>
-   <updated>2017-04-09T00:00:00-04:00</updated>
+   <updated>2017-04-09T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/04/09/introToJekyll</id>
    <content type="html">&lt;h2 id=&quot;switching-to-jekyll&quot;&gt;Switching to Jekyll&lt;/h2&gt;
 
@@ -2928,7 +2928,7 @@ This is my post that I get to write in *Markdown*!
  <entry>
    <title>Moving to Github Pages</title>
    <link href="http://bradfordcondon.com/2017/04/07/migrating-to-github/"/>
-   <updated>2017-04-07T00:00:00-04:00</updated>
+   <updated>2017-04-07T00:00:00+00:00</updated>
    <id>http://bradfordcondon.com/2017/04/07/migrating-to-github</id>
    <content type="html">&lt;p&gt;I’m moving to a Markdown-based blog using Jekyll and github pages hosting!&lt;/p&gt;
 
@@ -2943,7 +2943,7 @@ This is my post that I get to write in *Markdown*!
  <entry>
    <title>Expanding Your Horizons comes to Kentucky</title>
    <link href="http://bradfordcondon.com/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky/"/>
-   <updated>2017-01-10T14:00:07-05:00</updated>
+   <updated>2017-01-10T19:00:07+00:00</updated>
    <id>http://bradfordcondon.com/outreach/science/2017/01/10/expanding-your-horizons-comes-to-kentucky</id>
    <content type="html">&lt;p&gt;I’m excited to announce that, a collaboration between Dr. Ellen Crocker, Dr. Susan Odom and myself has secured an NSF EPSCoR (National Science Foundation Experimental Program to Stimulate Competitive Research) grant to bring a science conference for young girls to University of Kentucky.  The conference, an extension of the &lt;a href=&quot;http://www.eyhn.org/&quot;&gt;Expanding Your Horizons (EYH) network&lt;/a&gt;, is a great opportunity for young girls, as well as undergraduate and graduate students.  The conference will be held April 29, 2017.&lt;/p&gt;
 
@@ -2966,7 +2966,7 @@ This is my post that I get to write in *Markdown*!
  <entry>
    <title>Upcoming workshop: Mushrooms 101 at Floracliff Nature Sanctuary</title>
    <link href="http://bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory/"/>
-   <updated>2016-08-25T14:21:02-04:00</updated>
+   <updated>2016-08-25T18:21:02+00:00</updated>
    <id>http://bradfordcondon.com/fun/science/2016/08/25/upcoming-workshop-mushrooms-101-at-floracliff-nature-conservatory</id>
    <content type="html">&lt;p&gt;I’m excited to announce that my wife &lt;a href=&quot;https://evcrockerblog.wordpress.com/&quot;&gt;Dr. Ellen Crocker&lt;/a&gt; and I will be teaching a workshop at the &lt;a href=&quot;http://www.floracliff.org/fieldstudies.html&quot;&gt;Floracliff Nature Sanctuary&lt;/a&gt; on Friday and Saturday, October 14th-15th 2016.  I’m particularly proud to partner with Floracliff: it’s a beautiful nature preserve with very cool educational opportunities available to the public.  Ellen has taken Rob Paratley’s fern workshop and she said it was fantastic.&lt;/p&gt;
 
@@ -2994,7 +2994,7 @@ This is my post that I get to write in *Markdown*!
  <entry>
    <title>Society of Postdoctoral Scholars technical officer</title>
    <link href="http://bradfordcondon.com/science/2016/08/09/577/"/>
-   <updated>2016-08-09T11:45:48-04:00</updated>
+   <updated>2016-08-09T15:45:48+00:00</updated>
    <id>http://bradfordcondon.com/science/2016/08/09/577</id>
    <content type="html">&lt;p&gt;&lt;img class=&quot;size-full wp-image-578&quot; src=&quot;/wp-content/uploads/2016/08/Screen-Shot-2016-08-09-at-11.44.33-AM.png&quot; sizes=&quot;(max-width: 562px) 100vw, 562px&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/p&gt;
 
@@ -3007,7 +3007,7 @@ This is my post that I get to write in *Markdown*!
  <entry>
    <title>Where did MaCQIIME go?</title>
    <link href="http://bradfordcondon.com/science/tools/2016/07/11/where-did-macqiime-go/"/>
-   <updated>2016-07-11T14:29:34-04:00</updated>
+   <updated>2016-07-11T18:29:34+00:00</updated>
    <id>http://bradfordcondon.com/science/tools/2016/07/11/where-did-macqiime-go</id>
    <content type="html">&lt;p&gt;For those of you running MacQIIME on OSX El Capitan or higher, you may (like me) find that the MacQIIME executable is no longer in your path.&lt;/p&gt;
 
@@ -3027,7 +3027,7 @@ This is my post that I get to write in *Markdown*!
  <entry>
    <title>Using the command line and perl to quickly trim files</title>
    <link href="http://bradfordcondon.com/science/tools/2016/05/23/using-the-command-line-and-perl-to-quickly-trim-files/"/>
-   <updated>2016-05-23T14:58:02-04:00</updated>
+   <updated>2016-05-23T18:58:02+00:00</updated>
    <id>http://bradfordcondon.com/science/tools/2016/05/23/using-the-command-line-and-perl-to-quickly-trim-files</id>
    <content type="html">&lt;p&gt;Sometimes, you have a task where the goal is to remove a certain phrase, set of characters, or trailing characters within a file. This happens all the time working with FASTA files. For whatever reason, the header description might be longer than you like. Some phylogenetics programs, for example, have a character limit on headers. Failure to fix this on your own can result in clipped headers, which in turn can result in non-unique headers and failed scripts.&lt;/p&gt;
 
@@ -3070,7 +3070,7 @@ This is my post that I get to write in *Markdown*!
  <entry>
    <title>Plotting a SNP map by scaffold</title>
    <link href="http://bradfordcondon.com/science/tools/2016/01/08/plotting-a-snp-map-by-scaffold/"/>
-   <updated>2016-01-08T16:29:37-05:00</updated>
+   <updated>2016-01-08T21:29:37+00:00</updated>
    <id>http://bradfordcondon.com/science/tools/2016/01/08/plotting-a-snp-map-by-scaffold</id>
    <content type="html">&lt;p&gt; &lt;/p&gt;
 
@@ -3136,7 +3136,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Metagenomics in R: Phyloseq</title>
    <link href="http://bradfordcondon.com/science/tools/2015/12/26/metagenomics-in-r-phyloseq/"/>
-   <updated>2015-12-26T12:36:19-05:00</updated>
+   <updated>2015-12-26T17:36:19+00:00</updated>
    <id>http://bradfordcondon.com/science/tools/2015/12/26/metagenomics-in-r-phyloseq</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://joey711.github.io/phyloseq/&quot;&gt;Phyloseq&lt;/a&gt; is a fantastic R package that really helped me get started in R.  If you need to process your metagenomic data but lack the experience in statistics/R to use, say, the ecology stats R package &lt;a href=&quot;https://cran.r-project.org/web/packages/vegan/vegan.pdf&quot;&gt;VEGAN&lt;/a&gt;, I highly recommend giving Phyloseq a try.  Running through the vignettes will produce great heatmaps, taxonomy plots, and PCA/NMDS plots.&lt;/p&gt;
 
@@ -3161,7 +3161,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Pardon my mess</title>
    <link href="http://bradfordcondon.com/uncategorized/2015/12/26/pardon-my-mess/"/>
-   <updated>2015-12-26T12:05:24-05:00</updated>
+   <updated>2015-12-26T17:05:24+00:00</updated>
    <id>http://bradfordcondon.com/uncategorized/2015/12/26/pardon-my-mess</id>
    <content type="html">&lt;p&gt;Hello, thanks for finding my page!&lt;/p&gt;
 
@@ -3178,7 +3178,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Extracting MinION fastq on the command line using poRe</title>
    <link href="http://bradfordcondon.com/science/2015/09/18/extracting-minion-fastq-on-the-command-line-using-pore/"/>
-   <updated>2015-09-18T12:25:02-04:00</updated>
+   <updated>2015-09-18T16:25:02+00:00</updated>
    <id>http://bradfordcondon.com/science/2015/09/18/extracting-minion-fastq-on-the-command-line-using-pore</id>
    <content type="html">&lt;p&gt;Source: &lt;a href=&quot;https://biomickwatson.wordpress.com/2015/09/18/extracting-minion-fastq-on-the-command-line-using-pore/&quot;&gt;Extracting MinION fastq on the command line using poRe&lt;/a&gt;&lt;/p&gt;
 </content>
@@ -3187,7 +3187,7 @@ scaffold00001   176752  176752
  <entry>
    <title>An unfortunate sweet tooth for sensationalism</title>
    <link href="http://bradfordcondon.com/science/2015/05/28/an-unfortunate-sweet-tooth-for-sensationalism/"/>
-   <updated>2015-05-28T17:10:09-04:00</updated>
+   <updated>2015-05-28T21:10:09+00:00</updated>
    <id>http://bradfordcondon.com/science/2015/05/28/an-unfortunate-sweet-tooth-for-sensationalism</id>
    <content type="html">&lt;p&gt;When I taught a science for non-science majors at Cornell University, my favorite lecture was on science in the popular media.  My learning objective was straight forward: I wanted students to pick up a newspaper, flip to the science section, and detect bullshit.&lt;/p&gt;
 
@@ -3260,7 +3260,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Gamification for positive habits</title>
    <link href="http://bradfordcondon.com/fun/tools/2015/01/30/gamification-in-science/"/>
-   <updated>2015-01-29T20:30:27-05:00</updated>
+   <updated>2015-01-30T01:30:27+00:00</updated>
    <id>http://bradfordcondon.com/fun/tools/2015/01/30/gamification-in-science</id>
    <content type="html">&lt;p style=&quot;text-align: left;&quot;&gt;
   For as long as I can remember, I&amp;#8217;ve enjoyed video games.  If there&amp;#8217;s leveling up, character optimization, or strategic battles to be had, I&amp;#8217;m in.  At my worst, I can burn an entire Sunday; I&amp;#8217;ll admit that I&amp;#8217;ve banned myself from playing &lt;a href=&quot;http://blog.dota2.com/&quot;&gt;DOTA2&lt;/a&gt; after one too many late nights.
@@ -3296,7 +3296,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Lab notebook software</title>
    <link href="http://bradfordcondon.com/tools/2014/10/29/lab-notebook-software/"/>
-   <updated>2014-10-29T13:56:51-04:00</updated>
+   <updated>2014-10-29T17:56:51+00:00</updated>
    <id>http://bradfordcondon.com/tools/2014/10/29/lab-notebook-software</id>
    <content type="html">&lt;p&gt;Last year, I wrote about &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/07/18/a-digital-notebook/&quot; title=&quot;A digital notebook&quot;&gt;using Evernote as my digital lab notebook.&lt;/a&gt;  With the release of &lt;a href=&quot;http://findingsapp.com/&quot;&gt;Findings, a new digital notebook software&lt;/a&gt; from the people who created my &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/07/07/papers-as-a-reference-manager/&quot; title=&quot;Papers as a reference manager&quot;&gt;favorite reference management software Papers&lt;/a&gt;, I thought I would reflect on my digital notebook needs.&lt;/p&gt;
 
@@ -3325,7 +3325,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Who are CyberVor?</title>
    <link href="http://bradfordcondon.com/fun/2014/08/06/who-are-cybervor/"/>
-   <updated>2014-08-06T17:22:27-04:00</updated>
+   <updated>2014-08-06T21:22:27+00:00</updated>
    <id>http://bradfordcondon.com/fun/2014/08/06/who-are-cybervor</id>
    <content type="html">&lt;p&gt;Well, the &lt;a href=&quot;http://www.bbc.com/news/technology-28654613&quot;&gt;BBC&lt;/a&gt; and The &lt;a href=&quot;http://www.nytimes.com/2014/08/06/technology/russian-gang-said-to-amass-more-than-a-billion-stolen-internet-credentials.html?hp&amp;amp;action=click&amp;amp;pgtype=Homepage&amp;amp;version=LedeSum&amp;amp;module=first-column-region&amp;amp;region=top-news&amp;amp;WT.nav=top-news&amp;amp;_r=0&quot;&gt;New York Times&lt;/a&gt; have both published pieces on the Russian hackers “CyberVor”.  The claim is that  1.2 billion user names and passwords from some 420,000 websites have been hacked.  The sites/users affected, nature of the vulnerability, and severity of the threat have not been disclosed.&lt;/p&gt;
 
@@ -3346,7 +3346,7 @@ scaffold00001   176752  176752
  <entry>
    <title>MOOCs and me</title>
    <link href="http://bradfordcondon.com/uncategorized/2014/07/04/moocs-and-me/"/>
-   <updated>2014-07-04T15:52:41-04:00</updated>
+   <updated>2014-07-04T19:52:41+00:00</updated>
    <id>http://bradfordcondon.com/uncategorized/2014/07/04/moocs-and-me</id>
    <content type="html">&lt;p&gt;MOOCs (Massive Open Online Courses)  are an interesting development in higher education.  At their most impressive, they are a way for brilliant educators to reach thousands of students at a time, all across the world.  MOOCs have the potential to remove educational barriers like learning disabilities, economic constraints, geographic realities, or busy life schedules.  My alma mater, Cornell, &lt;a href=&quot;http://www.news.cornell.edu/stories/2013/10/cornell-s-first-four-moocs-launch-next-semester&quot;&gt;launched their first wave of MOOCs last semester.&lt;/a&gt;  Cornell prides itself on catering to “any person, any study” and its not hard to see how MOOCs can drive this mission forward.&lt;/p&gt;
 
@@ -3367,7 +3367,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Scientific writing is dry (but that&amp;#8217;s OK)</title>
    <link href="http://bradfordcondon.com/fun/2014/04/28/scientific-writing-is-dry-but-thats-ok/"/>
-   <updated>2014-04-28T11:55:59-04:00</updated>
+   <updated>2014-04-28T15:55:59+00:00</updated>
    <id>http://bradfordcondon.com/fun/2014/04/28/scientific-writing-is-dry-but-thats-ok</id>
    <content type="html">&lt;p&gt;This morning I was delighted to come across the &lt;a href=&quot;http://www.imafungus.org/&quot;&gt;IMA Fungus journal&lt;/a&gt;.  Put out by the International Mycological Association , the journal title (which primarily publishes species announcements and descriptions) playfully introduces each organism with a friendly “Hello, I’m a fungus!”  The truth is, scientific literature is seldom so fun and informal.&lt;/p&gt;
 
@@ -3389,7 +3389,7 @@ scaffold00001   176752  176752
  <entry>
    <title>How many copies of my thesis/dissertation should I order?</title>
    <link href="http://bradfordcondon.com/fun/2014/03/17/how-many-copies-of-my-thesisdissertation-should-i-order/"/>
-   <updated>2014-03-16T23:23:00-04:00</updated>
+   <updated>2014-03-17T03:23:00+00:00</updated>
    <id>http://bradfordcondon.com/fun/2014/03/17/how-many-copies-of-my-thesisdissertation-should-i-order</id>
    <content type="html">&lt;p&gt;&lt;em&gt; &lt;/em&gt;&lt;/p&gt;
 
@@ -3441,7 +3441,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Celebrity burgers a reality</title>
    <link href="http://bradfordcondon.com/fun/2014/02/28/celebrity-burgers-a-reality/"/>
-   <updated>2014-02-28T12:53:03-05:00</updated>
+   <updated>2014-02-28T17:53:03+00:00</updated>
    <id>http://bradfordcondon.com/fun/2014/02/28/celebrity-burgers-a-reality</id>
    <content type="html">&lt;p&gt;Back in September last year, &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/09/14/ethical-implications-of-the-stem-cell-burger/&quot;&gt;I explored some possibilities that the “Stem Cell burger” opened up.&lt;/a&gt;  Perhaps the most far-fetched idea I had was to produce meat from cloned celebrity stem cells.&lt;/p&gt;
 
@@ -3456,7 +3456,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Scoop.it! and content curation</title>
    <link href="http://bradfordcondon.com/tools/2014/01/10/scoop-it-and-content-curation/"/>
-   <updated>2014-01-10T11:35:07-05:00</updated>
+   <updated>2014-01-10T16:35:07+00:00</updated>
    <id>http://bradfordcondon.com/tools/2014/01/10/scoop-it-and-content-curation</id>
    <content type="html">&lt;p&gt;In the past, I’ve written about the &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/&quot; title=&quot;Let the literature come to you: custom pubmed RSS feeds&quot;&gt;importance of setting up custom newsfeeds&lt;/a&gt; for current publications in your field, and using &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/04/28/16/&quot; title=&quot;Tools for science: Citeulike&quot;&gt;Citeulike to share references&lt;/a&gt;.  While these tools can be useful for discovering and archiving content, they are not ideal for sharing and disseminating it.  Gathering content and distilling it for others is an art: the art of content curation.&lt;/p&gt;
 
@@ -3477,7 +3477,7 @@ scaffold00001   176752  176752
  <entry>
    <title>Consider the ostracod</title>
    <link href="http://bradfordcondon.com/fun/2013/12/03/consider-the-ostracod/"/>
-   <updated>2013-12-03T16:18:24-05:00</updated>
+   <updated>2013-12-03T21:18:24+00:00</updated>
    <id>http://bradfordcondon.com/fun/2013/12/03/consider-the-ostracod</id>
    <content type="html">&lt;p&gt;What does it mean to be a scientist?  I present to you some overly poetic thoughts on the topic.&lt;/p&gt;
 
@@ -3508,7 +3508,7 @@ scaffold00001   176752  176752
  <entry>
    <title>The Tannosome</title>
    <link href="http://bradfordcondon.com/science/2013/09/26/the-tannosome/"/>
-   <updated>2013-09-26T16:35:04-04:00</updated>
+   <updated>2013-09-26T20:35:04+00:00</updated>
    <id>http://bradfordcondon.com/science/2013/09/26/the-tannosome</id>
    <content type="html">&lt;p&gt;An article posted on the &lt;a href=&quot;http://blogs.scientificamerican.com/food-matters/2013/09/20/tannosomes-and-the-trickle-around-effect/&quot;&gt;Scientific American blog&lt;/a&gt; caught my attention recently.  Researchers have discovered the existence of a new organelle, the tannosome, in plants.  It is this organelle that produces tannins, of great interest to wine lovers.  The scientific article in question, posted to &lt;a href=&quot;http://sco.lt/5b1zST&quot;&gt;my scoop.it&lt;/a&gt;, was officially published in the Annals of Botany on September 25th 2013, but it barely created a ripple in the news cycle.  Why not?&lt;/p&gt;
 
@@ -3546,7 +3546,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>Ethical implications of the Stem Cell Burger</title>
    <link href="http://bradfordcondon.com/fun/2013/09/14/ethical-implications-of-the-stem-cell-burger/"/>
-   <updated>2013-09-14T05:00:47-04:00</updated>
+   <updated>2013-09-14T09:00:47+00:00</updated>
    <id>http://bradfordcondon.com/fun/2013/09/14/ethical-implications-of-the-stem-cell-burger</id>
    <content type="html">&lt;p&gt;I am  writing a short piece on the &lt;a href=&quot;http://www.cnn.com/2013/08/05/world/europe/europe-stem-cell-burger-ott&quot;&gt;Stem Cell Burger&lt;/a&gt; which was unveiled early last month.  The &lt;a href=&quot;http://culturedbeef.net/&quot;&gt;Cultured Beef website&lt;/a&gt; is eager to point out the many benefits this technology could have for global research usage and animal ethics.  &lt;a href=&quot;http://www.huffingtonpost.com/paul-knoepfler/test-tube-burger_b_3726288.html&quot;&gt;Opponents&lt;/a&gt; are just as quick to point out the possibility of unknown side-effects.&lt;/p&gt;
 
@@ -3593,7 +3593,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>Twitter bootcamp</title>
    <link href="http://bradfordcondon.com/2013/09/02/twitter-bootcamp/"/>
-   <updated>2013-09-02T13:25:54-04:00</updated>
+   <updated>2013-09-02T17:25:54+00:00</updated>
    <id>http://bradfordcondon.com/2013/09/02/twitter-bootcamp</id>
    <content type="html">&lt;p&gt;&lt;img class=&quot;alignnone&quot; alt=&quot;&quot; src=&quot;https://i2.wp.com/abs.twimg.com/a/1377795275/images/resources/twitter-bird-blue-on-white.png?resize=300%2C300&amp;#038;ssl=1&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;/p&gt;
 
@@ -3604,7 +3604,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>RSS readers</title>
    <link href="http://bradfordcondon.com/tools/2013/09/02/rss-readers/"/>
-   <updated>2013-09-02T13:18:56-04:00</updated>
+   <updated>2013-09-02T17:18:56+00:00</updated>
    <id>http://bradfordcondon.com/tools/2013/09/02/rss-readers</id>
    <content type="html">&lt;p&gt;(This post is a continuation of my science RSS series, found &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/&quot; title=&quot;Let the literature come to you: custom pubmed RSS feeds&quot;&gt;here&lt;/a&gt;)&lt;/p&gt;
 
@@ -3634,7 +3634,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>A digital notebook</title>
    <link href="http://bradfordcondon.com/tools/2013/07/18/a-digital-notebook/"/>
-   <updated>2013-07-18T18:13:37-04:00</updated>
+   <updated>2013-07-18T22:13:37+00:00</updated>
    <id>http://bradfordcondon.com/tools/2013/07/18/a-digital-notebook</id>
    <content type="html">&lt;p&gt;When I first started graduate school, I kept an old-fashioned notebook.  A 4×4 quad ruled Roaring Spring Lab Notebook.&lt;/p&gt;
 
@@ -3672,7 +3672,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>Emotion matters: Zimmerman vs Alexander</title>
    <link href="http://bradfordcondon.com/uncategorized/2013/07/14/emotion-matters-zimmerman-vs-alexander/"/>
-   <updated>2013-07-14T01:22:50-04:00</updated>
+   <updated>2013-07-14T05:22:50+00:00</updated>
    <id>http://bradfordcondon.com/uncategorized/2013/07/14/emotion-matters-zimmerman-vs-alexander</id>
    <content type="html">&lt;p&gt;The Florida Stand Your Ground controversy has everyone talking (and nevermind that neither case officially invoked said law).  And a mother (Marissa Alexander) getting 20 years &lt;a href=&quot;http://www.huffingtonpost.com/2012/05/11/marissa-alexander-sentenced_n_1510113.html&quot;&gt;(a minimum sentence for firing a gun during a crime)&lt;/a&gt; for firing warning shots at an abusive husband looks pretty shitty next time a man (George Zimmerman) shooting a 17-year old boy and &lt;a href=&quot;http://www.nytimes.com/2013/07/14/us/george-zimmerman-verdict-trayvon-martin.html?pagewanted=all&quot;&gt;being acquitted of all charges&lt;/a&gt;.&lt;/p&gt;
 
@@ -3694,7 +3694,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>Papers as a reference manager</title>
    <link href="http://bradfordcondon.com/uncategorized/2013/07/07/papers-as-a-reference-manager/"/>
-   <updated>2013-07-07T14:15:04-04:00</updated>
+   <updated>2013-07-07T18:15:04+00:00</updated>
    <id>http://bradfordcondon.com/uncategorized/2013/07/07/papers-as-a-reference-manager</id>
    <content type="html">&lt;p&gt;I love Mekentosj’s &lt;a href=&quot;http://www.papersapp.com/&quot;&gt;Papers&lt;/a&gt;, and &lt;a href=&quot;http://bradfordcondon.wordpress.com/2013/05/05/citation-management-papers/&quot; title=&quot;Citation management: Papers&quot;&gt;encourage you to check it out if you are on a mac and keep digital literature.&lt;/a&gt;&lt;/p&gt;
 
@@ -3728,7 +3728,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>Mycozombies of The Last of Us</title>
    <link href="http://bradfordcondon.com/fun/2013/06/22/the-last-of-us/"/>
-   <updated>2013-06-22T16:33:43-04:00</updated>
+   <updated>2013-06-22T20:33:43+00:00</updated>
    <id>http://bradfordcondon.com/fun/2013/06/22/the-last-of-us</id>
    <content type="html">&lt;p&gt;Warning:  probably some incredibly mild spoilers below regarding the game.&lt;/p&gt;
 
@@ -3782,7 +3782,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>Snack Writing</title>
    <link href="http://bradfordcondon.com/writing/2013/06/16/snack-writing/"/>
-   <updated>2013-06-16T10:19:55-04:00</updated>
+   <updated>2013-06-16T14:19:55+00:00</updated>
    <id>http://bradfordcondon.com/writing/2013/06/16/snack-writing</id>
    <content type="html">&lt;p&gt;I was reading &lt;a href=&quot;http://www.nature.com/naturejobs/science/articles/10.1038/nj7354-129a&quot;&gt;this Nature article&lt;/a&gt; by Kim Gardiner and Hugh Kearns on snack writing.  Their argument is that scientists who write in a small, fixed window, 45 minutes a day, every day, write more than “block writers” who blackout entire days for writing.&lt;/p&gt;
 
@@ -3797,7 +3797,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>Scientifink!</title>
    <link href="http://bradfordcondon.com/fun/2013/06/13/scientifink/"/>
-   <updated>2013-06-13T11:32:47-04:00</updated>
+   <updated>2013-06-13T15:32:47+00:00</updated>
    <id>http://bradfordcondon.com/fun/2013/06/13/scientifink</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://cornellcals.tumblr.com/post/52869381183/scientifink-bradford-condon&quot;&gt;I am featured in this week’s CALS “scientifink” writeup!&lt;/a&gt;&lt;/p&gt;
 
@@ -3830,7 +3830,7 @@ Organelle image: from wikimedia commons, http://upload.wikimedia.org/wikipedia/
  <entry>
    <title>Having trouble learning?  Get some rest</title>
    <link href="http://bradfordcondon.com/writing/2013/06/08/having-trouble-learning-get-some-rest/"/>
-   <updated>2013-06-08T14:33:11-04:00</updated>
+   <updated>2013-06-08T18:33:11+00:00</updated>
    <id>http://bradfordcondon.com/writing/2013/06/08/having-trouble-learning-get-some-rest</id>
    <content type="html">&lt;p&gt;Do you schedule breaks and rests during your working, writing, and learning?  Do you make time for sleep in your life?   A new article by Ingrid L. C. Nieuwenhuis et al., &lt;a href=&quot;http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0065046&quot;&gt;published June 5th in the journal PLOS ONE,&lt;/a&gt; provides another piece of evidence that you should.&lt;/p&gt;
 
@@ -3866,7 +3866,7 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  <entry>
    <title>Multitasking help: Slicer</title>
    <link href="http://bradfordcondon.com/tools/2013/06/07/multitasking-help-slicer/"/>
-   <updated>2013-06-07T13:37:57-04:00</updated>
+   <updated>2013-06-07T17:37:57+00:00</updated>
    <id>http://bradfordcondon.com/tools/2013/06/07/multitasking-help-slicer</id>
    <content type="html">&lt;p&gt;Sometimes it’s the little things that make a big difference.&lt;/p&gt;
 
@@ -3888,7 +3888,7 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  <entry>
    <title>Four ways to get writing</title>
    <link href="http://bradfordcondon.com/writing/2013/06/04/four-ways-to-get-writing/"/>
-   <updated>2013-06-04T17:17:47-04:00</updated>
+   <updated>2013-06-04T21:17:47+00:00</updated>
    <id>http://bradfordcondon.com/writing/2013/06/04/four-ways-to-get-writing</id>
    <content type="html">&lt;p&gt;I am trying to write my PhD dissertation.&lt;/p&gt;
 
@@ -3941,7 +3941,7 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  <entry>
    <title>Get your work on the cloud: Dropbox</title>
    <link href="http://bradfordcondon.com/tools/2013/05/18/get-your-work-on-the-cloud-dropbox/"/>
-   <updated>2013-05-18T17:04:28-04:00</updated>
+   <updated>2013-05-18T21:04:28+00:00</updated>
    <id>http://bradfordcondon.com/tools/2013/05/18/get-your-work-on-the-cloud-dropbox</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/&quot;&gt;Dropbox&lt;/a&gt; is simple and intuitive.  Make a folder on your computer that is automatically backed up to a cloud storage account.  Suddenly, the files you work on and the data you access syncs across devices, at home and at work.  Plus, you can dropbox folders with others.&lt;/p&gt;
 
@@ -3962,7 +3962,7 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  <entry>
    <title>Let the literature come to you: custom pubmed RSS feeds</title>
    <link href="http://bradfordcondon.com/tools/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/"/>
-   <updated>2013-05-10T16:23:45-04:00</updated>
+   <updated>2013-05-10T20:23:45+00:00</updated>
    <id>http://bradfordcondon.com/tools/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds</id>
    <content type="html">&lt;p&gt;RSS (rich site summary, or, really simple syndication) is an invaluable tool for all academics.  If you ever wish it was easier to stay up the current academic literature, then this is tool for you.&lt;/p&gt;
 
@@ -3984,7 +3984,7 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  <entry>
    <title>Citation management: Papers</title>
    <link href="http://bradfordcondon.com/tools/2013/05/05/citation-management-papers/"/>
-   <updated>2013-05-05T16:55:41-04:00</updated>
+   <updated>2013-05-05T20:55:41+00:00</updated>
    <id>http://bradfordcondon.com/tools/2013/05/05/citation-management-papers</id>
    <content type="html">&lt;p&gt;Before you can do good science, you must read good science.   A lot of it.  The good, the bad.&lt;/p&gt;
 
@@ -4013,7 +4013,7 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  <entry>
    <title>Tools for science: Citeulike</title>
    <link href="http://bradfordcondon.com/tools/2013/04/28/16/"/>
-   <updated>2013-04-27T23:08:04-04:00</updated>
+   <updated>2013-04-28T03:08:04+00:00</updated>
    <id>http://bradfordcondon.com/tools/2013/04/28/16</id>
    <content type="html">&lt;p&gt;I’m pretty sure I have too many gadgets for managing my academic references.  I’d surely be better off if I spent more time reading the literature, and less time setting up new accounts that I’ll neglect (this blog being a perfect case in point).&lt;/p&gt;
 
@@ -4033,7 +4033,7 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  <entry>
    <title>Tools for science: Citeulike</title>
    <link href="http://bradfordcondon.com/?p=16"/>
-   <updated>2013-04-27T23:08:04-04:00</updated>
+   <updated>2013-04-28T03:08:04+00:00</updated>
    <id>http://bradfordcondon.com/16-Citeulike</id>
    <content type="html">&lt;p&gt;I’m pretty sure I have too many gadgets for managing my academic references.  I’d surely be better off if I spent more time reading the literature, and less time setting up new accounts that I’ll neglect (this blog being a perfect case in point).&lt;/p&gt;
 

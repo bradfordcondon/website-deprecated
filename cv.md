@@ -94,7 +94,7 @@ Trained and certified as a [Data Carpentry](http://www.datacarpentry.org/) and [
 
 ##### KBRIN Next Generation Sequencing and Data Analysis Workshop, *University of Kentucky* 2017
  
-Instructor and web developer.  Implemented and maintained the (Drupal-based workshop website)[https://ngs.csr.uky.edu/] and REDCap registration/survey system.
+Instructor and web developer.  Implemented and maintained the (Drupal-based workshop website)[https://ngs.csr.uky.edu/] and REDCap registration/survey system.  [Poster publication link](https://link.springer.com/article/10.1186/s12859-017-1781-y).
 
 ##### UK-BLAST: *University of Kentucky* 2016
 
@@ -129,16 +129,16 @@ _Full day workshops developed & implemented:_
 #### Presentations
 
 ##### Workshops
-* [Floracliff mushroom identification workshop](http://www.bradfordcondon.com/2017/04/17/floraCliffUpdate/) Lexington, KY (2016)
-* [AgBioData metadata committee](https://www.agbiodata.org/working_groups/metadata_persistence_wg) Salt Lake City, UT (2017)
+* [Floracliff mushroom identification workshop](http://www.bradfordcondon.com/2017/04/17/floraCliffUpdate/). Lexington, KY (2016)
+* [AgBioData metadata committee](https://www.agbiodata.org/working_groups/metadata_persistence_wg). Salt Lake City, UT (2017)
+* [GMOD Hackathon](http://www.bradfordcondon.com/2018/01/12/gmod_day_1_2018/), [Plant and Animal Genomes Conference](http://www.intlpag.org/). San Diego CA (2017)
+* [Tripal 2017 Hackathon](http://www.bradfordcondon.com/2018/01/17/tripal_at_pag_2018/) Instructor, [Plant and Animal Genomes Conference](http://www.intlpag.org/). San Diego CA (2017)
 
 ##### Talks
-
 * Joint Genome Institute Dothideomycete jamboree. Walnut Creek, CA (2008)
 * Fungal Genetics Conference, secondary metabolism session. Asilomar, CA (2013)
 * Kentucky Food Retail Safety Conference, invited speaker on wild mushroom safety. Frankfort, KY (2016)
   - [Slides](https://www.slideshare.net/BradfordCondon1/ky-retail-foodseminar)
-
 
 ##### Posters
 
@@ -147,6 +147,7 @@ _Full day workshops developed & implemented:_
 * Molecular Plant Microbe Biology, Quebec City, QC (2009)
 * Fungal Genetics Conference, Asilomar, CA (2011)
 * [University of Kentucky Society of Postdoctoral Scholars Research Symposium](http://sops.as.uky.edu/), Lexington, KY (2017) 
+* [Oak Symposium](http://www.outreach.utk.edu/Conferences/Sustaining%20Oak%20Forests/announcement.html), Knoxville TN (2017)
 
 
 

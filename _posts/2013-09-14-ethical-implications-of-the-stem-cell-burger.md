@@ -4,7 +4,6 @@ title: Ethical implications of the Stem Cell Burger
 date: 2013-09-14T09:00:47+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=197
 categories:
   - fun
 tags:

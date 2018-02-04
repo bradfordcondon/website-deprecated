@@ -4,7 +4,6 @@ title: Scoop.it! and content curation
 date: 2014-01-10T16:35:07+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=267
 tags:
   - curation
   - news

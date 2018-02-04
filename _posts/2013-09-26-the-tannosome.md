@@ -4,7 +4,6 @@ title: The Tannosome
 date: 2013-09-26T20:35:04+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=216
 tags:
   - biology
   - news

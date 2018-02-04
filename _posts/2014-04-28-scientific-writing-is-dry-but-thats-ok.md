@@ -4,7 +4,6 @@ title: 'Scientific writing is dry (but that&#8217;s OK)'
 date: 2014-04-28T15:55:59+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=281
 categories:
   - fun
 tags:

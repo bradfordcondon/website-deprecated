@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-02-04T11:29:20-05:00</updated>
+ <updated>2018-02-04T11:35:11-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
@@ -3208,7 +3208,7 @@ scaffold00001   176752  176752
 
 &lt;h2 id=&quot;the-solution&quot;&gt;&lt;strong&gt;The solution&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;It’s clear that we have a problem here.  What prevents someone from doing poor work (or fabricating work) and “publishing” the work in predatory journals?  Nothing.  And unless some sort of watchdog agency is set up to accredit peer-reviewed journals, this will not change any time soon.  If real scientists can’t distinguish a quality journal from a predatory one, what chance do non-scientists have?  As it is, I find Beall’s &lt;a href=&quot;http://scholarlyoa.com/publishers/&quot;&gt;list of questionable publishers&lt;/a&gt; to be the most useful resource for investigating journals.  But this is a list built by a science librarian who saw a problem, and can’t be expected to be definitive or exhaustive.  The JournalGuide, cited on IAM’s website, appears to be a reasonable resource in its own right (it’s listed in &lt;a href=&quot;http://www.nature.com/news/rate-that-journal-1.17225&quot;&gt;this Nature article&lt;/a&gt; on resources for evaluating journals), but obviously it’s not perfect if IAM is listed.&lt;/p&gt;
+&lt;p&gt;It’s clear that we have a problem here.  What prevents someone from doing poor work (or fabricating work) and “publishing” the work in predatory journals?  Nothing.  And unless some sort of watchdog agency is set up to accredit peer-reviewed journals, this will not change any time soon.  If real scientists can’t distinguish a quality journal from a predatory one, what chance do non-scientists have?  As it is, I find Beall’s list of questionable publishers to be the most useful resource for investigating journals.  &lt;strong&gt;edit:  Beal’s list has been taken down.&lt;/strong&gt;   But this is a list built by a science librarian who saw a problem, and can’t be expected to be definitive or exhaustive.  The JournalGuide, cited on IAM’s website, appears to be a reasonable resource in its own right (it’s listed in &lt;a href=&quot;http://www.nature.com/news/rate-that-journal-1.17225&quot;&gt;this Nature article&lt;/a&gt; on resources for evaluating journals), but obviously it’s not perfect if IAM is listed.&lt;/p&gt;
 
 &lt;p&gt;If policing publishers isn’t the answer, then what can be done?  Bohannon’s piece makes one thing abundantly clear: the popular media did not do their homework on this piece.  Many magazines ran the story without contacting Bohannon at all.  If he was contacted, he was never contacted by someone who knew enough about science to ask the right questions.  In short, science journalism lack skepticism.  It seems that most magazines will run an article without asking the three questions I listed above.  And even if they do, it’s clear that a more careful tact must be taken in the future to prevent spreading misinformation.&lt;/p&gt;
 
@@ -3989,9 +3989,9 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  
  <entry>
    <title>Tools for science: Citeulike</title>
-   <link href="http://bradfordcondon.com/?p=16"/>
+   <link href="http://bradfordcondon.com/tools/2013/04/28/16-Citeulike/"/>
    <updated>2013-04-27T23:08:04-04:00</updated>
-   <id>http://bradfordcondon.com/16-Citeulike</id>
+   <id>http://bradfordcondon.com/tools/2013/04/28/16-Citeulike</id>
    <content type="html">&lt;p&gt;I’m pretty sure I have too many gadgets for managing my academic references.  I’d surely be better off if I spent more time reading the literature, and less time setting up new accounts that I’ll neglect (this blog being a perfect case in point).&lt;/p&gt;
 
 &lt;p&gt;Every year for my journal club, I try to get people to use &lt;a href=&quot;http://www.citeulike.org/home&quot; target=&quot;_blank&quot;&gt;Citeulike&lt;/a&gt;.  It’s a great concept- install a browser bookmark, and with one click, import all of the metadata for a paper to your personal library.  Tag it (which I always neglect), and there you go.  It’s pretty tough to stump the import tool (this wasn’t always so), so without much effort, it pulls the title, author, abstract, and journal info.

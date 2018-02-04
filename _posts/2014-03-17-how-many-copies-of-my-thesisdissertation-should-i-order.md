@@ -4,7 +4,6 @@ title: How many copies of my thesis/dissertation should I order?
 date: 2014-03-17T03:23:00+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=271
 tags:
   - dissertation
   - grad-school

@@ -4,7 +4,6 @@ title: Who are CyberVor?
 date: 2014-08-06T21:22:27+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=378
 categories:
   - fun
 tags:

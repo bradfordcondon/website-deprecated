@@ -4,7 +4,6 @@ title: Lab notebook software
 date: 2014-10-29T17:56:51+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=391
 tags:
   - lab-notebook
   - science

@@ -4,7 +4,6 @@ title: RSS readers
 date: 2013-09-02T17:18:56+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=86
 tags:
   - citeulike
   - evernote

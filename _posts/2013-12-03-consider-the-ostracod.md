@@ -4,7 +4,6 @@ title: Consider the ostracod
 date: 2013-12-03T21:18:24+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=195
 tags:
   - biology
   - essays

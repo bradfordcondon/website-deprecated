@@ -4,7 +4,6 @@ title: Twitter bootcamp
 date: 2013-09-02T17:25:54+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=188
 tags:
   - news
   - twitter

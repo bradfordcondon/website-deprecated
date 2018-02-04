@@ -11,7 +11,6 @@ tags:
 
 #### UK-BLAST workshop 2016
 
-
 This tutorial was developed for Dr. Mark Farman at the University of Kentucky for Undergraduate students participating in UK-BLAST.  If you are trying to learn how to run applications from the command line but are feeling lost, this guide is for you.
 
 UK-BLAST is a bioinformatics working group for undergraduate researchers.  In small labs, students often tackle the bioinformatician role in with little to no technical guidance.  The group may not have anyone with a computer science background, or the task may be beyond the skills of current personnel.  In these cases, a working group headed by a technical mentor (myself) allows students to bypass some of the pitfalls and headaches associated with learning computer science all alone.
@@ -34,7 +33,7 @@ BLAST, or Basic Local Alignment Search Tool, is a program compares a protein or 
 
 
 When most users access BLAST, they do so via the [NCBI BLAST web portal](http://blast.ncbi.nlm.nih.gov/Blast.cgi).  Here, one can paste in a sequence and search against GenBank or other comprehensive databases.  As of 2013, Genbank includes sequences from almost 260,000 formally described species.
-Note: for an extremely in depth summary of how BLAST works, see [the NCBI course here](http://www.ncbi.nlm.nih.gov/BLAST/tutorial/Altschul-1.html.). Be warned: there is a lot of higher math in this link. 
+Note: for an extremely in depth summary of how BLAST works, see [the NCBI course here](http://www.ncbi.nlm.nih.gov/BLAST/tutorial/Altschul-1.html). Be warned: there is a lot of higher math in this link. 
 
 ### Using BLAST remotely
 

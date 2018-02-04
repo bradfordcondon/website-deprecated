@@ -7,7 +7,7 @@ layout: post
 guid: http://bradfordcondon.wordpress.com/?p=188
 tags:
   - news
-  - Twitter
+  - twitter
 ---
 <img class="alignnone" alt="" src="https://i2.wp.com/abs.twimg.com/a/1377795275/images/resources/twitter-bird-blue-on-white.png?resize=300%2C300&#038;ssl=1" data-recalc-dims="1" />
 

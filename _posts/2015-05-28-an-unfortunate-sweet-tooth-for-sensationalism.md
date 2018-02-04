@@ -3,12 +3,6 @@ id: 416
 title: An unfortunate sweet tooth for sensationalism
 date: 2015-05-28T21:10:09+00:00
 author: BradfordCondon
-excerpt: |
-  When I taught a science for non-science majors at Cornell University, my favorite lecture was on science in the popular media.  My learning objective was straight forward: I wanted students to pick up a newspaper, flip to the science section, and detect bullshit.
-  
-  This is such an important life skill because at this point in time, blogs, newspapers, and magazines print unscientific bullshit.  They do it because it sells.  I have never seen an article so neatly package all of the problems that lead to this state of affairs than John Bohannon's recent "Chocolate Diet" charade.
-layout: post
-image: /wp-content/uploads/2015/05/screen-shot-2015-05-28-at-3-59-55-pm-825x510.png
 categories:
   - science
 tags:

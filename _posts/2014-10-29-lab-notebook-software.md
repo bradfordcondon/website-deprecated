@@ -5,15 +5,8 @@ date: 2014-10-29T17:56:51+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=391
-publicize_twitter_url:
-  - http://t.co/KnsKIdycVf
-publicize_twitter_user:
-  - BradfordCondon
-image: /wp-content/uploads/2014/10/screen-shot-2014-10-29-at-11-52-39-am-825x510.png
-categories:
-  - Tools
 tags:
-  - lab notebook
+  - lab-notebook
   - science
   - software
 ---

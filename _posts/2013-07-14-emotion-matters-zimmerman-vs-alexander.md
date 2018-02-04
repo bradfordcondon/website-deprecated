@@ -4,17 +4,10 @@ title: 'Emotion matters: Zimmerman vs Alexander'
 date: 2013-07-14T05:22:50+00:00
 author: BradfordCondon
 layout: post
-publicize_twitter_user:
-  - BradfordCondon
-categories:
-  - Uncategorized
 tags:
-  - Fear
-  - George Zimmerman
-  - Hate
-  - Marissa Alexander
-  - Stand Your Ground
-  - Trayvon Martin
+  - fear
+  - hate
+  - popular-science
 ---
 The Florida Stand Your Ground controversy has everyone talking (and nevermind that neither case officially invoked said law).  And a mother (Marissa Alexander) getting 20 years [(a minimum sentence for firing a gun during a crime)](http://www.huffingtonpost.com/2012/05/11/marissa-alexander-sentenced_n_1510113.html) for firing warning shots at an abusive husband looks pretty shitty next time a man (George Zimmerman) shooting a 17-year old boy and [being acquitted of all charges](http://www.nytimes.com/2013/07/14/us/george-zimmerman-verdict-trayvon-martin.html?pagewanted=all).
 

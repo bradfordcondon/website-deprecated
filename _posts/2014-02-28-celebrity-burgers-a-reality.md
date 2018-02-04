@@ -5,12 +5,6 @@ date: 2014-02-28T17:53:03+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=299
-publicize_twitter_user:
-  - BradfordCondon
-publicize_twitter_url:
-  - http://t.co/plAgsHnuuN
-categories:
-  - fun
 tags:
   - biology
   - science

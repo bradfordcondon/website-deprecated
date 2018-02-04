@@ -4,9 +4,6 @@ title: Papers as a reference manager
 date: 2013-07-07T18:15:04+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=140
-categories:
-  - Uncategorized
 tags:
   - osx
   - papers

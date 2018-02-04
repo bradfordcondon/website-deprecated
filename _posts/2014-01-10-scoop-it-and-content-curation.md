@@ -5,12 +5,6 @@ date: 2014-01-10T16:35:07+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=267
-publicize_twitter_user:
-  - BradfordCondon
-publicize_twitter_url:
-  - http://t.co/JXpuN7EzXl
-categories:
-  - Tools
 tags:
   - curation
   - news
@@ -19,7 +13,7 @@ tags:
   - tips
   - tools
 ---
-In the past, I&#8217;ve written about the [importance of setting up custom newsfeeds](http://bradfordcondon.wordpress.com/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/ "Let the literature come to you: custom pubmed RSS feeds") for current publications in your field, and using [Citeulike to share references](http://bradfordcondon.wordpress.com/2013/04/28/16/ "Tools for science: Citeulike").  While these tools can be useful for discovering and archiving content, they are not ideal for sharing and disseminating it.  Gathering content and distilling it for others is an art: the art of content curation.
+In the past, I&#8217;ve written about the importance of setting up custom newsfeeds for current publications in your field, and using CiteUlike to share references.  While these tools can be useful for discovering and archiving content, they are not ideal for sharing and disseminating it.  Gathering content and distilling it for others is an art: the art of content curation.
 
 Lately I&#8217;ve been using [Scoop.it](http://www.scoop.it/) for content curation and outreach.  I created two main channels: one for [science stories in the news,](http://www.scoop.it/t/popular-bioscience) and another for new research [in my field of fungal genetics](http://www.scoop.it/t/fungal-genetics).  By picking a key paragraph from the discussion or abstract, as well as a catchy image, I can easily pin small blurbs for each article (called scoops) to a news stream.  Each feed is easy to skim through, can be tagged and annotated, and allows me to easily review articles I was interested in.  RSS feeds for each topic can be fed elsewhere, such as a [flagship brand](http://www.bradfordcondon.com/) website.
 

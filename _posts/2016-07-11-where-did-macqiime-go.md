@@ -5,9 +5,6 @@ date: 2016-07-11T18:29:34+00:00
 author: bradford.condon@gmail.com
 excerpt_separator: <!--more-->
 layout: post
-categories:
-  - science
-  - Tools
 tags:
   - bioinformatics
   - ecology

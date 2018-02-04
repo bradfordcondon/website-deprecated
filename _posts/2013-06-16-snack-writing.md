@@ -4,13 +4,12 @@ title: Snack Writing
 date: 2013-06-16T14:19:55+00:00
 author: BradfordCondon
 layout: post
-guid: http://bradfordcondon.wordpress.com/?p=99
 categories:
   - Writing
 tags:
   - science
   - writing
-  - writing tips
+  - writing-tips
 ---
 I was reading [this Nature article](http://www.nature.com/naturejobs/science/articles/10.1038/nj7354-129a) by Kim Gardiner and Hugh Kearns on snack writing.  Their argument is that scientists who write in a small, fixed window, 45 minutes a day, every day, write more than &#8220;block writers&#8221; who blackout entire days for writing.
 

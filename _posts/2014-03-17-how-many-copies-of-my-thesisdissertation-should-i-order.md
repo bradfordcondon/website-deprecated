@@ -5,21 +5,14 @@ date: 2014-03-17T03:23:00+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=271
-publicize_twitter_user:
-  - BradfordCondon
-publicize_twitter_url:
-  - http://t.co/jtyBxYiOMB
-categories:
-  - fun
 tags:
   - dissertation
-  - grad school
+  - grad-school
   - thesis
   - writing
 ---
-_ _
 
-You&#8217;re finished!  You&#8217;ve spent hours writing and rewriting your thesis or dissertation (such semantics!), braved your defense, and spent even more time addressing your committee revisions (to say nothing of the years of hard work that got you here).  Congratulations.  Time to submit and watch Buffy the Vampire Slayer for eight days straight, right?
+You're finished!  You've spent hours writing and rewriting your thesis or dissertation (such semantics!), braved your defense, and spent even more time addressing your committee revisions (to say nothing of the years of hard work that got you here).  Congratulations.  Time to submit and watch Buffy the Vampire Slayer for eight days straight, right?
 
 ![buffy](/wp-content/uploads/2014/01/screen-shot-2014-01-17-at-1-52-17-pm.png)
 

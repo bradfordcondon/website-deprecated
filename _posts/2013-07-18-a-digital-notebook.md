@@ -4,8 +4,6 @@ title: A digital notebook
 date: 2013-07-18T22:13:37+00:00
 author: BradfordCondon
 layout: post
-categories:
-  - Tools
 tags:
   - evernote
   - notebooks

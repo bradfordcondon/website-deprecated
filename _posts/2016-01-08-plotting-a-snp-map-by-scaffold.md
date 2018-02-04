@@ -5,16 +5,12 @@ date: 2016-01-08T21:29:37+00:00
 author: bradford.condon@gmail.com
 layout: post
 guid: http://www.bradfordcondon.com/?p=541
-image: /wp-content/uploads/2016/01/snpsall.png
-categories:
-  - science
-  - Tools
 tags:
   - biology
-  - Coding
+  - coding
   - genomics
-  - R
-  - SNPs
+  - r
+  - snps
 ---
 &nbsp;
 

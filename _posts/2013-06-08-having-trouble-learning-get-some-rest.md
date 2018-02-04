@@ -4,17 +4,11 @@ title: 'Having trouble learning?  Get some rest'
 date: 2013-06-08T18:33:11+00:00
 author: BradfordCondon
 layout: post
-publicize_reach:
-  - 'a:2:{s:7:"twitter";a:1:{i:3583188;i:38;}s:2:"wp";a:1:{i:0;i:6;}}'
-publicize_twitter_user:
-  - BradfordCondon
-categories:
-  - Writing
 tags:
   - learning
   - research
   - sleep
-  - study habits
+  - study-habits
 ---
 Do you schedule breaks and rests during your working, writing, and learning?  Do you make time for sleep in your life?   A new article by Ingrid L. C. Nieuwenhuis et al., [published June 5th in the journal PLOS ONE,](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0065046) provides another piece of evidence that you should.
 

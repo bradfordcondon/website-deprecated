@@ -4,17 +4,12 @@ title: 'Metagenomics in R: Phyloseq'
 date: 2015-12-26T17:36:19+00:00
 author: bradford.condon@gmail.com
 layout: post
-guid: http://www.bradfordcondon.com/?p=501
-image: /wp-content/uploads/2015/12/vignette_nmds.png
-categories:
-  - science
-  - Tools
 tags:
   - biology
   - ecology
   - metagenomics
-  - Phyloseq
-  - R
+  - phyloseq
+  - r
   - science
 ---
 [Phyloseq](https://joey711.github.io/phyloseq/) is a fantastic R package that really helped me get started in R.  If you need to process your metagenomic data but lack the experience in statistics/R to use, say, the ecology stats R package [VEGAN](https://cran.r-project.org/web/packages/vegan/vegan.pdf), I highly recommend giving Phyloseq a try.  Running through the vignettes will produce great heatmaps, taxonomy plots, and PCA/NMDS plots.

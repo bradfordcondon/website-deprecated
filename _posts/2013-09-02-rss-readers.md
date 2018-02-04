@@ -5,10 +5,6 @@ date: 2013-09-02T17:18:56+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=86
-publicize_twitter_user:
-  - BradfordCondon
-categories:
-  - Tools
 tags:
   - citeulike
   - evernote
@@ -16,7 +12,6 @@ tags:
   - news
   - reading
   - rss
-  - scoop.it
   - tools
 ---
 (This post is a continuation of my science RSS series, found [here](http://bradfordcondon.wordpress.com/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/ "Let the literature come to you: custom pubmed RSS feeds"))

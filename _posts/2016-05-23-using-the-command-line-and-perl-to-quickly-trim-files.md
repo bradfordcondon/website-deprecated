@@ -5,10 +5,6 @@ date: 2016-05-23T18:58:02+00:00
 author: bradford.condon@gmail.com
 layout: post
 guid: http://www.bradfordcondon.com/?p=557
-image: /wp-content/uploads/2016/05/Screen-Shot-2016-05-23-at-2.59.05-PM.png
-categories:
-  - science
-  - Tools
 tags:
   - fasta
   - genomics

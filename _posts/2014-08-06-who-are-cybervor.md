@@ -5,13 +5,6 @@ date: 2014-08-06T21:22:27+00:00
 author: BradfordCondon
 layout: post
 guid: http://bradfordcondon.wordpress.com/?p=378
-geo_public:
-  - "0"
-publicize_twitter_user:
-  - BradfordCondon
-publicize_twitter_url:
-  - http://t.co/8meq3tMbOG
-image: /wp-content/uploads/2014/08/Hackersposter.jpg
 categories:
   - fun
 tags:

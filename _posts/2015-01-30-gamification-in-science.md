@@ -7,14 +7,6 @@ layout: post
 guid: https://bradfordcondon.wordpress.com/?p=402
 geo_public:
   - "0"
-publicize_twitter_user:
-  - BradfordCondon
-publicize_twitter_url:
-  - http://t.co/9rPLkDenTO
-image: /wp-content/uploads/2015/01/screen-shot-2015-01-29-at-7-23-39-pm-680x510.png
-categories:
-  - fun
-  - Tools
 tags:
   - fun
   - gamification

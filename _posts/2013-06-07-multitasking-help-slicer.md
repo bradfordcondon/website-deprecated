@@ -4,10 +4,6 @@ title: 'Multitasking help: Slicer'
 date: 2013-06-07T17:37:57+00:00
 author: BradfordCondon
 layout: post
-publicize_reach:
-  - 'a:2:{s:7:"twitter";a:1:{i:3583188;i:38;}s:2:"wp";a:1:{i:0;i:6;}}'
-publicize_twitter_user:
-  - BradfordCondon
 categories:
   - Tools
 tags:

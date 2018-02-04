@@ -157,7 +157,7 @@ This is clearly not an award winning plot.  We have no axes, scaling, grouping, 
 
 We'll cover the rest in later lessons.  But for now, try to define your own dataset and bind it to the DOM using `data()` and `enter()`.
 
-Continue reading with [part two: implementing scales](http://127.0.0.1:4000/2017/12/31/d3_part2_flipping/).
+Continue reading with [part two: implementing scales](/2017/12/31/d3_part2_flipping/).
 
 
 Did you enjoy this article?  Looking for more information?  Please feel free to contact me on twitter @bradfordcondon

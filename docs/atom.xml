@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-02-04T11:16:37-05:00</updated>
+ <updated>2018-02-04T11:29:20-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
@@ -144,7 +144,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
    <id>http://bradfordcondon.com/2018/01/17/d3_part3_nesting</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_logo.png&quot; alt=&quot;D3 logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In the &lt;a href=&quot;/2018/01/17/d3_part2_flipping/&quot;&gt;previous post&lt;/a&gt;, we learned about using scales to format our x and y axes, s well as our bar coloring.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href=&quot;/2017/12/31/d3_part2_flipping/&quot;&gt;previous post&lt;/a&gt;, we learned about using scales to format our x and y axes, s well as our bar coloring.&lt;/p&gt;
 
 &lt;p&gt;In this post I want to address how to &lt;strong&gt;nest&lt;/strong&gt; data with D3.  We will use the nest method to automatically sort our samples by property, and we’ll use multiple x-scales to group them along the x-axis.&lt;/p&gt;
 
@@ -350,7 +350,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
    <id>http://bradfordcondon.com/2017/12/31/d3_part2_flipping</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/img/d3/d3_logo.png&quot; alt=&quot;D3 logo&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In our &lt;a href=&quot;2017/12/22/plotting_with_d3/&quot;&gt;previous lesson&lt;/a&gt;, we created this rudimentary plot.&lt;/p&gt;
+&lt;p&gt;In our &lt;a href=&quot;/2017/12/22/plotting_with_d3/&quot;&gt;previous lesson&lt;/a&gt;, we created this rudimentary plot.&lt;/p&gt;
 
 &lt;p&gt;D3 considers the &lt;strong&gt;upper left&lt;/strong&gt; corner of the SVG to be 0,0.  This means that the part of our code defining y values needs to be corrected.&lt;/p&gt;
 
@@ -591,7 +591,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
   &lt;p&gt;The plot with x, y, and color scales.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;In the next segment, we’ll look at using a multi-level x-axis to group our plot by category.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href=&quot;/2018/01/17/d3_part3_nesting/&quot;&gt;next segment&lt;/a&gt;, we’ll look at using a multi-level x-axis to group our plot by category.&lt;/p&gt;
 </content>
  </entry>
  
@@ -743,7 +743,7 @@ Don’t freak out!  The Drupal production life cycle means that as new versions 
 
 &lt;p&gt;We’ll cover the rest in later lessons.  But for now, try to define your own dataset and bind it to the DOM using &lt;code class=&quot;highlighter-rouge&quot;&gt;data()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;enter()&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Continue reading with &lt;a href=&quot;http://127.0.0.1:4000/2017/12/31/d3_part2_flipping/&quot;&gt;part two: implementing scales&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Continue reading with &lt;a href=&quot;/2017/12/31/d3_part2_flipping/&quot;&gt;part two: implementing scales&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Did you enjoy this article?  Looking for more information?  Please feel free to contact me on twitter @bradfordcondon&lt;/p&gt;
 

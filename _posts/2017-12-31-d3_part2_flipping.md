@@ -14,7 +14,7 @@ tags:
 
 ![D3 logo](/assets/img/d3/d3_logo.png)
 
-In our [previous lesson](2017/12/22/plotting_with_d3/), we created this rudimentary plot.
+In our [previous lesson](/2017/12/22/plotting_with_d3/), we created this rudimentary plot.
 
 D3 considers the **upper left** corner of the SVG to be 0,0.  This means that the part of our code defining y values needs to be corrected.
 
@@ -255,4 +255,4 @@ colorScale.domain(["a", "b"])
 > <div id="plot_final"></div>
 > The plot with x, y, and color scales.
 
-In the next segment, we'll look at using a multi-level x-axis to group our plot by category.
+In the [next segment](/2018/01/17/d3_part3_nesting/), we'll look at using a multi-level x-axis to group our plot by category.

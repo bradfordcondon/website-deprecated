@@ -23,11 +23,19 @@ May 2007, BA in Biology and Religion, Oberlin College, Oberlin, OH
 
 February 2017 to present: Postdoctoral associate, Department of Entomology and Plant Pathology, University of Tennessee, Knoxville.
 
+>I develop the Hardwood Genomics Web (HWG), a web site that houses genetic and genomic data from a variety of hardwood tree species.  I contribute to Tripal, an open source genomic database and website framework. I also authored the mobile app TreeSnap, which allows citizens to partner with scientists to track and study trees.  I serve as the biological point person for undergraduate and graduate lab programmers to help them understand the underlying database model.
+
+
 January 2016 to January 2017: Postdoctoral associate, Department of Plant Pathology, University of Kentucky.
+
+>
 
 June 2014 to December 2015: Postdoctoral associate, Department of Ecology, Evolution, and Behavior, University of Minnesota.
 
 August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department of Plant Pathology & Plant-Microbe Interactions, Cornell University, advised by Dr. [B Gillian Turgeon](http://www.plantpath.cornell.edu/labs/turgeon/index.html)
+
+
+>Performed genetic and genomic studies using the model fungal phytopathogen Cochliobolus heterostrophus.  Acted as lab co-manager in charge of ordering and hiring/training/managing undergraduate students.
 
 ## Accomplishments
 

@@ -12,7 +12,7 @@ tags:
   - tips
   - writing
 ---
-I love Mekentosj&#8217;s [Papers](http://www.papersapp.com/), and [encourage you to check it out if you are on a mac and keep digital literature.](http://bradfordcondon.wordpress.com/2013/05/05/citation-management-papers/ "Citation management: Papers")
+I love Mekentosj&#8217;s [Papers](http://www.papersapp.com/), and [encourage you to check it out if you are on a mac and keep digital literature.](/2013/05/05/citation-management-papers/)
 
 One of the things that drove me nuts using my advisor&#8217;s Endnote library was that I couldn&#8217;t change it.  Each publication, each grant, it would be my task to go through and manually &#8220;spruce up&#8221; the references.  Each time I would plea to change the actual source library, and each time I&#8217;d be told we had no time as it was the 11th hour.  Everything was inevitably inconsistent.  Author names, journal abbreviations, italicizing species name.  What a mess.
 
@@ -31,7 +31,7 @@ Are there repeats?  Merge them!  Is the abbreviated title appearing in the ful
 
 Sometimes you&#8217;ll see weird journal titles.  Are they really journals, or is it a book or chapter set to the wrong source type?  Make sure each article is set to the correct type.  A PhD chapter that thinks it is a journal article is going to be formatted incorrectly.
 
-![</wp-content/uploads/2013/07/screen-shot-2013-07-07-at-1-28-50-pm.png?fit=276%2C178" data-recalc-dims="1" />](/wp-content/uploads/2013/07/screen-shot-2013-07-07-at-1-28-50-pm.png)
+![editing](/wp-content/uploads/2013/07/screen-shot-2013-07-07-at-1-28-50-pm.png)
 
 >Enable editing to change the source type for an article.
 

@@ -12,7 +12,7 @@ tags:
 ---
 Do you schedule breaks and rests during your working, writing, and learning?  Do you make time for sleep in your life?   A new article by Ingrid L. C. Nieuwenhuis et al., [published June 5th in the journal PLOS ONE,](http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0065046) provides another piece of evidence that you should.
 
-[<img class=" wp-image-108  " alt="Sleep is an important step for proper learning.  Photo source: Wikipedia" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?resize=300%2C199" srcset="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?w=1024 1024w, https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/sleeping-girl.jpg?resize=300%2C200 300w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />](/wp-content/uploads/2013/06/sleeping-girl.jpg)
+[sleep](/wp-content/uploads/2013/06/sleeping-girl.jpg)
 >Sleep is an important step for proper learning.
 
 &nbsp;

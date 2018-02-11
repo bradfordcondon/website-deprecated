@@ -14,7 +14,7 @@ It&#8217;s going OK, thanks for asking.  But it&#8217;s not going OK all the ti
 
 Some days, I can spend an hour in front of my computer and have nothing to show for it but a lot of purple links on Reddit.
 
-![<img class="size-full wp-image" id="i-65" alt="Image" src="https://i0.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-4-57-29-pm.png?resize=487%2C280" data-recalc-dims="1" />](/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-4-57-29-pm.png)
+![surfing](/wp-content/uploads/2013/06/screen-shot-2013-06-04-at-4-57-29-pm.png)
 >Surfing the web instead of working? Sounds like time for a run to me. 
 
 <span style="line-height:1.6;">Other days I can literally write, almost nonstop and without distraction, for epic 10 hour sessions.  </span>

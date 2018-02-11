@@ -23,6 +23,6 @@ Collaborating on a manuscript?  Keep the current manuscript and reference libra
 
 Fortunately, collaborators tend to be elsewhere in the world, and while I&#8217;m a night creature, my advisor writes in the morning.  This means we aren&#8217;t all trying to edit the same Dropbox shared document at once.
 
-Another nice use for papers is syncing my [Papers](http://bradfordcondon.wordpress.com/2013/05/05/citation-management-papers/) library.  I wish that Papers had this kind of service automatically, but it&#8217;s a nice work around.  Keep your papers library on dropbox in a secure location, and you can sync it between macs.  Just be careful to close down Papers when you are done with it &#8211; otherwise, you&#8217;ll get conflicting libraries.
+Another nice use for papers is syncing my [Papers](http://bradfordcondon.com/2013/05/05/citation-management-papers/) library.  I wish that Papers had this kind of service automatically, but it&#8217;s a nice work around.  Keep your papers library on dropbox in a secure location, and you can sync it between macs.  Just be careful to close down Papers when you are done with it &#8211; otherwise, you&#8217;ll get conflicting libraries.
 
 There are a million other uses for Dropbox, but these are the ones I regularly take advantage of.

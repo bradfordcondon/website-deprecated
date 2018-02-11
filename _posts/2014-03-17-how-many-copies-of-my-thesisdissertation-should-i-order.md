@@ -22,7 +22,7 @@ A couple of issues I hadn&#8217;t thought about came up before I clicked submit,
 
 **Family**
 
-Your parents, and perhaps grandparents, are a given.  After 4+ years of not being able to explain your work to anyone, having a 5 pound coffee table book to gesture at is going to make their day.  Don&#8217;t forget to include them in the acknowledgements!
+Your parents, and perhaps grandparents, are a given.  After 4+ years of not being able to explain your work to anyone, having a 5 pound coffee table book to gesture at is going to make their day.  Don&#8217;t forget to include them in the acknowledgments!
 
 **Friends**
 
@@ -36,7 +36,7 @@ Do not forget a copy for your advisor.  Again, write something nice in the ackn
 
 Did you receive a lot of guidance from your committee, or shed a lot of tears in their office?  This can be a nice gesture of thanks.
 
-[<img class="size-medium wp-image-274" alt="I keep my thesis on my person at all times (if only to stop bullets)." src="https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2014/01/screen-shot-2014-01-17-at-1-46-02-pm-292x300.png?fit=292%2C300" srcset="https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2014/01/screen-shot-2014-01-17-at-1-46-02-pm.png?w=1118 1118w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2014/01/screen-shot-2014-01-17-at-1-46-02-pm.png?resize=292%2C300 292w, https://i2.wp.com/www.bradfordcondon.com/wp-content/uploads/2014/01/screen-shot-2014-01-17-at-1-46-02-pm.png?resize=997%2C1024 997w" sizes="(max-width: 292px) 100vw, 292px" data-recalc-dims="1" />](/wp-content/uploads/2014/01/screen-shot-2014-01-17-at-1-46-02-pm.png)
+[dissertation](/wp-content/uploads/2014/01/screen-shot-2014-01-17-at-1-46-02-pm.png)
 >I keep my dissertation on my person at all times (if only to stop bullets)
 
 **Your lab**
@@ -49,4 +49,4 @@ Your campus library probably prints a copy of your dissertation for its own purp
 
 **Yourself**
 
-This probably goes without saying.  You may feel like you never want to see this cursed book again, but you probably will.  Even if its only to drag it out as a war story, or to prove to your date that you really _can _run a southern blot.
+This probably goes without saying.  You may feel like you never want to see this cursed book again, but you probably will.  Even if its only to drag it out as a war story, or to prove to your date that you really _can_ run a southern blot.

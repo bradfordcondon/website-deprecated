@@ -9,7 +9,7 @@ tags:
   - science
   - stem-cell-burgers
 ---
-Back in September last year, [I explored some possibilities that the &#8220;Stem Cell burger&#8221; opened up.](http://bradfordcondon.wordpress.com/2013/09/14/ethical-implications-of-the-stem-cell-burger/)  Perhaps the most far-fetched idea I had was to produce meat from cloned celebrity stem cells.
+Back in September last year, [I explored some possibilities that the &#8220;Stem Cell burger&#8221; opened up.](/2013/09/14/ethical-implications-of-the-stem-cell-burger/)  Perhaps the most far-fetched idea I had was to produce meat from cloned celebrity stem cells.
 
 It seems this idea wasn&#8217;t as absurd as I thought.  A new company has launched called [Bitelabs](http://bitelabs.org/), claiming they will produce celebrity-derived meats in salami-form.<figure style="width: 487px" class="wp-caption alignnone">
 

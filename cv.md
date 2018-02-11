@@ -28,9 +28,10 @@ February 2017 to present: Postdoctoral associate, Department of Entomology and P
 
 January 2016 to January 2017: Postdoctoral associate, Department of Plant Pathology, University of Kentucky.
 
->
+>Performed bioinformatic analyses for whole-genome alignment and phylogenetics of the rice blast pathogen _magnaporthe oryzae_.  Developed and implemented a mentoring program in bioinformatics for undergraduate biologists, UK-BLAST.
 
 June 2014 to December 2015: Postdoctoral associate, Department of Ecology, Evolution, and Behavior, University of Minnesota.
+>Planned and implemented a large-scale metagenomic study of bacterial and fungal endophytes for over 1,000 native prairie grass leaves.  Designed a metagenomic sequencing and analysis pipeline.
 
 August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department of Plant Pathology & Plant-Microbe Interactions, Cornell University, advised by Dr. [B Gillian Turgeon](http://www.plantpath.cornell.edu/labs/turgeon/index.html)
 
@@ -162,7 +163,7 @@ _Full day workshops developed & implemented:_
 
 ## Publications
 
-### Pre-print
+### Pre-print (accepted)
 
 Gladieux, P., **Condon, B. J.,** Ravel, S., Soanes, D., Nunes Maciel, J. L., Nhani, A., Jr., Terauchi, R., Lebrun, M.-H., Tharreau, D., Mitchell, T., Pedley, K. F., Valent, B., Talbot, N., Farman, M., and Fournier, E. (2017). Gene flow between divergent cereal- and grass-specific lineages of the rice blast fungus _Magnaporthe oryzae_. bioRxiv. :161513
 

@@ -13,11 +13,11 @@ tags:
   - rss
   - tools
 ---
-(This post is a continuation of my science RSS series, found [here](http://bradfordcondon.wordpress.com/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/ "Let the literature come to you: custom pubmed RSS feeds"))
+(This post is a continuation of my science RSS series, found [here](/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/)
 
 Once you&#8217;ve identified RSS feeds you&#8217;d like to follow, you need to choose an RSS reader.  This is where the fruits of selective RSS subscription are much sweeter than signing up for email notifications.  Notifications go to my inbox, where they are drowned out by the day-to-day requirements of the academic life.
 
-RSS feeds, on the other hand, wait patiently in the reader, separate, sorted, and ready to be skimmed.  Flipping through my reader every few days, and posting  articles of interest to [citeulike](http://bradfordcondon.wordpress.com/2013/04/28/16/ "Tools for science: Citeulike"), or [Scoop.it](http://www.scoop.it/t/fungal-genetics) (which I haven&#8217;t written about yet, but will), I stay on top of the big news in the science world, and the details relevant to my research.  Your reader may sync up to the cloud, your social media, or other reading, storage, or notetaking apps.  You can use your RSS reader to skim headlines and send the interesting bits to other programs, or you can do all your reading in the reader, depending on your personal preference.
+RSS feeds, on the other hand, wait patiently in the reader, separate, sorted, and ready to be skimmed.  Flipping through my reader every few days, and posting  articles of interest to [citeulike](/2013/04/28/16/), or [Scoop.it](http://www.scoop.it/t/fungal-genetics) (which I haven&#8217;t written about yet, but will), I stay on top of the big news in the science world, and the details relevant to my research.  Your reader may sync up to the cloud, your social media, or other reading, storage, or notetaking apps.  You can use your RSS reader to skim headlines and send the interesting bits to other programs, or you can do all your reading in the reader, depending on your personal preference.
 
 But what reader to use?
 

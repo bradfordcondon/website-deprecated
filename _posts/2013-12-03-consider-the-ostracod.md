@@ -20,10 +20,7 @@ Arriving at the lab, we armed ourselves with a microscope, and the knowledge of 
 <img alt="" src="https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/thumb/9/93/Ostracod.JPG/800px-Ostracod.JPG?resize=800%2C595" data-recalc-dims="1" />
 >An ostracod. Photo from Wikipedia: http://en.wikipedia.org/wiki/File:Ostracod.JPG
 
-Observing our ostracod (we named her Sue) scooting around under the microscope was a joy.  My curiosity for Sue was fed by an excellent website by [Robin James Smith at the Lake Biwa Museum](http://www.lbm.go.jp/smith/facts.html).  I highly encourage you to visit Robin&#8217;s website, especially the [images](http://www.lbm.go.jp/smith/photos.html) section (I&#8217;ve included my favorite sketch below).  Amazingly my initial assessment wasn&#8217;t far off: the common name of my &#8220;clamshrimp&#8221; is actually &#8220;seed shrimp!&#8221;<figure style="width: 500px" class="wp-caption alignnone">
-
-<img alt="" src="https://i0.wp.com/www.lbm.go.jp/smith/images/limnocythere2.png?resize=500%2C377" data-recalc-dims="1" />
->A sketch of a female ostracod, by Robin James Smith
+Observing our ostracod (we named her Sue) scooting around under the microscope was a joy.  My curiosity for Sue was fed by an excellent website by Robin James Smith at the Lake Biwa Museum**edit** this website has since been taken down.  
 
 The amazing thing about biology is that a simple walk through the woods can ignite an entire afternoon of looking through a microscope and learning something new and bizarre.  I now know that ostracods can produce spermatozoa up to ten times their body length, can be bioluminescent, and can hunt in groups!  Every organism has an untold story, with so much left to learn and be discovered.  And thanks to the unbelievable scope and rigor of science, a discovery can easily climb the scaffolds of human knowledge.  We can just as easily reach the peak, and wonder at the reality just beyond our comprehension.
 

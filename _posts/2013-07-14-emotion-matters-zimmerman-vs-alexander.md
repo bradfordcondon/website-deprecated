@@ -16,7 +16,7 @@ What I find amazing here is the central role emotions play.  Not just in the pu
 _Both_ verdicts, for Zimmerman and Alexander, came down to one thing: was the shooter angry, or fearful?  The jury found that Zimmerman was afraid when he shot and killed Treyvon Martin.  Marissa Alexander, on the other hand, was found to be angry.  Angry at her husband for beating her, but nonetheless, angry.  Because she was angry, she could not utilize Stand Your Ground, and was found guilty of assault (I encourage you to actually read the reports of both trials if you are interested in either case, as in both situations a jury reached that verdict somehow.  In the case of Alexander, the prosecution made a big deal over the &#8220;warning shots&#8221; fired, and the possibility that these shots could have hit one of her children.)
 
 <img class=" " alt="" src="https://i2.wp.com/upload.wikimedia.org/wikipedia/commons/6/6b/Portret_van_een_man005.jpg?resize=900%2C538" data-recalc-dims="1" />
->The state of a defendant&#8217;s mind during a crime can matter more for the verdict than the direct consesquences of the crime itself.
+>The state of a defendant&#8217;s mind during a crime can matter more for the verdict than the direct consequences of the crime itself.
 
 How can such a distinction between fear and anger make all the difference?  Is the line between fear and anger so clearcut that we can make this call, with such grave consequences?  Was Alexander not angry because of a long history of fear and abuse?  Was Zimmerman&#8217;s anger what prompted him to confront Martin in the first place?
 

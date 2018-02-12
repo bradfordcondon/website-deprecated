@@ -1,6 +1,5 @@
 ---
-id: 60
-title: Four ways to get writing
+title: "Four ways to get writing"
 date: 2013-06-04T21:17:47+00:00
 author: BradfordCondon
 layout: post

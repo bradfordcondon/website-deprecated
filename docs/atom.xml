@@ -4,13 +4,51 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-02-10T21:11:41-05:00</updated>
+ <updated>2018-02-12T12:58:24-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Tripal Country: Chado Feature Annotations</title>
+   <link href="http://bradfordcondon.com/2018/02/12/tripal_understanding_feature_annotations/"/>
+   <updated>2018-02-12T00:00:00-05:00</updated>
+   <id>http://bradfordcondon.com/2018/02/12/tripal_understanding_feature_annotations</id>
+   <content type="html">&lt;p&gt;Welcome to Tripal Country!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/TripalLogo_dark.png&quot; alt=&quot;Tripal Logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tripal feature annotations might be a little unintuitive, especially for non-biologists.  This guide is to solidify my own knowledge of what goes where and why: hopefully it will be helpful to some developers as well.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;executive-summary&quot;&gt;Executive Summary&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;KEGG, IPR, GO annotations go in &lt;code class=&quot;highlighter-rouge&quot;&gt;feature_cvterm&lt;/code&gt;.  The annotations show up in the “Annotation” field&lt;/li&gt;
+  &lt;li&gt;BLAST annotations go in &lt;code class=&quot;highlighter-rouge&quot;&gt;blast_hit_data&lt;/code&gt;.  The annotations show in up the “Homology” field&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-feature-table&quot;&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;feature&lt;/code&gt; table&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;feature&lt;/code&gt; table is where all sequences live in Chado as dictated by the &lt;a href=&quot;https://laceysanderson.github.io/chado-docs/sequence/index.html&quot;&gt;sequence&lt;/a&gt; module.  I won’t go into detail as there are other guides available for this module.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-feature_cvterm-table&quot;&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;feature_cvterm&lt;/code&gt; table&lt;/h2&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://laceysanderson.github.io/chado-docs/tables/feature_cvterm.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;feature_cvterm&lt;/code&gt;&lt;/a&gt; table is the simplest way to annotate a feature.  You just need a feature_id and a cvterm_id, which will be the KEGG, IPR, or GO cvterm id. Additional info for the annotation goes in &lt;a href=&quot;https://laceysanderson.github.io/chado-docs/tables/feature_cvtermprop.html&quot;&gt;feature_cvtermprop&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-blast_hit_data-table&quot;&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;blast_hit_data&lt;/code&gt; table&lt;/h2&gt;
+
+&lt;p&gt;Blast annotations loaded in from the &lt;code class=&quot;highlighter-rouge&quot;&gt;analysis_blast&lt;/code&gt; module go somewhere &lt;em&gt;different&lt;/em&gt;: to the &lt;code class=&quot;highlighter-rouge&quot;&gt;blast_hit_data&lt;/code&gt; table.  Why?&lt;/p&gt;
+
+&lt;p&gt;Tripal sites can use whatever BLAST annotations they would like.  This might mean a custom gene set, even the &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/refseq/about/nonredundantproteins/&quot;&gt;genbank nr database&lt;/a&gt;.  To use the feature_cvterm annotation table, you’d need a cvterm for each entry in your blast database! The &lt;code class=&quot;highlighter-rouge&quot;&gt;blast_hit_data&lt;/code&gt; table means you dont need to do this.  That’s my rationale for it, at least- I didn’t write it!&lt;/p&gt;
+
+&lt;p&gt;All of the information for the blast result is available in the &lt;code class=&quot;highlighter-rouge&quot;&gt;blast_hit_data&lt;/code&gt; table.  This includes the name and accession of the hit with its full description and url, the scores, percent identity, e value, and number of hits.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Tripal Country: Manually Creating New Bundle Types</title>
@@ -3797,26 +3835,6 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>Multitasking help: Slicer</title>
-   <link href="http://bradfordcondon.com/tools/2013/06/07/multitasking-help-slicer/"/>
-   <updated>2013-06-07T13:37:57-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/06/07/multitasking-help-slicer</id>
-   <content type="html">&lt;p&gt;Sometimes it’s the little things that make a big difference.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://slicerapp.com/&quot;&gt;Slicer&lt;/a&gt; is a tiny app.  Its sole function is to reduce the active screen window to 50%, 33%, or 66% of the screen height.&lt;/p&gt;
-
-&lt;p&gt;What do I use Slicer for?  When I’m copying data from a figure or excel file into a text writeup.  When I’m browsing the internet and taking notes at the same time.    Reorganizing data folder structures, dragging from one window to another. Anytime I’m multitasking.   Or half-tasking (procrastinating and working at the same).  And when am I not doing one of those two things?&lt;figure id=&quot;attachment_95&quot; style=&quot;width: 300px&quot; class=&quot;wp-caption alignnone&quot;&gt;&lt;/figure&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2013/06/screen-shot-2013-06-07-at-1-31-47-pm.png&quot; alt=&quot;slicer&quot; /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Slicer makes hopping between apps, and working with multiple apps at the same time, so much easier.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This blog is really about ways to be a better scientist; efficient use of technology is one of them.  Slicer is one of those apps that I can’t believe I rely on so heavily- was it  so bad to drag and resize manually?  All I can say, working in a post-Slicer environment, where all of my windows fit into one of my designated work zones perfectly, I could never go back to my primitive ways.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
    <title>Four ways to get writing</title>
    <link href="http://bradfordcondon.com/2013/06/04/four-ways-to-get-writing/"/>
    <updated>2013-06-04T17:17:47-04:00</updated>
@@ -3866,98 +3884,6 @@ http://en.wikipedia.org/wiki/File:Sleeping-girl.jpg&lt;/p&gt;
 &lt;p&gt;Seriously.  Go to the gym, go for a run, shoot some hoops.  Sometimes I just clean my house for an hour (in fact, I think my apartment is only clean when I have a deadline looming.  This may not be for everyone, as it’s a trait I share with my mother, but not my father.).  I leave the music at home, and busy my body while clearing my mind.  When I return to my desk, I’m often reset and ready to work.&lt;/p&gt;
 
 &lt;p&gt;If you are reading this, then I wish you the best of luck on your project.  Get back to work!  And if you can’t, and you don’t have a real world deadline breathing down your neck, go take care of yourself!  Because you deserve it, and you’ll function better if you aren’t burnt out.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Get your work on the cloud: Dropbox</title>
-   <link href="http://bradfordcondon.com/tools/2013/05/18/get-your-work-on-the-cloud-dropbox/"/>
-   <updated>2013-05-18T17:04:28-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/05/18/get-your-work-on-the-cloud-dropbox</id>
-   <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/&quot;&gt;Dropbox&lt;/a&gt; is simple and intuitive.  Make a folder on your computer that is automatically backed up to a cloud storage account.  Suddenly, the files you work on and the data you access syncs across devices, at home and at work.  Plus, you can dropbox folders with others.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2013/05/screen-shot-2013-05-18-at-5-04-58-pm.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Write at home, go in to work, and the latest version is on dropbox without passing it between USB sticks.&lt;/p&gt;
-
-&lt;p&gt;Collaborating on a manuscript?  Keep the current manuscript and reference library in a shared folder.  No more emailing files back and forth (and, most frustratingly, losing comments or edits as versions are passed back and forth.  In theory, &lt;a href=&quot;http://windows.microsoft.com/en-us/skydrive/download&quot;&gt;Microsoft Skydrive&lt;/a&gt; should be the ideal solution for this sort of thing, as it boasts seamless editing of word files as &lt;a href=&quot;https://drive.google.com/&quot;&gt;google drive&lt;/a&gt; does.  Unfortunately for both of these services, I wasn’t able to get it to seamlessly integrate as well without doing the word processing on the web interface.  Fun fact: if it doesn’t work easily for the boss, it isn’t going to happen.&lt;/p&gt;
-
-&lt;p&gt;Fortunately, collaborators tend to be elsewhere in the world, and while I’m a night creature, my advisor writes in the morning.  This means we aren’t all trying to edit the same Dropbox shared document at once.&lt;/p&gt;
-
-&lt;p&gt;Another nice use for papers is syncing my &lt;a href=&quot;http://bradfordcondon.com/2013/05/05/citation-management-papers/&quot;&gt;Papers&lt;/a&gt; library.  I wish that Papers had this kind of service automatically, but it’s a nice work around.  Keep your papers library on dropbox in a secure location, and you can sync it between macs.  Just be careful to close down Papers when you are done with it – otherwise, you’ll get conflicting libraries.&lt;/p&gt;
-
-&lt;p&gt;There are a million other uses for Dropbox, but these are the ones I regularly take advantage of.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Let the literature come to you: custom pubmed RSS feeds</title>
-   <link href="http://bradfordcondon.com/tools/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds/"/>
-   <updated>2013-05-10T16:23:45-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/05/10/let-the-literature-come-to-you-custom-pubmed-rss-feeds</id>
-   <content type="html">&lt;p&gt;RSS (rich site summary, or, really simple syndication) is an invaluable tool for all academics.  If you ever wish it was easier to stay up the current academic literature, then this is tool for you.&lt;/p&gt;
-
-&lt;p&gt;So what is RSS?  It’s a way of publishing work so that readers can be notified of updates.  In this day and age, almost every journal has an RSS feed- all you have to do is hook your RSS reader up to the journal’s RSS feed, and you will have every new issue delivered to your virtual doorstep.  You’ll find RSS feeds everywhere: there’s one lurking at the bottom of the sidebar.&lt;/p&gt;
-
-&lt;p&gt;The list of journals I read cover to cover is very low (well, it’s nonexistent).  The utility of RSS starts to become apparent when you combine it with search terms.  &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmed&quot;&gt;Pubmed&lt;/a&gt; makes it insanely easy to do this.  First, make a literature search with some well-devised keywords and observe the results.  Pick terms that are specific enough to filter out things you have no interest in, but are not so demanding you find no results.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2015/09/screen-shot-2015-09-22-at-1-11-32-pm.png&quot; alt=&quot;&amp;lt;img class=&amp;quot;wp-image-433 size-medium&amp;quot; src=&amp;quot;https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/09/screen-shot-2015-09-22-at-1-11-32-pm-300x182.png?fit=300%2C182&amp;quot; alt=&amp;quot;Screen Shot 2015-09-22 at 1.11.32 PM&amp;quot; srcset=&amp;quot;https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/09/screen-shot-2015-09-22-at-1-11-32-pm.png?w=2268 2268w, https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/09/screen-shot-2015-09-22-at-1-11-32-pm.png?resize=300%2C182 300w, https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/09/screen-shot-2015-09-22-at-1-11-32-pm.png?resize=1024%2C620 1024w, https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2015/09/screen-shot-2015-09-22-at-1-11-32-pm.png?w=2000 2000w&amp;quot; sizes=&amp;quot;(max-width: 300px) 100vw, 300px&amp;quot; data-recalc-dims=&amp;quot;1&amp;quot; /&amp;gt;&quot; /&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Create a custom RSS feed with the right search terms and you’ll never have to skim the table of contents for a journal again&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Once you are satisfied with your search terms,  click on the link to save your search as an RSS.  Now, whenever a new article matching your search term is published and collected by pubmed, it will be pushed to your RSS feed.  Combine several of these RSS searches, and you will impress your advisor/journal club/dog with your awareness of cutting-edge research in your field!&lt;/p&gt;
-
-&lt;p&gt;Next time: picking an RSS reader!&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Citation management: Papers</title>
-   <link href="http://bradfordcondon.com/tools/2013/05/05/citation-management-papers/"/>
-   <updated>2013-05-05T16:55:41-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/05/05/citation-management-papers</id>
-   <content type="html">&lt;p&gt;Before you can do good science, you must read good science.   A lot of it.  The good, the bad.&lt;/p&gt;
-
-&lt;p&gt;But how to manage your scientific reading?  Do you print out everything you can possibly hope to read some day?  File it away somewhere?&lt;/p&gt;
-
-&lt;p&gt;Maybe you download PDFs, and carefully curate your articles in a dense folder structure forest.&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;line-height:1.6;&quot;&gt;Being the supremely lazy and scattered-brained person that I am, I need a more hands-off solution.  The primary tool I use for reading and storing scientific papers is&lt;/span&gt; &lt;a style=&quot;line-height:1.6;&quot; title=&quot;papers&quot; href=&quot;http://www.papersapp.com/papers/&quot; target=&quot;_blank&quot;&gt;Papers&lt;/a&gt;&lt;span style=&quot;line-height:1.6;&quot;&gt;.  Think of it as itunes for your PDF library.  &lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png&quot; alt=&quot;&amp;lt;img class=&amp;quot;size-full wp-image&amp;quot; id=&amp;quot;i-9&amp;quot; alt=&amp;quot;Image&amp;quot; src=&amp;quot;https://i1.wp.com/www.bradfordcondon.com/wp-content/uploads/2013/04/screen-shot-2013-04-27-at-9-47-27-pm.png&amp;quot; data-recalc-dims=&amp;quot;1&amp;quot; /&amp;gt;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;Download pdfs, drag them into papers, and let it do the rest.  The program is quite good at automatically pulling meta data (author, journal, etc) from the web.  I point mine to pubmed only: google scholar metadata isn’t always spot on.&lt;/p&gt;
-
-&lt;p&gt;Papers can be read, rated, and tagged.  Best of all, there is ipad integration with automatic library syncinc and highlighting.  This means that I effectively never have to print out a paper again.  I bring my ipad to discussions or as a side-car to my workstation when writing papers.&lt;/p&gt;
-
-&lt;p&gt;My qualms with papers really relate to my own inadequacies.  For some reason, collections have never been quite intuitive enough for me, so my papers are a hugely disorganized mess.  Tagging papers with keywords, and then creating smart collections around those keywords, sounds like a good strategy, but not one I’ve implemented.  Fortunately, the spotlight index is really robust, and I can find what I’m looking for without too much fuss.&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;I’ve also heard good things about Mendeley and Xotero- feel free to leave a comment about which you prefer.&lt;/p&gt;
-</content>
- </entry>
- 
- <entry>
-   <title>Tools for science: Citeulike</title>
-   <link href="http://bradfordcondon.com/tools/2013/04/28/16/"/>
-   <updated>2013-04-27T23:08:04-04:00</updated>
-   <id>http://bradfordcondon.com/tools/2013/04/28/16</id>
-   <content type="html">&lt;p&gt;I’m pretty sure I have too many gadgets for managing my academic references.  I’d surely be better off if I spent more time reading the literature, and less time setting up new accounts that I’ll neglect (this blog being a perfect case in point).&lt;/p&gt;
-
-&lt;p&gt;Every year for my journal club, I try to get people to use &lt;a href=&quot;http://www.citeulike.org/home&quot; target=&quot;_blank&quot;&gt;Citeulike&lt;/a&gt;.  It’s a great concept- install a browser bookmark, and with one click, import all of the metadata for a paper to your personal library.  Tag it (which I always neglect), and there you go.  It’s pretty tough to stump the import tool (this wasn’t always so), so without much effort, it pulls the title, author, abstract, and journal info.
-&lt;img src=&quot;/wp-content/uploads/2013/04/screen-shot-2013-04-27-at-11-04-51-pm.png&quot; alt=&quot;citeulike&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;A citeulike entry&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Which is all nice, but it doesn’t stop there.  Citeulike has all sorts of functionality for sharing papers with a dedicate group, or just e-stalking a scientist you have a crush on (or who stays on top of the literature).  In theory, this means you’ll be plugged into your academic community, noticing new publications and seeing who is reading what.&lt;/p&gt;
-
-&lt;p&gt;In practice, it’s been a bit more lonely.  As it is, I use it as a citation repository for articles I haven’t read, or read but don’t want to keep in my papers library (an upcoming post on that!).  My Citeulike library is &lt;a href=&quot;http://www.citeulike.org/user/bcondon&quot;&gt;here&lt;/a&gt;, if you have any interest in fungal genetics, follow me!&lt;/p&gt;
 </content>
  </entry>
  

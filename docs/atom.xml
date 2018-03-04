@@ -4,13 +4,91 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-02-26T19:07:58-05:00</updated>
+ <updated>2018-03-03T20:13:54-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Tripal Country: Tripal and Travis</title>
+   <link href="http://bradfordcondon.com/2018/02/26/tripal_and_travis/"/>
+   <updated>2018-02-26T00:00:00-05:00</updated>
+   <id>http://bradfordcondon.com/2018/02/26/tripal_and_travis</id>
+   <content type="html">&lt;p&gt;Welcome to Tripal Country!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/TripalLogo_dark.png&quot; alt=&quot;Tripal Logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This week I’m excited to announce we’ve set up Travis Continuous Integration with Tripal!  This means every time code is committed, we test three things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Upgrade a Tripal 2 site to Tripal 3&lt;/li&gt;
+  &lt;li&gt;Install Tripal 3 on a clean site&lt;/li&gt;
+  &lt;li&gt;Run PHPUnit tests&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--more--&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;img src=&quot;/assets/img/tripal/tripal_passing.png&quot; alt=&quot;tripal passing!&quot; /&gt;
+Is there anything more fulfilling than seeing a &lt;em&gt;Build:Passing&lt;/em&gt; tag on your repo?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;the-general-idea&quot;&gt;The General Idea&lt;/h2&gt;
+
+&lt;p&gt;Even small changes to the code base can have unintended consequences.  Continuous Integration running on a pull request means you know, before you merge the pull request, whether or not the new code will pass all your tests.&lt;/p&gt;
+
+&lt;p&gt;In the case of Tripal, we wanted to clear the way for PHPUnit testing.  Testing is interesting when you work in Drupal 6 and 7: Drupal switched to PHPUnit support in Drupal 8.  Especially as a novice developer, you ask yourself, should I bother learning the old framework (simpletest) when I know that PHPunit is just around the corner?&lt;/p&gt;
+
+&lt;p&gt;Turns out with a little bit of work, PHPUnit works just fine with Drupal 7.  This means we can add test coverage to our code and be aware when new changes break old functionality.  Plus, because we build new sites from scratch, we can rest assured that new users trying out Tripal won’t be faced with a broken build.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-build-script&quot;&gt;The Build Script&lt;/h2&gt;
+
+&lt;p&gt;The full build script (&lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt;) we went with is below.  We’re grateful to &lt;a href=&quot;https://graysonkoonce.com/getting-the-current-branch-name-during-a-pull-request-in-travis-ci/&quot;&gt;Grayson Koonce for the branch vs PR workaround.&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;language: php
+
+services:
+  - docker
+
+sudo: required
+
+before_script:
+  - docker pull statonlab/drupal7
+
+script:
+  # Set branch name
+  - export REPO=$(if [ &quot;$TRAVIS_PULL_REQUEST&quot; == &quot;false&quot; ]; then echo $TRAVIS_REPO_SLUG; else echo $TRAVIS_PULL_REQUEST_SLUG; fi)
+  - export BRANCH=$(if [ &quot;$TRAVIS_PULL_REQUEST&quot; == &quot;false&quot; ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  #  Travis does a shallow clone and we need a full clone to test Tripal v2 to v3 upgrade
+  - cd .. &amp;amp;&amp;amp; rm -rf tripal &amp;amp;&amp;amp; git clone https://github.com/$REPO.git tripal &amp;amp;&amp;amp; cd tripal
+  - git checkout $BRANCH
+  # Test tripal 3 installation
+  - docker run -it -d --rm --name tripal3 -v &quot;$(pwd)&quot;:/modules/tripal statonlab/drupal7
+  - sleep 15
+  - docker exec -it tripal3 drush en -y tripal tripal_chado tripal_chado_views tripal_ds tripal_ws
+  # Prepare Chado
+  - docker exec -it tripal3 drush eval &quot;module_load_include('inc', 'tripal_chado', 'includes/tripal_chado.install'); tripal_chado_load_drush_submit('Install Chado v1.3');&quot;
+  - docker exec -it tripal3 drush trp-run-jobs --username=admin
+  # Prepare Drupal
+  - docker exec -it tripal3 drush eval &quot;module_load_include('inc', 'tripal_chado', 'includes/setup/tripal_chado.setup'); tripal_chado_prepare_drush_submit();&quot;
+  - docker exec -it tripal3 drush trp-run-jobs --username=admin
+  # Run PHPUnit tests
+  - docker exec -it tripal3 bash -c &quot;cd /modules/tripal &amp;amp;&amp;amp; composer install &amp;amp;&amp;amp; DRUPAL_ROOT=/var/www/html ./vendor/bin/phpunit&quot;
+  # Test Tripal v2 to v3 upgrade steps
+  - git checkout 7.x-2.x
+  - docker run -it -d --rm --name tripal2 -v &quot;$(pwd)&quot;:/modules/tripal statonlab/drupal7
+  - sleep 15
+  - docker exec -it tripal2 drush en -y tripal_core
+  - docker exec -it tripal2 drush pm-disable tripal_core -y
+  - git checkout $BRANCH
+  - docker exec -it tripal2 drush en -y tripal
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Tripal Country: Chado Feature Annotations</title>

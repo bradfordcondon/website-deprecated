@@ -84,78 +84,79 @@
         <div>
   <div class="box">
 <article class="post">
-  <h1 class="post-title">qual format</h1>
- <time datetime="2017-07-09T00:00:00-04:00" class="post-date">09 Jul 2017</time>
+  <h1 class="post-title">Tripal Country: Tripal and Travis</h1>
+ <time datetime="2018-02-26T00:00:00-05:00" class="post-date">26 Feb 2018</time>
   <div class="card-content">
-  <p>This post is part 7 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
+  <p>Welcome to Tripal Country!</p>
 
-<h3 id="qual-format">qual format</h3>
+<p><img src="/assets/img/TripalLogo_dark.png" alt="Tripal Logo" /></p>
 
-<p>A <code class="highlighter-rouge">.qual</code> file provides Phred-based quality scores for a set of sequences (often a corresponding FASTA file).  It looks something like this:</p>
+<p>This week I’m excited to announce we’ve set up Travis Continuous Integration with Tripal!  This means every time code is committed, we test three things:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&gt;my_sequence1
-4 39 8 4 50 1 100 5 0
-&gt;my_sequence2 
-3 3 40 42 35
+<ul>
+  <li>Upgrade a Tripal 2 site to Tripal 3</li>
+  <li>Install Tripal 3 on a clean site</li>
+  <li>Run PHPUnit tests</li>
+</ul>
+
+<!--more-->
+
+<blockquote>
+  <p><img src="/assets/img/tripal/tripal_passing.png" alt="tripal passing!" />
+Is there anything more fulfilling than seeing a <em>Build:Passing</em> tag on your repo?</p>
+</blockquote>
+
+<h2 id="the-general-idea">The General Idea</h2>
+
+<p>Even small changes to the code base can have unintended consequences.  Continuous Integration running on a pull request means you know, before you merge the pull request, whether or not the new code will pass all your tests.</p>
+
+<p>In the case of Tripal, we wanted to clear the way for PHPUnit testing.  Testing is interesting when you work in Drupal 6 and 7: Drupal switched to PHPUnit support in Drupal 8.  Especially as a novice developer, you ask yourself, should I bother learning the old framework (simpletest) when I know that PHPunit is just around the corner?</p>
+
+<p>Turns out with a little bit of work, PHPUnit works just fine with Drupal 7.  This means we can add test coverage to our code and be aware when new changes break old functionality.  Plus, because we build new sites from scratch, we can rest assured that new users trying out Tripal won’t be faced with a broken build.</p>
+
+<h2 id="the-build-script">The Build Script</h2>
+
+<p>The full build script (<code class="highlighter-rouge">.travis.yml</code>) we went with is below.  We’re grateful to <a href="https://graysonkoonce.com/getting-the-current-branch-name-during-a-pull-request-in-travis-ci/">Grayson Koonce for the branch vs PR workaround.</a></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>language: php
+
+services:
+  - docker
+
+sudo: required
+
+before_script:
+  - docker pull statonlab/drupal7
+
+script:
+  # Set branch name
+  - export REPO=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_REPO_SLUG; else echo $TRAVIS_PULL_REQUEST_SLUG; fi)
+  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  #  Travis does a shallow clone and we need a full clone to test Tripal v2 to v3 upgrade
+  - cd .. &amp;&amp; rm -rf tripal &amp;&amp; git clone https://github.com/$REPO.git tripal &amp;&amp; cd tripal
+  - git checkout $BRANCH
+  # Test tripal 3 installation
+  - docker run -it -d --rm --name tripal3 -v "$(pwd)":/modules/tripal statonlab/drupal7
+  - sleep 15
+  - docker exec -it tripal3 drush en -y tripal tripal_chado tripal_chado_views tripal_ds tripal_ws
+  # Prepare Chado
+  - docker exec -it tripal3 drush eval "module_load_include('inc', 'tripal_chado', 'includes/tripal_chado.install'); tripal_chado_load_drush_submit('Install Chado v1.3');"
+  - docker exec -it tripal3 drush trp-run-jobs --username=admin
+  # Prepare Drupal
+  - docker exec -it tripal3 drush eval "module_load_include('inc', 'tripal_chado', 'includes/setup/tripal_chado.setup'); tripal_chado_prepare_drush_submit();"
+  - docker exec -it tripal3 drush trp-run-jobs --username=admin
+  # Run PHPUnit tests
+  - docker exec -it tripal3 bash -c "cd /modules/tripal &amp;&amp; composer install &amp;&amp; DRUPAL_ROOT=/var/www/html ./vendor/bin/phpunit"
+  # Test Tripal v2 to v3 upgrade steps
+  - git checkout 7.x-2.x
+  - docker run -it -d --rm --name tripal2 -v "$(pwd)":/modules/tripal statonlab/drupal7
+  - sleep 15
+  - docker exec -it tripal2 drush en -y tripal_core
+  - docker exec -it tripal2 drush pm-disable tripal_core -y
+  - git checkout $BRANCH
+  - docker exec -it tripal2 drush en -y tripal
 </code></pre>
 </div>
-
-<p>Similar to FASTA format, each sequence is defined with a header starting with the <code class="highlighter-rouge">&gt;</code> character, and all subsequente characters after the line break describe the sequence.  Unlike FASTA, the individual nucleotides are not included in this file, only the corresponding quality Phred-format scores. 
-At this point, all we need to understand is what are <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred quality scores</a>.  Every nucleotide in a sequence will have a quality score associated with it.  The score <code class="highlighter-rouge">Q</code> describes the probability <code class="highlighter-rouge">P</code> that the base is called in correctly:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Q = –10 log(P)
-</code></pre>
-</div>
-<p>Let’s look at some example Phred scores below:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Phred score</th>
-      <th>Probability incorrect</th>
-      <th>% likelihood correct call</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>3</td>
-      <td>1 in 2</td>
-      <td>50%</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>1 in 10</td>
-      <td>90%</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>1 in 100</td>
-      <td>99%</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>1 in 1000</td>
-      <td>99.9%</td>
-    </tr>
-    <tr>
-      <td>40</td>
-      <td>1 in 10,000</td>
-      <td>99.99%</td>
-    </tr>
-    <tr>
-      <td>50</td>
-      <td>1 in 100,000</td>
-      <td>99.999%</td>
-    </tr>
-    <tr>
-      <td>60</td>
-      <td>1 in 1,000,000</td>
-      <td>99.9999%</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Phred scores typically range from 2-40 with current sequencing technology.  As you can see, setting a cutoff somewhere around <code class="highlighter-rouge">30</code> or higher results in fairly strict confidence in invidual base calls.</p>
 
   </div>
 </article>
@@ -169,13 +170,6 @@ At this point, all we need to understand is what are <a href="https://en.wikiped
   <ul class="related-posts">
     
       <li>
-        <a href="/2018/02/26/tripal_and_travis/">
-          Tripal Country: Tripal and Travis
-          <small><time datetime="2018-02-26T00:00:00-05:00">26 Feb 2018</time></small>
-        </a>
-      </li>
-    
-      <li>
         <a href="/2018/02/12/tripal_understanding_feature_annotations/">
           Tripal Country: Chado Feature Annotations
           <small><time datetime="2018-02-12T00:00:00-05:00">12 Feb 2018</time></small>
@@ -186,6 +180,13 @@ At this point, all we need to understand is what are <a href="https://en.wikiped
         <a href="/2018/02/01/tripal_manually_creating_bundles/">
           Tripal Country: Manually Creating New Bundle Types
           <small><time datetime="2018-02-01T00:00:00-05:00">01 Feb 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/01/17/tripal_at_pag_2018/">
+          Tripal at the 2018 GMOD hackathon
+          <small><time datetime="2018-01-17T00:00:00-05:00">17 Jan 2018</time></small>
         </a>
       </li>
     

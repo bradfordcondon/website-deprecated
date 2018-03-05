@@ -84,79 +84,71 @@
         <div>
   <div class="box">
 <article class="post">
-  <h1 class="post-title">Tripal Country: Tripal and Travis</h1>
- <time datetime="2018-02-26T00:00:00-05:00" class="post-date">26 Feb 2018</time>
+  <h1 class="post-title">Tripal best practices</h1>
+ <time datetime="2018-03-05T00:00:00-05:00" class="post-date">05 Mar 2018</time>
   <div class="card-content">
   <p>Welcome to Tripal Country!</p>
 
 <p><img src="/assets/img/TripalLogo_dark.png" alt="Tripal Logo" /></p>
 
-<p>This week I’m excited to announce we’ve set up Travis Continuous Integration with Tripal!  This means every time code is committed, we test three things:</p>
-
-<ul>
-  <li>Upgrade a Tripal 2 site to Tripal 3</li>
-  <li>Install Tripal 3 on a clean site</li>
-  <li>Run PHPUnit tests</li>
-</ul>
+<p>Today I’m sharing my suggestions on how to set up your module.</p>
 
 <!--more-->
 
-<blockquote>
-  <p><img src="/assets/img/tripal/tripal_passing.png" alt="tripal passing!" />
-Is there anything more fulfilling than seeing a <em>Build:Passing</em> tag on your repo?</p>
-</blockquote>
+<h1 id="for-your-database">For your database</h1>
 
-<h2 id="the-general-idea">The General Idea</h2>
+<h3 id="organizational-groups">Organizational Groups</h3>
 
-<p>Even small changes to the code base can have unintended consequences.  Continuous Integration running on a pull request means you know, before you merge the pull request, whether or not the new code will pass all your tests.</p>
+<ul>
+  <li>Add your site to Tripal.info</li>
+  <li>Add your site to the <a href="https://fairsharing.org/collection/Tripal">FAIRsharing Tripal</a> collection.</li>
+</ul>
 
-<p>In the case of Tripal, we wanted to clear the way for PHPUnit testing.  Testing is interesting when you work in Drupal 6 and 7: Drupal switched to PHPUnit support in Drupal 8.  Especially as a novice developer, you ask yourself, should I bother learning the old framework (simpletest) when I know that PHPunit is just around the corner?</p>
+<h1 id="for-your-tripal-modules">For your Tripal Modules</h1>
 
-<p>Turns out with a little bit of work, PHPUnit works just fine with Drupal 7.  This means we can add test coverage to our code and be aware when new changes break old functionality.  Plus, because we build new sites from scratch, we can rest assured that new users trying out Tripal won’t be faced with a broken build.</p>
+<p>If you create custom Tripal Modules, here are some best practices and suggestions.</p>
 
-<h2 id="the-build-script">The Build Script</h2>
+<h3 id="add-your-module-to-tripalinfo">Add your module to Tripal.info</h3>
 
-<p>The full build script (<code class="highlighter-rouge">.travis.yml</code>) we went with is below.  We’re grateful to <a href="https://graysonkoonce.com/getting-the-current-branch-name-during-a-pull-request-in-travis-ci/">Grayson Koonce for the branch vs PR workaround.</a></p>
+<h3 id="host-your-code-on-github">Host your code on GitHub</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>language: php
+<p>We recommend making your code open source and hosting it on GitHub.  It’s free, it let’s people easily find, use, and contribute to your source code.</p>
 
-services:
-  - docker
+<h4 id="associate-the-github-repository-with-tripal">Associate the GitHub repository with Tripal</h4>
 
-sudo: required
+<p>Once your module is on GitHub, consider <a href="https://github.com/tripal/"><strong>joining the Tripal organization</strong></a>.  Your lab group can exist as a team and maintain control over your code, but your projects will be listed in the main Tripal group.</p>
 
-before_script:
-  - docker pull statonlab/drupal7
+<p>If you’d rather not, you can still tag your project as <em>Tripal</em> by clicking on the <em>Manage Topics</em> Link at the top of your repository.</p>
 
-script:
-  # Set branch name
-  - export REPO=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_REPO_SLUG; else echo $TRAVIS_PULL_REQUEST_SLUG; fi)
-  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-  #  Travis does a shallow clone and we need a full clone to test Tripal v2 to v3 upgrade
-  - cd .. &amp;&amp; rm -rf tripal &amp;&amp; git clone https://github.com/$REPO.git tripal &amp;&amp; cd tripal
-  - git checkout $BRANCH
-  # Test tripal 3 installation
-  - docker run -it -d --rm --name tripal3 -v "$(pwd)":/modules/tripal statonlab/drupal7
-  - sleep 15
-  - docker exec -it tripal3 drush en -y tripal tripal_chado tripal_chado_views tripal_ds tripal_ws
-  # Prepare Chado
-  - docker exec -it tripal3 drush eval "module_load_include('inc', 'tripal_chado', 'includes/tripal_chado.install'); tripal_chado_load_drush_submit('Install Chado v1.3');"
-  - docker exec -it tripal3 drush trp-run-jobs --username=admin
-  # Prepare Drupal
-  - docker exec -it tripal3 drush eval "module_load_include('inc', 'tripal_chado', 'includes/setup/tripal_chado.setup'); tripal_chado_prepare_drush_submit();"
-  - docker exec -it tripal3 drush trp-run-jobs --username=admin
-  # Run PHPUnit tests
-  - docker exec -it tripal3 bash -c "cd /modules/tripal &amp;&amp; composer install &amp;&amp; DRUPAL_ROOT=/var/www/html ./vendor/bin/phpunit"
-  # Test Tripal v2 to v3 upgrade steps
-  - git checkout 7.x-2.x
-  - docker run -it -d --rm --name tripal2 -v "$(pwd)":/modules/tripal statonlab/drupal7
-  - sleep 15
-  - docker exec -it tripal2 drush en -y tripal_core
-  - docker exec -it tripal2 drush pm-disable tripal_core -y
-  - git checkout $BRANCH
-  - docker exec -it tripal2 drush en -y tripal
-</code></pre>
-</div>
+<h3 id="doi">DOI</h3>
+
+<p>When your module is release ready, why not create a Digital Object Identifier (DOI) for it with <a href="https://zenodo.org/">Zenodo</a>?  It’s free!  Sync your github account and create a <em>new</em> release (Zenodo won’t find old releases).  You can then display your DOI badge on your module’s page.</p>
+
+<p>Additionally, there is a <a href="https://zenodo.org/communities/tripal/">Tripal Community group</a> on Zenodo.  You can edit your record to associate your DOI with the Tripal community.</p>
+
+<h3 id="testing-and-continuous-integration">Testing and Continuous Integration</h3>
+
+<p>A <a href="https://github.com/statonlab/TripalTestSuite">Tripal Test module</a> is coming soon, which will automatically set up a PHPUnit and Travis testing environment for you.</p>
+
+<ul>
+  <li>Test with PHP Unit.</li>
+  <li>Set up Travis continuous integration.</li>
+</ul>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>Every repository can include a README file that will be displayed on the repository page.  A README file should at a minimum include:</p>
+
+<ul>
+  <li>An overview of the module</li>
+  <li>Instructions on how to install &amp; use the module</li>
+</ul>
+
+<p>Consider documenting your Code itself.  Tripal documents in the <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen style</a> which allows documentation webpages to be automatically generated.  Even if you don’t build HTML documentation, the in-line code documentation will be very helpful to contributors.</p>
+
+<h3 id="coding-standards">Coding Standards</h3>
+
+<p>Drupal has <a href="https://www.drupal.org/docs/develop/standards/coding-standards">defined coding standards</a> that Tripal modules should meet.</p>
 
   </div>
 </article>
@@ -170,9 +162,9 @@ script:
   <ul class="related-posts">
     
       <li>
-        <a href="/2018/03/05/_tripal_guide_metadata_practices/">
-          Tripal best practices
-          <small><time datetime="2018-03-05T00:00:00-05:00">05 Mar 2018</time></small>
+        <a href="/2018/02/26/tripal_and_travis/">
+          Tripal Country: Tripal and Travis
+          <small><time datetime="2018-02-26T00:00:00-05:00">26 Feb 2018</time></small>
         </a>
       </li>
     

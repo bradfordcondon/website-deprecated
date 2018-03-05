@@ -4,13 +4,83 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-03-03T20:13:54-05:00</updated>
+ <updated>2018-03-05T09:51:30-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Tripal best practices</title>
+   <link href="http://bradfordcondon.com/2018/03/05/_tripal_guide_metadata_practices/"/>
+   <updated>2018-03-05T00:00:00-05:00</updated>
+   <id>http://bradfordcondon.com/2018/03/05/_tripal_guide_metadata_practices</id>
+   <content type="html">&lt;p&gt;Welcome to Tripal Country!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/TripalLogo_dark.png&quot; alt=&quot;Tripal Logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Today I’m sharing my suggestions on how to set up your module.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;for-your-database&quot;&gt;For your database&lt;/h1&gt;
+
+&lt;h3 id=&quot;organizational-groups&quot;&gt;Organizational Groups&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add your site to Tripal.info&lt;/li&gt;
+  &lt;li&gt;Add your site to the &lt;a href=&quot;https://fairsharing.org/collection/Tripal&quot;&gt;FAIRsharing Tripal&lt;/a&gt; collection.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;for-your-tripal-modules&quot;&gt;For your Tripal Modules&lt;/h1&gt;
+
+&lt;p&gt;If you create custom Tripal Modules, here are some best practices and suggestions.&lt;/p&gt;
+
+&lt;h3 id=&quot;add-your-module-to-tripalinfo&quot;&gt;Add your module to Tripal.info&lt;/h3&gt;
+
+&lt;h3 id=&quot;host-your-code-on-github&quot;&gt;Host your code on GitHub&lt;/h3&gt;
+
+&lt;p&gt;We recommend making your code open source and hosting it on GitHub.  It’s free, it let’s people easily find, use, and contribute to your source code.&lt;/p&gt;
+
+&lt;h4 id=&quot;associate-the-github-repository-with-tripal&quot;&gt;Associate the GitHub repository with Tripal&lt;/h4&gt;
+
+&lt;p&gt;Once your module is on GitHub, consider &lt;a href=&quot;https://github.com/tripal/&quot;&gt;&lt;strong&gt;joining the Tripal organization&lt;/strong&gt;&lt;/a&gt;.  Your lab group can exist as a team and maintain control over your code, but your projects will be listed in the main Tripal group.&lt;/p&gt;
+
+&lt;p&gt;If you’d rather not, you can still tag your project as &lt;em&gt;Tripal&lt;/em&gt; by clicking on the &lt;em&gt;Manage Topics&lt;/em&gt; Link at the top of your repository.&lt;/p&gt;
+
+&lt;h3 id=&quot;doi&quot;&gt;DOI&lt;/h3&gt;
+
+&lt;p&gt;When your module is release ready, why not create a Digital Object Identifier (DOI) for it with &lt;a href=&quot;https://zenodo.org/&quot;&gt;Zenodo&lt;/a&gt;?  It’s free!  Sync your github account and create a &lt;em&gt;new&lt;/em&gt; release (Zenodo won’t find old releases).  You can then display your DOI badge on your module’s page.&lt;/p&gt;
+
+&lt;p&gt;Additionally, there is a &lt;a href=&quot;https://zenodo.org/communities/tripal/&quot;&gt;Tripal Community group&lt;/a&gt; on Zenodo.  You can edit your record to associate your DOI with the Tripal community.&lt;/p&gt;
+
+&lt;h3 id=&quot;testing-and-continuous-integration&quot;&gt;Testing and Continuous Integration&lt;/h3&gt;
+
+&lt;p&gt;A &lt;a href=&quot;https://github.com/statonlab/TripalTestSuite&quot;&gt;Tripal Test module&lt;/a&gt; is coming soon, which will automatically set up a PHPUnit and Travis testing environment for you.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Test with PHP Unit.&lt;/li&gt;
+  &lt;li&gt;Set up Travis continuous integration.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;p&gt;Every repository can include a README file that will be displayed on the repository page.  A README file should at a minimum include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An overview of the module&lt;/li&gt;
+  &lt;li&gt;Instructions on how to install &amp;amp; use the module&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Consider documenting your Code itself.  Tripal documents in the &lt;a href=&quot;http://www.stack.nl/~dimitri/doxygen/&quot;&gt;Doxygen style&lt;/a&gt; which allows documentation webpages to be automatically generated.  Even if you don’t build HTML documentation, the in-line code documentation will be very helpful to contributors.&lt;/p&gt;
+
+&lt;h3 id=&quot;coding-standards&quot;&gt;Coding Standards&lt;/h3&gt;
+
+&lt;p&gt;Drupal has &lt;a href=&quot;https://www.drupal.org/docs/develop/standards/coding-standards&quot;&gt;defined coding standards&lt;/a&gt; that Tripal modules should meet.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Tripal Country: Tripal and Travis</title>

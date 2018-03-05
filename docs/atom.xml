@@ -4,7 +4,7 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-03-05T09:52:35-05:00</updated>
+ <updated>2018-03-05T09:54:12-05:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Tripal best practices</title>
-   <link href="http://bradfordcondon.com/2018/03/05/_tripal_guide_metadata_practices/"/>
+   <link href="http://bradfordcondon.com/2018/03/05/tripal_guide_metadata_practices/"/>
    <updated>2018-03-05T00:00:00-05:00</updated>
-   <id>http://bradfordcondon.com/2018/03/05/_tripal_guide_metadata_practices</id>
+   <id>http://bradfordcondon.com/2018/03/05/tripal_guide_metadata_practices</id>
    <content type="html">&lt;p&gt;Welcome to Tripal Country!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/TripalLogo_dark.png&quot; alt=&quot;Tripal Logo&quot; /&gt;&lt;/p&gt;

@@ -163,11 +163,11 @@ _Full day workshops developed & implemented:_
 
 ## Publications
 
-### Pre-print (accepted)
-
-Gladieux, P., **Condon, B. J.,** Ravel, S., Soanes, D., Nunes Maciel, J. L., Nhani, A., Jr., Terauchi, R., Lebrun, M.-H., Tharreau, D., Mitchell, T., Pedley, K. F., Valent, B., Talbot, N., Farman, M., and Fournier, E. (2017). Gene flow between divergent cereal- and grass-specific lineages of the rice blast fungus _Magnaporthe oryzae_. bioRxiv. :161513
-
 ### Peer-reviewed
+
+
+Gladieux, P., **Condon, B. J.** (co-first author), Ravel, S., Soanes, D., Maciel, J. L. N., Nhani, A., Chen, L., Terauchi, R., Lebrun, M.-H., Tharreau, D., Mitchell, T., Pedley, K. F., Valent, B., Talbot, N. J., Farman, M., and Fournier, E. 2018. Gene Flow between Divergent Cereal- and Grass-Specific Lineages of the Rice Blast Fungus _Magnaporthe oryzae_. J.W. Taylor, ed. MBio. 9:e01219–17
+
 
 Mohd Zainudin, N. A. I., **Condon, B. J.,** De Bruyne, L., Poucke, C. V., Bi, Q., Li, W., et al. (2015). Virulence, host selective toxin production, and development of three Cochliobolus phytopathogens lacking the Sfp-type 4&#8242;-phosphopantetheinyl transferase Ppt1. _MPMI_ (digital preprint). doi:10.1094/MPMI-03-15-0068-R
 

@@ -1,0 +1,1 @@
+Window management is an important part of workflow.  I've previously written about using tools like slicer or Shiftit to quickly resize and reposition windows.  I discovered a little tool today for Chrome that makes my life a little bit easier with Chrome.  I often work with multiple tabs.

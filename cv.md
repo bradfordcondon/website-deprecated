@@ -42,8 +42,34 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 
 * Upgraded [HardwoodGenomics](https://hardwoodgenomics.org/) to Tripal 3, performed bioinformatic analyses and uploaded new data to site.
 * Co-developer of [TreeSnap](https://treesnap.org/), mobile citizen science app
-* Rewrote [Tripal Analysis Expression](https://github.com/tripal/tripal_analysis_expression) for Tripal 3
-* Created [Fields Generator](https://github.com/statonlab/fields_generator) and [Tripal Alchemist](https://github.com/statonlab/tripal_alchemist/), tools for developing in Tripal.
+* [Tripal](tripal.info) community developer (see Software section below).  
+
+## Software
+
+#### Tripal 
+
+* [Tripal Analysis Expression Module](https://github.com/tripal/tripal_analysis_expression) 
+  - For loading and display of RNASeq data, from biological source material to gene expression data  
+  - DOI: 10.5281/zenodo.1115662
+* [Tripal ElasticSearch Module](https://github.com/tripal/tripal_elasticsearch)
+  - For installing and managing sitewide search, customized search forms, and cross-Tripal-site queries via ElasticSearch
+  - DOI: 10.5281/zenodo.1193925
+* [Tripal Fields Generator](https://github.com/statonlab/fields_generator)
+  - Developer CLI tool to automate Tripal field creation for Tripal v3 development 
+  - DOI: 10.5281/zenodo.1200662
+* [Tripal TestSuite](https://github.com/statonlab/TripalTestSuite)
+  - A composer package that handles common test practices such as bootstrapping Drupal before running the tests, creating test file, and creating and managing database seeders.
+  - DOI: 10.5281/zenodo.1209904
+* [Tripal Alchemist](https://github.com/statonlab/tripal_alchemist)
+  - Enables bulk transformation of Tripal entities from one type to another
+  - DOI: 10.5281/zenodo.1187120
+
+#### TreeSnap
+
+* [Mobile](https://github.com/statonlab/Treesnap-mobile)
+* [Web](https://github.com/statonlab/Treesnap-website)
+
+
 
 ## Skills
 
@@ -162,6 +188,12 @@ _Full day workshops developed & implemented:_
 
 
 ## Publications
+
+### In Review
+
+Lumibao, C, **Condon, B**, Kinkel , L, May, G, Seabloom, E, Borer, E 2018.  Where you are matters: site-specific responses of fungal endophyte communities in _Andropogon gerardii_ to fertilization and herbivory.  Ecology, In Review.
+
+**Condon, B.**, Elliott, C, Gonzalez, J, Yun, S, Akagi, Y, Wiesner-Hanks, T, Kodama, M, Turgeon, G 2018.  Clues to an evolutionary mystery: the genes for T-toxin, enabler of the devastating 1970 Southern Corn Leaf Blight epidemic, are present in ancestral species, suggesting an ancient origin.  MPMI, In Review.
 
 ### Peer-reviewed
 

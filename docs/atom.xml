@@ -4,13 +4,197 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-04-09T11:35:53-04:00</updated>
+ <updated>2018-05-02T10:51:36-04:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
  </author>
 
+ 
+ <entry>
+   <title>Testing in Tripal Core</title>
+   <link href="http://bradfordcondon.com/2018/05/02/tripal_testing_guidelines/"/>
+   <updated>2018-05-02T00:00:00-04:00</updated>
+   <id>http://bradfordcondon.com/2018/05/02/tripal_testing_guidelines</id>
+   <content type="html">&lt;p&gt;This guide is for developers looking to contribute code to the core Tripal project.  It introduces the testing philosophy and guidelines for Tripal core.  Tripal uses Tripal Test Suite, which brings bootstraps your Tripal site for PHPUnit.  It also provides conveniences like namespacing, seeders, transactions, and data factories.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/TripalLogo_dark.png&quot; alt=&quot;Tripal Logo&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tripal-test-suite&quot;&gt;Tripal Test Suite&lt;/h2&gt;
+
+&lt;p&gt;For a basic introduction of Tripal Testing, please see the &lt;a href=&quot;https://github.com/statonlab/TripalTestSuite&quot;&gt;Test Suite repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;installation&quot;&gt;Installation&lt;/h3&gt;
+
+&lt;p&gt;After cloning the &lt;a href=&quot;https://github.com/tripal/tripal&quot;&gt;Tripal github repo&lt;/a&gt;, you will need to install the developer dependencies required to run tests locally.  To do this, you’ll need to &lt;a href=&quot;https://getcomposer.org/doc/00-intro.md&quot;&gt;install Composer&lt;/a&gt;, and then execute &lt;code class=&quot;highlighter-rouge&quot;&gt;composer install&lt;/code&gt; in your project root.&lt;/p&gt;
+
+&lt;h2 id=&quot;testing-criteria&quot;&gt;Testing criteria&lt;/h2&gt;
+&lt;p&gt;For facilitate accepting your pull requests, your code should include tests.  The tests should meet the following guidelines:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All tests pass&lt;/li&gt;
+  &lt;li&gt;Tests pass in all environments (Travis)&lt;/li&gt;
+  &lt;li&gt;Tests don’t modify the database (use transactions or clean up after yourself)&lt;/li&gt;
+  &lt;li&gt;Tests are properly organized (see organization section below)&lt;/li&gt;
+  &lt;li&gt;Tests run quietly&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;test-organization&quot;&gt;Test organization&lt;/h2&gt;
+
+&lt;p&gt;Tests should be placed in &lt;code class=&quot;highlighter-rouge&quot;&gt;tests/&lt;/code&gt;.  This root directory contains the following files:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bootstrap.php&lt;/code&gt; - Test directory configuration.  Don’t modify this.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DatabasSeeders/&lt;/code&gt; - &lt;a href=&quot;https://github.com/statonlab/TripalTestSuite#database-seeders&quot;&gt;Database seeders&lt;/a&gt;, for filling Chado with permanent test data&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DataFactory.php&lt;/code&gt; - &lt;a href=&quot;https://github.com/statonlab/TripalTestSuite#factories&quot;&gt;Data factories&lt;/a&gt;, for providing test-by-test Chado data.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;example.env&lt;/code&gt; - An example environment file.  Configure this to match your development site and save as &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tests must end with &lt;code class=&quot;highlighter-rouge&quot;&gt;Test.php&lt;/code&gt; to be recognized by PHPUnit.  The tests themselves should be organized by submodule, and category.&lt;/p&gt;
+
+&lt;h5 id=&quot;submodules&quot;&gt;Submodules&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;tripal&lt;/li&gt;
+  &lt;li&gt;tripal_bulk_loader&lt;/li&gt;
+  &lt;li&gt;tripal_chado&lt;/li&gt;
+  &lt;li&gt;tripal_chado_views&lt;/li&gt;
+  &lt;li&gt;tripal_daemon&lt;/li&gt;
+  &lt;li&gt;tripal_ds&lt;/li&gt;
+  &lt;li&gt;tripal_ws&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;categories&quot;&gt;Categories&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;API&lt;/li&gt;
+  &lt;li&gt;theme&lt;/li&gt;
+  &lt;li&gt;views&lt;/li&gt;
+  &lt;li&gt;drush&lt;/li&gt;
+  &lt;li&gt;fields&lt;/li&gt;
+  &lt;li&gt;entities&lt;/li&gt;
+  &lt;li&gt;admin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So for example, tests for the file &lt;code class=&quot;highlighter-rouge&quot;&gt;tripal/api/tripal.jobs.api.inc&lt;/code&gt; should go in &lt;code class=&quot;highlighter-rouge&quot;&gt;tests/tripal/api/TripalJobsAPITest.php&lt;/code&gt;. tests that don’t fit in any of these categories should be placed in &lt;code class=&quot;highlighter-rouge&quot;&gt;tests/[submodule]/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;In order for tests to run locally, you’ll need an environmental file &lt;code class=&quot;highlighter-rouge&quot;&gt;tests/.env&lt;/code&gt; with the project root, base url, and locale.  See &lt;code class=&quot;highlighter-rouge&quot;&gt;tests/example.env&lt;/code&gt; for an example.&lt;/p&gt;
+
+&lt;h2 id=&quot;writing-tests&quot;&gt;Writing tests&lt;/h2&gt;
+
+&lt;p&gt;When doing test driven development, you might be running tests over and over.  To speed you along, you can assign your tests a unique &lt;code class=&quot;highlighter-rouge&quot;&gt;@group&lt;/code&gt; tag, ie &lt;code class=&quot;highlighter-rouge&quot;&gt;@group failing&lt;/code&gt;.  Then specify your novel group when you run phpunit, ie &lt;code class=&quot;highlighter-rouge&quot;&gt;phpunit --group failing&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should also tag your test with relevant groups.  For example, our Tripal Chado API tests should be tagged with &lt;code class=&quot;highlighter-rouge&quot;&gt;@group api&lt;/code&gt;.  We don’t tag it with &lt;code class=&quot;highlighter-rouge&quot;&gt;@group chado&lt;/code&gt; because it is in the &lt;em&gt;testsuite&lt;/em&gt; (the submodule folder) Chado.&lt;/p&gt;
+
+&lt;h2 id=&quot;defining-the-test-class&quot;&gt;Defining the test class&lt;/h2&gt;
+
+&lt;p&gt;Once you’ve identified where your test will go, we can start writing our test.&lt;/p&gt;
+
+&lt;p&gt;Tripal Test suite provides a convenient way to start writing a test class: &lt;code class=&quot;highlighter-rouge&quot;&gt;tripaltest make:test TestName&lt;/code&gt;.  From the project root, our example  &lt;code class=&quot;highlighter-rouge&quot;&gt;./vendor/bin/tripaltest make:test tripal_chado/api/TripalChadoOrganismAPITest&lt;/code&gt;.  This will generate a test stub file with namespacing.&lt;/p&gt;
+
+&lt;p&gt;The test class file should extend &lt;code class=&quot;highlighter-rouge&quot;&gt;StatonLab\TripalTestSuite\TripalTestCase&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;TestCase&lt;/code&gt; to take advantage of the Tripal Test Suite tools.  For example, to wrap our tests in a database transaction (so we can indescriminately insert and modify without having to revert consider how to clean up the database after), we use &lt;code class=&quot;highlighter-rouge&quot;&gt;StatonLab\TripalTestSuite\DBTransaction;&lt;/code&gt;.  Your test class name should match the file.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;use StatonLab\TripalTestSuite\DBTransaction;
+use StatonLab\TripalTestSuite\TripalTestCase;
+
+class TripalChadoOrganismAPITest extends TripalTestCase {
+	use DBTransaction;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You typically will want at least one test per public method in your file or class. In the below test class, I define a single test: &lt;code class=&quot;highlighter-rouge&quot;&gt;test_tripal_get_organism()&lt;/code&gt;.  The test should start with &lt;code class=&quot;highlighter-rouge&quot;&gt;test_&lt;/code&gt;, otherwise it wont run by default in PHPUnit (you can also declare that it is a test in the method documentation using &lt;code class=&quot;highlighter-rouge&quot;&gt;@test&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;An ideal test operates &lt;em&gt;independently&lt;/em&gt; of other tests: by default, unit tests run in random order.  How, then, do we provide our test with relevant data?  We use &lt;strong&gt;Factories&lt;/strong&gt;, which you can read about on the &lt;a href=&quot;https://github.com/statonlab/TripalTestSuite#factories&quot;&gt;Tripal Test Suite repo&lt;/a&gt;.  In the below example, we create an organism with known information, and assert that we can retrieve it with the Chado API functions.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+namespace Tests\tripal_chado\api;
+
+use StatonLab\TripalTestSuite\DBTransaction;
+use StatonLab\TripalTestSuite\TripalTestCase;
+
+class TripalChadoOrganismAPITest extends TripalTestCase {
+
+  use DBTransaction;
+
+  /**
+   * Test tripal_get_organism.
+   *
+   * @group api
+   */
+  public function test_tripal_get_organism() {
+
+    $genus_string = 'a_genius_genus';
+    $species_string = 'fake_species';
+
+    $organism = factory('chado.organism')-&amp;gt;create([
+      'genus' =&amp;gt; $genus_string,
+      'species' =&amp;gt; $species_string,
+    ]);
+
+    $results = [];
+
+    $results[] = tripal_get_organism(['organism_id' =&amp;gt; $organism-&amp;gt;organism_id]);
+    $results[] = tripal_get_organism([
+      'genus' =&amp;gt; $genus_string,
+      'species' =&amp;gt; $species_string,
+    ]);
+
+    foreach ($results as $result) {
+      $this-&amp;gt;assertNotFalse($result);
+      $this-&amp;gt;assertNotNull($result);
+      $this-&amp;gt;assertObjectHasAttribute('genus', $result);
+      $this-&amp;gt;assertEquals($genus_string, $result-&amp;gt;genus);
+    }
+  }
+
+  public function test_tripal_get_organism_fails_gracefully() {
+    $result = tripal_get_organism([
+      'genus' =&amp;gt; uniqid(),
+      'species' =&amp;gt; uniqid(),
+    ]);
+
+    $this-&amp;gt;assertNull($result);
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id=&quot;testing-quietly&quot;&gt;Testing quietly&lt;/h3&gt;
+
+&lt;p&gt;Code may output errors when failing intentionally, or as part of job progress.  This can clutter the test environment, so you should wrap the offending methods.  If the output goes to standard out, you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;ob_start()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ob_end_clean()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+    ob_start();//dont display the job message
+    $bool = tripal_chado_publish_records($values);
+    ob_end_clean();
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If the message comes from the Tripal error reporter, you must use &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;TRIPAL_SUPPRESS_ERRORS=TRUE&quot;&lt;/code&gt; to suppress the tripal error reporter message.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+  /**
+   * Test chado_publish_records returns false given bad bundle.
+   *
+   * @group api
+   */
+  public function test_tripal_chado_publish_records_false_with_bad_bundle() {
+    putenv(&quot;TRIPAL_SUPPRESS_ERRORS=TRUE&quot;);//this will fail, so we suppress the tripal error reporter
+    $bool = tripal_chado_publish_records(['bundle_name' =&amp;gt; 'never_in_a_million_years']);
+    $this-&amp;gt;assertFalse($bool);
+    putenv(&quot;TRIPAL_SUPPRESS_ERRORS&quot;);//unset
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;testing-entities-and-fields&quot;&gt;Testing Entities and Fields&lt;/h3&gt;
+
+&lt;p&gt;Coming soon.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Tripal GFF Loader</title>

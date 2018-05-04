@@ -189,11 +189,16 @@ _Full day workshops developed & implemented:_
 
 ## Publications
 
+### Accepted, In Review
+
+Harper, Lisa, Agbiodata consortium, 2018.  AgBioData Consortium Recommendations for Sustainable Genomics and Genetics Databases for Agriculture.  Database, In Review.
+
+
+**Condon, B.**, Elliott, C, Gonzalez, J, Yun, S, Akagi, Y, Wiesner-Hanks, T, Kodama, M, Turgeon, G 2018.  Clues to an evolutionary mystery: the genes for T-toxin, enabler of the devastating 1970 Southern Corn Leaf Blight epidemic, are present in ancestral species, suggesting an ancient origin.  MPMI, In Review.
+
 ### In Review
 
 Lumibao, C, **Condon, B**, Kinkel , L, May, G, Seabloom, E, Borer, E 2018.  Where you are matters: site-specific responses of fungal endophyte communities in _Andropogon gerardii_ to fertilization and herbivory.  Ecology, In Review.
-
-**Condon, B.**, Elliott, C, Gonzalez, J, Yun, S, Akagi, Y, Wiesner-Hanks, T, Kodama, M, Turgeon, G 2018.  Clues to an evolutionary mystery: the genes for T-toxin, enabler of the devastating 1970 Southern Corn Leaf Blight epidemic, are present in ancestral species, suggesting an ancient origin.  MPMI, In Review.
 
 ### Peer-reviewed
 

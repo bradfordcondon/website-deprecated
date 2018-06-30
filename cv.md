@@ -40,9 +40,12 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 
 ## Accomplishments
 
+* [Tripal](tripal.info) project manager.
+   - Established testing protocols and continuous integration testing.
+   - Formed a governance structure with contribution guidelines and requirements.
 * Upgraded [HardwoodGenomics](https://hardwoodgenomics.org/) to Tripal 3, performed bioinformatic analyses and uploaded new data to site.
-* Co-developer of [TreeSnap](https://treesnap.org/), mobile citizen science app
-* [Tripal](tripal.info) community developer (see Software section below).  
+* Co-developer of [TreeSnap](https://treesnap.org/), mobile citizen science app.
+
 
 ## Software
 
@@ -75,7 +78,7 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 
 #### Bioinformatics and programming
 
-  * Proficient with UNIX/LINUX systems, command-line programming, querying and managing big data/databases (SQL, JSON)
+  * Proficient with UNIX/LINUX systems, command-line programming, querying and managing big data/databases
   * Developer for cross-platform (iOS and Android) apps in React-Native, and genomics websites using Tripal and Drupal.
   * Experience designing experiments and analyzing data for a wide variety of bioinformatic projects, including 
       * Metagenomics
@@ -83,7 +86,7 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
       * Genome assembly and annotation
       * Phylogenetics
 
-  * Programming languages: **R, Perl, javascript, PHP, CSS, Ruby**
+  * Programming languages: **R, Perl, javascript, PHP, CSS, Ruby, SQL**
   * Frameworks: **Laravel, Drupal, Wordpress, React, React Native**
 
 #### Molecular biology
@@ -200,8 +203,10 @@ Harper, Lisa, Agbiodata consortium, 2018.  AgBioData Consortium Recommendations 
 
 Lumibao, C, **Condon, B**, Kinkel , L, May, G, Seabloom, E, Borer, E 2018.  Where you are matters: site-specific responses of fungal endophyte communities in _Andropogon gerardii_ to fertilization and herbivory.  Ecology, In Review.
 
-### Peer-reviewed
+Condon, B, Almsaeed, A, West, J, Chen, M, Staton, M 2018.  [Tripal Developer Toolkit](https://doi.org/10.1101/328641).  BioRxiv preprint, in review. doi: https://doi.org/10.1101/328641
 
+
+### Peer-reviewed
 
 Gladieux, P., **Condon, B. J.** (co-first author), Ravel, S., Soanes, D., Maciel, J. L. N., Nhani, A., Chen, L., Terauchi, R., Lebrun, M.-H., Tharreau, D., Mitchell, T., Pedley, K. F., Valent, B., Talbot, N. J., Farman, M., and Fournier, E. 2018. Gene Flow between Divergent Cereal- and Grass-Specific Lineages of the Rice Blast Fungus _Magnaporthe oryzae_. J.W. Taylor, ed. MBio. 9:e01219–17
 

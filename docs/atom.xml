@@ -4,62 +4,13 @@
  <title>Bradford Condon PhD</title>
  <link href="http://bradfordcondon.com/atom.xml" rel="self"/>
  <link href="http://bradfordcondon.com/"/>
- <updated>2018-06-30T15:33:22-04:00</updated>
+ <updated>2018-06-30T15:34:35-04:00</updated>
  <id>http://bradfordcondon.com</id>
  <author>
    <name>Bradford Condon</name>
    <email>bradford.condon@uky.edu</email>
  </author>
 
- 
- <entry>
-   <title>Tripal Developer Toolkit paper</title>
-   <link href="http://bradfordcondon.com/2018/06/08/biorxiv-tripal-dev-kit/"/>
-   <updated>2018-06-08T00:00:00-04:00</updated>
-   <id>http://bradfordcondon.com/2018/06/08/biorxiv-tripal-dev-kit</id>
-   <content type="html">&lt;p&gt;Announcing the availability of my &lt;a href=&quot;https://www.biorxiv.org/content/early/2018/06/04/328641&quot;&gt;preprint “Tripal Developer Toolkit” on bioRxiv!&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This paper was not the first one I’ve authored that was put up as an open-access preprint, but it is the first paper where the entire drafting process was open, online, and collaborative.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;I don’t think this method of working is feasible for all projects, but when writing open-source software it is!  This paper was so much fun to write, I wanted to share my workflow and the tools I used.&lt;/p&gt;
-
-&lt;h1 id=&quot;coding&quot;&gt;Coding&lt;/h1&gt;
-
-&lt;p&gt;The code is primarily PHP.  All code was hosted on Github.&lt;/p&gt;
-
-&lt;p&gt;As I began to define which modules would end up in the paper, I created a single, organization level Github project.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-paper-writing-process&quot;&gt;The paper writing process&lt;/h1&gt;
-
-&lt;h2 id=&quot;organization&quot;&gt;Organization&lt;/h2&gt;
-
-&lt;p&gt;I’ve previously worked on manuscripts by emailing a word document back and forth with tracked changes, renaming the file with each revision.  GoogleDocs = &lt;strong&gt;so much better&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Some handy google doc plugins/tips:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Table of contents
-    &lt;ul&gt;
-      &lt;li&gt;Use the text type dropdown and predefined headings instead of manually formatting the sections.  Otherwise they won’t show up in the TOC!&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Name versions at milestones&lt;/li&gt;
-  &lt;li&gt;Use suggest changes (same as track changes)&lt;/li&gt;
-  &lt;li&gt;Use comments&lt;/li&gt;
-  &lt;li&gt;Assign people to sections!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Citations: I switched to paperpile.  It’s not free but it integrates with GoogleDocs.  As long as its the only software that does that, it’s the only one I’ll use or recommend.  It handled shared citation management fairly well.&lt;/p&gt;
-
-&lt;h2 id=&quot;writing&quot;&gt;Writing&lt;/h2&gt;
-
-&lt;h3 id=&quot;citation-management&quot;&gt;Citation management&lt;/h3&gt;
-
-&lt;p&gt;The paper has been submitted to Database for review.&lt;/p&gt;
-</content>
- </entry>
  
  <entry>
    <title>Module showcase</title>

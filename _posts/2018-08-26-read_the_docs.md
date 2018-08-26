@@ -50,7 +50,7 @@ The abbreviated version is:
 * Push your changes to github
 
 
-We use `RST` format.  It make seem a little more complicated than markdown (and it is), but its also more powerful, so I feel its worth the work.
+We use `RST` format.  It might seem a little more complicated than markdown (and it is), but its also more powerful, so I feel its worth the work.
 
 Link documents to your `index.rst` and Sphinx will build you a searchable site with nicely formatted navigation.
 

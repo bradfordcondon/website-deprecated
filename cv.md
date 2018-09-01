@@ -73,7 +73,6 @@ August 2007 to June 2014: Graduate Student and Post-Doctoral fellow, Department
 * [Web](https://github.com/statonlab/Treesnap-website)
 
 
-
 ## Skills
 
 #### Bioinformatics and programming
@@ -199,11 +198,13 @@ Harper, Lisa, Agbiodata consortium, 2018.  AgBioData Consortium Recommendations 
 
 **Condon, B.**, Elliott, C, Gonzalez, J, Yun, S, Akagi, Y, Wiesner-Hanks, T, Kodama, M, Turgeon, G 2018.  Clues to an evolutionary mystery: the genes for T-toxin, enabler of the devastating 1970 Southern Corn Leaf Blight epidemic, are present in ancestral species, suggesting an ancient origin.  MPMI, In Review.
 
+
+**Condon**, B, Almsaeed, A, West, J, Chen, M, Staton, M 2018.  [Tripal Developer Toolkit](https://doi.org/10.1101/328641).  Database, In Review. doi: https://doi.org/10.1101/328641
+
+
 ### In Review
 
 Lumibao, C, **Condon, B**, Kinkel , L, May, G, Seabloom, E, Borer, E 2018.  Where you are matters: site-specific responses of fungal endophyte communities in _Andropogon gerardii_ to fertilization and herbivory.  Ecology, In Review.
-
-Condon, B, Almsaeed, A, West, J, Chen, M, Staton, M 2018.  [Tripal Developer Toolkit](https://doi.org/10.1101/328641).  BioRxiv preprint, in review. doi: https://doi.org/10.1101/328641
 
 
 ### Peer-reviewed

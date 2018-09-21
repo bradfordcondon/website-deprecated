@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head>
+  <title>Bradford Condon, Developer and Bioinformaticist</title>
+<meta charset="utf-8">
+<meta name="author" content="Bradford Condon">
+<meta name="description" content="Website, CV, and Blog of Bradford Condon.  Bradford is a web and mobile developer.  Bradford also holds a PhD in plant pathology and is an expert in genomics, bioinformatics.">
+</head>
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                <a href="/" title="Home">
+                    
+                </a>
+            </h1>
+            <h2 class="subtitle">
+                
+            </h2>
+        </div>
+
+    </div>
+    <div class="hero-foot">
+        <nav class="tabs is-boxed nav-menu has-shadow">
+            <div class="nav-center">
+                <ul>
+
+                    <li >
+                    <a href="/">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-home fa-stack-1x"></i>
+          </span>
+                        Home</a></li>
+                    <li >
+
+                    <a href="/blog/">
+
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-newspaper-o fa-stack-1x"></i>
+          </span>
+                        Blog</a>
+                    </li>
+                    <li >
+
+                    <a href="/about/">
+                   <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-question fa-stack-1x"></i>
+                    </span>
+                        About</a>
+
+                    </li>
+                    <li >
+
+                    <a href="/cv.html">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-id-card fa-stack-1x"></i>
+                   </span>
+                        CV</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<link rel="stylesheet" href="/assets/css/application.css" />
+<link rel="stylesheet" href="/assets/css/prism.css" />
+
+<link rel="alternate" type="application/atom+xml" title="" href="/atom.xml">
+
+<br/>
+
+<body>
+<div class="container content">
+    <main>
+        <div>
+  <div class="box">
+<article class="post">
+  <h1 class="post-title">Plotting with D3 part 1</h1>
+ <time datetime="2017-12-22T00:00:00-05:00" class="post-date">22 Dec 2017</time>
+  <div class="card-content">
+  <p><img src="/assets/img/d3/d3_logo.png" alt="D3 logo" /></p>
+
+<p><a href="https://d3js.org/">D3js (Data-Driven Documents)</a> is a Javascript library that manipulates the DOM and is often used to build SVG plots.  I recently created an interactive plot for differential expression data as part of the <a href="https://github.com/tripal/tripal_analysis_expression/">Tripal Analysis Expression module</a>. Because other Tripal modules use D3 v3.x, I was required to do the same (as opposed to v4, the latest version).  While the <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/API-Reference.md">API is available</a>, I’m the sort of person who learns best from tutorials and examples, and I struggled to find enough v3 examples.</p>
+
+<!--more-->
+
+<blockquote>
+  <p><img src="/assets/img/d3/taexp_plot.png" alt="Tripal Analysis Expression plot" /></p>
+
+  <p>The Tripal Analysis Expression module groups and colors data based on user selection. Each group can be dragged and rearranged.  By the end of this series, you’ll be able to create higher order plots like this in D3.</p>
+</blockquote>
+
+<p>With that in mind, I am writing this basic D3js v3 tutorial. This is installment one, where we create a very basic and unimpressive plot using just <code class="highlighter-rouge">data()</code> and <code class="highlighter-rouge">enter()</code>.  I recommend some starting resources below, but this tutorial is aimed at beginners.</p>
+
+<p>The code for this lesson is available as a <a href="https://gist.github.com/bradfordcondon/317fe6b4edd66ba3904ed2248f8b6134">GitHub gist</a>, or visualized with <a href="https://bl.ocks.org/bradfordcondon/317fe6b4edd66ba3904ed2248f8b6134">Bl.ocks</a>.</p>
+
+<h3 id="background-reading">Background reading</h3>
+
+<p>Before we get started, you should understand the basics of</p>
+<ul>
+  <li><a href="https://www.javascript.com/">Javascript</a></li>
+  <li><a href="https://jquery.com/">jQuery</a></li>
+  <li>The <a href="https://www.w3schools.com/js/js_htmldom.asp">DOM model</a></li>
+  <li><a href="https://www.w3schools.com/graphics/svg_intro.asp">SVG</a></li>
+  <li>A browser developer console such as <a href="https://developer.chrome.com/devtools">Google Chrome</a></li>
+</ul>
+
+<p>I’d also recommend looking over the <a href="https://d3js.org/">D3 website</a> and reading the introduction/gaining inspiration from the plots.</p>
+
+<h3 id="why-d3">Why D3?</h3>
+
+<p>There are other plotting solutions for javascript.  I like D3 because it strikes a nice balance between ease of use and flexibility.  It might be easier to get results plotting something with, for example, <a href="https://plot.ly/javascript/">plot.ly</a> (which is built on top of D3), but the higher layer of abstraction leaves you with fewer options.</p>
+
+<h2 id="d3-the-basics">D3: the basics</h2>
+
+<p>I recommended reading about jQuery in the introduction because they share the same fundamental goal: select objects in the DOM and manipulate them.  jQuery is much broader in scope: it’s a general purpose javascript library.  D3’s twist is revealed in it’s name: Data-Driven Documents.  The assumption is that you’ve got data (represented in an array) and you want to <em>apply</em> that data to the DOM.  Typically, that means visualize it in some way!</p>
+
+<h3 id="show-me-the-data">Show me the data</h3>
+
+<p>How does D3 communicate your data to the DOM?  Using the <code class="highlighter-rouge">data()</code>, <code class="highlighter-rouge">enter()</code> methods!</p>
+
+<p>Let’s make a simple example.  You can follow along by pasting the code into text editor and opening the file in a web browser.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+<span class="p">.</span><span class="nx">axis</span> <span class="p">.</span><span class="nx">domain</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="nx">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">svg</span> <span class="nx">width</span><span class="o">=</span><span class="s2">"960"</span> <span class="nx">height</span><span class="o">=</span><span class="s2">"500"</span><span class="o">&gt;&lt;</span><span class="sr">/svg&gt;</span><span class="err"> 
+</span><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://d3js.org/d3.v3.min.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+  
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"one"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"two"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"a"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
+              <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"two"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+             <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s2">"four"</span><span class="p">,</span> <span class="na">property</span><span class="p">:</span> <span class="s2">"b"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="mi">57</span><span class="p">},</span> <span class="p">];</span>
+  
+  <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">)</span> 
+    
+ <span class="kd">var</span> <span class="nx">bars</span><span class="o">=</span>  <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.bar'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+   <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'transform'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">'translate('</span> <span class="o">+</span> <span class="nx">i</span><span class="o">*</span> <span class="mi">20</span> <span class="o">+</span> <span class="s1">',0)'</span><span class="p">;</span> 
+  <span class="p">}).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'rect'</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">'fill'</span><span class="p">,</span> <span class="s2">"red"</span><span class="p">)</span>
+ <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">})</span>
+ <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+  
+  <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>  
+</code></pre>
+</div>
+<p>Below is the resulting plot.</p>
+
+<div id="output_plot"></div>
+
+<p>There’s a couple of problems here, but let’s see what we are trying to do.</p>
+
+<ul>
+  <li>We define a data array consisting of objects with some simple key =&gt; value pairs.  For now we just use the <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">value</code> property.</li>
+  <li>We define and select the <code class="highlighter-rouge">svg</code> element which holds our graphics.</li>
+  <li>We enter our data into the <code class="highlighter-rouge">svg</code> using the <code class="highlighter-rouge">data()</code> and <code class="highlighter-rouge">enter()</code> calls.</li>
+  <li>We append <code class="highlighter-rouge">g</code> elements to each <code class="highlighter-rouge">.bar</code> object.</li>
+  <li>We transform each <code class="highlighter-rouge">g</code> object by translating it, shifting it along the x-axis.</li>
+  <li>We append a <code class="highlighter-rouge">rect</code> element.</li>
+  <li>We transform the  <code class="highlighter-rouge">rect</code> element based on the data.</li>
+</ul>
+
+<p>Pay special attention to <code class="highlighter-rouge">function (d, i) {//code}</code>.  Because we’ve entered our data, we can define a function that takes the <em><code class="highlighter-rouge">i</code>th</em> element of the <code class="highlighter-rouge">data</code> array as <code class="highlighter-rouge">d</code> as an input, and outputs what we want.</p>
+
+<h3 id="chaining">Chaining</h3>
+<p>D3 allows for <em>chaining</em> method calls together, much like jQuery.  In the above example, we took advantage of chaining several times.  For example…</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code> <span class="kd">var</span> <span class="nx">bars</span><span class="o">=</span>  <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.bar'</span><span class="p">)</span>
+	<span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>What’s important to understand is that the chain is executed in order, and each link in the chain passes down its selection to the next member.  This means that subsequent calls after <code class="highlighter-rouge">.append('g')</code> will <em>affect that g element</em>.  On the other hand, setting the <code class="highlighter-rouge">style</code> or <code class="highlighter-rouge">attr</code> of an element will pass on the reference element, meaning you can execute several <code class="highlighter-rouge">style</code> calls in a row on the same element (as we do above)</p>
+
+<p>If chaining confuses you, the above code could be written without chaining, as</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code> <span class="kd">var</span> <span class="nx">bars</span><span class="o">=</span>  <span class="nx">svg</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'.bar'</span><span class="p">)</span>
+ <span class="nx">bars</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+ <span class="nx">bars</span><span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+ <span class="nx">bars</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="entering-data-with--selectalldataenterappend">Entering data with  <code class="highlighter-rouge">.selectAll().data().enter().append()</code></h3>
+
+<p>This chain will look very familiar to you the more you use D3.  The <code class="highlighter-rouge">data</code> method requires a selection to bind data to.  It might be confusing that we select all <code class="highlighter-rouge">.bar</code> elements in the above example: what <code class="highlighter-rouge">.bar</code>?  They <strong>dont exist yet!</strong></p>
+
+<p>That’s where <code class="highlighter-rouge">.enter()</code> comes in.  It compares the data in <code class="highlighter-rouge">data()</code> and the selection, and creates new placeholder elements for the entered data.</p>
+
+<h3 id="looping-through-data">Looping through data</h3>
+
+<p>You may be confused how each element gets “told” what its height and x-position should be.  The answer lies in how D3 has created an element for each element in our data array.</p>
+
+<p>Consider how we style the height in the above code:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"height"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">d</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">value</span><span class="p">})</span>
+</code></pre>
+</div>
+
+<p>Rather than returning a fixed height, we use a <strong>function</strong> to dynamically return the height based on <code class="highlighter-rouge">d</code> and <code class="highlighter-rouge">i</code>.  <code class="highlighter-rouge">d</code> is the individual data entry, and <code class="highlighter-rouge">i</code> is its key.  In our example code, when <code class="highlighter-rouge">i = 2</code>, <code class="highlighter-rouge">d = {name: "two", property: "a", value: 50}</code>.</p>
+
+<p>Because our data structure has a <code class="highlighter-rouge">value</code> key, simply returning <code class="highlighter-rouge">d.value</code> will set the height of the bar based on the value of that element!  If you are getting confused, I recommend including a <code class="highlighter-rouge">console.log(d)</code> in your function.  You’ll see in your console that each data object in the array is returned one by one.</p>
+
+<h2 id="building-a-better-plot">Building a better plot</h2>
+
+<p>This is clearly not an award winning plot.  We have no axes, scaling, grouping, labels, legends, or titles.  The colors are uniform.  Oh, and it’s upside down (a surprisingly persistent problem with D3!)</p>
+
+<p>We’ll cover the rest in later lessons.  But for now, try to define your own dataset and bind it to the DOM using <code class="highlighter-rouge">data()</code> and <code class="highlighter-rouge">enter()</code>.</p>
+
+<p>Continue reading with <a href="/2017/12/31/d3_part2_flipping/">part two: implementing scales</a>.</p>
+
+<p>Did you enjoy this article?  Looking for more information?  Please feel free to contact me on twitter @bradfordcondon</p>
+
+
+  </div>
+</article>
+  </div>
+
+
+
+ <div class="box">
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2018/08/26/read_the_docs.html">
+          Documentation with Read the Docs
+          <small><time datetime="2018-08-26T00:00:00-04:00">26 Aug 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/06/08/module_showcase_site.html">
+          Module showcase
+          <small><time datetime="2018-06-08T00:00:00-04:00">08 Jun 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/05/02/tripal_testing_guidelines.html">
+          Testing in Tripal Core
+          <small><time datetime="2018-05-02T00:00:00-04:00">02 May 2018</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+ </div>
+
+
+   
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    
+   <script src='/javascripts/d3_graph_1.js' type="text/javascript"></script>
+   
+   
+ </div>
+    </main>
+</div>
+
+<footer class="footer">
+      <div class="container">
+
+      <div class="content has-text-centered">
+      <span>
+        <a href="https://github.com/bradfordcondon"><i class="fa fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/BradfordCondon"><i class="fa fa-twitter-square fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/bradford-condon-0843823b/"><i class="fa fa-linkedin-square fa-3x"></i></a>
+
+        </span>
+        </div>
+              <div class="content has-text-centered">
+
+          <p>
+          <time datetime="2018-09-21T17:02:41-04:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          </p> 
+          </div>
+      
+        </div>
+        
+      </footer>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71775012-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

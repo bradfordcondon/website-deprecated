@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head>
+  <title>Bradford Condon, Developer and Bioinformaticist</title>
+<meta charset="utf-8">
+<meta name="author" content="Bradford Condon">
+<meta name="description" content="Website, CV, and Blog of Bradford Condon.  Bradford is a web and mobile developer.  Bradford also holds a PhD in plant pathology and is an expert in genomics, bioinformatics.">
+</head>
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                <a href="/" title="Home">
+                    
+                </a>
+            </h1>
+            <h2 class="subtitle">
+                
+            </h2>
+        </div>
+
+    </div>
+    <div class="hero-foot">
+        <nav class="tabs is-boxed nav-menu has-shadow">
+            <div class="nav-center">
+                <ul>
+
+                    <li >
+                    <a href="/">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-home fa-stack-1x"></i>
+          </span>
+                        Home</a></li>
+                    <li >
+
+                    <a href="/blog/">
+
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-newspaper-o fa-stack-1x"></i>
+          </span>
+                        Blog</a>
+                    </li>
+                    <li >
+
+                    <a href="/about/">
+                   <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-question fa-stack-1x"></i>
+                    </span>
+                        About</a>
+
+                    </li>
+                    <li >
+
+                    <a href="/cv.html">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-id-card fa-stack-1x"></i>
+                   </span>
+                        CV</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<link rel="stylesheet" href="/assets/css/application.css" />
+<link rel="stylesheet" href="/assets/css/prism.css" />
+
+<link rel="alternate" type="application/atom+xml" title="" href="/atom.xml">
+
+<br/>
+
+<body>
+<div class="container content">
+    <main>
+        <div>
+  <div class="box">
+<article class="post">
+  <h1 class="post-title">Tripal at the 2018 GMOD hackathon</h1>
+ <time datetime="2018-01-17T00:00:00-05:00" class="post-date">17 Jan 2018</time>
+  <div class="card-content">
+  <p><img src="/assets/img/TripalLogo_dark.png" alt="Tripal Logo" /></p>
+
+<p>The 2018 Tripal hackathon took place at the Plant &amp; Animal Genomes conference in San Diego January 11th &amp; 12th. I’d post the itinerary and workshop sessions were, but I didn’t take great notes.  Instead, I’ll share about the sessions I took part in. Thursday we discussed Controlled Vocabularies in the morning, and Tripal Core issues (generally Tripal 3 issues) in the afternoon.  Friday was a general round-table and a Tripal 3 bundles and fields live demo.</p>
+
+<!--more-->
+
+<p>I want to thank everyone who came out to the Tripal workshop at the 2018 Plant &amp; Animal Genome Conference for making it a success.  Special thanks to Meg Staton and Ethy Cannon for organizing.</p>
+
+<h2 id="day-one">Day One</h2>
+<h3 id="controlled-vocabularies">Controlled Vocabularies</h3>
+
+<p>In the morning I ran a tutorial on Controlled Vocabularies, their increased importance in Tripal 3, and how Chado stores them.  If you’re interested in learning more, I’ve already written detailed Controlled Vocabulary Term guides for my <a href="https://github.com/statonlab/fields_generator">Tripal Fields Generator tool</a>, so check out the documentation there if you’re interested in learning more.</p>
+
+<h3 id="tripal-3-issue-queue">Tripal 3 Issue Queue</h3>
+<p>In the afternoon I bounced between working on some of the issues we’ve found migrating to Tripal 3, and answering questions about creating fields and bundles in Tripal 3 using the GUI.  Now that I’ve been working in Tripal 3 for a while, the concepts seem crystal clear, but it took me a while to wrap my head around them.  I’m hoping to post my experience here to ease the transition for other sites converting from Tripal 2 to Tripal 3.</p>
+
+<h2 id="day-two">Day Two</h2>
+<h3 id="round-table-discussion">Round Table Discussion</h3>
+<p>I don’t have much to write about this discussion: I enjoyed meeting members of the Tripal community, learning about the sites that use or will use Tripal, and hearing about some of the new modules being developed. It looks like Tripal 4 is in the works to keep up with Drupal 8’s release (see below) but it won’t be available in 2018.  In the meantime the community is exploring the Tripal 3 upgrade process.</p>
+
+<h3 id="tripal-3-development-demo">Tripal 3 Development Demo</h3>
+<p>It was clear the first day that the Tripal community is ready to start thinking about migrating to Tripal 3, and had a lot of the same questions I did starting out. To address this, I ran a live code demo of creating a new module that defined a bundle and field with code rather than using the GUI.  I’m proud to report we made it through the whole process without any technical glitches.  Going through the demo made me realize that maybe I do understand this stuff a little.  Lesson learned: if you really want to see if you’ve mastered something, do it in front of a group, without advanced notice or preparation or time to collect your thoughts.</p>
+
+<h2 id="coming-soon---tripal-3-guides">Coming Soon - Tripal 3 Guides</h2>
+
+<p>For those not in the know, Tripal is a Drupal module, and the <a href="https://www.drupal.org/core/release-cycle-overview">Drupal development lifecycle</a> dictates that as new versions of Drupal get released, old ones enter long term support (LTS), security fixes only, and finally, deprecation.  Once security fixes are no longer released for a version, it’s only a matter of time before new exploits are developed and sites running old Drupal releases</p>
+
+<blockquote>
+  <p><img src="https://www.drupal.org/files/release_schedule_caveat_0.jpg" alt="drupal release lifecycle" />
+Don’t freak out!  The Drupal production life cycle means that as new versions get released, support for old versions drops.</p>
+</blockquote>
+
+<p>Tripal 3 is the first step in getting the community ready for the death of Drupal 7.  My hope is that I can share some what I’ve learned in the upgrade process, as a neophyte to Drupal, Chado, and Tripal.  Hopefully it will solidify what I’ve learned, and perhaps it will ease the transition of other sites.</p>
+
+  </div>
+</article>
+  </div>
+
+
+
+ <div class="box">
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2018/08/26/read_the_docs.html">
+          Documentation with Read the Docs
+          <small><time datetime="2018-08-26T00:00:00-04:00">26 Aug 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/06/08/module_showcase_site.html">
+          Module showcase
+          <small><time datetime="2018-06-08T00:00:00-04:00">08 Jun 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/05/02/tripal_testing_guidelines.html">
+          Testing in Tripal Core
+          <small><time datetime="2018-05-02T00:00:00-04:00">02 May 2018</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+ </div>
+
+
+   
+ </div>
+    </main>
+</div>
+
+<footer class="footer">
+      <div class="container">
+
+      <div class="content has-text-centered">
+      <span>
+        <a href="https://github.com/bradfordcondon"><i class="fa fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/BradfordCondon"><i class="fa fa-twitter-square fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/bradford-condon-0843823b/"><i class="fa fa-linkedin-square fa-3x"></i></a>
+
+        </span>
+        </div>
+              <div class="content has-text-centered">
+
+          <p>
+          <time datetime="2018-09-21T17:02:41-04:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          </p> 
+          </div>
+      
+        </div>
+        
+      </footer>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71775012-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

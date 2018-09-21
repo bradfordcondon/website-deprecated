@@ -21,7 +21,11 @@ May 2007, BA in Biology and Religion, Oberlin College, Oberlin, OH
 ## Employment
 
 
-February 2017 to present: Postdoctoral associate, Department of Entomology and Plant Pathology, University of Tennessee, Knoxville.
+September 2018 to present: IT Specialist III, University of Tennessee
+
+
+
+February 2017 to September 2018: Postdoctoral associate, Department of Entomology and Plant Pathology, University of Tennessee, Knoxville.
 
 >I develop the Hardwood Genomics Web (HWG), a web site that houses genetic and genomic data from a variety of hardwood tree species.  I contribute to Tripal, an open source genomic database and website framework. I also authored the mobile app TreeSnap, which allows citizens to partner with scientists to track and study trees.  I serve as the biological point person for undergraduate and graduate lab programmers to help them understand the underlying database model.
 
@@ -193,10 +197,9 @@ _Full day workshops developed & implemented:_
 
 ### Accepted, In Review
 
-Harper, Lisa, Agbiodata consortium, 2018.  AgBioData Consortium Recommendations for Sustainable Genomics and Genetics Databases for Agriculture.  Database, In Review.
 
 
-**Condon, B.**, Elliott, C, Gonzalez, J, Yun, S, Akagi, Y, Wiesner-Hanks, T, Kodama, M, Turgeon, G 2018.  Clues to an evolutionary mystery: the genes for T-toxin, enabler of the devastating 1970 Southern Corn Leaf Blight epidemic, are present in ancestral species, suggesting an ancient origin.  MPMI, In Review.
+**Condon, B.**, Elliott, C, Gonzalez, J, Yun, S, Akagi, Y, Wiesner-Hanks, T, Kodama, M, Turgeon, G 2018.  Clues to an evolutionary mystery: the genes for T-toxin, enabler of the devastating 1970 Southern Corn Leaf Blight epidemic, are present in ancestral species, suggesting an ancient origin.  MPMI.
 
 
 **Condon**, B, Almsaeed, A, West, J, Chen, M, Staton, M 2018.  [Tripal Developer Toolkit](https://doi.org/10.1101/328641).  Database, In Review. doi: https://doi.org/10.1101/328641
@@ -208,6 +211,9 @@ Lumibao, C, **Condon, B**, Kinkel , L, May, G, Seabloom, E, Borer, E 2018.  Wher
 
 
 ### Peer-reviewed
+
+Lisa Harper, Jacqueline Campbell, Ethalinda K S Cannon, Sook Jung, Monica Poelchau, Ramona Walls, Carson Andorf, Elizabeth Arnaud, Tanya Z Berardini, Clayton Birkett, Steve Cannon, James Carson, **Bradford Condon**, Laurel Cooper, Nathan Dunn, Christine G Elsik, Andrew Farmer, Stephen P Ficklin, David Grant, Emily Grau, Nic Herndon, Zhi-Liang Hu, Jodi Humann, Pankaj Jaiswal, Clement Jonquet, Marie-Angélique Laporte, Pierre Larmande, Gerard Lazo, Fiona McCarthy, Naama Menda, Christopher J Mungall, Monica C Munoz-Torres, Sushma Naithani, Rex Nelson, Daureen Nesdill, Carissa Park, James Reecy, Leonore Reiser, Lacey-Anne Sanderson, Taner Z Sen, Margaret Staton, Sabarinath Subramaniam, Marcela Karey Tello-Ruiz, Victor Unda, Deepak Unni, Liya Wang, Doreen Ware, Jill Wegrzyn, Jason Williams, Margaret Woodhouse, Jing Yu, Doreen Main; AgBioData consortium recommendations for sustainable genomics and genetics databases for agriculture, _Database_, Volume 2018, 1 January 2018, bay088, https://doi.org/10.1093/database/bay088
+
 
 Gladieux, P., **Condon, B. J.** (co-first author), Ravel, S., Soanes, D., Maciel, J. L. N., Nhani, A., Chen, L., Terauchi, R., Lebrun, M.-H., Tharreau, D., Mitchell, T., Pedley, K. F., Valent, B., Talbot, N. J., Farman, M., and Fournier, E. 2018. Gene Flow between Divergent Cereal- and Grass-Specific Lineages of the Rice Blast Fungus _Magnaporthe oryzae_. J.W. Taylor, ed. MBio. 9:e01219–17
 

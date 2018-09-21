@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- Enable responsiveness on mobile devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head>
+  <title>Bradford Condon, Developer and Bioinformaticist</title>
+<meta charset="utf-8">
+<meta name="author" content="Bradford Condon">
+<meta name="description" content="Website, CV, and Blog of Bradford Condon.  Bradford is a web and mobile developer.  Bradford also holds a PhD in plant pathology and is an expert in genomics, bioinformatics.">
+</head>
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                <a href="/" title="Home">
+                    Bradford Condon PhD
+                </a>
+            </h1>
+            <h2 class="subtitle">
+                Bioinformatics, Web & Mobile Development
+            </h2>
+        </div>
+
+    </div>
+    <div class="hero-foot">
+        <nav class="tabs is-boxed nav-menu has-shadow">
+            <div class="nav-center">
+                <ul>
+
+                    <li >
+                    <a href="/">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-home fa-stack-1x"></i>
+          </span>
+                        Home</a></li>
+                    <li >
+
+                    <a href="/blog/">
+
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-newspaper-o fa-stack-1x"></i>
+          </span>
+                        Blog</a>
+                    </li>
+                    <li >
+
+                    <a href="/about/">
+                   <span class="fa-stack fa-lg">
+                      <i class="fa fa-square-o fa-stack-2x"></i>
+                      <i class="fa fa-question fa-stack-1x"></i>
+                    </span>
+                        About</a>
+
+                    </li>
+                    <li >
+
+                    <a href="/cv.html">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-square-o fa-stack-2x"></i>
+                        <i class="fa fa-id-card fa-stack-1x"></i>
+                   </span>
+                        CV</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+<link rel="stylesheet" href="/assets/css/application.css" />
+<link rel="stylesheet" href="/assets/css/prism.css" />
+
+<link rel="alternate" type="application/atom+xml" title="Bradford Condon PhD" href="/atom.xml">
+
+<br/>
+
+<body>
+<div class="container content">
+    <main>
+        <div>
+  <div class="box">
+<article class="post">
+  <h1 class="post-title">Documentation with Read the Docs</h1>
+ <time datetime="2018-08-26T00:00:00-04:00" class="post-date">26 Aug 2018</time>
+  <div class="card-content">
+  <p>This week, we’ll be moving the Tripal documentation over to ReadTheDocs.  I’ve already put the Tripal DevSeed documentation online.</p>
+
+<p><img src="/assets/img/TripalLogo_dark.png" alt="Tripal Logo" /></p>
+
+<p>This post will talk about the reasons for this decision, and a quick “how to” guide.</p>
+
+<!--more-->
+
+<h2 id="what-is-readthedocs">What is ReadTheDocs?</h2>
+
+<p>Documentation is important.  It tells users how to use our product, and developers how to read our code.  In the past, I’ve written my documentation out in markdown and included it alongside the code.  This approach still makes sense for small projects, and it gets built nicely by GitHub on the repository.</p>
+
+<p><img src="/assets/img/tripal_github_doc.png" alt="tripal readme" /></p>
+
+<p>For larger projects, such as Tripal, the real documentation is hosted on a drupal site at tripal.info.  There is a full content management system for creating new posts, managing privileges, uploading images, linking documents, etc.</p>
+
+<p><a href="https://readthedocs.org/">ReadTheDocs</a> uses <a href="http://www.sphinx-doc.org/en/master/">Sphinx</a> to build a website in a Continuous Integration setup. When new code is pushed to GitHub, the documentation website as defined by sphinx is built, and the “live” documentation website is updated.</p>
+
+<p>This has several advantages:</p>
+
+<ul>
+  <li>Code changes can include documentation updates <strong>in the same pull request</strong>.</li>
+  <li>Changes to the documentation is <strong>subject to review, just like code changes</strong>.</li>
+  <li>Documentation changes are under <strong>version control</strong>.</li>
+</ul>
+
+<p>These are all huge points.  It’s actually quite hard to remember to update the documentation when its on a separate website.  You also don’t have to remember to re-build the website, ReadTheDocs rebuilds it when you push new code and documentation.</p>
+
+<h2 id="how-do-i-add-readthedocs-to-my-project">How do I add ReadTheDocs to My Project?</h2>
+
+<p>It’s very simple: check out the <a href="https://docs.readthedocs.io/en/latest/getting_started.html">official guide</a>.</p>
+
+<p>The abbreviated version is:</p>
+
+<ul>
+  <li>Set up your ReadeTheDocs account and add your project integration</li>
+  <li>Install Sphinx</li>
+  <li>Run the quickstart command: <code class="highlighter-rouge">sphinx-quickstart</code></li>
+  <li>Write your documentation (we’re using <code class="highlighter-rouge">RST</code> format)</li>
+  <li>run <code class="highlighter-rouge">make html</code> in the <code class="highlighter-rouge">docs</code> folder to build your site for testing purposes</li>
+  <li>Push your changes to github</li>
+</ul>
+
+<p>We use <code class="highlighter-rouge">RST</code> format.  It might seem a little more complicated than markdown (and it is), but its also more powerful, so I feel its worth the work.</p>
+
+<p>Link documents to your <code class="highlighter-rouge">index.rst</code> and Sphinx will build you a searchable site with nicely formatted navigation.</p>
+
+<p><img src="/assets/img/devseed_rtd.png" alt="devseed read the docs site" /></p>
+
+<p>ReadTheDocs also provides some really awesome <strong>versioning</strong> tools, allowing you to post releases of the documentation so users can go back and find older documentation with almost no effort on your part.</p>
+
+<h2 id="tripal-documentation">Tripal Documentation</h2>
+
+<p>We currently have ReadTheDocs up for the following projects:</p>
+
+<ul>
+  <li><a href="https://tripal.readthedocs.io/en/latest/">Tripal</a></li>
+  <li><a href="https://tripaltestsuite.readthedocs.io/en/latest/">Tripal Test Suite</a></li>
+  <li><a href="https://tripal-devseed.readthedocs.io/en/latest/">Tripal DevSeed</a></li>
+</ul>
+
+
+  </div>
+</article>
+  </div>
+
+
+
+ <div class="box">
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2018/06/08/module_showcase_site/">
+          Module showcase
+          <small><time datetime="2018-06-08T00:00:00-04:00">08 Jun 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/05/02/tripal_testing_guidelines/">
+          Testing in Tripal Core
+          <small><time datetime="2018-05-02T00:00:00-04:00">02 May 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/03/28/loading_gff3_tripal/">
+          Tripal GFF Loader
+          <small><time datetime="2018-03-28T00:00:00-04:00">28 Mar 2018</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+ </div>
+
+
+   
+ </div>
+    </main>
+</div>
+
+<footer class="footer">
+      <div class="container">
+
+      <div class="content has-text-centered">
+      <span>
+        <a href="https://github.com/bradfordcondon"><i class="fa fa-github-square fa-3x"></i></a>
+        <a href="https://twitter.com/BradfordCondon"><i class="fa fa-twitter-square fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/bradford-condon-0843823b/"><i class="fa fa-linkedin-square fa-3x"></i></a>
+
+        </span>
+        </div>
+              <div class="content has-text-centered">
+
+          <p>
+          <time datetime="2018-09-01T15:33:00-04:00"> Bradford Condon 2018</time>. Site and content provided under a <a href="https://creativecommons.org/licenses/by-nc/2.0/"> Creative Commons non-commercial 2.0 license</a>.  Proudly hosted on Github Pages. 
+          </p> 
+          </div>
+      
+        </div>
+        
+      </footer>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71775012-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

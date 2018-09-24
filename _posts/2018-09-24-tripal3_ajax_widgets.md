@@ -2,7 +2,7 @@
 layout: post
 title: "AJAX and widgets in Tripal 3"
 excerpt_separator: <!--more-->
-date: 2018-09-23
+date: 2018-09-24
 tags: 
  - drupal
  - tripal

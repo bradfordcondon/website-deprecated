@@ -4,13 +4,125 @@
  <title></title>
  <link href="/atom.xml" rel="self"/>
  <link href="/"/>
- <updated>2018-09-21T17:02:41-04:00</updated>
+ <updated>2018-09-24T16:13:07-04:00</updated>
  <id></id>
  <author>
    <name></name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>AJAX and widgets in Tripal 3</title>
+   <link href="/2018/09/24/tripal3_ajax_widgets.html"/>
+   <updated>2018-09-24T00:00:00-04:00</updated>
+   <id>/2018/09/24/tripal3_ajax_widgets</id>
+   <content type="html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Link: &lt;a href=&quot;https://github.com/tripal/tripal/issues/607&quot;&gt;original GitHub issue&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I found myself in a predicament: I wanted to include a dynamic element in my Tripal field’s formatter.&lt;/p&gt;
+
+&lt;p&gt;However, I couldnt for the life of me get the AJAX callback to run in the formatter.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;the-problem-renderable-arrays&quot;&gt;The problem: renderable arrays&lt;/h3&gt;
+
+&lt;p&gt;Drupal has its special way of doing AJAX!  &lt;a href=&quot;https://api.drupal.org/api/drupal/includes%21ajax.inc/group/ajax/7.x&quot;&gt;You should read the documentation carefully!&lt;/a&gt;.  To Drupal, AJAX only makes sense as on forms.&lt;/p&gt;
+
+&lt;p&gt;Here’s the problem: formatters &lt;strong&gt;are not forms&lt;/strong&gt;.  Instead, they are &lt;a href=&quot;https://www.drupal.org/docs/7/api/render-arrays/render-arrays-overview&quot;&gt;renderable arrays&lt;/a&gt;!  This is obvious in hindsight: rather than accepting &lt;code class=&quot;highlighter-rouge&quot;&gt;$form&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;$form_state&lt;/code&gt;, they accept &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;$element, $entity_type, $entity, $langcode, $items, $display&lt;/code&gt;, where &lt;code class=&quot;highlighter-rouge&quot;&gt;$element&lt;/code&gt; is the renderable array.&lt;/p&gt;
+
+&lt;p&gt;This means if we want to add an AJAX callback, we actually need a &lt;strong&gt;seperate form file&lt;/strong&gt; tahts get added in using &lt;code class=&quot;highlighter-rouge&quot;&gt;drupal_get_form()&lt;/code&gt;.  If we do this, we can build the AJAX as Drupal expects it.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-solution-drupal_get_form&quot;&gt;the solution: &lt;code class=&quot;highlighter-rouge&quot;&gt;drupal_get_form&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Here’s my form file: as you can see its a standard form following Drupal AJAX conventions.  We provide a &lt;code class=&quot;highlighter-rouge&quot;&gt;rendered_maps&lt;/code&gt; fieldset with the prefix defining the wrapper.  The selector has specifies that wrapper, and the AJAX callback function &lt;code class=&quot;highlighter-rouge&quot;&gt;tripalmap_organism_featuremap_callback&lt;/code&gt;.  We then define that function to simply return  the piece of the form that should be rebuilt: the &lt;code class=&quot;highlighter-rouge&quot;&gt;rendered_maps&lt;/code&gt; fieldset!&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+function tripal_map_organism_featuremap_selector($form, &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;$form_state, $select) {
+
+  $selected = 0;
+
+  if (isset($form_state['values']['featuremap_select'])) {
+    $selected = isset($form_state['values']['featuremap_select']);
+  }
+
+
+  $form['rendered_maps'] = [
+    '#type' =&amp;gt; 'fieldset',
+    '#collapsible' =&amp;gt; FALSE,
+    '#prefix' =&amp;gt; '&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tripalmap-featuremap-organism-selector-wrapper&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;',
+    '#suffix' =&amp;gt; '&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;',
+  ];
+
+
+  $form['rendered_maps']['featuremap_select'] = [
+    '#type' =&amp;gt; 'select',
+    '#options' =&amp;gt; $select,
+    '#title' =&amp;gt; 'Please select a map to view',
+    '#default_value' =&amp;gt; $selected,
+    '#ajax' =&amp;gt; [
+      'callback' =&amp;gt; 'tripalmap_organism_featuremap_callback',
+      'wrapper' =&amp;gt; 'tripalmap-featuremap-organism-selector-wrapper',
+      'effect' =&amp;gt; 'fade',
+    ],
+  ];
+
+
+  $chosen = 0;
+
+  if (isset($form_state['values']['featuremap_select'])) {
+    $chosen = $form_state['input']['featuremap_select'];
+  }
+
+  if ($chosen != 0) {
+
+
+    $mini_form = tripal_map_genetic_map_overview_form([], $form_state, $chosen);
+
+    $form['rendered_maps']['map'] = $mini_form;
+
+    return $form;
+  }
+
+  return $form;
+}
+
+/**
+ * @param $form
+ * @param $form_state
+ *
+ * @return mixed
+ */
+function tripalmap_organism_featuremap_callback($form, &lt;span class=&quot;err&quot;&gt;&amp;amp;&lt;/span&gt;$form_state) {
+
+  return $form['rendered_maps'];
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In the field formatter, we simply add this form and put the markup in the element:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+      //multiple maps for this organism, let user select.  Create a special form for that so we can have an AJAX select box
+      $select= $select + $select_add;
+
+      $form = drupal_get_form('tripal_map_organism_featuremap_selector', $select);
+      $content = drupal_render($form);
+        $element[] = [
+          '#type' =&amp;gt; 'markup',
+          '#markup' =&amp;gt; $content,
+        ];
+        return $element;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Documentation with Read the Docs</title>

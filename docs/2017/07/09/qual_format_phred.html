@@ -81,11 +81,121 @@
 <body>
 <div class="container content">
     <main>
-        <div class="page">
-  <h1 class="page-title">404: Page not found</h1>
-  <p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="/">Head back home</a> to try finding it again.</p>
+        <div>
+  <div class="box">
+<article class="post">
+  <h1 class="post-title">qual format</h1>
+ <time datetime="2017-07-09T00:00:00-04:00" class="post-date">09 Jul 2017</time>
+  <div class="card-content">
+  <p>This post is part 7 of a series on file formats, written for the 2017 UK-KBRIN Essentials of Next Generation Sequencing Workshop at the University of Kentucky.</p>
+
+<h3 id="qual-format">qual format</h3>
+
+<p>A <code class="highlighter-rouge">.qual</code> file provides Phred-based quality scores for a set of sequences (often a corresponding FASTA file).  It looks something like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;my_sequence1
+4 39 8 4 50 1 100 5 0
+&gt;my_sequence2 
+3 3 40 42 35
+</code></pre>
 </div>
 
+<p>Similar to FASTA format, each sequence is defined with a header starting with the <code class="highlighter-rouge">&gt;</code> character, and all subsequente characters after the line break describe the sequence.  Unlike FASTA, the individual nucleotides are not included in this file, only the corresponding quality Phred-format scores. 
+At this point, all we need to understand is what are <a href="https://en.wikipedia.org/wiki/Phred_quality_score">Phred quality scores</a>.  Every nucleotide in a sequence will have a quality score associated with it.  The score <code class="highlighter-rouge">Q</code> describes the probability <code class="highlighter-rouge">P</code> that the base is called in correctly:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Q = –10 log(P)
+</code></pre>
+</div>
+<p>Let’s look at some example Phred scores below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phred score</th>
+      <th>Probability incorrect</th>
+      <th>% likelihood correct call</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>1 in 2</td>
+      <td>50%</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>1 in 10</td>
+      <td>90%</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>1 in 100</td>
+      <td>99%</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>1 in 1000</td>
+      <td>99.9%</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>1 in 10,000</td>
+      <td>99.99%</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>1 in 100,000</td>
+      <td>99.999%</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>1 in 1,000,000</td>
+      <td>99.9999%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Phred scores typically range from 2-40 with current sequencing technology.  As you can see, setting a cutoff somewhere around <code class="highlighter-rouge">30</code> or higher results in fairly strict confidence in invidual base calls.</p>
+
+  </div>
+</article>
+  </div>
+
+
+
+ <div class="box">
+<aside class="related">
+  <h3>Related posts</h3>
+  <ul class="related-posts">
+    
+      <li>
+        <a href="/2018/09/24/tripal3_ajax_widgets.html">
+          AJAX and widgets in Tripal 3
+          <small><time datetime="2018-09-24T00:00:00-04:00">24 Sep 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/08/26/read_the_docs.html">
+          Documentation with Read the Docs
+          <small><time datetime="2018-08-26T00:00:00-04:00">26 Aug 2018</time></small>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/2018/06/08/module_showcase_site.html">
+          Module showcase
+          <small><time datetime="2018-06-08T00:00:00-04:00">08 Jun 2018</time></small>
+        </a>
+      </li>
+    
+  </ul>
+</aside>
+ </div>
+
+
+   
+ </div>
     </main>
 </div>
 

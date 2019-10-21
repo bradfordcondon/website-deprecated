@@ -202,15 +202,14 @@ _Full day workshops developed & implemented:_
 **Condon, B.**, Elliott, C, Gonzalez, J, Yun, S, Akagi, Y, Wiesner-Hanks, T, Kodama, M, Turgeon, G 2018.  Clues to an evolutionary mystery: the genes for T-toxin, enabler of the devastating 1970 Southern Corn Leaf Blight epidemic, are present in ancestral species, suggesting an ancient origin.  MPMI.
 
 
-**Condon**, B, Almsaeed, A, West, J, Chen, M, Staton, M 2018.  [Tripal Developer Toolkit](https://doi.org/10.1101/328641).  Database, In Review. doi: https://doi.org/10.1101/328641
-
-
-### In Review
-
-Lumibao, C, **Condon, B**, Kinkel , L, May, G, Seabloom, E, Borer, E 2018.  Where you are matters: site-specific responses of fungal endophyte communities in _Andropogon gerardii_ to fertilization and herbivory.  Ecology, In Review.
 
 
 ### Peer-reviewed
+
+**Condon**, B, Almsaeed, A, West, J, Chen, M, Staton, M.  [Tripal Developer Toolkit](https://doi.org/10.1101/328641).  Database, 2018. https://doi.org/10.1093/database/bay099
+
+Lumibao, C, **Condon, B**, Kinkel , L, May, G, Seabloom, E, Borer, E 2018. Site‐specific responses of foliar fungal microbiomes to nutrient addition and herbivory at different spatial scales.  Ecology and Evolution, October 2019. https://doi.org/10.1002/ece3.5711
+
 
 Lisa Harper, Jacqueline Campbell, Ethalinda K S Cannon, Sook Jung, Monica Poelchau, Ramona Walls, Carson Andorf, Elizabeth Arnaud, Tanya Z Berardini, Clayton Birkett, Steve Cannon, James Carson, **Bradford Condon**, Laurel Cooper, Nathan Dunn, Christine G Elsik, Andrew Farmer, Stephen P Ficklin, David Grant, Emily Grau, Nic Herndon, Zhi-Liang Hu, Jodi Humann, Pankaj Jaiswal, Clement Jonquet, Marie-Angélique Laporte, Pierre Larmande, Gerard Lazo, Fiona McCarthy, Naama Menda, Christopher J Mungall, Monica C Munoz-Torres, Sushma Naithani, Rex Nelson, Daureen Nesdill, Carissa Park, James Reecy, Leonore Reiser, Lacey-Anne Sanderson, Taner Z Sen, Margaret Staton, Sabarinath Subramaniam, Marcela Karey Tello-Ruiz, Victor Unda, Deepak Unni, Liya Wang, Doreen Ware, Jill Wegrzyn, Jason Williams, Margaret Woodhouse, Jing Yu, Doreen Main; AgBioData consortium recommendations for sustainable genomics and genetics databases for agriculture, _Database_, Volume 2018, 1 January 2018, bay088, https://doi.org/10.1093/database/bay088
 
